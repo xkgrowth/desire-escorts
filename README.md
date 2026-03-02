@@ -1,24 +1,72 @@
 # Desire Escorts
 
-## Description
-
-Project description goes here.
+A Next.js application built with React and TypeScript.
 
 ## Getting Started
 
 ### Prerequisites
 
-- List any prerequisites here
+- Node.js 18+ 
+- npm, yarn, or pnpm
 
 ### Installation
 
 ```bash
-# Installation instructions go here
+npm install
+# or
+yarn install
+# or
+pnpm install
 ```
 
-## Usage
+### Development
 
-Usage instructions go here.
+Run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Build
+
+```bash
+npm run build
+# or
+yarn build
+# or
+pnpm build
+```
+
+### Production
+
+```bash
+npm start
+# or
+yarn start
+# or
+pnpm start
+```
+
+## Tech Stack
+
+- **Framework:** Next.js
+- **Language:** TypeScript
+- **Styling:** (To be configured)
+
+## Project Structure
+
+```
+├── app/              # Next.js App Router
+├── components/       # React components
+├── public/          # Static assets
+└── ...
+```
 
 ## Contributing
 
