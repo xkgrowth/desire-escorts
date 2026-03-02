@@ -1,6 +1,11 @@
 {
   "version": 1,
   "skills": {
+    "accessibility-compliance": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "computedHash": "3936584cc5ff5c958f33b0072ad17ba2bc9ed947dd3ada3c1ce4f4265385aada"
+    },
     "find-skills": {
       "source": "vercel-labs/skills",
       "sourceType": "github",
@@ -16,6 +21,11 @@
       "sourceType": "github",
       "computedHash": "8eed8401fa4980cc67ac308bc9d09e21bb312848f03990ab73dafe7265590c61"
     },
+    "responsive-design": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "computedHash": "9df1908623814c4c93cc1fde25caa211b2d28c8ffcdc2b5a12c6b7ae456f0f89"
+    },
     "seo-audit": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
@@ -30,6 +40,11 @@
       "source": "moteodimassi/strapi-v5-expert",
       "sourceType": "github",
       "computedHash": "ac06526458db74ffa6437fe3100e329f13105372c70e89ec8faff49ecd4e43b9"
+    },
+    "vercel-deployment": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "computedHash": "53b95746d6ed728a76d7fdba944fd72f23dac43620595f965e84eb4897871697"
     },
     "wp-rest-api": {
       "source": "wordpress/agent-skills",

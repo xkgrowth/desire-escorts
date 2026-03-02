@@ -32,6 +32,8 @@ Rebuild the website in Next.js while preserving current organic performance by m
 
 - Frontend: Next.js (Node.js runtime)
 - CMS/Data source: Strapi
+- Hosting and deployment: Vercel (preview + production environments)
+- Delivery model: Git-based CI/CD with automated Vercel builds per branch/PR
 - Legacy extraction sources:
   - WordPress export data
   - Firecrawl site extraction
@@ -69,6 +71,18 @@ Rebuild the website in Next.js while preserving current organic performance by m
 - Keep language paths stable (`/` NL, `/en/` EN) unless explicitly redefined.
 - Preserve or improve Core Web Vitals and crawl efficiency.
 - No accidental deindexing of currently valuable pages.
+- Preserve technical SEO behavior through deployment (stable redirects, canonical output, and noindex controls per environment).
+
+## Deployment and Environments
+
+- Production deployment target is Vercel.
+- Maintain separate preview and production environments for safe validation.
+- Ensure environment variable strategy is defined for:
+  - Strapi API access
+  - analytics/search console integrations
+  - any SEO/runtime feature flags
+- Build pipeline must include pre-release SEO checks before production promotion.
+- Rollback path must be documented and validated before launch.
 
 ## Content and Discovery Inputs
 
@@ -108,6 +122,7 @@ Migration discovery should combine:
 4. SEO QA and Pre-Launch
    - Validate metadata, canonicals, hreflang, indexability, links, and structured signals.
    - Validate parity versus legacy inventory.
+   - Validate Vercel preview against launch checklist before production promotion.
 
 5. Launch and Stabilization
    - Monitor indexing, rankings, traffic, crawl stats, and 404s.
