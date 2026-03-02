@@ -3,6 +3,7 @@ import "./globals.css";
 import { SiteHeader } from "./components/site-header";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://desire-escorts.nl"),
   title: "Desire Escorts",
   description: "Desire Escorts application",
   icons: {
