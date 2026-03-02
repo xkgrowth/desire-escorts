@@ -20,6 +20,10 @@
     "firecrawl:coverage": "node scripts/firecrawl-rendered-extract-full.mjs --limit 1 --dry-run",
     "reconcile:build-dataset": "node scripts/build-normalized-content-dataset.mjs",
     "reconcile:gates": "node scripts/build-reconcile-gates.mjs",
+    "reconcile:link-triage": "node scripts/build-link-target-triage.mjs",
+    "reconcile:metadata-gaps": "node scripts/build-metadata-parity-gaps.mjs",
+    "reconcile:language-gaps": "node scripts/build-language-parity-gaps.mjs",
+    "reconcile:parity-evidence": "node scripts/build-parity-validation-evidence.mjs",
     "strapi:audit:coverage": "node scripts/strapi-coverage-audit.mjs",
     "ingest:healthcheck": "npm run wp:healthcheck && npm run strapi:healthcheck"
   },

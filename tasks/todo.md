@@ -46,6 +46,12 @@
 - [x] Run Strapi coverage audit for profile data across scoped hosts.
 - [x] Build first include/review/exclude gate manifest.
 - [x] Triage remaining review URLs to final include/exclude/redirect decisions.
+- [x] Generate parity evidence artifacts (link/metadata/media/language) and refresh gate summary.
+- [x] Create build-phase handoff action plan artifact.
+- [x] Execute parity QA follow-up checklist for link/metadata/language review signals.
+- [x] Complete link-target triage and generate redirect/include-addition artifacts.
+- [x] Complete metadata parity gap analysis and clear metadata gate to pass.
+- [x] Complete language parity gap analysis and clear language gate to pass (with accepted redirect exception).
 
 ## Review Notes (Phase 2)
 
@@ -58,8 +64,16 @@
 - Strapi audit report generated with host-consistent profile counts and known endpoint caveats (`/health` 403 with read-only token, `/filters` 400 invalid key).
 - Gate artifacts generated in `data/reconcile/` with current decisions: include `781`, review `0`, exclude `0`.
 - Manual include overrides are tracked in `data/reconcile/manual-decision-overrides.json`.
+- Parity evidence artifacts are generated under `data/reconcile/gates/`.
+- Build handoff plan created at `.cursor/plans/CONTENT_MIGRATION_ACTION_PLAN.md`.
+- Follow-up checklist created at `.cursor/plans/PARITY_QA_FOLLOWUP_CHECKLIST.md`.
+- Link triage artifacts generated: `data/reconcile/link-target-triage.json`, `data/reconcile/redirect-candidates.json`, `data/reconcile/link-target-include-additions.json`.
+- Metadata gap artifact generated: `data/reconcile/metadata-parity-gaps.json` (0 page-metadata gaps; `locations.kml` exempted as technical asset).
+- Language gap artifact generated: `data/reconcile/language-parity-gaps.json` (0 review gaps, 1 accepted redirect exception).
+- Residual follow-up: merge 50 include-additions into canonical inventory and implement 20 redirect candidates in runtime routing config.
 
 ## Deferred Backend Fixes (Logged)
 
-- [ ] Strapi `/api/profiles/health` route auth behavior: currently `403` for read-only token (deferred backend route config decision).
-- [ ] Strapi `/api/profiles/filters` response `400 Invalid key nationality` (deferred backend controller/query fix in `escorts/backend`).
+- [x] Strapi `/api/profiles/health` route auth behavior fix implemented in `escorts/backend` (`auth: false` on health route).
+- [x] Strapi `/api/profiles/filters` `Invalid key nationality` fix implemented in `escorts/backend` controller query.
+- [ ] Deploy/restart Strapi backend and verify fixes on live endpoint via `npm run strapi:audit:coverage`.

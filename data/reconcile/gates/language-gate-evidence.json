@@ -1,0 +1,10 @@
+{
+  "generatedAt": "2026-03-02T15:14:54.985Z",
+  "totals": {
+    "includedUrls": 781,
+    "languageEligibleUrls": 780,
+    "localeMatches": 779,
+    "localeMismatches": 1,
+    "localeUnknown": 0
+  }
+}

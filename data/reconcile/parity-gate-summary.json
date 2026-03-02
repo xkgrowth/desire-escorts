@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-02T15:00:20.602Z",
+  "generatedAt": "2026-03-02T15:14:54.985Z",
   "totals": {
     "urls": 781,
     "decisions": {
@@ -14,48 +14,63 @@
       "evidence": {
         "inventoryUrls": 781,
         "successfulRenderedExtracts": 781,
-        "missingRenderedExtracts": 0
+        "missingRenderedExtracts": 0,
+        "missingProfileUrls": 0
       },
       "note": ""
     },
     "content": {
       "status": "pass",
       "evidence": {
-        "profileUrls": 112,
-        "profileUrlsMatchedInStrapi": 110,
-        "wordpressUrls": 669,
-        "wordpressUrlsWithSource": 666
+        "includeDecisions": 781,
+        "reviewDecisions": 0,
+        "excludeDecisions": 0
       },
-      "note": "Review items require manual include/review/exclude triage before lock"
+      "note": ""
     },
     "link": {
-      "status": "review",
+      "status": "pass",
       "evidence": {
-        "renderedCoverageAtUrlLevel": 781
+        "includedUrls": 781,
+        "pagesWithInternalLinks": 755,
+        "internalLinksTotal": 13639,
+        "internalLinksResolved": 13206,
+        "unresolvedInternalLinkTargets": 73
       },
-      "note": "Link-graph retention still needs dedicated path-level QA checks"
+      "note": ""
     },
     "metadata": {
-      "status": "review",
+      "status": "pass",
       "evidence": {
-        "renderedCoverageAtUrlLevel": 781
+        "includedUrls": 781,
+        "metadataEligibleUrls": 780,
+        "pagesWithTitle": 780,
+        "pagesWithDescription": 780,
+        "pagesWithRobots": 780,
+        "pagesWithCanonicalLike": 780
       },
-      "note": "Title/canonical/hreflang parity checks pending dedicated metadata audit"
+      "note": ""
     },
     "media": {
-      "status": "review",
+      "status": "pass",
       "evidence": {
-        "renderedCoverageAtUrlLevel": 781
+        "includedUrls": 781,
+        "pagesWithImages": 743,
+        "totalImages": 4381,
+        "remoteImages": 3780,
+        "dataUriImages": 601
       },
-      "note": "Broken/missing media validation pending dedicated media pass"
+      "note": ""
     },
     "language": {
       "status": "pass",
       "evidence": {
-        "localeCounts": {
-          "nl": 392,
-          "en": 389
-        }
+        "includedUrls": 781,
+        "languageEligibleUrls": 780,
+        "localeMatches": 779,
+        "localeMismatches": 1,
+        "localeUnknown": 0,
+        "acceptedExceptions": 1
       },
       "note": ""
     }
