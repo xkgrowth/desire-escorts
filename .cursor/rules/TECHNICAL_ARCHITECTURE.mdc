@@ -57,6 +57,8 @@ Define implementation guardrails for rebuilding Desire Escorts on Next.js with S
   - title and description
   - robots/indexability intent
   - locale alternates (NL/EN mapping)
+- For Phase 1 parity launch, `meta title` and `meta description` must exactly match live legacy text for each URL+locale.
+- Metadata deviations are allowed only with explicit SEO approval and a documented exception (reason, owner, date, affected URL+locale).
 - Preserve heading semantics and internal linking parity for migrated pages.
 - Keep metadata generation centralized and deterministic across templates.
 - Prevent preview/staging indexation (environment-specific noindex handling where required).

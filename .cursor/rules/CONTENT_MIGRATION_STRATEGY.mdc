@@ -29,6 +29,8 @@ This strategy is pre-actionable by design; detailed execution planning happens a
 
 - Phase 1 policy: mirror-first with minor editorial fixes only.
 - No changes that alter search intent, canonical URL intent, or core page semantics.
+- For every migrated URL+locale in Phase 1, the launch `meta title` and `meta description` must exactly match the live legacy page text.
+- Metadata deviations are allowed only with explicit SEO signoff and a documented exception (reason, owner, date, affected URL+locale).
 - Any unavoidable URL delta requires explicit redirect mapping and approval.
 - Out-of-scope changes are logged into post-launch optimization backlog.
 
@@ -47,7 +49,7 @@ This strategy is pre-actionable by design; detailed execution planning happens a
 - Coverage gate: all in-scope URLs are classified (`include`, `review`, `exclude`).
 - Content gate: critical commercial pages have full content parity records.
 - Link gate: key internal pathways are preserved.
-- Metadata gate: title/meta/canonical/hreflang requirements mapped.
+- Metadata gate: title/meta/canonical/hreflang requirements mapped, with exact-match validation for `meta title` and `meta description` against legacy per URL+locale.
 - Media gate: missing/broken assets are below agreed threshold.
 - Language gate: NL/EN alternates and route strategy are defined for all in-scope pages.
 
@@ -98,6 +100,7 @@ This actionable plan must include:
 
 - All approved in-scope pages are live with parity intent preserved.
 - Critical metadata and internal links match migration requirements.
+- `Meta title` and `meta description` are exact text matches to legacy for all approved URL+locale pairs, except approved and documented exceptions.
 - NL/EN routing parity is correct.
 - Redirects and 404 monitoring are in place.
 - Post-launch optimization backlog is documented and prioritized.

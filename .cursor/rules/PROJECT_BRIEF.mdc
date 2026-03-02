@@ -66,7 +66,9 @@ Rebuild the website in Next.js while preserving current organic performance by m
 ## SEO Requirements (Non-Negotiable)
 
 - Exact URL parity where technically possible.
-- Preserve title/meta intent and heading hierarchy at launch.
+- For Phase 1 launch, `meta title` and `meta description` must be exact text matches to the live legacy page for each URL+locale (`/` NL, `/en/` EN).
+- Any title/description deviation requires explicit SEO approval and a documented exception before release.
+- Preserve heading hierarchy at launch.
 - Maintain internal linking pathways for key commercial and informational pages.
 - Keep language paths stable (`/` NL, `/en/` EN) unless explicitly redefined.
 - Preserve or improve Core Web Vitals and crawl efficiency.
@@ -133,6 +135,7 @@ Migration discovery should combine:
 - All in-scope legacy URLs migrated or intentionally redirected.
 - No critical SEO regressions in indexation/crawlability signals at launch.
 - NL/EN parity delivered.
+- `Meta title` and `meta description` exact-match parity is achieved for all in-scope URL+locale pairs, except approved exceptions.
 - Escort profile + availability powered by Strapi in production.
 - Content parity achieved with only approved minor editorial changes.
 
