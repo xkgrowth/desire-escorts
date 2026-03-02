@@ -8,11 +8,15 @@
     "start": "next start",
     "lint": "next lint",
     "wp:healthcheck": "node scripts/wp-healthcheck.mjs",
+    "strapi:healthcheck": "node scripts/strapi-healthcheck.mjs",
     "wp:export": "node scripts/wp-export.mjs",
     "wp:export:nl": "node scripts/wp-export.mjs --lang nl --types pages,posts --out-dir data/wordpress/nl",
     "wp:export:en": "node scripts/wp-export.mjs --lang en --types pages,posts --out-dir data/wordpress/en",
     "wp:export:all-locales": "node scripts/wp-export-all-locales.mjs",
-    "wp:validate:sitemap": "node scripts/validate-wp-export-against-sitemap.mjs"
+    "wp:validate:sitemap": "node scripts/validate-wp-export-against-sitemap.mjs",
+    "inventory:build": "node scripts/build-hybrid-url-inventory.mjs",
+    "firecrawl:extract:core": "node scripts/firecrawl-rendered-extract.mjs --batch core-pilot --limit 12",
+    "ingest:healthcheck": "npm run wp:healthcheck && npm run strapi:healthcheck"
   },
   "dependencies": {
     "react": "^18.3.1",

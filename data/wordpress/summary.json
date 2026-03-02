@@ -1,0 +1,21 @@
+{
+  "baseUrl": "https://desire-escorts.nl",
+  "generatedAt": "2026-03-02T13:47:00.026Z",
+  "types": {
+    "pages": {
+      "count": 302,
+      "file": "data/wordpress/pages.json",
+      "durationMs": 74631
+    },
+    "posts": {
+      "count": 40,
+      "file": "data/wordpress/posts.json",
+      "durationMs": 4741
+    },
+    "media": {
+      "count": 1289,
+      "file": "data/wordpress/media.json",
+      "durationMs": 66223
+    }
+  }
+}

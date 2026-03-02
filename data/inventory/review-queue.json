@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-03-02T14:24:14.209Z",
+  "baseUrl": "https://desire-escorts.nl",
+  "urls": [
+    {
+      "url": "https://desire-escorts.nl/en/kennisbank",
+      "locale": "en",
+      "type": "kennisbank",
+      "fromSitemap": false,
+      "fromFirecrawl": true,
+      "source": "fromFirecrawl",
+      "reviewReason": "Discovered by Firecrawl but missing from sitemap baseline"
+    },
+    {
+      "url": "https://desire-escorts.nl/en/kennisbank/services-experience/is-kissing-with-an-escort-common",
+      "locale": "en",
+      "type": "kennisbank",
+      "fromSitemap": false,
+      "fromFirecrawl": true,
+      "source": "fromFirecrawl",
+      "reviewReason": "Discovered by Firecrawl but missing from sitemap baseline"
+    }
+  ]
+}
