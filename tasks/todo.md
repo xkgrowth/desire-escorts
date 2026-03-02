@@ -77,3 +77,9 @@
 - [x] Strapi `/api/profiles/health` route auth behavior fix implemented in `escorts/backend` (`auth: false` on health route).
 - [x] Strapi `/api/profiles/filters` `Invalid key nationality` fix implemented in `escorts/backend` controller query.
 - [ ] Deploy/restart Strapi backend and verify fixes on live endpoint via `npm run strapi:audit:coverage`.
+
+# Phase 3 Design System Kickoff
+
+- [x] Persist approved brand color palette as project tokens in `app/globals.css` and `tailwind.config.ts`.
+- [x] Store palette intent document at `assets/brand/PALETTE.md`.
+- [x] Create Desire-specific design system implementation plan at `.cursor/plans/design_system_setup.plan.md`.

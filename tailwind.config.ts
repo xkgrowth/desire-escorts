@@ -9,8 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        brand: {
+          vanillaCustard: "var(--color-vanilla-custard)",
+          royalGold: "var(--color-royal-gold)",
+          darkOlive: "var(--color-dark-olive)",
+          carbonBlack: "var(--color-carbon-black)",
+          whiteSmoke: "var(--color-white-smoke)",
+        },
         background: "var(--background)",
         foreground: "var(--foreground)",
+        surface: "var(--surface)",
+        border: "var(--border)",
+        primary: "var(--primary)",
+        "primary-foreground": "var(--primary-foreground)",
+        accent: "var(--accent)",
+        "accent-foreground": "var(--accent-foreground)",
+        muted: "var(--muted)",
+        "muted-foreground": "var(--muted-foreground)",
       },
     },
   },
