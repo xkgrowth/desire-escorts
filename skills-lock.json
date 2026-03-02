@@ -26,6 +26,11 @@
       "sourceType": "github",
       "computedHash": "8fcb40e614ce8a4b1ceed69cadebe94f4509021fed1211de299e49f60ff0f628"
     },
+    "strapi-v5-expert": {
+      "source": "moteodimassi/strapi-v5-expert",
+      "sourceType": "github",
+      "computedHash": "ac06526458db74ffa6437fe3100e329f13105372c70e89ec8faff49ecd4e43b9"
+    },
     "wp-rest-api": {
       "source": "wordpress/agent-skills",
       "sourceType": "github",
