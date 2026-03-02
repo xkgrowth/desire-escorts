@@ -1,0 +1,106 @@
+---
+description: Technical architecture standards for Next.js, Strapi, Vercel, and SEO-safe migration delivery
+alwaysApply: true
+---
+
+# TECHNICAL ARCHITECTURE
+
+## Purpose
+
+Define implementation guardrails for rebuilding Desire Escorts on Next.js with Strapi as CMS and Vercel as deployment platform, while preserving SEO continuity during migration.
+
+## Architecture Goals
+
+- Parity-first launch with minimal behavioral drift from the legacy site.
+- Strong SEO stability across routing, metadata, and indexability.
+- Clear separation between presentation (Next.js) and content source (Strapi).
+- Fast, observable, and reversible deployments on Vercel.
+
+## System Boundaries
+
+- Frontend application: Next.js App Router.
+- Content and entity source: Strapi (escort profiles, availability, page/blog content where modeled).
+- Migration sources: WordPress exports + Firecrawl + sitemap-derived inventories.
+- Hosting/runtime: Vercel preview and production environments.
+
+## Routing and Locale Strategy
+
+- Preserve existing language routing behavior:
+  - NL default under `/`
+  - EN under `/en/`
+- Keep URL structure parity for all in-scope legacy URLs unless explicitly approved otherwise.
+- If route changes are unavoidable, define permanent redirects before release.
+- Locale behavior must remain deterministic and aligned with canonical/hreflang output.
+
+## Rendering Strategy
+
+- Prefer static generation or cached server rendering for stable content pages.
+- Use revalidation where content updates are periodic and not request-critical.
+- Use dynamic rendering only where freshness is required (for example profile availability status).
+- Avoid introducing client-side-only rendering for SEO-critical page bodies.
+
+## Content Delivery Layer
+
+- Encapsulate Strapi access behind a dedicated data layer (`lib/api` or equivalent), not directly in UI components.
+- Normalize Strapi responses into frontend-friendly shapes before rendering.
+- Enforce explicit error states and fallback behavior for missing/unpublished content.
+- Keep content model mapping documented for:
+  - pages
+  - blogs
+  - escort profiles
+  - availability fields
+
+## SEO and Metadata Contract
+
+- Every indexable page must define:
+  - canonical URL
+  - title and description
+  - robots/indexability intent
+  - locale alternates (NL/EN mapping)
+- Preserve heading semantics and internal linking parity for migrated pages.
+- Keep metadata generation centralized and deterministic across templates.
+- Prevent preview/staging indexation (environment-specific noindex handling where required).
+
+## Media and Asset Strategy
+
+- Preserve media references from migration inventories and avoid broken URLs.
+- Optimize delivery through Next.js image pipeline where compatible with source constraints.
+- Use explicit fallback behavior for missing images during migration rollout.
+
+## Vercel Deployment Model
+
+- Use branch/PR previews for validation before production promotion.
+- Keep production config immutable through environment variables and project settings.
+- Required environment variables must be documented and environment-scoped (preview vs production).
+- Production releases must pass architecture QA gates:
+  - route parity checks
+  - metadata checks
+  - internal link checks
+  - redirect validation
+
+## Reliability and Observability
+
+- Capture runtime errors for server and route handlers with actionable context.
+- Log content fetch failures with URL/locale identifiers for fast diagnosis.
+- Monitor launch health signals:
+  - 404/500 trends
+  - crawler-visible regressions
+  - key template rendering failures
+
+## Security and Compliance Baseline
+
+- Never expose private tokens to client bundles.
+- Use server-only access for privileged Strapi operations.
+- Validate and sanitize any rich content rendered from CMS sources.
+
+## Performance Baseline
+
+- Optimize for Core Web Vitals on both desktop and mobile.
+- Keep third-party scripts minimal and defer non-critical scripts.
+- Maintain lean page payloads for key SEO landing pages.
+
+## Delivery Governance
+
+- Architecture-affecting changes require explicit approval when they risk SEO parity.
+- Prefer additive, low-risk changes during migration phase 1.
+- Record deliberate deviations and route/metadata exceptions in migration artifacts.
