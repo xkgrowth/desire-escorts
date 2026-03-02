@@ -40,10 +40,26 @@
 - [x] Add hybrid inventory builder script and npm command.
 - [x] Run sitemap discovery + Firecrawl map union build.
 - [x] Generate canonical inventory, review queue, and summary artifacts.
-- [ ] Start Firecrawl rendered extraction for prioritized template batches.
+- [x] Start Firecrawl rendered extraction for prioritized template batches (core pilot).
+- [x] Expand rendered extraction from pilot batch to broader prioritized groups.
+- [x] Build normalized reconciliation dataset keyed by canonical URL with provenance fields.
+- [x] Run Strapi coverage audit for profile data across scoped hosts.
+- [x] Build first include/review/exclude gate manifest.
+- [x] Triage remaining review URLs to final include/exclude/redirect decisions.
 
 ## Review Notes (Phase 2)
 
 - New command `npm run inventory:build` generates inventory artifacts under `data/inventory/`.
 - Latest run produced 781 canonical URLs (NL 392, EN 389) from sitemap+Firecrawl union.
 - Review queue narrowed to 2 Firecrawl-only URLs requiring classification.
+- Core rendered extraction pilot completed with 12/12 successes and output manifests in `data/firecrawl/`.
+- Full Firecrawl rendered extraction completed with inventory coverage report at `data/firecrawl/coverage-report.json` (`781/781` URLs covered).
+- Reconciliation dataset now marks profile routes as Strapi-primary authority with URL parity intent.
+- Strapi audit report generated with host-consistent profile counts and known endpoint caveats (`/health` 403 with read-only token, `/filters` 400 invalid key).
+- Gate artifacts generated in `data/reconcile/` with current decisions: include `781`, review `0`, exclude `0`.
+- Manual include overrides are tracked in `data/reconcile/manual-decision-overrides.json`.
+
+## Deferred Backend Fixes (Logged)
+
+- [ ] Strapi `/api/profiles/health` route auth behavior: currently `403` for read-only token (deferred backend route config decision).
+- [ ] Strapi `/api/profiles/filters` response `400 Invalid key nationality` (deferred backend controller/query fix in `escorts/backend`).

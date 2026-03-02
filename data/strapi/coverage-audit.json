@@ -1,0 +1,106 @@
+{
+  "generatedAt": "2026-03-02T14:30:29.087Z",
+  "baseUrl": "https://steadfast-art-a1f81485c3.strapiapp.com",
+  "scope": {
+    "hosts": [
+      "desire-escorts.nl",
+      "www.desire-escorts.nl"
+    ]
+  },
+  "assumptions": {
+    "profileAuthority": "strapi",
+    "profileUrlParityIntent": "keep existing profile URLs"
+  },
+  "results": [
+    {
+      "host": "desire-escorts.nl",
+      "checks": {
+        "health": {
+          "ok": false,
+          "status": 403,
+          "note": "Endpoint returns 403 for read-only token in current backend config"
+        },
+        "filtersEndpoint": {
+          "ok": false,
+          "keys": [],
+          "note": "Strapi request failed 400: Invalid key nationality"
+        },
+        "profilesListEndpoint": {
+          "ok": true,
+          "sampleShape": [
+            "id",
+            "attributes"
+          ]
+        }
+      },
+      "audit": {
+        "totalProfiles": 55,
+        "localeCounts": {
+          "unknown": 55
+        },
+        "missingRequiredFieldCounts": {
+          "name": 0,
+          "slug": 0,
+          "isAvailable": 0,
+          "isHidden": 54
+        },
+        "relationCoverage": {
+          "withSites": 0,
+          "withLanguages": 2
+        },
+        "statusCoverage": {
+          "published": 55,
+          "hidden": 0,
+          "available": 55
+        }
+      }
+    },
+    {
+      "host": "www.desire-escorts.nl",
+      "checks": {
+        "health": {
+          "ok": false,
+          "status": 403,
+          "note": "Endpoint returns 403 for read-only token in current backend config"
+        },
+        "filtersEndpoint": {
+          "ok": false,
+          "keys": [],
+          "note": "Strapi request failed 400: Invalid key nationality"
+        },
+        "profilesListEndpoint": {
+          "ok": true,
+          "sampleShape": [
+            "id",
+            "attributes"
+          ]
+        }
+      },
+      "audit": {
+        "totalProfiles": 55,
+        "localeCounts": {
+          "unknown": 55
+        },
+        "missingRequiredFieldCounts": {
+          "name": 0,
+          "slug": 0,
+          "isAvailable": 0,
+          "isHidden": 54
+        },
+        "relationCoverage": {
+          "withSites": 0,
+          "withLanguages": 2
+        },
+        "statusCoverage": {
+          "published": 55,
+          "hidden": 0,
+          "available": 55
+        }
+      }
+    }
+  ],
+  "consistency": {
+    "profileCountMatch": true,
+    "localeCountMatch": true
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-03-02T14:52:07.134Z",
+  "scope": "all-inventory-urls",
+  "totals": {
+    "inventoryUrls": 781,
+    "successfulRenderedExtracts": 781,
+    "missingRenderedExtracts": 0,
+    "missingProfileUrls": 0
+  },
+  "missing": []
+}

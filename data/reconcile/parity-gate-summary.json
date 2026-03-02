@@ -1,0 +1,63 @@
+{
+  "generatedAt": "2026-03-02T15:00:20.602Z",
+  "totals": {
+    "urls": 781,
+    "decisions": {
+      "include": 781,
+      "review": 0,
+      "exclude": 0
+    }
+  },
+  "gates": {
+    "coverage": {
+      "status": "pass",
+      "evidence": {
+        "inventoryUrls": 781,
+        "successfulRenderedExtracts": 781,
+        "missingRenderedExtracts": 0
+      },
+      "note": ""
+    },
+    "content": {
+      "status": "pass",
+      "evidence": {
+        "profileUrls": 112,
+        "profileUrlsMatchedInStrapi": 110,
+        "wordpressUrls": 669,
+        "wordpressUrlsWithSource": 666
+      },
+      "note": "Review items require manual include/review/exclude triage before lock"
+    },
+    "link": {
+      "status": "review",
+      "evidence": {
+        "renderedCoverageAtUrlLevel": 781
+      },
+      "note": "Link-graph retention still needs dedicated path-level QA checks"
+    },
+    "metadata": {
+      "status": "review",
+      "evidence": {
+        "renderedCoverageAtUrlLevel": 781
+      },
+      "note": "Title/canonical/hreflang parity checks pending dedicated metadata audit"
+    },
+    "media": {
+      "status": "review",
+      "evidence": {
+        "renderedCoverageAtUrlLevel": 781
+      },
+      "note": "Broken/missing media validation pending dedicated media pass"
+    },
+    "language": {
+      "status": "pass",
+      "evidence": {
+        "localeCounts": {
+          "nl": 392,
+          "en": 389
+        }
+      },
+      "note": ""
+    }
+  }
+}

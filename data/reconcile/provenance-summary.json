@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-03-02T14:29:50.176Z",
+  "totals": {
+    "urls": 781,
+    "byAuthority": {
+      "strapi": 112,
+      "wordpress": 669
+    },
+    "byEntityKind": {
+      "profile": 112,
+      "page": 599,
+      "post": 67,
+      "unknown": 3
+    },
+    "localeBreakdown": {
+      "nl": 392,
+      "en": 389
+    }
+  },
+  "coverage": {
+    "wpApi": 666,
+    "wpLegacyExport": 336,
+    "firecrawlRendered": 12
+  }
+}

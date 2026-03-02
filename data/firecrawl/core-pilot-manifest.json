@@ -1,0 +1,113 @@
+{
+  "batch": "core-pilot",
+  "entries": [
+    {
+      "url": "https://desire-escorts.nl/",
+      "locale": "nl",
+      "type": "home",
+      "source": "both",
+      "outputFile": ".firecrawl/rendered/core-pilot/desire-escorts.nl__home.json",
+      "status": "success",
+      "scrapedAt": "2026-03-02T14:25:51.530Z"
+    },
+    {
+      "url": "https://desire-escorts.nl/en",
+      "locale": "en",
+      "type": "en-home",
+      "source": "fromSitemap",
+      "outputFile": ".firecrawl/rendered/core-pilot/desire-escorts.nl__en.json",
+      "status": "success",
+      "scrapedAt": "2026-03-02T14:26:02.380Z"
+    },
+    {
+      "url": "https://desire-escorts.nl/alle-escorts",
+      "locale": "nl",
+      "type": "alle-escorts",
+      "source": "fromSitemap",
+      "outputFile": ".firecrawl/rendered/core-pilot/desire-escorts.nl__alle-escorts.json",
+      "status": "success",
+      "scrapedAt": "2026-03-02T14:26:12.449Z"
+    },
+    {
+      "url": "https://desire-escorts.nl/blog",
+      "locale": "nl",
+      "type": "blog",
+      "source": "fromSitemap",
+      "outputFile": ".firecrawl/rendered/core-pilot/desire-escorts.nl__blog.json",
+      "status": "success",
+      "scrapedAt": "2026-03-02T14:26:15.629Z"
+    },
+    {
+      "url": "https://desire-escorts.nl/en/blog",
+      "locale": "en",
+      "type": "blog",
+      "source": "fromSitemap",
+      "outputFile": ".firecrawl/rendered/core-pilot/desire-escorts.nl__en__blog.json",
+      "status": "success",
+      "scrapedAt": "2026-03-02T14:26:22.833Z"
+    },
+    {
+      "url": "https://desire-escorts.nl/contact",
+      "locale": "nl",
+      "type": "contact",
+      "source": "fromSitemap",
+      "outputFile": ".firecrawl/rendered/core-pilot/desire-escorts.nl__contact.json",
+      "status": "success",
+      "scrapedAt": "2026-03-02T14:26:26.902Z"
+    },
+    {
+      "url": "https://desire-escorts.nl/en/contact",
+      "locale": "en",
+      "type": "contact",
+      "source": "fromSitemap",
+      "outputFile": ".firecrawl/rendered/core-pilot/desire-escorts.nl__en__contact.json",
+      "status": "success",
+      "scrapedAt": "2026-03-02T14:26:30.704Z"
+    },
+    {
+      "url": "https://desire-escorts.nl/24-uurs-escort",
+      "locale": "nl",
+      "type": "24-uurs-escort",
+      "source": "fromSitemap",
+      "outputFile": ".firecrawl/rendered/core-pilot/desire-escorts.nl__24-uurs-escort.json",
+      "status": "success",
+      "scrapedAt": "2026-03-02T14:26:35.284Z"
+    },
+    {
+      "url": "https://desire-escorts.nl/bdsm-escorts",
+      "locale": "nl",
+      "type": "bdsm-escorts",
+      "source": "fromSitemap",
+      "outputFile": ".firecrawl/rendered/core-pilot/desire-escorts.nl__bdsm-escorts.json",
+      "status": "success",
+      "scrapedAt": "2026-03-02T14:26:39.862Z"
+    },
+    {
+      "url": "https://desire-escorts.nl/en/bdsm-escorts",
+      "locale": "en",
+      "type": "bdsm-escorts",
+      "source": "fromSitemap",
+      "outputFile": ".firecrawl/rendered/core-pilot/desire-escorts.nl__en__bdsm-escorts.json",
+      "status": "success",
+      "scrapedAt": "2026-03-02T14:26:44.462Z"
+    },
+    {
+      "url": "https://desire-escorts.nl/business-escort",
+      "locale": "nl",
+      "type": "business-escort",
+      "source": "fromSitemap",
+      "outputFile": ".firecrawl/rendered/core-pilot/desire-escorts.nl__business-escort.json",
+      "status": "success",
+      "scrapedAt": "2026-03-02T14:26:49.220Z"
+    },
+    {
+      "url": "https://desire-escorts.nl/en/business-escort",
+      "locale": "en",
+      "type": "business-escort",
+      "source": "fromSitemap",
+      "outputFile": ".firecrawl/rendered/core-pilot/desire-escorts.nl__en__business-escort.json",
+      "status": "success",
+      "scrapedAt": "2026-03-02T14:26:53.533Z"
+    }
+  ]
+}

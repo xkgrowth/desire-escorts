@@ -19,6 +19,7 @@
     "firecrawl:extract:full": "node scripts/firecrawl-rendered-extract-full.mjs --limit 250 --concurrency 5",
     "firecrawl:coverage": "node scripts/firecrawl-rendered-extract-full.mjs --limit 1 --dry-run",
     "reconcile:build-dataset": "node scripts/build-normalized-content-dataset.mjs",
+    "reconcile:gates": "node scripts/build-reconcile-gates.mjs",
     "strapi:audit:coverage": "node scripts/strapi-coverage-audit.mjs",
     "ingest:healthcheck": "npm run wp:healthcheck && npm run strapi:healthcheck"
   },
