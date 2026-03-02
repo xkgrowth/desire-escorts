@@ -16,22 +16,27 @@
     "wp:validate:sitemap": "node scripts/validate-wp-export-against-sitemap.mjs",
     "inventory:build": "node scripts/build-hybrid-url-inventory.mjs",
     "firecrawl:extract:core": "node scripts/firecrawl-rendered-extract.mjs --batch core-pilot --limit 12",
+    "firecrawl:extract:full": "node scripts/firecrawl-rendered-extract-full.mjs --limit 250 --concurrency 5",
+    "firecrawl:coverage": "node scripts/firecrawl-rendered-extract-full.mjs --limit 1 --dry-run",
+    "reconcile:build-dataset": "node scripts/build-normalized-content-dataset.mjs",
+    "strapi:audit:coverage": "node scripts/strapi-coverage-audit.mjs",
     "ingest:healthcheck": "npm run wp:healthcheck && npm run strapi:healthcheck"
   },
   "dependencies": {
+    "lucide-react": "^0.576.0",
+    "next": "^15.1.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "next": "^15.1.0"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "typescript": "^5.7.2",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9.17.0",
     "eslint-config-next": "^15.1.0",
-    "tailwindcss": "^3.4.17",
     "postcss": "^8.4.49",
-    "autoprefixer": "^10.4.20"
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2"
   }
 }
