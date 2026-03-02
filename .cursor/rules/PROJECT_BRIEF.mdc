@@ -1,0 +1,137 @@
+---
+description: Project brief for rebuilding Desire Escorts website with SEO-safe migration from WordPress/Elementor to Next.js + Strapi
+alwaysApply: true
+---
+
+# PROJECT BRIEF — Desire Escorts Rebuild (Next.js + Strapi)
+
+## Project Context
+
+Desire Escorts currently runs on WordPress/Elementor with Dutch and English content (`/` and `/en/`) on [desire-escorts.nl](https://desire-escorts.nl/).
+Escort profiles (products) have already moved to Strapi and will remain the source of truth for profile data, profile content, and availability status.
+
+The website will be rebuilt in a modern Next.js/Node.js stack and migrated with SEO continuity as a non-negotiable.
+
+## Primary Goal
+
+Rebuild the website in Next.js while preserving current organic performance by mirroring existing pages, structure, internal links, and content as closely as possible at launch.
+
+## Migration Principle
+
+- Launch phase = parity-first migration:
+  - Keep URLs stable.
+  - Keep page intent and content blocks equivalent.
+  - Keep internal linking structure equivalent.
+- Allow minor editorial fixes during migration only when they do not alter:
+  - URL structure
+  - canonical intent
+  - search intent alignment
+- Post-launch phase = structured content optimization.
+
+## Technical Direction
+
+- Frontend: Next.js (Node.js runtime)
+- CMS/Data source: Strapi
+- Legacy extraction sources:
+  - WordPress export data
+  - Firecrawl site extraction
+  - XML sitemaps
+- Content domains:
+  - Core pages
+  - Page structure/content blocks
+  - Media assets
+  - Blog content
+  - Existing internal links
+  - Current URL/sitemap topology
+
+## Scope
+
+### In Scope (Phase 1)
+
+- Recreate existing NL and EN site architecture.
+- Migrate all indexable pages required for parity launch.
+- Integrate escort profile data and availability from Strapi.
+- Preserve crawlability/indexability signals (metadata, canonicals, hreflang intent, internal links).
+- Prepare redirect map for any unavoidable URL deltas (target: minimal to zero deltas).
+
+### Out of Scope (Phase 1)
+
+- Major content rewrites
+- Aggressive IA changes
+- Large-scale CRO redesign experiments
+- Non-essential new page creation unrelated to current indexable footprint
+
+## SEO Requirements (Non-Negotiable)
+
+- Exact URL parity where technically possible.
+- Preserve title/meta intent and heading hierarchy at launch.
+- Maintain internal linking pathways for key commercial and informational pages.
+- Keep language paths stable (`/` NL, `/en/` EN) unless explicitly redefined.
+- Preserve or improve Core Web Vitals and crawl efficiency.
+- No accidental deindexing of currently valuable pages.
+
+## Content and Discovery Inputs
+
+Migration discovery should combine:
+
+- XML sitemap inventory (current truth for indexable URLs)
+- WordPress export datasets (structured legacy source)
+- Firecrawl outputs (rendered content and link graph)
+- Media extraction and mapping
+- Blog post archive extraction
+- URL-level inventory + mapping manifest (legacy -> new)
+
+## Expected Deliverables
+
+- URL inventory (NL/EN) with migration status (`include`, `review`, `exclude`)
+- Page-level content parity map
+- Internal link retention map
+- Media inventory + replacement mapping
+- Blog migration dataset
+- Redirect specification (if any deltas)
+- Go-live SEO QA checklist and validation report
+
+## Delivery Phases
+
+1. Discovery and Inventory
+   - Crawl and export all relevant sources.
+   - Build canonical URL inventory and classify by type.
+
+2. Mapping and Modeling
+   - Map legacy content to new templates/components.
+   - Confirm Strapi content model coverage for all required entities.
+
+3. Build and Populate
+   - Implement Next.js routes/templates.
+   - Populate content and media with parity checks.
+
+4. SEO QA and Pre-Launch
+   - Validate metadata, canonicals, hreflang, indexability, links, and structured signals.
+   - Validate parity versus legacy inventory.
+
+5. Launch and Stabilization
+   - Monitor indexing, rankings, traffic, crawl stats, and 404s.
+   - Fix critical regressions immediately.
+
+## Success Criteria
+
+- All in-scope legacy URLs migrated or intentionally redirected.
+- No critical SEO regressions in indexation/crawlability signals at launch.
+- NL/EN parity delivered.
+- Escort profile + availability powered by Strapi in production.
+- Content parity achieved with only approved minor editorial changes.
+
+## Risks to Manage
+
+- Hidden legacy pages not present in standard sitemap exports
+- Media mismatches or broken references
+- Internal link graph degradation
+- Metadata drift between old and new templates
+- Hreflang/canonical implementation inconsistencies
+- Unexpected Strapi schema/content gaps during integration
+
+## Governance
+
+- Any change that may affect SEO parity requires explicit approval.
+- Parity-first decisions override improvement-first decisions during Phase 1.
+- Optimization backlog is recorded and prioritized for post-launch iterations.

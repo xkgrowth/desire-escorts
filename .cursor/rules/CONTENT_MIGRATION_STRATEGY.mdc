@@ -1,0 +1,103 @@
+---
+description: Strategy for SEO-safe content migration from WordPress to Next.js and Strapi, with post-scrape action planning
+alwaysApply: true
+---
+
+# CONTENT MIGRATION STRATEGY
+
+## Purpose
+
+Define how legacy content is discovered, validated, and prepared for migration so launch achieves parity-first SEO continuity.
+This strategy is pre-actionable by design; detailed execution planning happens after scrape completion.
+
+## Strategic Objectives
+
+- Preserve organic performance by mirroring legacy URLs, content intent, and internal linking.
+- Build a complete and auditable inventory before implementation decisions.
+- Migrate NL and EN content with consistent language routing (`/` and `/en/`).
+- Keep migration deterministic via manifests, coverage reports, and validation gates.
+
+## Source-of-Truth Hierarchy
+
+1. XML sitemaps for indexable URL scope.
+2. WordPress exports for structured legacy fields.
+3. Firecrawl for rendered page content, DOM structure, and internal link graph.
+4. Existing media references from sitemap, page content, and exports.
+5. Strapi for escort profile entities and availability (target runtime source).
+
+## Migration Scope Policy
+
+- Phase 1 policy: mirror-first with minor editorial fixes only.
+- No changes that alter search intent, canonical URL intent, or core page semantics.
+- Any unavoidable URL delta requires explicit redirect mapping and approval.
+- Out-of-scope changes are logged into post-launch optimization backlog.
+
+## Required Discovery Outputs (Before Action Plan)
+
+- Canonical URL inventory (NL + EN), deduped and typed.
+- Page parity inventory: legacy URL -> planned Next.js route.
+- Content block map per page template (headings, body sections, CTA blocks).
+- Internal link graph export (source URL -> destination URL).
+- Media inventory with reusable asset mapping.
+- Blog inventory with taxonomy and publish metadata where available.
+- Strapi coverage check for profile fields and availability dependencies.
+
+## Validation Gates (Must Pass Before Build)
+
+- Coverage gate: all in-scope URLs are classified (`include`, `review`, `exclude`).
+- Content gate: critical commercial pages have full content parity records.
+- Link gate: key internal pathways are preserved.
+- Metadata gate: title/meta/canonical/hreflang requirements mapped.
+- Media gate: missing/broken assets are below agreed threshold.
+- Language gate: NL/EN alternates and route strategy are defined for all in-scope pages.
+
+## Decision Rules During Migration
+
+- If source mismatch exists, prefer sitemap + rendered page reality over assumptions.
+- If WP export data is incomplete, proceed with scrape baseline and flag enrichment backlog.
+- If content duplicates exist across locales, preserve locale-specific canonical intent.
+- If a page cannot be mirrored exactly, escalate and decide between:
+  - parity workaround in Next.js, or
+  - controlled URL/content deviation with redirect + SEO signoff.
+
+## Risks and Mitigations
+
+- Hidden legacy URLs not in sitemap:
+  - Mitigation: union sitemap + crawl-discovered URLs, then classify.
+- Internal link loss during component rebuild:
+  - Mitigation: enforce link parity checks before release.
+- Metadata drift from template changes:
+  - Mitigation: page-level metadata mapping and pre-launch QA crawl.
+- Media gaps or mismatched references:
+  - Mitigation: hash-based media inventory and broken-asset reports.
+
+## Post-Scrape Handoff (Actionable Planning Trigger)
+
+After scraping and inventories are complete, produce a separate actionable plan that converts strategy to execution tickets.
+
+Create:
+- `.cursor/plans/CONTENT_MIGRATION_ACTION_PLAN.md`
+
+This actionable plan must include:
+- Route-by-route migration batches (priority order).
+- Component/template mapping by page type.
+- Exact field mapping (WordPress/Firecrawl -> Next.js/Strapi).
+- Redirect matrix (only where required).
+- QA checklist per batch (content, links, metadata, hreflang, media).
+- Owners, effort estimate, dependencies, and acceptance criteria per batch.
+
+## Definition of Ready for Action Plan
+
+- Scrape run complete with failure report and retries documented.
+- URL inventory finalized and approved.
+- Page and media parity maps available.
+- Strapi model fit reviewed and known gaps logged.
+- SEO parity constraints accepted by project stakeholders.
+
+## Definition of Done for Migration Phase 1
+
+- All approved in-scope pages are live with parity intent preserved.
+- Critical metadata and internal links match migration requirements.
+- NL/EN routing parity is correct.
+- Redirects and 404 monitoring are in place.
+- Post-launch optimization backlog is documented and prioritized.

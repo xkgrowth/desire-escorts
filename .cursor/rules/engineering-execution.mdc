@@ -1,0 +1,37 @@
+---
+description: Engineering execution standards for simple, high-quality, low-risk delivery
+alwaysApply: true
+---
+
+# Engineering Execution
+
+## Core Principles
+
+- Simplicity first: choose the simplest correct implementation.
+- Minimal impact: change only what is required to solve the problem safely.
+- No lazy fixes: identify and address root causes, not symptoms.
+
+## Elegance, Balanced
+
+- For non-trivial changes, pause and check if a cleaner approach exists.
+- If the current path is hacky, prefer a maintainable and consistent solution.
+- Do not over-engineer obvious fixes.
+
+## Autonomous Bug Resolution
+
+- When a bug is reported, investigate and resolve end-to-end with minimal user burden.
+- Use available evidence first (errors, logs, failing checks, reproduction).
+- Restore passing state for impacted tests/flows before completion.
+
+## Documentation Discipline
+
+- For non-trivial tasks, keep `tasks/todo.md` updated with:
+  - current plan,
+  - completion state,
+  - short review notes of outcomes and risks.
+
+## Self-Improvement Loop
+
+- When corrected by the user on a meaningful pattern, record it in `tasks/lessons.md`.
+- Add preventative guidance that reduces recurrence.
+- Review relevant lessons at the start of substantial sessions.

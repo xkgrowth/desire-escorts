@@ -1,0 +1,37 @@
+---
+description: Workflow orchestration for planning, delegation, and verification on non-trivial tasks
+alwaysApply: true
+---
+
+# Workflow Orchestration
+
+## Priority and Scope
+
+- Follow instruction priority order: system > developer > user > these rules.
+- Apply this workflow for non-trivial work (3+ steps, ambiguity, architectural impact, or migration-critical tasks).
+- Keep simple tasks lightweight; do not add process overhead when unnecessary.
+
+## Plan First
+
+- Start with a short execution plan before implementation.
+- Include verification steps in the plan, not just build steps.
+- If assumptions break or results diverge, stop and re-plan immediately.
+- Favor explicit specs early to reduce ambiguity and rework.
+
+## Delegation Strategy
+
+- Use subagents when parallel research or isolation improves speed/quality.
+- Assign one clear objective per subagent.
+- Keep core decisions in the main thread; use subagents for discovery and analysis.
+
+## Progress Discipline
+
+- Track active steps in `tasks/todo.md` for non-trivial tasks.
+- Mark items complete as evidence is produced.
+- Share concise progress updates at meaningful checkpoints.
+
+## Verification Before Completion
+
+- Do not mark work complete without concrete validation evidence.
+- Validate behavior (tests, logs, checks) and compare expected vs actual outcomes.
+- Final gate: quality should meet staff-level engineering review standards.
