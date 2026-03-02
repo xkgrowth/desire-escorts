@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "wp:healthcheck": "node scripts/wp-healthcheck.mjs",
+    "wp:export": "node scripts/wp-export.mjs",
+    "wp:export:nl": "node scripts/wp-export.mjs --lang nl --types pages,posts --out-dir data/wordpress/nl",
+    "wp:export:en": "node scripts/wp-export.mjs --lang en --types pages,posts --out-dir data/wordpress/en",
+    "wp:export:all-locales": "node scripts/wp-export-all-locales.mjs",
+    "wp:validate:sitemap": "node scripts/validate-wp-export-against-sitemap.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
