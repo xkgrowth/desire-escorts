@@ -15,6 +15,7 @@ import { HowToSteps } from "../components/domain/how-to-steps";
 import { Footer } from "../components/layout/footer";
 import { Separator, GoldSeparator } from "../components/ui/separator";
 import { Breadcrumbs } from "../components/ui/breadcrumbs";
+import { Suspense } from "react";
 import { LocaleToggle } from "../components/ui/locale-toggle";
 import { 
   AnimatedShowcase, 
@@ -27,6 +28,11 @@ import {
   TabbedContentShowcase,
   ProfileHeroShowcase,
   HomepageHeroShowcase,
+  BreadcrumbsShowcase,
+  FilterBarShowcase,
+  PricingTableShowcase,
+  ArticleCardShowcase,
+  LegalSectionShowcase,
 } from "./components";
 import {
   AnimatedSection,
@@ -395,27 +401,24 @@ export default function DesignSystemPage() {
       <AnimatedSectionDivider id="content-blocks" title="3. Content Blocks" description="Domain-specific components for page composition" />
 
       {/* Breadcrumbs & Navigation */}
-      <AnimatedSection title="Breadcrumbs & Locale Toggle" subtitle="Navigation aids">
-        <div className="space-y-8">
-          <div>
-            <p className="text-sm text-muted-foreground mb-4">Breadcrumbs</p>
-            <Breadcrumbs
-              items={[
-                { label: "Escorts", href: "/escorts" },
-                { label: "Amsterdam", href: "/escorts/amsterdam" },
-                { label: "Sophie" },
-              ]}
-            />
-          </div>
-          <div>
-            <p className="text-sm text-muted-foreground mb-4">Locale Toggle Variants</p>
-            <div className="flex items-center gap-6">
-              <LocaleToggle variant="button" />
-              <LocaleToggle variant="text" />
-              <LocaleToggle variant="dropdown" />
-            </div>
-          </div>
+      <AnimatedSection title="Breadcrumbs" subtitle="Navigation hierarchy indicators">
+        <BreadcrumbsShowcase />
+      </AnimatedSection>
+
+      {/* Locale Toggle */}
+      <AnimatedSection title="Locale Toggle" subtitle="Language switching controls">
+        <div className="flex items-center gap-6">
+          <LocaleToggle variant="button" />
+          <LocaleToggle variant="text" />
+          <LocaleToggle variant="dropdown" />
         </div>
+      </AnimatedSection>
+
+      {/* Filter Bar */}
+      <AnimatedSection title="Filter Bar" subtitle="Listing page filters">
+        <Suspense fallback={<div className="h-20 bg-surface/30 rounded-lg animate-pulse" />}>
+          <FilterBarShowcase />
+        </Suspense>
       </AnimatedSection>
 
       {/* Separators */}
@@ -733,6 +736,21 @@ export default function DesignSystemPage() {
             />
           </div>
         </div>
+      </AnimatedSection>
+
+      {/* Pricing Table */}
+      <AnimatedSection title="Pricing Table" subtitle="Rate display and pricing components">
+        <PricingTableShowcase />
+      </AnimatedSection>
+
+      {/* Article Cards */}
+      <AnimatedSection title="Article Cards" subtitle="Blog and knowledge centre cards">
+        <ArticleCardShowcase />
+      </AnimatedSection>
+
+      {/* Legal Sections */}
+      <AnimatedSection title="Legal Sections" subtitle="Terms, privacy, and legal document components">
+        <LegalSectionShowcase />
       </AnimatedSection>
 
       {/* ═══════════════════════════════════════════════════════════════

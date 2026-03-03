@@ -13,7 +13,19 @@ import { HomepageHero } from "../components/domain/homepage-hero";
 import { TextWithImage } from "../components/domain/text-with-image";
 import { TabbedContent } from "../components/domain/tabbed-content";
 import { ProfileHero } from "../components/domain/profile-hero";
-import { Mail, Search, User } from "lucide-react";
+import { Breadcrumbs, BreadcrumbsCompact } from "../components/ui/breadcrumbs";
+import { FilterBar, FilterBarCompact } from "../components/domain/filter-bar";
+import { PricingTable, PricingFeatures, PaymentMethods } from "../components/domain/pricing-table";
+import { ArticleCard, ArticleCategoryCard } from "../components/domain/article-card";
+import {
+  LegalSection,
+  LegalTableOfContents,
+  LegalDocumentHeader,
+  LegalContactBlock,
+  LegalHighlight,
+  LegalList,
+} from "../components/domain/legal-section";
+import { Mail, Search, User, BookOpen, HelpCircle, CreditCard, Banknote, Building } from "lucide-react";
 
 export function PageGradientShowcase() {
   return (
@@ -619,6 +631,307 @@ export function HomepageHeroShowcase() {
   return (
     <div className="relative left-1/2 right-1/2 w-screen -translate-x-1/2">
       <HomepageHero profiles={heroProfiles} />
+    </div>
+  );
+}
+
+export function BreadcrumbsShowcase() {
+  return (
+    <div className="space-y-8">
+      <div>
+        <p className="text-sm text-muted-foreground mb-4">Full Breadcrumbs with Home</p>
+        <Breadcrumbs
+          items={[
+            { label: "Escorts", href: "/escorts" },
+            { label: "Amsterdam", href: "/escorts/amsterdam" },
+            { label: "Sophie" },
+          ]}
+        />
+      </div>
+      <div>
+        <p className="text-sm text-muted-foreground mb-4">Without Home Icon</p>
+        <Breadcrumbs
+          showHome={false}
+          items={[
+            { label: "Blog", href: "/blog" },
+            { label: "Lifestyle", href: "/blog/lifestyle" },
+            { label: "De Beste Tips voor een Perfecte Date" },
+          ]}
+        />
+      </div>
+      <div>
+        <p className="text-sm text-muted-foreground mb-4">Compact (Back Navigation)</p>
+        <BreadcrumbsCompact
+          items={[
+            { label: "Kennisbank", href: "/kennisbank" },
+            { label: "Boeken & Reserveren", href: "/kennisbank/boeken" },
+            { label: "Hoe verleng ik mijn boeking?" },
+          ]}
+        />
+      </div>
+    </div>
+  );
+}
+
+export function FilterBarShowcase() {
+  const filters = [
+    {
+      id: "city",
+      label: "Stad",
+      options: [
+        { value: "amsterdam", label: "Amsterdam", count: 24 },
+        { value: "rotterdam", label: "Rotterdam", count: 18 },
+        { value: "den-haag", label: "Den Haag", count: 12 },
+        { value: "utrecht", label: "Utrecht", count: 8 },
+      ],
+    },
+    {
+      id: "type",
+      label: "Type",
+      multiple: true,
+      options: [
+        { value: "blonde", label: "Blonde", count: 15 },
+        { value: "brunette", label: "Brunette", count: 22 },
+        { value: "asian", label: "Aziatisch", count: 8 },
+        { value: "mature", label: "Mature", count: 6 },
+      ],
+    },
+    {
+      id: "availability",
+      label: "Beschikbaarheid",
+      options: [
+        { value: "now", label: "Nu beschikbaar", count: 12 },
+        { value: "today", label: "Vandaag", count: 28 },
+        { value: "week", label: "Deze week", count: 45 },
+      ],
+    },
+  ];
+
+  return (
+    <div className="space-y-12">
+      <div>
+        <p className="text-sm text-muted-foreground mb-4">Full Filter Bar (with dropdowns)</p>
+        <FilterBar filters={filters} />
+      </div>
+      <div>
+        <p className="text-sm text-muted-foreground mb-4">Compact Filter Bar (select dropdowns)</p>
+        <FilterBarCompact filters={filters} />
+      </div>
+    </div>
+  );
+}
+
+export function PricingTableShowcase() {
+  const tiers = [
+    {
+      duration: "1 uur",
+      price: "300",
+      description: "Standaard escort service",
+    },
+    {
+      duration: "2 uur",
+      price: "550",
+      description: "Meer tijd voor connectie",
+      highlighted: true,
+      highlightLabel: "Populair",
+    },
+    {
+      duration: "3 uur",
+      price: "750",
+      description: "Ideaal voor dinner date",
+    },
+    {
+      duration: "Overnachting",
+      price: "1500",
+      priceNote: "Tot 12 uur",
+      description: "Exclusieve overnight experience",
+    },
+  ];
+
+  const features = [
+    { label: "Escort service voor gekozen duur", included: true },
+    { label: "Reiskosten binnen 15km", included: true },
+    { label: "Discretie gegarandeerd", included: true },
+    { label: "24/7 telefonische support", included: true },
+    { label: "Specifieke extra services", included: false, note: "op aanvraag" },
+  ];
+
+  const paymentMethods = [
+    { name: "Contant", icon: <Banknote className="w-4 h-4" /> },
+    { name: "Bankoverschrijving", icon: <Building className="w-4 h-4" /> },
+    { name: "Creditcard", icon: <CreditCard className="w-4 h-4" /> },
+  ];
+
+  return (
+    <div className="space-y-16">
+      <div>
+        <p className="text-sm text-muted-foreground mb-6">Table Variant</p>
+        <PricingTable
+          tiers={tiers}
+          disclaimer="Tarieven kunnen variëren per escort. Neem contact op voor exacte prijzen."
+        />
+      </div>
+      <div>
+        <p className="text-sm text-muted-foreground mb-6">Cards Variant</p>
+        <PricingTable tiers={tiers} variant="cards" />
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <p className="text-sm text-muted-foreground mb-6">Features List</p>
+          <PricingFeatures features={features} />
+        </div>
+        <div>
+          <p className="text-sm text-muted-foreground mb-6">Payment Methods</p>
+          <PaymentMethods methods={paymentMethods} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function ArticleCardShowcase() {
+  const mockArticles = [
+    {
+      title: "De Beste Amsterdam Escorts voor een Onvergetelijke Avond",
+      slug: "beste-amsterdam-escorts",
+      excerpt: "Ontdek waar je de beste high-class escorts in Amsterdam kunt vinden en hoe je de perfecte match maakt voor jouw specifieke wensen.",
+      imageUrl: "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=800&h=450&fit=crop",
+      category: "Lifestyle",
+      author: { name: "Redactie" },
+      publishedAt: "15 feb 2026",
+      readTime: "5 min lezen",
+    },
+    {
+      title: "Hoe Plan Je de Perfecte Dinner Date met een Escort",
+      slug: "perfecte-dinner-date",
+      excerpt: "Tips en trucs voor een memorabele avond uit met een professionele escort.",
+      imageUrl: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=450&fit=crop",
+      category: "Tips",
+      publishedAt: "10 feb 2026",
+      readTime: "4 min lezen",
+    },
+    {
+      title: "Veiligheid en Discretie: Onze Top Prioriteit",
+      slug: "veiligheid-discretie",
+      excerpt: "Leer hoe wij jouw privacy waarborgen en veiligheid garanderen.",
+      imageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=450&fit=crop",
+      category: "Over Ons",
+      publishedAt: "5 feb 2026",
+      readTime: "3 min lezen",
+    },
+  ];
+
+  const categories = [
+    { title: "Boeken & Reserveren", href: "/kennisbank/boeken", articleCount: 12, icon: <BookOpen className="w-5 h-5" /> },
+    { title: "Veelgestelde Vragen", href: "/kennisbank/faq", articleCount: 24, icon: <HelpCircle className="w-5 h-5" /> },
+    { title: "Betaling & Tarieven", href: "/kennisbank/betaling", articleCount: 8, icon: <CreditCard className="w-5 h-5" /> },
+  ];
+
+  return (
+    <div className="space-y-16">
+      <div>
+        <p className="text-sm text-muted-foreground mb-6">Featured Variant</p>
+        <ArticleCard {...mockArticles[0]} variant="featured" />
+      </div>
+      <div>
+        <p className="text-sm text-muted-foreground mb-6">Default Grid</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {mockArticles.map((article) => (
+            <ArticleCard key={article.slug} {...article} />
+          ))}
+        </div>
+      </div>
+      <div>
+        <p className="text-sm text-muted-foreground mb-6">Horizontal Variant</p>
+        <div className="space-y-4">
+          {mockArticles.map((article) => (
+            <ArticleCard key={article.slug} {...article} variant="horizontal" />
+          ))}
+        </div>
+      </div>
+      <div>
+        <p className="text-sm text-muted-foreground mb-6">Compact Variant</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {mockArticles.map((article) => (
+            <ArticleCard key={article.slug} {...article} variant="compact" />
+          ))}
+        </div>
+      </div>
+      <div>
+        <p className="text-sm text-muted-foreground mb-6">Category Cards (for Knowledge Centre)</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {categories.map((cat) => (
+            <ArticleCategoryCard key={cat.href} {...cat} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function LegalSectionShowcase() {
+  const tocItems = [
+    { id: "algemeen", number: 1, title: "Algemene Bepalingen" },
+    { id: "services", number: 2, title: "Diensten en Tarieven" },
+    { id: "privacy", number: 3, title: "Privacy en Gegevensverwerking" },
+    { id: "aansprakelijkheid", number: 4, title: "Aansprakelijkheid" },
+  ];
+
+  return (
+    <div className="space-y-12">
+      <div>
+        <p className="text-sm text-muted-foreground mb-6">Document Header</p>
+        <LegalDocumentHeader
+          title="Algemene Voorwaarden"
+          lastUpdated="1 maart 2026"
+          version="2.1"
+        />
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="lg:col-span-1">
+          <p className="text-sm text-muted-foreground mb-4">Table of Contents</p>
+          <LegalTableOfContents items={tocItems} />
+        </div>
+        <div className="lg:col-span-3 space-y-8">
+          <LegalSection
+            id="algemeen"
+            number={1}
+            title="Algemene Bepalingen"
+            content={
+              <div className="space-y-4">
+                <p>
+                  Deze algemene voorwaarden zijn van toepassing op alle diensten aangeboden
+                  door Desire Escorts. Door gebruik te maken van onze diensten gaat u akkoord
+                  met deze voorwaarden.
+                </p>
+                <LegalList
+                  items={[
+                    "De klant dient minimaal 21 jaar oud te zijn.",
+                    "Alle diensten worden aangeboden op basis van beschikbaarheid.",
+                    "Boekingen zijn pas definitief na bevestiging.",
+                  ]}
+                />
+                <LegalHighlight type="important">
+                  <strong>Let op:</strong> Annuleringen dienen minimaal 2 uur van tevoren
+                  te worden doorgegeven.
+                </LegalHighlight>
+              </div>
+            }
+          />
+          <LegalSection
+            id="privacy"
+            number={3}
+            title="Privacy en Gegevensverwerking"
+            content="Wij verwerken persoonsgegevens in overeenstemming met de AVG. Zie ons privacybeleid voor meer informatie over hoe wij omgaan met uw gegevens."
+          />
+        </div>
+      </div>
+
+      <div>
+        <p className="text-sm text-muted-foreground mb-4">Contact Block</p>
+        <LegalContactBlock email="legal@desire-escorts.nl" />
+      </div>
     </div>
   );
 }

@@ -319,6 +319,610 @@ tot Thaise hartelijkheid — diverse achtergronden voor verschillende voorkeuren
 
 ---
 
+## Escorts Overview Page
+
+### URL
+- `/alle-escorts/` (NL) / `/en/escorts/` (EN)
+
+### Target Metrics
+- **Word count**: 300-500 words
+- **Read time**: <2 minutes
+- **Primary function**: Navigation hub to all escort profiles
+
+### Required Sections (In Order)
+
+#### 1. Hero Section
+- **H1**: "Onze Escorts" or "Alle Beschikbare Escorts"
+- **Intro**: 2 sentences describing the selection and quality standards
+- **Primary CTA**: Integrated into filter bar
+
+#### 2. Filter Bar
+- **Required filters**: City, Type/Attribute, Availability (Now/Today/This Week)
+- **Optional filters**: Price range, Services offered
+- **Behavior**: URL-based filtering for SEO (e.g., `/alle-escorts/?city=amsterdam`)
+
+#### 3. Escort Grid
+- **Default sort**: Availability, then featured status
+- **Card content**: Photo, name, tagline, key stats, availability indicator
+- **Pagination**: 12-16 profiles per page, numbered pagination (not infinite scroll)
+
+#### 4. Value Proposition Strip
+- **Format**: Compact USP bar below grid
+- **Content**: 3 trust signals (selection process, discretion, availability)
+
+#### 5. CTA Section
+- **Format**: Simple banner
+- **Content**: "Niet gevonden wat je zoekt? Neem contact op" with contact link
+
+### SEO Requirements
+- **Schema**: ItemList with escort profiles
+- **Pagination**: rel="next"/rel="prev" for paginated results
+- **Canonical**: Self-referencing, filtered views use canonical to base URL
+
+### Content to Avoid
+- Long introductory essays
+- Repeated service descriptions
+- Duplicate content from homepage
+
+---
+
+## Services Overview Page
+
+### URL
+- `/diensten/` (NL) / `/en/services/` (EN)
+
+### Target Metrics
+- **Word count**: 400-600 words
+- **Read time**: <2 minutes
+- **Primary function**: Navigation hub to all service types
+
+### Required Sections (In Order)
+
+#### 1. Hero Section
+- **H1**: "Onze Escort Services" or "Escort Diensten"
+- **Intro**: 2-3 sentences explaining the range of services available
+- **Primary CTA**: "Bekijk Beschikbare Escorts"
+
+#### 2. Service Categories Grid
+- **Format**: Card grid with icon, title, short description, link
+- **Categories to include**:
+  - Standard Escort Service
+  - Dinner Date
+  - Travel Companion
+  - Business Escort
+  - Hotel Escort
+  - 24-uurs Escort
+  - GFE (Girlfriend Experience)
+  - BDSM Escorts
+  - Erotische Massage
+- **Card content**: Icon/image, service name, 1-sentence description, "Meer info" link
+
+#### 3. How Booking Works
+- **Format**: 3-step visual process
+- **Steps**: Choose service → Select escort → Book appointment
+- **Keep concise**: Max 1 sentence per step
+
+#### 4. FAQ Section
+- **Count**: 3-4 questions
+- **Topics**: Service differences, pricing overview, booking process
+- **Example questions**:
+  - "Wat is het verschil tussen een escort date en dinner date?"
+  - "Kan ik services combineren?"
+
+#### 5. CTA Section
+- **Format**: Full-width banner
+- **Content**: Emphasize contact for custom arrangements
+
+### SEO Requirements
+- **Schema**: ItemList with Service items
+- **Internal links**: Each service card links to detail page
+
+---
+
+## Types Overview Page
+
+### URL
+- `/escort-types/` (NL) / `/en/escort-types/` (EN)
+
+### Target Metrics
+- **Word count**: 300-500 words
+- **Read time**: <2 minutes
+- **Primary function**: Navigation hub to escort type/attribute pages
+
+### Required Sections (In Order)
+
+#### 1. Hero Section
+- **H1**: "Escort Types" or "Vind Jouw Ideale Escort"
+- **Intro**: 2 sentences explaining the variety of escort types available
+- **Subtext**: Mention that filtering by preference helps find the right match
+
+#### 2. Type Categories Grid
+- **Format**: Visual card grid
+- **Categories to include**:
+  - Blonde Escorts
+  - Brunette Escorts
+  - Aziatische Escorts
+  - Busty Escorts
+  - Petite Escorts
+  - Mature Escorts
+  - Young Escorts (21+)
+  - Tattoo/Alt Escorts
+- **Card content**: Representative image, type name, escort count, link
+
+#### 3. Can't Decide Section
+- **Format**: Short text block
+- **Content**: Encourage browsing all escorts or contacting for recommendations
+- **CTA**: Link to full escort listing
+
+### SEO Requirements
+- **Schema**: ItemList with type categories
+- **Internal links**: Each type card links to filtered type page
+
+### Content to Avoid
+- Lengthy descriptions of each type (save for detail pages)
+- Repetitive text across type cards
+
+---
+
+## Location Overview Page
+
+### URL
+- `/locaties/` (NL) / `/en/locations/` (EN)
+
+### Target Metrics
+- **Word count**: 400-600 words
+- **Read time**: <2 minutes
+- **Primary function**: Navigation hub to city/region pages
+
+### Required Sections (In Order)
+
+#### 1. Hero Section
+- **H1**: "Escort Service Locaties" or "Waar Wij Actief Zijn"
+- **Intro**: 2-3 sentences about geographic coverage
+- **Key stat**: Number of cities served
+
+#### 2. Primary Cities Grid
+- **Format**: Large cards for major cities
+- **Cities**: Amsterdam, Rotterdam, Den Haag, Utrecht, Eindhoven, Haarlem
+- **Card content**: City name, representative image, escort count, response time
+- **Visual hierarchy**: Larger cards for Amsterdam/Rotterdam/Den Haag
+
+#### 3. All Locations List
+- **Format**: Grouped by region or alphabetical
+- **Content**: City name + link
+- **Include**: Almere, Amstelveen, Arnhem, Breda, Delft, Groningen, Leiden, Maastricht, etc.
+
+#### 4. Coverage Information
+- **Format**: Short text block
+- **Content**: Outcall service radius, travel arrangements, response times
+- **Example**: "Outcall service beschikbaar in heel Nederland. Gemiddelde responstijd: 2 uur in de Randstad."
+
+#### 5. CTA Section
+- **Format**: Banner
+- **Content**: "Jouw stad niet in de lijst? Neem contact op"
+
+### SEO Requirements
+- **Schema**: ItemList with Place items
+- **Internal links**: Each city links to dedicated location page
+
+---
+
+## Blog Overview Page
+
+### URL
+- `/blog/` (NL) / `/en/blog/` (EN)
+
+### Target Metrics
+- **Word count**: 200-300 words (intro only)
+- **Read time**: <1 minute (navigation page)
+- **Primary function**: Article discovery and navigation
+
+### Required Sections (In Order)
+
+#### 1. Hero Section
+- **H1**: "Blog" or "Insights & Artikelen"
+- **Intro**: 1-2 sentences about content themes (lifestyle, tips, industry insights)
+
+#### 2. Featured Article
+- **Format**: Large hero card for most recent or featured post
+- **Content**: Featured image, title, excerpt, author, date, read time
+
+#### 3. Article Grid
+- **Format**: Card grid (2-3 columns)
+- **Card content**: Thumbnail, title, excerpt (max 2 lines), date, category tag
+- **Sorting**: Most recent first
+- **Pagination**: 9-12 articles per page
+
+#### 4. Category Filter (Optional)
+- **Format**: Tag/pill row above grid
+- **Categories**: Lifestyle, Tips, Behind the Scenes, City Guides, etc.
+
+#### 5. Newsletter CTA (Optional)
+- **Format**: Inline banner within grid or below
+- **Content**: Subscribe for updates (if newsletter exists)
+
+### SEO Requirements
+- **Schema**: Blog with BlogPosting list
+- **Pagination**: Proper rel="next"/rel="prev"
+
+### Content to Avoid
+- Long introductory essays
+- Duplicate excerpts as full content
+
+---
+
+## Knowledge Centre Overview Page
+
+### URL
+- `/kennisbank/` (NL) / `/en/knowledge-centre/` (EN)
+
+### Target Metrics
+- **Word count**: 300-400 words
+- **Read time**: <2 minutes
+- **Primary function**: FAQ and help article hub
+
+### Required Sections (In Order)
+
+#### 1. Hero Section
+- **H1**: "Kennisbank" or "Veelgestelde Vragen"
+- **Intro**: 2 sentences explaining what users can find here
+- **Search bar**: Optional but recommended for large FAQ sets
+
+#### 2. Category Grid
+- **Format**: Icon + title cards
+- **Categories**:
+  - Boeken & Reserveringen
+  - Betaling & Tarieven
+  - Privacy & Discretie
+  - Over Onze Escorts
+  - Services & Mogelijkheden
+  - Contact & Support
+- **Card content**: Icon, category name, article count
+
+#### 3. Popular Questions
+- **Format**: Accordion or linked list
+- **Count**: 5-8 most viewed/asked questions
+- **Content**: Question text + link to full article
+
+#### 4. Still Need Help
+- **Format**: CTA block
+- **Content**: Contact options for questions not covered
+
+### SEO Requirements
+- **Schema**: FAQPage for popular questions section
+- **Internal links**: Each category and question links to detail page
+
+---
+
+## Knowledge Centre Detail Page
+
+### URL
+- `/kennisbank/[category]/[slug]/` (NL)
+- Example: `/kennisbank/boeken-reserveringen/kan-ik-verlengen/`
+
+### Target Metrics
+- **Word count**: 200-500 words
+- **Read time**: 1-2 minutes
+- **Primary function**: Answer a specific question thoroughly
+
+### Required Sections (In Order)
+
+#### 1. Breadcrumbs
+- Format: Kennisbank > [Category] > [Article Title]
+- All levels linked
+
+#### 2. Article Header
+- **H1**: The question itself (natural phrasing)
+- **Example**: "Kan ik de boekingstijd ter plekke verlengen?"
+- **Meta**: Last updated date
+
+#### 3. Answer Content
+- **Format**: Direct answer in first paragraph
+- **Structure**: 
+  - Lead with the answer (yes/no/it depends)
+  - Explain the process or conditions
+  - Include any costs or requirements
+- **Formatting**: Use bullets for steps, bold for key terms
+
+#### 4. Related Questions
+- **Format**: Linked list
+- **Count**: 3-5 related articles from same category
+- **Content**: Question text as link
+
+#### 5. CTA Block
+- **Format**: Compact banner
+- **Content**: "Nog vragen? Neem contact op" with contact link
+
+### SEO Requirements
+- **Schema**: FAQPage with single Q&A, or Article
+- **Canonical**: Self-referencing
+- **Internal links**: To related questions and relevant service pages
+
+### Content Guidelines
+- Answer the question directly—no filler introductions
+- Use second person ("u" or "je") consistently
+- Include specific details (prices, timeframes) where applicable
+- Keep technical jargon minimal
+
+---
+
+## FAQ Page (Standalone)
+
+### URL
+- `/faq/` (NL) / `/en/faq/` (EN)
+
+### Target Metrics
+- **Word count**: 800-1500 words (total across all Q&As)
+- **Read time**: 3-5 minutes (scannable)
+- **Primary function**: Comprehensive FAQ for common questions
+
+### Required Sections (In Order)
+
+#### 1. Hero Section
+- **H1**: "Veelgestelde Vragen" or "FAQ"
+- **Intro**: 1 sentence inviting users to find answers
+- **Jump links**: Anchor links to each category (optional)
+
+#### 2. FAQ Categories (Accordion Groups)
+Organize questions by topic:
+
+**Boeken & Reserveren**
+- Hoe boek ik een escort?
+- Kan ik op korte termijn boeken?
+- Kan ik de boekingstijd verlengen?
+- Wat als ik moet annuleren?
+
+**Betaling & Tarieven**
+- Wat zijn de tarieven?
+- Welke betaalmethoden accepteren jullie?
+- Moet ik vooraf betalen?
+- Zijn er extra kosten voor reizen?
+
+**Discretie & Privacy**
+- Hoe wordt mijn privacy beschermd?
+- Verschijnt er iets herkenbaars op mijn bankafschrift?
+- Worden mijn gegevens opgeslagen?
+
+**Over Onze Escorts**
+- Hoe selecteren jullie escorts?
+- Kan ik een specifieke escort aanvragen?
+- Spreken de escorts meerdere talen?
+
+**Services**
+- Welke services bieden jullie aan?
+- Wat is het verschil tussen incall en outcall?
+- Kan ik services combineren?
+
+#### 3. Question Format
+- **Question**: Clear, natural phrasing as users would ask
+- **Answer**: 2-4 sentences, direct and specific
+- **Links**: Include internal links to relevant detail pages where appropriate
+
+#### 4. Still Have Questions CTA
+- **Format**: Full-width block below FAQ
+- **Content**: Contact information and availability hours
+
+### SEO Requirements
+- **Schema**: FAQPage with all Q&A pairs
+- **Structure**: H2 for categories, questions in accordion with proper ARIA
+
+### Content Guidelines
+- Write questions as users phrase them (not corporate speak)
+- Lead each answer with the direct response
+- Keep answers concise—link to detail pages for complex topics
+- Update regularly based on actual customer inquiries
+
+---
+
+## Contact Page
+
+### URL
+- `/contact/` (NL) / `/en/contact/` (EN)
+
+### Target Metrics
+- **Word count**: 200-400 words
+- **Read time**: <1 minute
+- **Primary function**: Provide all contact methods clearly
+
+### Required Sections (In Order)
+
+#### 1. Hero Section
+- **H1**: "Contact" or "Neem Contact Op"
+- **Intro**: 1-2 sentences welcoming inquiries
+- **Availability hours**: Prominent display of operating hours
+
+#### 2. Contact Methods Grid
+- **Format**: Icon + method cards
+- **Required methods**:
+  - Phone (click-to-call on mobile)
+  - WhatsApp (deep link)
+  - Email
+  - Live Chat (if available)
+- **Each card**: Icon, label, value, action button
+
+#### 3. Contact Form (Optional)
+- **Fields**: Name, Email, Phone (optional), Message, Preferred contact method
+- **Submit CTA**: "Verstuur Bericht"
+- **Privacy note**: Link to privacy policy
+
+#### 4. Response Time Expectation
+- **Format**: Short text block
+- **Content**: "We reageren doorgaans binnen [X] uur tijdens openingstijden"
+
+#### 5. Location Information (Optional)
+- **Content**: Service area mention (not physical address for privacy)
+- **Map**: Optional coverage area visualization
+
+#### 6. FAQ Quick Links
+- **Format**: 3-4 linked questions
+- **Content**: Most common contact-related questions
+- **Example**: "Wat zijn de tarieven?", "Hoe boek ik een escort?"
+
+### SEO Requirements
+- **Schema**: ContactPage or LocalBusiness with contact details
+- **Structured data**: Phone, email in schema
+
+### Content to Avoid
+- Physical address (privacy concern)
+- Lengthy company descriptions
+- Duplicate content from About page
+
+---
+
+## Rates Page
+
+### URL
+- `/tarieven/` (NL) / `/en/rates/` (EN)
+
+### Target Metrics
+- **Word count**: 400-700 words
+- **Read time**: 2-3 minutes
+- **Primary function**: Clear pricing transparency
+
+### Required Sections (In Order)
+
+#### 1. Hero Section
+- **H1**: "Tarieven" or "Escort Tarieven"
+- **Intro**: 2 sentences about transparent pricing
+- **Trust signal**: "Geen verborgen kosten"
+
+#### 2. Pricing Table
+- **Format**: Clear table or tiered cards
+- **Structure**:
+
+| Duur | Tarief | Inclusief |
+|------|--------|-----------|
+| 1 uur | €XXX | Standaard escort service |
+| 2 uur | €XXX | + meer tijd voor connectie |
+| 3 uur | €XXX | Ideaal voor dinner date |
+| Overnachting | €XXX | Tot 12 uur |
+
+- **Notes**: Indicate starting prices ("Vanaf €XXX")
+- **Variation note**: Mention that rates may vary by escort
+
+#### 3. What's Included
+- **Format**: Bullet list or icon grid
+- **Content**:
+  - Escort service voor gekozen duur
+  - Reiskosten binnen [radius]
+  - Discretie en privacy gegarandeerd
+- **Not included**: List extras separately if applicable
+
+#### 4. Additional Costs
+- **Format**: Transparent list
+- **Content**:
+  - Reiskosten buiten standaard gebied
+  - Specifieke services (link to service pages)
+  - Last-minute booking surcharge (if any)
+
+#### 5. Payment Methods
+- **Format**: Icon row
+- **Methods**: Cash, bank transfer, other accepted methods
+- **Timing**: When payment is expected
+
+#### 6. FAQ Section
+- **Count**: 3-4 pricing-specific questions
+- **Example questions**:
+  - "Waarom variëren tarieven per escort?"
+  - "Zijn er kortingen voor langere boekingen?"
+  - "Wat als ik wil verlengen tijdens de date?"
+
+#### 7. CTA Section
+- **Format**: Banner
+- **Content**: "Vragen over tarieven? Neem contact op"
+
+### SEO Requirements
+- **Schema**: Service or Product with pricing
+- **Transparency**: Ensure prices are clearly visible (not hidden)
+
+### Content Guidelines
+- Be transparent—vague pricing damages trust
+- Use "vanaf" (starting from) for variable rates
+- Don't list every possible extra; link to relevant pages
+- Update promptly when rates change
+
+---
+
+## Legal/License Page
+
+### URL
+- `/licentie/` or `/algemene-voorwaarden/` (NL)
+- `/en/license/` or `/en/terms/` (EN)
+
+### Target Metrics
+- **Word count**: 500-2000 words (varies by document type)
+- **Read time**: Varies (reference document)
+- **Primary function**: Legal compliance and transparency
+
+### Page Types Under This Template
+
+1. **Algemene Voorwaarden** (Terms & Conditions)
+2. **Privacybeleid** (Privacy Policy)
+3. **Licentie** (Business License/Compliance)
+4. **Cookiebeleid** (Cookie Policy)
+
+### Required Sections (In Order)
+
+#### 1. Breadcrumbs
+- Format: Home > [Page Title]
+
+#### 2. Header
+- **H1**: Document title
+- **Last updated**: Visible date
+- **Version**: If applicable
+
+#### 3. Table of Contents (For Long Documents)
+- **Format**: Linked list of sections
+- **Threshold**: Include if document has 5+ sections
+
+#### 4. Content Sections
+- **Format**: Numbered sections with H2 headers
+- **Structure**: 
+  - Use clear section titles
+  - Keep paragraphs short
+  - Use bullets for lists of items/rights
+- **Language**: Plain Dutch/English where possible; legal terms where required
+
+#### 5. Contact for Questions
+- **Format**: Simple text block at end
+- **Content**: "Vragen over deze voorwaarden? Neem contact op via [email]"
+
+### SEO Requirements
+- **Schema**: WebPage (legal pages typically don't need special schema)
+- **Indexing**: Generally index, but consider noindex for very boilerplate policies
+- **Canonical**: Self-referencing
+
+### Content Guidelines
+- Write for readability while maintaining legal accuracy
+- Use headers to break up dense text
+- Highlight user rights and obligations
+- Include effective date and update history
+- Link to related policies where referenced
+
+### Legal Page Specific Requirements
+
+**Algemene Voorwaarden**:
+- Service description and scope
+- Booking and cancellation terms
+- Payment terms
+- Liability limitations
+- Dispute resolution
+
+**Privacybeleid**:
+- What data is collected
+- How data is used
+- Data retention periods
+- User rights (GDPR compliance)
+- Cookie policy reference
+
+**Licentie**:
+- Business registration details
+- Compliance statements
+- Regulatory information
+- Trust signals (certifications, memberships)
+
+---
+
 ## Technical Content Requirements
 
 ### All Pages Must Include

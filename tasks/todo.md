@@ -158,3 +158,53 @@
 - Added pulsing green dot to "X currently available" badge on right side.
 - Added pulsing green availability dots to floating avatars.
 - Implemented 5-second auto-rotation of highlighted profile; stops when user manually clicks an avatar.
+
+# Phase 4 Template Rollout
+
+## Phase A: Content Specification Expansion
+
+- [x] Add Escorts Overview Page specification
+- [x] Add Services Overview Page specification
+- [x] Add Types Overview Page specification
+- [x] Add Location Overview Page specification
+- [x] Add Blog Overview Page specification
+- [x] Add Knowledge Centre Overview Page specification
+- [x] Add Knowledge Centre Detail Page specification
+- [x] Add FAQ Page (Standalone) specification
+- [x] Add Contact Page specification
+- [x] Add Rates Page specification
+- [x] Add Legal/License Page specification
+
+## Review Notes (Phase A)
+
+- Expanded `CONTENT_SPECIFICATIONS.mdc` with 11 new page type specifications.
+- All overview/listing pages now have defined structure: hero, grid/list, filters, CTAs.
+- Utility pages (FAQ, Contact, Rates, Legal) have complete section breakdowns.
+- Each spec includes target metrics, required sections, SEO requirements, and content guidelines.
+- Knowledge Centre uses two-level spec (Overview + Detail) for FAQ-style article hub.
+
+## Phase B: Component Gap Fill
+
+- [x] Build Breadcrumbs component (`ui/breadcrumbs.tsx`)
+- [x] Build FilterBar component (`domain/filter-bar.tsx`)
+- [x] Build PricingTable component (`domain/pricing-table.tsx`)
+- [x] Build ArticleCard component (`domain/article-card.tsx`)
+- [x] Build LegalSection component (`domain/legal-section.tsx`)
+- [x] Add showcases to design system page
+
+## Review Notes (Phase B)
+
+- **Breadcrumbs**: Full variant with schema.org markup, compact "back" variant for mobile.
+- **FilterBar**: URL-based filtering with dropdowns, multi-select support, active filter pills. Compact variant uses native selects.
+- **PricingTable**: Table and cards variants, PricingFeatures checklist, PaymentMethods display.
+- **ArticleCard**: 4 variants (default, featured, horizontal, compact) + ArticleCategoryCard for knowledge centre.
+- **LegalSection**: Full legal document system with ToC, sections, subsections, highlights, contact blocks, and related documents.
+
+## Phase C: Template Implementation
+
+- [ ] C.1 Update global shell (header/footer with dynamic nav, breadcrumbs slot)
+- [ ] C.2 Implement Homepage template with optimized content
+- [ ] C.3 Implement Escorts Overview + Detail templates
+- [ ] C.4 Implement Location, Types, Services templates (overview + detail)
+- [ ] C.5 Implement Blog + Knowledge Centre templates
+- [ ] C.6 Implement utility pages (FAQ, Contact, Rates, Legal)
