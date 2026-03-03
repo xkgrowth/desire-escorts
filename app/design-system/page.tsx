@@ -26,6 +26,7 @@ import {
   TextWithImageShowcase,
   TabbedContentShowcase,
   ProfileHeroShowcase,
+  HomepageHeroShowcase,
 } from "./components";
 import {
   AnimatedSection,
@@ -468,6 +469,14 @@ export default function DesignSystemPage() {
       {/* Profile Hero */}
       <AnimatedSection title="Profile Hero" subtitle="Profile detail page header with gallery">
         <ProfileHeroShowcase />
+      </AnimatedSection>
+
+      {/* Homepage Hero */}
+      <AnimatedSection
+        title="Homepage Hero (Full Bleed)"
+        subtitle="Hero layout with live-availability avatars and top-profile fold cards"
+      >
+        <HomepageHeroShowcase />
       </AnimatedSection>
 
       {/* Service Cards */}

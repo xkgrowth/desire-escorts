@@ -135,14 +135,20 @@
 
 # Phase 3.3 Homepage Hero Design Block
 
-- [ ] Build a reusable full-bleed homepage hero component for the design system.
-- [ ] Add left hero content block (badge, callout title, short description, two CTAs).
-- [ ] Add dynamic right-side avatar cluster driven by currently available profiles.
-- [ ] Implement avatar interactions (click to show mini profile card + profile CTA).
-- [ ] Replace fold-bottom logo strip with top-30%-profiles compact card strip.
-- [ ] Wire the new hero showcase into `app/design-system/page.tsx`.
-- [ ] Run lint checks for changed files and fix issues if introduced.
+- [x] Build a reusable full-bleed homepage hero component for the design system.
+- [x] Add left hero content block (badge, callout title, short description, two CTAs).
+- [x] Add dynamic right-side avatar cluster driven by currently available profiles.
+- [x] Implement avatar interactions (click to show mini profile card + profile CTA).
+- [x] Replace fold-bottom logo strip with top-30%-profiles compact card strip.
+- [x] Wire the new hero showcase into `app/design-system/page.tsx`.
+- [x] Run lint checks for changed files and fix issues if introduced.
 
 ## Review Notes (Phase 3.3)
 
-- In progress.
+- Added `HomepageHero` in `app/components/domain/homepage-hero.tsx` as a reusable hero block.
+- Hero includes left-side badge/title/description and dual CTAs (`All Escorts`, `Explore Our Services`).
+- Right-side cluster now animates available avatars with staggered pop-in and subtle float motion.
+- Avatar clicks reveal a mini profile card with direct profile navigation.
+- Fold-bottom content now shows top 30% compact profile cards instead of logo strip.
+- Added `HomepageHeroShowcase` in `app/design-system/components.tsx` and wired it in `app/design-system/page.tsx`.
+- Lint diagnostics report no errors for updated files.

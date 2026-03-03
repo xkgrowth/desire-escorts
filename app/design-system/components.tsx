@@ -9,6 +9,7 @@ import { Select } from "../components/ui/select";
 import { Textarea } from "../components/ui/textarea";
 import { Checkbox } from "../components/ui/checkbox";
 import { ProfileCard, ProfileCardCompact } from "../components/domain/profile-card";
+import { HomepageHero } from "../components/domain/homepage-hero";
 import { TextWithImage } from "../components/domain/text-with-image";
 import { TabbedContent } from "../components/domain/tabbed-content";
 import { ProfileHero } from "../components/domain/profile-hero";
@@ -519,4 +520,101 @@ export function ProfileHeroShowcase() {
       whatsapp="+31642188911"
     />
   );
+}
+
+export function HomepageHeroShowcase() {
+  const heroProfiles = [
+    {
+      name: "Sophie",
+      slug: "sophie",
+      imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=640&fit=crop",
+      tagline: "Elegant, warm, and ready for your evening in Amsterdam.",
+      isVerified: true,
+      isAvailable: true,
+      rankScore: 98,
+    },
+    {
+      name: "Emma",
+      slug: "emma",
+      imageUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=640&fit=crop",
+      tagline: "Playful and classy companion for upscale dates.",
+      isVerified: true,
+      isAvailable: true,
+      rankScore: 94,
+    },
+    {
+      name: "Isabella",
+      slug: "isabella",
+      imageUrl: "https://images.unsplash.com/photo-1524502397800-2eeaad7c3fe5?w=400&h=640&fit=crop",
+      tagline: "Refined conversation and unforgettable chemistry.",
+      isVerified: true,
+      isAvailable: false,
+      rankScore: 89,
+    },
+    {
+      name: "Luna",
+      slug: "luna",
+      imageUrl: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=640&fit=crop",
+      tagline: "Luxury date energy with a soft, feminine touch.",
+      isVerified: true,
+      isAvailable: true,
+      rankScore: 95,
+    },
+    {
+      name: "Nina",
+      slug: "nina",
+      imageUrl: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=640&fit=crop",
+      tagline: "Confident, discreet, and always present in the moment.",
+      isVerified: true,
+      isAvailable: true,
+      rankScore: 92,
+    },
+    {
+      name: "Mila",
+      slug: "mila",
+      imageUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=640&fit=crop",
+      tagline: "Chic companion for intimate and social settings.",
+      isVerified: true,
+      isAvailable: false,
+      rankScore: 88,
+    },
+    {
+      name: "Elise",
+      slug: "elise",
+      imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=640&fit=crop",
+      tagline: "Effortless charm and premium-level discretion.",
+      isVerified: true,
+      isAvailable: true,
+      rankScore: 96,
+    },
+    {
+      name: "Olivia",
+      slug: "olivia",
+      imageUrl: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=400&h=640&fit=crop",
+      tagline: "Sophisticated, multilingual, and always graceful.",
+      isVerified: true,
+      isAvailable: true,
+      rankScore: 93,
+    },
+    {
+      name: "Romy",
+      slug: "romy",
+      imageUrl: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=400&h=640&fit=crop",
+      tagline: "Stylish companion for premium dinner dates.",
+      isVerified: true,
+      isAvailable: true,
+      rankScore: 91,
+    },
+    {
+      name: "Vera",
+      slug: "vera",
+      imageUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=640&fit=crop",
+      tagline: "Elegant presence with naturally warm energy.",
+      isVerified: true,
+      isAvailable: false,
+      rankScore: 87,
+    },
+  ];
+
+  return <HomepageHero profiles={heroProfiles} />;
 }
