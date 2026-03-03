@@ -258,7 +258,7 @@ export default function DesignSystemPage() {
       <AnimatedSection title="Buttons" subtitle="3D beveled buttons with glassy borders">
         <div className="space-y-10">
           <div>
-            <p className="text-sm text-muted-foreground mb-4">Primary (Gold) - Main CTAs</p>
+            <p className="text-sm text-muted-foreground mb-4">Primary (White) - Main CTAs</p>
             <div className="flex flex-wrap items-center gap-6">
               <Button variant="primary" size="xl">Book Now</Button>
               <Button variant="primary" size="lg">Large Primary</Button>
@@ -268,7 +268,7 @@ export default function DesignSystemPage() {
           </div>
 
           <div>
-            <p className="text-sm text-muted-foreground mb-4">Premium (White) - Special CTAs</p>
+            <p className="text-sm text-muted-foreground mb-4">Premium (Gold) - Special CTAs</p>
             <div className="flex flex-wrap items-center gap-6">
               <Button variant="premium" size="xl">Work With Us</Button>
               <Button variant="premium" size="lg">Large Premium</Button>

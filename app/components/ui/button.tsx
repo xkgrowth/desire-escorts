@@ -32,8 +32,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       "inline-flex items-center justify-center font-heading font-bold transition-all rounded-luxury";
 
     const variantClasses = {
-      primary: "btn-bevel text-primary-foreground",
-      premium: "btn-bevel-premium text-background",
+      primary: "btn-bevel-premium text-background",
+      premium: "btn-bevel text-primary-foreground",
       whatsapp: "btn-bevel-whatsapp text-white",
       secondary:
         "bg-surface-interactive border-2 border-primary/30 text-foreground hover:border-primary/60 hover:bg-surface-interactive",
