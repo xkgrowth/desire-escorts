@@ -23,7 +23,7 @@ export function AnimatedSection({
   return (
     <motion.section
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
+      initial={false}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{
         duration: 0.6,
@@ -34,7 +34,7 @@ export function AnimatedSection({
     >
       <div className="mx-auto max-w-7xl px-4 lg:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{
             duration: 0.5,
@@ -51,7 +51,7 @@ export function AnimatedSection({
           )}
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{
             duration: 0.5,
@@ -80,14 +80,14 @@ export function AnimatedSectionDivider({ id, title, description }: AnimatedSecti
     <motion.div
       ref={ref}
       id={id}
-      initial={{ opacity: 0 }}
+      initial={false}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.6 }}
       className="scroll-mt-8 py-12 bg-gradient-to-r from-primary/5 via-transparent to-primary/5"
     >
       <div className="mx-auto max-w-7xl px-4 lg:px-6">
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
+          initial={false}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
@@ -96,7 +96,7 @@ export function AnimatedSectionDivider({ id, title, description }: AnimatedSecti
           </GradientTitle>
         </motion.div>
         <motion.p
-          initial={{ opacity: 0, x: -30 }}
+          initial={false}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-foreground/60"
@@ -121,7 +121,7 @@ export function AnimatedCard({ title, children, delay = 0 }: AnimatedCardProps) 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 20, scale: 0.98 }}
+      initial={false}
       animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 20, scale: 0.98 }}
       transition={{
         duration: 0.5,
@@ -152,7 +152,7 @@ export function AnimatedColorSwatch({ name, color, token, delay = 0 }: AnimatedC
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, scale: 0.9 }}
+      initial={false}
       animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
       transition={{
         duration: 0.4,
@@ -162,7 +162,7 @@ export function AnimatedColorSwatch({ name, color, token, delay = 0 }: AnimatedC
       className="card-surface rounded-luxury overflow-hidden"
     >
       <motion.div
-        initial={{ scaleX: 0 }}
+        initial={false}
         animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
         transition={{ duration: 0.5, delay: delay + 0.1 }}
         style={{ backgroundColor: color, transformOrigin: "left" }}
@@ -187,7 +187,7 @@ export function AnimatedNavPill({ href, children, delay = 0 }: AnimatedNavPillPr
   return (
     <motion.a
       href={href}
-      initial={{ opacity: 0, y: 10 }}
+      initial={false}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay }}
       whileHover={{ scale: 1.05 }}
@@ -251,7 +251,7 @@ type AnimatedHeroProps = {
 export function AnimatedHero({ children }: AnimatedHeroProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={false}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
     >

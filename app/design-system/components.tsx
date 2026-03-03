@@ -616,5 +616,9 @@ export function HomepageHeroShowcase() {
     },
   ];
 
-  return <HomepageHero profiles={heroProfiles} />;
+  return (
+    <div className="relative left-1/2 right-1/2 w-screen -translate-x-1/2">
+      <HomepageHero profiles={heroProfiles} />
+    </div>
+  );
 }

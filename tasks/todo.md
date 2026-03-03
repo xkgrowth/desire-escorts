@@ -152,3 +152,9 @@
 - Fold-bottom content now shows top 30% compact profile cards instead of logo strip.
 - Added `HomepageHeroShowcase` in `app/design-system/components.tsx` and wired it in `app/design-system/page.tsx`.
 - Lint diagnostics report no errors for updated files.
+- Adjusted `app/design-system/animated-sections.tsx` to render content visible on SSR (`initial={false}`) to avoid blank-looking page during hydration hiccups.
+- Updated hero presentation to true full-bleed and changed fold-bottom preview to cropped full `ProfileCard` tops so the next listing section is visually introduced in the first fold.
+- Constrained hero content to grid system (`max-w-7xl`) while keeping background full-bleed.
+- Added pulsing green dot to "X currently available" badge on right side.
+- Added pulsing green availability dots to floating avatars.
+- Implemented 5-second auto-rotation of highlighted profile; stops when user manually clicks an avatar.
