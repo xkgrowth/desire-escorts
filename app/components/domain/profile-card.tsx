@@ -18,7 +18,6 @@ type ProfileCardProps = {
   age?: number;
   height?: string;
   cupSize?: string;
-  services?: string[];
   className?: string;
 };
 
@@ -32,7 +31,6 @@ export function ProfileCard({
   age,
   height,
   cupSize,
-  services,
   className,
 }: ProfileCardProps) {
   const hasImage = imageUrl && imageUrl !== PLACEHOLDER_IMAGE;
@@ -142,24 +140,6 @@ export function ProfileCard({
                 </div>
               )}
 
-              {/* Services preview */}
-              {services && services.length > 0 && (
-                <div className="flex flex-wrap gap-1.5 mt-2">
-                  {services.slice(0, 3).map((service) => (
-                    <span
-                      key={service}
-                      className="text-xs px-2 py-0.5 rounded-full bg-surface/50 text-foreground/60 border border-white/5"
-                    >
-                      {service}
-                    </span>
-                  ))}
-                  {services.length > 3 && (
-                    <span className="text-xs px-2 py-0.5 text-foreground/40">
-                      +{services.length - 3}
-                    </span>
-                  )}
-                </div>
-              )}
             </div>
           </div>
         </div>

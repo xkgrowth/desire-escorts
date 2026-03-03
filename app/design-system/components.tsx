@@ -335,7 +335,6 @@ export function ProfileCardShowcase() {
       age: 24,
       height: "175cm",
       cupSize: "C",
-      services: ["GFE", "Massage", "Dinner Date"],
     },
     {
       name: "Emma",
@@ -347,7 +346,6 @@ export function ProfileCardShowcase() {
       age: 22,
       height: "168cm",
       cupSize: "B",
-      services: ["Erotische Massage", "Hotel Service"],
     },
     {
       name: "Isabella",
@@ -359,7 +357,6 @@ export function ProfileCardShowcase() {
       age: 26,
       height: "170cm",
       cupSize: "D",
-      services: ["Duo", "BDSM Light"],
     },
     {
       name: "New Escort",
@@ -794,7 +791,7 @@ export function ArticleCardShowcase() {
     {
       title: "De Beste Amsterdam Escorts voor een Onvergetelijke Avond",
       slug: "beste-amsterdam-escorts",
-      excerpt: "Ontdek waar je de beste high-class escorts in Amsterdam kunt vinden en hoe je de perfecte match maakt voor jouw specifieke wensen.",
+      excerpt: "Ontdek waar je de beste escorts in Amsterdam kunt vinden en hoe je de perfecte match maakt voor jouw specifieke wensen.",
       imageUrl: "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=800&h=450&fit=crop",
       category: "Lifestyle",
       author: { name: "Redactie" },

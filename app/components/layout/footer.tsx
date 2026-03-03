@@ -60,7 +60,7 @@ const defaultColumns: FooterColumn[] = [
     links: [
       { label: "Blonde Escorts", href: "/escorts/blonde" },
       { label: "Brunette Escorts", href: "/escorts/brunette" },
-      { label: "High Class Escorts", href: "/escorts/high-class" },
+      { label: "Ervaren Escorts", href: "/escorts/ervaren" },
       { label: "Nederlandse Escorts", href: "/escorts/nederlandse" },
       { label: "Turkse Escorts", href: "/escorts/turkse" },
       { label: "Alle escort types →", href: "/escorts" },

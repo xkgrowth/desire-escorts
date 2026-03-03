@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Badge } from "../ui/badge";
-import { ProfileCard } from "./profile-card";
 import { cn } from "@/lib/utils";
 import { ArrowRight, User } from "lucide-react";
 
@@ -41,12 +40,6 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
     () => profiles.filter((profile) => profile.isAvailable),
     [profiles]
   );
-
-  const topProfiles = useMemo(() => {
-    const sorted = [...profiles].sort((a, b) => (b.rankScore ?? 0) - (a.rankScore ?? 0));
-    const takeCount = Math.max(1, Math.ceil(sorted.length * 0.3));
-    return sorted.slice(0, takeCount);
-  }, [profiles]);
 
   const [visibleAvatarCount, setVisibleAvatarCount] = useState(0);
   const [selectedSlug, setSelectedSlug] = useState<string | null>(
@@ -86,27 +79,27 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
       )}
     >
       <div className="pointer-events-none absolute inset-0 hero-glow" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_120%_90%_at_70%_20%,rgba(180,100,50,0.2)_0%,transparent_65%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_130%_95%_at_50%_-10%,rgba(180,100,50,0.3)_0%,rgba(247,208,99,0.12)_35%,transparent_72%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(26,27,23,0.96)_0%,rgba(26,27,23,0.74)_50%,rgba(26,27,23,0.96)_100%)]" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 lg:px-6">
-        <div className="grid min-h-[600px] grid-cols-1 gap-10 pb-8 pt-10 lg:min-h-[680px] lg:grid-cols-2 lg:pb-10 lg:pt-14">
+        <div className="grid min-h-[500px] grid-cols-1 gap-8 pb-6 pt-8 lg:min-h-[520px] lg:grid-cols-2 lg:pb-8 lg:pt-10">
         <div className="flex flex-col justify-center">
           <div className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-surface/80 px-4 py-2 text-xs text-foreground/80">
             <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
             </span>
-            {availableProfiles.length} escorts available right now
+            {availableProfiles.length} escorts nu beschikbaar
           </div>
 
           <h1 className="max-w-xl text-4xl font-heading font-bold leading-tight text-foreground md:text-5xl lg:text-6xl">
-            Defining Premium Digital Desire, One Perfect Match at a Time
+            Ontdek Jouw Perfecte Match, Discreet en Betrouwbaar
           </h1>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-foreground/70 md:text-lg">
-            Discover verified high-class escorts, see live availability, and book with
-            full discretion. Start with the profiles currently online now.
+            Bekijk geverifieerde escort profielen, check live beschikbaarheid en boek met
+            volledige discretie. Begin met de dames die nu online zijn.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -114,20 +107,20 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
               href="/escorts/"
               className="btn-bevel inline-flex items-center justify-center rounded-luxury px-8 py-3 text-base font-heading font-bold text-primary-foreground"
             >
-              All Escorts
+              Alle Escorts
             </Link>
             <Link
               href="/services/"
               className="inline-flex items-center gap-2 rounded-luxury border border-white/20 bg-surface/40 px-6 py-3 text-base font-heading font-semibold text-foreground/90 transition hover:border-primary/40 hover:text-foreground"
             >
-              Explore Our Services
+              Onze Services
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
 
         <div className="flex items-center justify-center">
-          <div className="relative h-[400px] w-full rounded-[26px] border border-white/10 bg-surface/20 p-4 backdrop-blur-sm lg:h-[500px]">
+          <div className="relative h-[340px] w-full rounded-[26px] border border-white/10 bg-surface/20 p-4 backdrop-blur-sm lg:h-[400px]">
             <div className="absolute inset-0 rounded-[26px] bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,rgba(247,208,99,0.14)_0%,rgba(247,208,99,0.03)_55%,transparent_80%)]" />
             <div
               className="pointer-events-none absolute inset-0 rounded-[26px] opacity-[0.12]"
@@ -255,26 +248,6 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
         </div>
       </div>
 
-      <div className="relative z-10 border-t border-white/10 bg-background/30">
-        <div className="mx-auto w-full max-w-7xl px-4 pb-0 pt-4 lg:px-6">
-        <p className="mb-3 text-sm text-foreground/60">Next: Top profiles</p>
-        <div className="h-[120px] overflow-hidden md:h-[140px] lg:h-[160px]">
-          <div className="grid grid-cols-3 gap-3 md:grid-cols-4 lg:grid-cols-5">
-          {topProfiles.map((profile) => (
-            <ProfileCard
-              key={profile.slug}
-              name={profile.name}
-              slug={profile.slug}
-              imageUrl={profile.imageUrl}
-              tagline={profile.tagline}
-              isVerified={profile.isVerified}
-              isAvailable={profile.isAvailable}
-            />
-          ))}
-          </div>
-        </div>
-        </div>
-      </div>
     </section>
   );
 }
