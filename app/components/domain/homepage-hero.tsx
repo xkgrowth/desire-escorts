@@ -85,13 +85,14 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 lg:px-6">
         <div className="grid min-h-[500px] grid-cols-1 gap-8 pb-6 pt-8 lg:min-h-[520px] lg:grid-cols-2 lg:pb-8 lg:pt-10">
         <div className="flex flex-col justify-center">
-          <h1 className="max-w-xl text-4xl font-heading font-bold leading-tight text-foreground md:text-5xl lg:text-6xl">
-            Ontdek Jouw Perfecte Match, Discreet en Betrouwbaar
+          <h1 className="max-w-xl text-4xl font-heading font-bold leading-tight md:text-5xl lg:text-6xl">
+            <span className="text-gradient-gold">Jouw Perfecte Escort Service</span>
+            <span className="block text-foreground">in Nederland, Discreet en Betrouwbaar</span>
           </h1>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-foreground/70 md:text-lg">
             Bekijk geverifieerde escort profielen, check live beschikbaarheid en boek met
-            volledige discretie. Begin met de dames die nu online zijn.
+            volledige discretie. Voor escort Amsterdam en amsterdam escort ben je hier direct op de juiste plek.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -103,10 +104,10 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
             </Link>
             <Link
               href="/services/"
-              className="inline-flex items-center gap-2 rounded-luxury border border-white/20 bg-surface/40 px-6 py-3 text-base font-heading font-semibold text-foreground/90 transition hover:border-primary/40 hover:text-foreground"
+              className="group inline-flex items-center gap-2 rounded-luxury border border-white/20 bg-surface/40 px-6 py-3 text-base font-heading font-semibold text-foreground/90 transition-all duration-300 hover:border-primary/40 hover:bg-surface/70 hover:text-foreground hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)]"
             >
               Onze Services
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
         </div>

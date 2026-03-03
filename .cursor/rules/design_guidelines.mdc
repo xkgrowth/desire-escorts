@@ -134,6 +134,17 @@ Primary CTAs use inner gradients and a subtle outer rim to create a convex/pillo
 | Elevated | `#24271A` | `1px solid rgba(247,208,99,0.1)` | `0 8px 32px rgba(0,0,0,0.5)` |
 | Interactive | `#202216` | `1px solid rgba(245,244,243,0.06)` | Hover adds gold border glow |
 
+### Clickable Tiles (Mandatory)
+
+Any tile/card that is clickable (for example location tiles, knowledge links, category tiles) must use elevated interactive styling:
+
+- Base: `card-surface` + `rounded-luxury`
+- Hover: `hover:shadow-glow` (or equivalent gold-accent elevation)
+- Transition: `transition-shadow duration-300`
+- No flat/plain clickable tiles without elevation cues
+
+This rule applies to all future templates and scaled page batches.
+
 ### Form Inputs
 
 | State | Background | Border | Shadow |

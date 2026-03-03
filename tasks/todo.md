@@ -17,6 +17,7 @@
 - Follow-up refinement re-anchored profile cards directly under hero and added stronger visual split.
 - Added explicit `escort amsterdam` supporting mentions on homepage without changing city-page ownership.
 - Added mandatory content-source mix rule in `.cursor/rules/CONTENT_SPECIFICATIONS.mdc` for all templates.
+- Added mandatory template workflow to check `data/search-console`, scraped legacy content, and strategy docs before writing any scaled template copy.
 
 - [x] Add `--lang` support to WordPress export script.
 - [x] Add WPML language probes to healthcheck script.
@@ -221,11 +222,18 @@
 ## Phase C: Template Implementation
 
 - [x] C.1 Update global shell (header/footer with dynamic nav, breadcrumbs slot)
-- [ ] C.2 Implement Homepage template with optimized content
-- [ ] C.3 Implement Escorts Overview + Detail templates
+- [x] C.2 Implement Homepage template with optimized content
+- [x] C.3 Implement Escorts Overview + Detail templates
 - [ ] C.4 Implement Location, Types, Services templates (overview + detail)
 - [ ] C.5 Implement Blog + Knowledge Centre templates
 - [ ] C.6 Implement utility pages (FAQ, Contact, Rates, Legal)
+
+## Review Notes (Phase C.2 + C.3)
+
+- Homepage copy now blends Search Console opportunity terms with legacy intent blocks and updated brand constraints.
+- Clickable tile styling is standardized to elevated interactive treatment for consistency across sections.
+- Added `app/escorts/page.tsx` as Escorts Overview template with hero, filter bar, listing grid, FAQ, and CTA.
+- Added `app/escort/[slug]/page.tsx` as Escort Detail template with profile hero, attributes/services, related profiles, FAQ, and CTA.
 
 ## Review Notes (Phase C.1 - Global Shell)
 

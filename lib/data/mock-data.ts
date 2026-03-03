@@ -174,28 +174,28 @@ export const mockEscortGrid = [
 
 export const homeFaqs = [
   {
-    question: "Hoe boek ik een escort?",
-    answer: "Het boeken van een escort girl is gemakkelijk. Je kunt contact met ons opnemen via onze website, telefonisch of via WhatsApp. Ons team zal dan alle nodige stappen met jou doornemen en de ideale escort girl voor jouw ervaring te vinden.",
+    question: "Hoe boek ik een escort service in Amsterdam of elders in Nederland?",
+    answer: "Boeken is eenvoudig: neem contact op via website, telefoon of WhatsApp en deel je wensen. Ons team helpt je direct met een passende selectie en actuele beschikbaarheid, of je nu zoekt op escort Amsterdam of een andere locatie.",
   },
   {
     question: "Kan ik aangeven hoe mijn escort eruitziet?",
-    answer: "Zeker, bij Desire Escorts waarderen we jouw voorkeur voor het uiterlijk van je top escort girls. We streven ernaar om een perfecte match voor je te vinden die zoveel mogelijk aansluit bij jouw wensen.",
+    answer: "Zeker. Bij Desire Escorts kun je duidelijke voorkeuren aangeven, zodat we een passende match kunnen voorstellen die zo goed mogelijk aansluit bij jouw wensen.",
   },
   {
     question: "Wat zijn de opties voor betaling?",
     answer: "Desire Escorts biedt verschillende betalingsopties, waaronder contant, creditcard en online betalingen, om jouw ervaring zo soepel mogelijk te maken.",
   },
   {
-    question: "Is er een mogelijkheid om vooraf met de escort te communiceren?",
-    answer: "Om de privacy en veiligheid van onze escort girls te beschermen, faciliteren we geen directe communicatie services voor de afspraak. We beloven echter al jouw wensen en voorkeuren nauwkeurig door te geven.",
+    question: "Is er een mogelijkheid om vooraf met de dame te communiceren?",
+    answer: "Om privacy en veiligheid te waarborgen faciliteren we geen direct contact vooraf. We nemen je wensen wel zorgvuldig door en zorgen dat alle relevante voorkeuren duidelijk worden doorgegeven.",
   },
   {
     question: "Hoe wordt mijn privacy beschermd?",
     answer: "Jouw privacy is onze topprioriteit. Alle informatie die je met ons deelt, wordt behandeld met strikte vertrouwelijkheid, en afspraken vinden plaats met de grootst mogelijke discretie.",
   },
   {
-    question: "Komt de escort girl rechtstreeks naar mijn hotel?",
-    answer: "Ja, onze escort girls kunnen je direct in je hotel bezoeken. We garanderen een discrete aankomst en vertrek. Al onze dames bieden hotel service aan.",
+    question: "Komt de dame rechtstreeks naar mijn hotel?",
+    answer: "Ja, onze dames kunnen je direct in je hotel bezoeken. We zorgen voor een discrete aankomst en vertrek, met heldere afstemming vooraf.",
   },
 ];
 

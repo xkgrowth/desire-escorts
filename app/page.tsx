@@ -115,7 +115,7 @@ export default function Home() {
 
       {/* 2. Escort Preview Grid */}
       <Section
-        size="md"
+        size="sm"
         className="bg-surface/5"
       >
         <Container size="2xl">
@@ -176,7 +176,8 @@ export default function Home() {
                 <Link href="/escort-amsterdam" className="text-primary hover:underline">
                   escort Amsterdam
                 </Link>{" "}
-                bieden we een duidelijke route: direct profielen bekijken, snel
+                bieden we een duidelijke route. Ook bezoekers die zoeken op escorts
+                amsterdam of amsterdam escorts kunnen direct profielen bekijken, snel
                 contact leggen en gericht boeken op basis van beschikbaarheid.
               </p>
             </div>
@@ -230,7 +231,7 @@ export default function Home() {
               Onze Escort Services
             </GradientTitle>
             <p className="text-foreground/60 max-w-2xl mx-auto">
-              Van ontspannende massages en escort massage tot een complete Girlfriend Experience.
+              Van ontspannende massages, escort massage en massage escort tot een complete Girlfriend Experience.
               Ontdek onze veelzijdige services.
             </p>
           </div>
@@ -324,7 +325,7 @@ export default function Home() {
               <Link 
                 key={city.name} 
                 href={city.href}
-                className="group flex flex-col items-center justify-center p-6 rounded-luxury bg-surface/50 border border-white/5 hover:border-primary/30 hover:bg-surface transition-all duration-300"
+                className="group card-surface rounded-luxury p-6 flex flex-col items-center justify-center transition-shadow duration-300 hover:shadow-glow"
               >
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-3 group-hover:scale-110 transition-transform">
                   <MapPin className="w-5 h-5" />
@@ -430,21 +431,21 @@ export default function Home() {
           <div className="grid gap-3 md:grid-cols-3">
             <Link
               href="/kennisbank/boeken-reserveringen/"
-              className="rounded-luxury border border-white/10 bg-surface/40 p-5 text-left transition-colors hover:border-primary/30"
+              className="card-surface rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
             >
               <p className="font-heading font-semibold mb-1">Boeken & reserveren</p>
               <p className="text-sm text-foreground/65">Alles over beschikbaarheid, timing en aanvraagproces.</p>
             </Link>
             <Link
               href="/kennisbank/discretie-privacy/"
-              className="rounded-luxury border border-white/10 bg-surface/40 p-5 text-left transition-colors hover:border-primary/30"
+              className="card-surface rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
             >
               <p className="font-heading font-semibold mb-1">Discretie & privacy</p>
               <p className="text-sm text-foreground/65">Hoe wij omgaan met vertrouwelijkheid en gegevensbescherming.</p>
             </Link>
             <Link
               href="/blog"
-              className="rounded-luxury border border-white/10 bg-surface/40 p-5 text-left transition-colors hover:border-primary/30"
+              className="card-surface rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
             >
               <p className="font-heading font-semibold mb-1">Nieuws & inzichten</p>
               <p className="text-sm text-foreground/65">Praktische tips en updates uit onze kennisbank en blog.</p>

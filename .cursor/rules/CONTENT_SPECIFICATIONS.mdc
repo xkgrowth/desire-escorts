@@ -43,6 +43,33 @@ For each template and locale, copy must be built from a controlled mix of source
 - Avoid keyword stuffing; exact-match phrase use should remain natural and context-led.
 - Preserve URL ownership rules from `KEYWORD_STRATEGY.mdc` (for example city-intent ownership on city pages).
 
+### Template Build Workflow (Mandatory)
+
+Before writing copy for any new template/page:
+
+1. **Search Console check (`data/search-console`)**
+   - Review `*Queries.csv` for the page group (or `General_Queries.csv` when page-level is unavailable).
+   - Select:
+     - 1 primary term (highest-value intent),
+     - 2-4 supporting terms (impressions + realistic ranking opportunity),
+     - 1-2 growth terms.
+
+2. **Scraped content reuse check**
+   - Pull relevant copy and section intent from legacy scrape artifacts (`.firecrawl/rendered/...`) and WP exports where applicable.
+   - Reuse proven intent blocks first; optimize wording second.
+
+3. **Strategy alignment check**
+   - Validate against `KEYWORD_STRATEGY.mdc`, `SEO_OPTIMIZATION_GUIDELINES.mdc`, and this spec.
+   - Confirm URL ownership rules (for example homepage supports `escort amsterdam`, city page owns it).
+
+4. **Copy mapping note (required in task/PR notes)**
+   - List:
+     - terms reinforced from Search Console,
+     - legacy blocks reused,
+     - new growth terms introduced.
+
+This workflow is required for all Phase 4 templates and scaled page batches.
+
 ---
 
 ## Homepage
