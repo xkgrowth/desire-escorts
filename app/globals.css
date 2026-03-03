@@ -31,6 +31,10 @@
   --gradient-light: linear-gradient(180deg, #ffffff 0%, #f5f4f3 100%);
   --gradient-ambient: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(247, 208, 99, 0.08) 0%, transparent 70%);
   --gradient-section: linear-gradient(180deg, #161e21 0%, rgba(22, 30, 33, 0.6) 50%, #161e21 100%);
+  --ambient-gold-rgb: 247, 208, 99;
+  --ambient-vanilla-rgb: 242, 222, 155;
+  --ambient-coral-rgb: 255, 170, 120;
+  --ambient-ink-rgb: 48, 74, 122;
 
   /* Grid system */
   --grid-columns: 12;
@@ -55,6 +59,7 @@
 }
 
 body {
+  position: relative;
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-inter), system-ui, sans-serif;
@@ -357,36 +362,15 @@ body {
    PAGE-LEVEL BACKGROUND UTILITIES
    ============================================ */
 
-/* Keep these classes as no-ops for compatibility. */
-.page-gradient {
-  position: relative;
-  isolation: isolate;
-}
-
-.page-gradient::before {
-  content: none;
-}
-
-/* Section-level glow (add to individual sections for emphasis) */
-.section-glow {
-  position: relative;
-}
-
-.section-glow::before {
-  content: none;
-}
-
-/* Disabled page-level glow variants */
-.hero-glow {
-  background: none;
-}
-
-.mid-glow {
-  background: none;
-}
-
+/* Placeholder classes for future ambient gradient system */
+.site-ambient,
+.site-page-gradient,
+.page-gradient,
+.section-glow,
+.hero-glow,
+.mid-glow,
 .bottom-glow {
-  background: none;
+  /* Reserved for future use */
 }
 
 /* ============================================

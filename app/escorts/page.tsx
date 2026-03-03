@@ -52,15 +52,15 @@ export default async function EscortsOverviewPage() {
       </PageSection>
 
       <PageSection size="sm">
+        <CTASection />
+      </PageSection>
+
+      <PageSection size="sm">
         <FAQ
           eyebrow="Veelgestelde vragen"
           title="Escorts boeken: kort uitgelegd"
           items={homeFaqs.slice(0, 4)}
         />
-      </PageSection>
-
-      <PageSection size="sm">
-        <CTASection />
       </PageSection>
     </PageLayout>
   );

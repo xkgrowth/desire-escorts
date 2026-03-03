@@ -16,7 +16,7 @@ export function SiteHeader() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/99 backdrop-blur supports-[backdrop-filter]:bg-background/98">
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/90">
       {/* Full-width container with edge-to-edge padding */}
       <div className="flex w-full items-center justify-between px-6 py-3 lg:px-10 xl:px-16">
         {/* Logo - Far Left */}

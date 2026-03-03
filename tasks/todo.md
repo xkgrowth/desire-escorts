@@ -292,3 +292,18 @@
 - [x] Add design-system showcase block for visual QA and spacing validation.
 - [x] Extend USP bar horizontal mode to support start alignment for hero usage.
 - [x] Run lint diagnostics on updated files and resolve any issues.
+
+# Global Ambient Gradient System (Sitewide)
+
+- [x] Add fixed global ambient layer for top and bottom glows.
+- [x] Re-enable and redesign page-level ambient layer for 33% left and 66% right glows.
+- [x] Tune color/opacity tokens to match design inspiration while preserving readability.
+- [x] Run lint diagnostics on touched files and resolve regressions.
+- [x] Removed all gradient implementations per user request — will revisit with different approach.
+
+## Review Notes (Global Ambient Gradient System)
+
+- Multiple iterations attempted (fixed viewport layer, content-anchored layer, simplified ellipse gradients).
+- Removed all gradient implementations — ambient color tokens retained in CSS for future use.
+- Layout reverted to simple structure without ambient wrapper layers.
+- Header styling reverted to original opacity/blur values.
