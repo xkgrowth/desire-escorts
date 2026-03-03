@@ -260,3 +260,35 @@
 - Created `PageLayout`, `PageHero`, `PageSection` components for consistent page structure.
 - Added `generateBreadcrumbsFromPath` helper for automatic breadcrumb generation.
 - Language toggle now uses actual route-based locale switching.
+
+# Escorts Filter Mechanic Rebuild
+
+- [x] Add hydration-safe filter context with localStorage persistence.
+- [x] Implement pure filtering engine + option/count derivation utilities.
+- [x] Build desktop `FilterPanel` + mobile `MobileFilterModal` with shared behavior.
+- [x] Integrate filter flow into `/escorts` overview with live filtered count.
+- [x] Add unit tests for filter logic and integration test for dynamic count updates.
+- [x] Run lint/tests and fix any regressions.
+
+## Review Notes (Escorts Filter Mechanic Rebuild)
+
+- Implemented new filter architecture under `src/` with `FilterProvider`, pure filter engine, and facet-aware dynamic counts.
+- Replaced `/escorts` list rendering with client `OverviewContent` integration so counts and gallery update live without URL hydration drift.
+- Added shared filter controls used by both desktop panel and mobile modal to keep behavior consistent.
+- Added test setup with Vitest + Testing Library.
+- Added filter unit tests and a hook-level integration test validating live count updates after filter interaction.
+
+## Review Notes (Filter Design Alignment)
+
+- Updated filter controls to match design interaction model: dual-range sliders for age, height, and cup size.
+- Replaced multi-select checkbox groups with single-select dropdowns (`All` + options) for build type, services, hair color, and eye color.
+- Added design-aligned "Refine your search" labeling and reset button placement in shared controls so desktop/mobile remain behavior-identical.
+- Preserved existing filtering data flow and dynamic count recalculation from active dataset.
+
+# Glass Template Hero (Design System)
+
+- [x] Create reusable compact non-home hero component with layered glass card effect.
+- [x] Include required content slots: breadcrumbs, title, short description, compact horizontal USP row.
+- [x] Add design-system showcase block for visual QA and spacing validation.
+- [x] Extend USP bar horizontal mode to support start alignment for hero usage.
+- [x] Run lint diagnostics on updated files and resolve any issues.

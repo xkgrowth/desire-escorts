@@ -29,6 +29,7 @@ import {
   TabbedContentShowcase,
   ProfileHeroShowcase,
   HomepageHeroShowcase,
+  GlassTemplateHeroShowcase,
   BreadcrumbsShowcase,
   FilterBarShowcase,
   PricingTableShowcase,
@@ -431,6 +432,14 @@ export default function DesignSystemPage() {
       {/* Breadcrumbs & Navigation */}
       <AnimatedSection title="Breadcrumbs" subtitle="Navigation hierarchy indicators">
         <BreadcrumbsShowcase />
+      </AnimatedSection>
+
+      {/* Glass Template Hero */}
+      <AnimatedSection
+        title="Page Hero (Glass Compact)"
+        subtitle="Reusable non-home hero with breadcrumbs, short copy, and compact horizontal USP bar"
+      >
+        <GlassTemplateHeroShowcase />
       </AnimatedSection>
 
       {/* Locale Toggle */}

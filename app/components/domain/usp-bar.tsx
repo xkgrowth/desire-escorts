@@ -13,6 +13,7 @@ type USPBarProps = {
   title?: string;
   items?: USPItem[];
   variant?: "cards" | "minimal" | "horizontal";
+  horizontalAlign?: "start" | "center";
   className?: string;
 };
 
@@ -44,6 +45,7 @@ export function USPBar({
   title,
   items = defaultItems,
   variant = "cards",
+  horizontalAlign = "center",
   className,
 }: USPBarProps) {
   return (
@@ -66,7 +68,12 @@ export function USPBar({
 
       {/* USP Items */}
       {variant === "horizontal" ? (
-        <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-12">
+        <div
+          className={cn(
+            "flex flex-wrap items-center gap-6 lg:gap-12",
+            horizontalAlign === "start" ? "justify-start" : "justify-center"
+          )}
+        >
           {items.map((item, index) => (
             <div key={index} className="flex items-center gap-3">
               <div className="text-primary">{item.icon}</div>

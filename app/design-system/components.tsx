@@ -13,6 +13,7 @@ import { HomepageHero } from "../components/domain/homepage-hero";
 import { TextWithImage } from "../components/domain/text-with-image";
 import { TabbedContent } from "../components/domain/tabbed-content";
 import { ProfileHero } from "../components/domain/profile-hero";
+import { TemplateHeroGlass } from "../components/domain/template-hero-glass";
 import { Breadcrumbs, BreadcrumbsCompact } from "../components/ui/breadcrumbs";
 import { FilterBar, FilterBarCompact } from "../components/domain/filter-bar";
 import { PricingTable, PricingFeatures, PaymentMethods } from "../components/domain/pricing-table";
@@ -25,7 +26,7 @@ import {
   LegalHighlight,
   LegalList,
 } from "../components/domain/legal-section";
-import { Mail, Search, User, BookOpen, HelpCircle, CreditCard, Banknote, Building } from "lucide-react";
+import { Mail, Search, User, BookOpen, HelpCircle, CreditCard, Banknote, Building, Shield, Clock3, Award } from "lucide-react";
 
 export function PageGradientShowcase() {
   return (
@@ -667,6 +668,33 @@ export function BreadcrumbsShowcase() {
         />
       </div>
     </div>
+  );
+}
+
+export function GlassTemplateHeroShowcase() {
+  return (
+    <TemplateHeroGlass
+      breadcrumbs={[
+        { label: "Escorts", href: "/escorts" },
+        { label: "Overzicht" },
+      ]}
+      title="Escorts in Nederland"
+      description="Vind snel een passende match met actuele beschikbaarheid. Filter op locatie en service en boek discreet, zonder onnodige stappen."
+      uspItems={[
+        {
+          icon: <Shield className="h-5 w-5" />,
+          title: "100% discreet",
+        },
+        {
+          icon: <Clock3 className="h-5 w-5" />,
+          title: "24/7 beschikbaar",
+        },
+        {
+          icon: <Award className="h-5 w-5" />,
+          title: "Geverifieerde profielen",
+        },
+      ]}
+    />
   );
 }
 
