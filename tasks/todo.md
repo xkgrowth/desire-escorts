@@ -83,3 +83,4 @@
 - [x] Persist approved brand color palette as project tokens in `app/globals.css` and `tailwind.config.ts`.
 - [x] Store palette intent document at `assets/brand/PALETTE.md`.
 - [x] Create Desire-specific design system implementation plan at `.cursor/plans/design_system_setup.plan.md`.
+- [x] Create design guidelines rule file at `.cursor/rules/design_guidelines.mdc` with visual direction, typography, and component specs.

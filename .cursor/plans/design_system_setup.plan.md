@@ -13,7 +13,7 @@ todos:
     status: pending
   - id: p1-guidelines-rule
     content: 1.4 Create design guideline rule file with tone, contrast, and component constraints
-    status: pending
+    status: completed
   - id: p2-color-tokens
     content: 2.1 Define color tokens (brand, semantic, and interactive state tokens)
     status: pending

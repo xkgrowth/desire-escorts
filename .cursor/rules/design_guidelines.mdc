@@ -1,0 +1,234 @@
+# DESIGN GUIDELINES
+
+## Purpose
+
+Define visual direction, token usage, and component styling rules for Desire Escorts to ensure consistent implementation across templates and prevent design drift during migration.
+
+## Visual Direction
+
+Premium dark aesthetic with warm gold luminosity. The design uses subtle gradient washes to create depth and atmosphere against dark surfaces, with 3D-beveled interactive elements that feel tactile and luxurious.
+
+**Core principles:**
+- Dark-first surface hierarchy (Carbon Black base, Dark Olive cards)
+- Gold accents used sparingly for emphasis and interaction
+- Subtle ambient gradients to add warmth without distraction
+- High contrast maintained for accessibility on all text
+- Tactile, beveled CTAs that feel premium and clickable
+
+## Color Palette
+
+### Brand Colors
+
+| Name | Hex | Usage |
+|------|-----|-------|
+| Vanilla Custard | `#F2DE9B` | Accent, gradient endpoint, hover states |
+| Royal Gold | `#F7D063` | Primary accent, CTAs, headline gradients |
+| Dark Olive | `#202216` | Card surfaces, elevated containers |
+| Carbon Black | `#1A1B17` | Page background, input backgrounds |
+| White Smoke | `#F5F4F3` | Body text, foreground content |
+
+### Semantic Tokens
+
+| Token | Value | Purpose |
+|-------|-------|---------|
+| `--background` | `#1A1B17` | Page background |
+| `--foreground` | `#F5F4F3` | Primary text color |
+| `--surface` | `#202216` | Card/container backgrounds |
+| `--surface-muted` | `#24271A` | Elevated surfaces |
+| `--border` | `#3a3d30` | Default borders |
+| `--primary` | `#F7D063` | Primary actions, key accents |
+| `--primary-foreground` | `#1A1B17` | Text on primary backgrounds |
+| `--accent` | `#F2DE9B` | Secondary accents, gradients |
+| `--accent-foreground` | `#1A1B17` | Text on accent backgrounds |
+| `--muted` | `#202216` | Muted backgrounds |
+| `--muted-foreground` | `#D8C98E` | Muted/secondary text |
+| `--ring` | `#F7D063` | Focus rings |
+
+### Gradient Tokens
+
+```css
+--gradient-title-gold: linear-gradient(180deg, #F7D063 0%, #F2DE9B 100%);
+--gradient-title-light: linear-gradient(180deg, #FFFFFF 0%, #F5F4F3 100%);
+--gradient-cta-gold: linear-gradient(180deg, #F2DE9B 0%, #F7D063 100%);
+--gradient-ambient: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(247,208,99,0.08) 0%, transparent 70%);
+```
+
+## Typography
+
+### Font Families
+
+| Role | Font | Fallback |
+|------|------|----------|
+| Headlines | Sora | system-ui, sans-serif |
+| Body | Geist | system-ui, sans-serif |
+
+### Type Scale
+
+| Element | Font | Weight | Size | Line Height | Treatment |
+|---------|------|--------|------|-------------|-----------|
+| H1 (Hero) | Sora | ExtraBold (800) | 48–60px | 1.1 | Gold gradient |
+| H2 | Sora | ExtraBold (800) | 36–42px | 1.15 | Gold gradient |
+| H3 | Sora | Bold (700) | 24–30px | 1.2 | Solid Royal Gold or White Smoke |
+| H4 | Sora | Bold (700) | 20–24px | 1.25 | Solid Royal Gold or White Smoke |
+| Body | Geist | Regular (400) | 16px | 1.6 | White Smoke |
+| Body Large | Geist | Regular (400) | 18px | 1.6 | White Smoke |
+| Body Small | Geist | Regular (400) | 14px | 1.5 | White Smoke or muted |
+| Caption | Geist | Regular (400) | 12px | 1.4 | Muted foreground |
+
+### Title Gradient Treatment
+
+Headlines use a vertical gradient from bright to slightly muted:
+
+**Gold titles (H1, H2 on dark backgrounds):**
+```css
+.title-gradient-gold {
+  background: linear-gradient(180deg, #F7D063 0%, #F2DE9B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+```
+
+**Light titles (alternative):**
+```css
+.title-gradient-light {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5F4F3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+```
+
+## Components
+
+### CTA Buttons — 3D Beveled Style
+
+Primary CTAs use inner gradients and a subtle outer rim to create a convex/pillow effect.
+
+**Primary CTA (gold):**
+- Fill: `linear-gradient(180deg, #F2DE9B 0%, #F7D063 100%)` — lighter at top creates convex illusion
+- Border: `1px solid rgba(245, 244, 243, 0.25)`
+- Box shadow: `inset 0 1px 0 rgba(255,255,255,0.15)`
+- Text: Carbon Black `#1A1B17` in Sora Bold
+- Border radius: `9999px` (pill) or `12px` (rounded rect)
+
+**Hover state:**
+- Intensify gradient brightness slightly
+- Add outer glow: `0 0 20px rgba(247, 208, 99, 0.3)`
+
+**Secondary CTA (outline/ghost):**
+- Fill: transparent
+- Border: `1px solid #F7D063`
+- Text: Royal Gold `#F7D063`
+- Hover: subtle gold background at 10% opacity
+
+**Disabled state:**
+- Reduce opacity to 50%
+- Remove hover effects
+
+### Cards
+
+| Variant | Background | Border | Shadow |
+|---------|------------|--------|--------|
+| Default | `#202216` | `1px solid rgba(245,244,243,0.06)` | `0 4px 24px rgba(0,0,0,0.4)` |
+| Elevated | `#24271A` | `1px solid rgba(247,208,99,0.1)` | `0 8px 32px rgba(0,0,0,0.5)` |
+| Interactive | `#202216` | `1px solid rgba(245,244,243,0.06)` | Hover adds gold border glow |
+
+### Form Inputs
+
+| State | Background | Border | Shadow |
+|-------|------------|--------|--------|
+| Default | `#1A1B17` | `1px solid #3a3d30` | none |
+| Hover | `#1A1B17` | `1px solid #4a4d40` | none |
+| Focus | `#1A1B17` | `1px solid #F7D063` | `0 0 0 3px rgba(247,208,99,0.15)` |
+| Error | `#1A1B17` | `1px solid #e53e3e` | `0 0 0 3px rgba(229,62,62,0.15)` |
+| Disabled | `#202216` | `1px solid #3a3d30` | none, 50% opacity |
+
+## Layout
+
+### Background Treatments
+
+**Hero/section ambient glow:**
+```css
+.ambient-glow {
+  background: radial-gradient(
+    ellipse 80% 50% at 50% 0%,
+    rgba(247, 208, 99, 0.08) 0%,
+    transparent 70%
+  );
+}
+```
+
+**Section divider gradient:**
+```css
+.section-gradient {
+  background: linear-gradient(
+    180deg,
+    #1A1B17 0%,
+    rgba(32, 34, 22, 0.6) 50%,
+    #1A1B17 100%
+  );
+}
+```
+
+### Spacing
+
+Use Tailwind default spacing scale (4px base unit). Key usage:
+- Section padding: `py-16` to `py-24` (64–96px)
+- Card padding: `p-6` to `p-8` (24–32px)
+- Component gaps: `gap-4` to `gap-6` (16–24px)
+- Text block spacing: `space-y-4` (16px)
+
+### Container Widths
+
+- Max content width: `1280px` (`max-w-6xl`)
+- Wide sections: `1440px` (`max-w-7xl`)
+- Narrow content (blog, legal): `768px` (`max-w-3xl`)
+
+## Accessibility
+
+### Contrast Requirements
+
+All text must meet WCAG 2.1 AA minimum contrast ratios:
+- Normal text: 4.5:1
+- Large text (18px+ or 14px+ bold): 3:1
+
+Verified combinations:
+- White Smoke `#F5F4F3` on Carbon Black `#1A1B17`: ~15:1 ✓
+- Royal Gold `#F7D063` on Carbon Black `#1A1B17`: ~10:1 ✓
+- Carbon Black `#1A1B17` on Royal Gold `#F7D063`: ~10:1 ✓
+
+### Focus States
+
+All interactive elements must have visible focus indicators:
+- Use `--ring` color (`#F7D063`) for focus rings
+- Minimum 3px ring width with offset
+- Never remove focus outlines without replacement
+
+## Do / Don't
+
+### Do
+
+- Use gold gradients sparingly on key headlines and primary CTAs
+- Keep ambient background glows subtle (< 10% opacity)
+- Maintain high contrast for body text (White Smoke on Carbon Black)
+- Reserve 3D-beveled style for primary action buttons
+- Use Sora ExtraBold only for H1/H2 headlines
+- Apply consistent border radius within component families
+
+### Don't
+
+- Apply gold gradients to all text or body copy
+- Create harsh, high-opacity color transitions
+- Use gold colors for body text
+- Apply bevel effect to secondary or ghost buttons
+- Use ExtraBold weight for subheadings or body
+- Mix pill and rounded-rect radius in the same context
+- Remove focus indicators without accessible alternatives
+
+## Implementation Notes
+
+- Font loading: Use `next/font` for Sora and Geist with `display: swap`
+- Gradient text: Always include fallback solid color for older browsers
+- Dark mode: This is a dark-first design; no light mode variant planned for Phase 1
+- Motion: Keep transitions subtle (150–200ms ease) to maintain premium feel
