@@ -16,14 +16,15 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 lg:px-6">
-        {/* Logo */}
+      {/* Full-width container with edge-to-edge padding */}
+      <div className="flex w-full items-center justify-between px-6 py-3 lg:px-10 xl:px-16">
+        {/* Logo - Far Left */}
         <Link href="/" aria-label="Ga naar homepage" className="shrink-0">
           <DesireLogoAnimated size="md" />
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1" aria-label="Hoofdnavigatie">
+        {/* Desktop Navigation - Centered */}
+        <nav className="hidden lg:flex items-center justify-center gap-1 absolute left-1/2 -translate-x-1/2" aria-label="Hoofdnavigatie">
           {primaryNav.map((item) => {
             const isActive = isNavItemOrChildActive(pathname, item);
             
@@ -40,7 +41,7 @@ export function SiteHeader() {
                     "flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors",
                     isActive 
                       ? "text-primary bg-primary/10" 
-                      : "text-foreground/80 hover:text-foreground hover:bg-white/5"
+                      : "text-foreground/70 hover:text-foreground hover:bg-white/5"
                   )}
                   aria-current={isActive ? "page" : undefined}
                 >
@@ -85,23 +86,23 @@ export function SiteHeader() {
           })}
         </nav>
 
-        {/* Desktop CTAs */}
-        <div className="hidden lg:flex items-center gap-3">
-          <LanguageToggle />
+        {/* Desktop Right Side - Language Toggle Far Right */}
+        <div className="hidden lg:flex items-center gap-4">
           <a 
             href="tel:+31642188911"
-            className="inline-flex items-center justify-center gap-2 px-5 py-2 text-sm font-heading font-bold rounded-luxury bg-transparent border border-foreground/20 text-foreground/70 hover:border-foreground/40 hover:text-foreground hover:bg-surface/30 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
           >
             <Phone className="w-4 h-4" />
-            <span>Bel Ons</span>
+            <span className="hidden xl:inline">Bel Ons</span>
           </a>
           <Button variant="primary" size="sm" className="gap-2">
             <MessageCircle className="w-4 h-4" />
-            <span>Start Live Chat</span>
+            <span>Live Chat</span>
           </Button>
+          <LanguageToggle />
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Right Side */}
         <div className="flex lg:hidden items-center gap-3">
           <LanguageToggle />
           <button
@@ -147,32 +148,34 @@ function LanguageToggle() {
   };
 
   return (
-    <div className="flex items-center gap-1 text-sm">
+    <div className="flex items-center rounded-full border border-white/20 overflow-hidden text-sm">
       <Link
         href={switchToLocale("nl")}
         className={cn(
-          "px-2 py-1 rounded transition-colors",
+          "px-3 py-1.5 transition-colors flex items-center gap-1.5",
           !isEnglish 
-            ? "bg-primary/20 text-primary font-medium" 
-            : "text-foreground/60 hover:text-foreground"
+            ? "bg-white/10 text-foreground font-medium" 
+            : "text-foreground/60 hover:text-foreground hover:bg-white/5"
         )}
         aria-label="Nederlands"
         hrefLang="nl"
       >
-        🇳🇱 NL
+        <span className="text-base">🇳🇱</span>
+        <span>NL</span>
       </Link>
       <Link
         href={switchToLocale("en")}
         className={cn(
-          "px-2 py-1 rounded transition-colors",
+          "px-3 py-1.5 transition-colors flex items-center gap-1.5",
           isEnglish 
-            ? "bg-primary/20 text-primary font-medium" 
-            : "text-foreground/60 hover:text-foreground"
+            ? "bg-white/10 text-foreground font-medium" 
+            : "text-foreground/60 hover:text-foreground hover:bg-white/5"
         )}
         aria-label="English"
         hrefLang="en"
       >
-        🇬🇧 EN
+        <span className="text-base">🇬🇧</span>
+        <span>EN</span>
       </Link>
     </div>
   );
