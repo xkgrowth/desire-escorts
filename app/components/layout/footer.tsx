@@ -91,7 +91,7 @@ export function Footer({
   return (
     <footer
       className={cn(
-        "border-t border-white/5",
+        "border-t border-white/5 bg-grain",
         className
       )}
     >
