@@ -202,9 +202,18 @@
 
 ## Phase C: Template Implementation
 
-- [ ] C.1 Update global shell (header/footer with dynamic nav, breadcrumbs slot)
+- [x] C.1 Update global shell (header/footer with dynamic nav, breadcrumbs slot)
 - [ ] C.2 Implement Homepage template with optimized content
 - [ ] C.3 Implement Escorts Overview + Detail templates
 - [ ] C.4 Implement Location, Types, Services templates (overview + detail)
 - [ ] C.5 Implement Blog + Knowledge Centre templates
 - [ ] C.6 Implement utility pages (FAQ, Contact, Rates, Legal)
+
+## Review Notes (Phase C.1 - Global Shell)
+
+- Created `lib/navigation.ts` as single source of truth for all navigation config.
+- Updated `SiteHeader`: active state detection via `usePathname()`, improved accessibility with ARIA attributes.
+- Updated `SiteFooter`: dynamic year, shared nav config, bilingual support.
+- Created `PageLayout`, `PageHero`, `PageSection` components for consistent page structure.
+- Added `generateBreadcrumbsFromPath` helper for automatic breadcrumb generation.
+- Language toggle now uses actual route-based locale switching.

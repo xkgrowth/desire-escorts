@@ -1,36 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X, Phone, MessageCircle, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { primaryNav, isNavItemActive, isNavItemOrChildActive, type NavItem } from "@/lib/navigation";
 import { DesireLogoAnimated } from "../desire-logo";
 import { Button } from "../ui/button";
 
-type NavItem = {
-  label: string;
-  href: string;
-  children?: { label: string; href: string }[];
-};
-
-const navItems: NavItem[] = [
-  { label: "Escorts", href: "/escorts" },
-  {
-    label: "Services",
-    href: "/services",
-    children: [
-      { label: "Erotische Massage", href: "/services/erotische-massage" },
-      { label: "GFE Escorts", href: "/services/gfe-escorts" },
-      { label: "Hotel Escorts", href: "/services/hotel-escorts" },
-      { label: "BDSM Escorts", href: "/services/bdsm-escorts" },
-    ],
-  },
-  { label: "Hoe Het Werkt", href: "/hoe-het-werkt" },
-  { label: "Prijzen", href: "/prijzen" },
-  { label: "Contact", href: "/contact" },
-];
-
 export function SiteHeader() {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
@@ -38,57 +18,83 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 lg:px-6">
         {/* Logo */}
-        <Link href="/" aria-label="Go to homepage" className="shrink-0">
+        <Link href="/" aria-label="Ga naar homepage" className="shrink-0">
           <DesireLogoAnimated size="md" />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1">
-          {navItems.map((item) => (
-            <div
-              key={item.label}
-              className="relative"
-              onMouseEnter={() => item.children && setActiveDropdown(item.label)}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <Link
-                href={item.href}
-                className={cn(
-                  "flex items-center gap-1 px-4 py-2 text-sm font-medium text-foreground/80 rounded-lg",
-                  "hover:text-foreground hover:bg-white/5 transition-colors"
-                )}
+        <nav className="hidden lg:flex items-center gap-1" aria-label="Hoofdnavigatie">
+          {primaryNav.map((item) => {
+            const isActive = isNavItemOrChildActive(pathname, item);
+            
+            return (
+              <div
+                key={item.label}
+                className="relative"
+                onMouseEnter={() => item.children && setActiveDropdown(item.label)}
+                onMouseLeave={() => setActiveDropdown(null)}
               >
-                {item.label}
-                {item.children && <ChevronDown className="w-4 h-4" />}
-              </Link>
+                <Link
+                  href={item.href}
+                  className={cn(
+                    "flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors",
+                    isActive 
+                      ? "text-primary bg-primary/10" 
+                      : "text-foreground/80 hover:text-foreground hover:bg-white/5"
+                  )}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  {item.label}
+                  {item.children && (
+                    <ChevronDown 
+                      className={cn(
+                        "w-4 h-4 transition-transform",
+                        activeDropdown === item.label && "rotate-180"
+                      )} 
+                    />
+                  )}
+                </Link>
 
-              {/* Dropdown */}
-              {item.children && activeDropdown === item.label && (
-                <div className="absolute top-full left-0 pt-2">
-                  <div className="card-surface rounded-luxury p-2 min-w-[200px]">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        className="block px-4 py-2.5 text-sm text-foreground/80 rounded-lg hover:text-foreground hover:bg-white/5 transition-colors"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
+                {/* Dropdown */}
+                {item.children && activeDropdown === item.label && (
+                  <div className="absolute top-full left-0 pt-2">
+                    <div className="card-surface rounded-luxury p-2 min-w-[220px] shadow-lg">
+                      {item.children.map((child) => {
+                        const isChildActive = isNavItemActive(pathname, child.href);
+                        return (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className={cn(
+                              "block px-4 py-2.5 text-sm rounded-lg transition-colors",
+                              isChildActive
+                                ? "text-primary bg-primary/10"
+                                : "text-foreground/80 hover:text-foreground hover:bg-white/5"
+                            )}
+                            aria-current={isChildActive ? "page" : undefined}
+                          >
+                            {child.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
-          ))}
+                )}
+              </div>
+            );
+          })}
         </nav>
 
         {/* Desktop CTAs */}
         <div className="hidden lg:flex items-center gap-3">
           <LanguageToggle />
-          <Button variant="ghost" size="sm" className="gap-2">
+          <a 
+            href="tel:+31642188911"
+            className="inline-flex items-center justify-center gap-2 px-5 py-2 text-sm font-heading font-bold rounded-luxury bg-transparent border border-foreground/20 text-foreground/70 hover:border-foreground/40 hover:text-foreground hover:bg-surface/30 transition-all"
+          >
             <Phone className="w-4 h-4" />
             <span>Bel Ons</span>
-          </Button>
+          </a>
           <Button variant="primary" size="sm" className="gap-2">
             <MessageCircle className="w-4 h-4" />
             <span>Start Live Chat</span>
@@ -101,7 +107,9 @@ export function SiteHeader() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 text-foreground hover:bg-white/5 rounded-lg transition-colors"
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-label={mobileMenuOpen ? "Sluit menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {mobileMenuOpen ? (
               <X className="w-6 h-6" />
@@ -115,7 +123,8 @@ export function SiteHeader() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <MobileMenu
-          navItems={navItems}
+          navItems={primaryNav}
+          pathname={pathname}
           onClose={() => setMobileMenuOpen(false)}
         />
       )}
@@ -124,86 +133,143 @@ export function SiteHeader() {
 }
 
 function LanguageToggle() {
-  const [locale, setLocale] = useState<"nl" | "en">("nl");
+  const pathname = usePathname();
+  const isEnglish = pathname.startsWith("/en");
+  
+  const switchToLocale = (locale: "nl" | "en") => {
+    if (locale === "en" && !isEnglish) {
+      return `/en${pathname}`;
+    }
+    if (locale === "nl" && isEnglish) {
+      return pathname.replace(/^\/en/, "") || "/";
+    }
+    return pathname;
+  };
 
   return (
-    <button
-      onClick={() => setLocale(locale === "nl" ? "en" : "nl")}
-      className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-foreground/80 hover:text-foreground rounded-lg hover:bg-white/5 transition-colors"
-    >
-      <span className="w-5 h-4 rounded overflow-hidden">
-        {locale === "nl" ? "🇳🇱" : "🇬🇧"}
-      </span>
-      <span className="uppercase">{locale}</span>
-      <ChevronDown className="w-3 h-3" />
-    </button>
+    <div className="flex items-center gap-1 text-sm">
+      <Link
+        href={switchToLocale("nl")}
+        className={cn(
+          "px-2 py-1 rounded transition-colors",
+          !isEnglish 
+            ? "bg-primary/20 text-primary font-medium" 
+            : "text-foreground/60 hover:text-foreground"
+        )}
+        aria-label="Nederlands"
+        hrefLang="nl"
+      >
+        🇳🇱 NL
+      </Link>
+      <Link
+        href={switchToLocale("en")}
+        className={cn(
+          "px-2 py-1 rounded transition-colors",
+          isEnglish 
+            ? "bg-primary/20 text-primary font-medium" 
+            : "text-foreground/60 hover:text-foreground"
+        )}
+        aria-label="English"
+        hrefLang="en"
+      >
+        🇬🇧 EN
+      </Link>
+    </div>
   );
 }
 
 type MobileMenuProps = {
   navItems: NavItem[];
+  pathname: string;
   onClose: () => void;
 };
 
-function MobileMenu({ navItems, onClose }: MobileMenuProps) {
+function MobileMenu({ navItems, pathname, onClose }: MobileMenuProps) {
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
 
   return (
-    <div className="lg:hidden absolute top-full left-0 right-0 bg-background border-b border-white/10">
-      <nav className="flex flex-col p-4">
-        {navItems.map((item) => (
-          <div key={item.label}>
-            {item.children ? (
-              <>
-                <button
-                  onClick={() =>
-                    setExpandedItem(
-                      expandedItem === item.label ? null : item.label
-                    )
-                  }
-                  className="flex items-center justify-between w-full px-4 py-3 text-base font-medium text-foreground/80 hover:text-foreground transition-colors"
+    <div 
+      id="mobile-menu"
+      className="lg:hidden absolute top-full left-0 right-0 bg-background border-b border-white/10 shadow-lg"
+    >
+      <nav className="flex flex-col p-4" aria-label="Mobiele navigatie">
+        {navItems.map((item) => {
+          const isActive = isNavItemOrChildActive(pathname, item);
+          
+          return (
+            <div key={item.label}>
+              {item.children ? (
+                <>
+                  <button
+                    onClick={() =>
+                      setExpandedItem(
+                        expandedItem === item.label ? null : item.label
+                      )
+                    }
+                    className={cn(
+                      "flex items-center justify-between w-full px-4 py-3 text-base font-medium transition-colors",
+                      isActive ? "text-primary" : "text-foreground/80 hover:text-foreground"
+                    )}
+                    aria-expanded={expandedItem === item.label}
+                  >
+                    {item.label}
+                    <ChevronDown
+                      className={cn(
+                        "w-5 h-5 transition-transform",
+                        expandedItem === item.label && "rotate-180"
+                      )}
+                    />
+                  </button>
+                  {expandedItem === item.label && (
+                    <div className="pl-4 pb-2">
+                      {item.children.map((child) => {
+                        const isChildActive = isNavItemActive(pathname, child.href);
+                        return (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            onClick={onClose}
+                            className={cn(
+                              "block px-4 py-2.5 text-sm transition-colors",
+                              isChildActive
+                                ? "text-primary"
+                                : "text-foreground/60 hover:text-foreground"
+                            )}
+                            aria-current={isChildActive ? "page" : undefined}
+                          >
+                            {child.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <Link
+                  href={item.href}
+                  onClick={onClose}
+                  className={cn(
+                    "block px-4 py-3 text-base font-medium transition-colors",
+                    isActive ? "text-primary" : "text-foreground/80 hover:text-foreground"
+                  )}
+                  aria-current={isActive ? "page" : undefined}
                 >
                   {item.label}
-                  <ChevronDown
-                    className={cn(
-                      "w-5 h-5 transition-transform",
-                      expandedItem === item.label && "rotate-180"
-                    )}
-                  />
-                </button>
-                {expandedItem === item.label && (
-                  <div className="pl-4 pb-2">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        onClick={onClose}
-                        className="block px-4 py-2.5 text-sm text-foreground/60 hover:text-foreground transition-colors"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </>
-            ) : (
-              <Link
-                href={item.href}
-                onClick={onClose}
-                className="block px-4 py-3 text-base font-medium text-foreground/80 hover:text-foreground transition-colors"
-              >
-                {item.label}
-              </Link>
-            )}
-          </div>
-        ))}
+                </Link>
+              )}
+            </div>
+          );
+        })}
 
         {/* Mobile CTAs */}
         <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-white/10">
-          <Button variant="ghost" size="md" className="w-full gap-2">
+          <a 
+            href="tel:+31642188911"
+            className="w-full inline-flex items-center justify-center gap-2 px-6 py-2.5 text-base font-heading font-bold rounded-luxury bg-transparent border border-foreground/20 text-foreground/70 hover:border-foreground/40 hover:text-foreground hover:bg-surface/30 transition-all"
+          >
             <Phone className="w-5 h-5" />
-            <span>Bel Ons</span>
-          </Button>
+            <span>Bel +31 6 42188911</span>
+          </a>
           <Button variant="primary" size="md" className="w-full gap-2">
             <MessageCircle className="w-5 h-5" />
             <span>Start Live Chat</span>
