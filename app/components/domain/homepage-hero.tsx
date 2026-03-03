@@ -119,7 +119,6 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
               </span>
               {availableProfiles.length} escorts nu beschikbaar
             </div>
-            <div className="absolute inset-0 rounded-[26px] bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,rgba(247,208,99,0.14)_0%,rgba(247,208,99,0.03)_55%,transparent_80%)]" />
             <div
               className="pointer-events-none absolute inset-0 rounded-[26px] opacity-[0.12]"
               style={{
