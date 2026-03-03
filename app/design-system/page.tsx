@@ -758,8 +758,8 @@ export default function DesignSystemPage() {
         </div>
       </AnimatedSection>
 
-      <div className="m-1 mt-0 rounded-luxury overflow-hidden border border-white/10">
-        <Footer className="bg-surface" />
+      <div className="m-3 mt-6 rounded-luxury overflow-hidden border border-white/10">
+        <Footer className="bottom-glow" />
       </div>
     </PageWrapper>
   );

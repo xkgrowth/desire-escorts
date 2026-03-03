@@ -90,7 +90,7 @@ export function Footer({
   return (
     <footer
       className={cn(
-        "bg-surface border-t border-white/5",
+        "border-t border-white/5",
         className
       )}
     >
@@ -157,7 +157,12 @@ export function Footer({
                   <li key={linkIndex}>
                     <Link
                       href={link.href}
-                      className="text-xs text-foreground/60 hover:text-primary transition-colors"
+                      className={cn(
+                        "text-xs transition-colors",
+                        link.label.includes("→")
+                          ? "text-primary hover:text-accent"
+                          : "text-foreground/60 hover:text-primary"
+                      )}
                     >
                       {link.label}
                     </Link>

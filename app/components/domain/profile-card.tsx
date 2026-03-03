@@ -42,11 +42,11 @@ export function ProfileCard({
       href={`/escort/${slug}/`}
       className={cn("group block aspect-[5/8]", className)}
     >
-      <div className="relative w-full h-full rounded-luxury p-[2px] transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(247,208,99,0.2)]">
-        {/* Hover border glow effect */}
-        <div className="absolute inset-0 rounded-luxury bg-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="relative w-full h-full rounded-luxury p-[1.5px] bg-gradient-to-b from-white/45 via-white/14 to-white/24 transition-all duration-500 shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_0_12px_rgba(255,255,255,0.08),inset_0_1px_0_rgba(255,255,255,0.2)] group-hover:shadow-[0_0_0_1px_rgba(255,255,255,0.12),0_0_18px_rgba(255,255,255,0.12),0_0_26px_rgba(247,208,99,0.18),inset_0_1px_0_rgba(255,255,255,0.28)]">
+        {/* Hover glass rim */}
+        <div className="absolute inset-0 rounded-luxury border border-primary/35 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-        <div className="relative w-full h-full rounded-[18px] overflow-hidden bg-surface">
+        <div className="relative w-full h-full rounded-[18px] overflow-hidden bg-surface border border-white/20">
           {/* Image or Placeholder */}
           <div className="absolute inset-0 z-0">
             {hasImage ? (
@@ -66,6 +66,9 @@ export function ProfileCard({
 
           {/* Gradient overlay */}
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-background via-background/60 to-transparent opacity-90" />
+
+          {/* Inner glass line/bevel */}
+          <div className="absolute inset-0 z-[11] pointer-events-none rounded-[18px] border border-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.3),inset_0_-1px_0_rgba(255,255,255,0.08)]" />
 
           {/* Availability status - top right */}
           <div className="absolute top-4 right-4 z-20">
@@ -192,7 +195,7 @@ export function ProfileCardCompact({
       <div className="flex items-center gap-4 p-3 rounded-lg bg-surface/50 border border-white/5 transition-all duration-300 hover:border-primary/20 hover:bg-surface">
         {/* Avatar with availability dot */}
         <div className="relative flex-shrink-0">
-          <div className="w-14 h-14 rounded-full overflow-hidden bg-surface-muted">
+          <div className="relative w-14 h-14 rounded-full overflow-hidden bg-surface-muted">
             {hasImage ? (
               <Image
                 src={imageUrl}
@@ -207,9 +210,12 @@ export function ProfileCardCompact({
               </div>
             )}
           </div>
-          {/* Green dot overlapping outside the avatar */}
+          {/* Pulsing green dot overlapping the avatar */}
           {isAvailable && (
-            <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-green-500 border-2 border-surface" />
+            <span className="absolute -bottom-0.5 -right-0.5 z-10 flex h-4 w-4">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex h-4 w-4 rounded-full border-2 border-surface bg-green-500" />
+            </span>
           )}
         </div>
 

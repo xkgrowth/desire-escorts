@@ -46,11 +46,11 @@ export function Badge({ variant = "default", children, className }: BadgeProps) 
       <span
         className={cn(
           "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium",
-          "bg-background/90 text-foreground/60 backdrop-blur-sm border border-white/10",
+          "bg-surface text-foreground/85 backdrop-blur-sm border border-white/20 shadow-sm",
           className
         )}
       >
-        <span className="w-2 h-2 rounded-full bg-foreground/40" />
+        <span className="w-2 h-2 rounded-full bg-white" />
         <span>Niet beschikbaar</span>
       </span>
     );

@@ -132,3 +132,17 @@
   - Homepage supports `escort amsterdam` as secondary high-authority traffic capture.
   - `/escort-amsterdam/` is the canonical city-intent landing page (`200`, indexable).
   - `/escort-amsterdam-centrum/` is a district long-tail page and should not own the city head term.
+
+# Phase 3.3 Homepage Hero Design Block
+
+- [ ] Build a reusable full-bleed homepage hero component for the design system.
+- [ ] Add left hero content block (badge, callout title, short description, two CTAs).
+- [ ] Add dynamic right-side avatar cluster driven by currently available profiles.
+- [ ] Implement avatar interactions (click to show mini profile card + profile CTA).
+- [ ] Replace fold-bottom logo strip with top-30%-profiles compact card strip.
+- [ ] Wire the new hero showcase into `app/design-system/page.tsx`.
+- [ ] Run lint checks for changed files and fix issues if introduced.
+
+## Review Notes (Phase 3.3)
+
+- In progress.
