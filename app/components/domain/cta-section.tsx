@@ -108,24 +108,20 @@ export function CTASection({
             ))}
           </div>
 
-          {/* Availability badge */}
-          <div className="flex items-center gap-2 mt-8 text-sm text-foreground/60">
-            <Clock className="w-4 h-4" />
-            <span>24/7 Beschikbaar</span>
-          </div>
         </div>
 
         {/* Right: CTA buttons */}
         <div className="p-8 lg:p-12 bg-surface/30 flex flex-col justify-center">
-          <h3 className="text-sm font-medium text-primary uppercase tracking-wider mb-2 text-center">
-            Plan Your Experience
+          <h3 className="flex items-center justify-center gap-2 text-sm font-medium text-yellow-400 uppercase tracking-wider mb-2 text-center">
+            <Clock className="w-4 h-4" />
+            <span>24/7 Beschikbaar</span>
           </h3>
           <p className="text-foreground/60 text-sm text-center mb-6">
-            Share your preferred timing, area, and style, and our team will guide you discreetly. Rates are available upon request.
+            Deel je voorkeuren voor tijd, locatie en escort, en ons team helpt je discreet verder. Tarieven zijn op aanvraag beschikbaar.
           </p>
 
           <div className="flex gap-3">
-            <Button variant="premium" size="lg" className="flex-1 gap-2">
+            <Button variant="ghost" size="lg" className="flex-1 gap-2 text-white">
               <MessageCircle className="w-5 h-5" />
               Live Chat
             </Button>
