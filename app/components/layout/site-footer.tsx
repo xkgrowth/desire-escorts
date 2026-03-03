@@ -50,7 +50,7 @@ export function SiteFooter() {
                   <Phone className="w-5 h-5 text-primary" />
                   <span>+31 6 42188911</span>
                 </a>
-                <Button variant="premium" size="md" className="justify-start gap-3">
+                <Button variant="primary" size="md" className="justify-start gap-3">
                   <MessageCircle className="w-5 h-5" />
                   <span>Start Live Chat</span>
                 </Button>

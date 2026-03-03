@@ -88,7 +88,7 @@ export function SiteHeader() {
 
         {/* Desktop Right Side - Language Toggle Far Right */}
         <div className="hidden lg:flex items-center gap-4">
-          <Button variant="premium" size="md" className="gap-2">
+          <Button variant="primary" size="md" className="gap-2">
             <MessageCircle className="w-4 h-4" />
             <span>Live Chat</span>
           </Button>
@@ -266,7 +266,7 @@ function MobileMenu({ navItems, pathname, onClose }: MobileMenuProps) {
             <Phone className="w-5 h-5" />
             <span>Bel +31 6 42188911</span>
           </a>
-          <Button variant="premium" size="md" className="w-full gap-2">
+          <Button variant="primary" size="md" className="w-full gap-2">
             <MessageCircle className="w-5 h-5" />
             <span>Start Live Chat</span>
           </Button>

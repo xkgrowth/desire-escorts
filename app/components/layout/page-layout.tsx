@@ -71,6 +71,7 @@ type PageHeroProps = {
   eyebrow?: string;
   title: string;
   description?: string;
+  breadcrumbs?: React.ReactNode;
   children?: React.ReactNode;
   align?: "left" | "center";
   size?: "sm" | "md" | "lg";
@@ -85,6 +86,7 @@ export function PageHero({
   eyebrow,
   title,
   description,
+  breadcrumbs,
   children,
   align = "left",
   size = "md",
@@ -97,8 +99,13 @@ export function PageHero({
           "max-w-3xl",
           align === "center" && "mx-auto text-center"
         )}>
+          {breadcrumbs && (
+            <div className="mb-4">
+              {breadcrumbs}
+            </div>
+          )}
           {eyebrow && (
-            <span className="inline-block px-3 py-1 mb-4 text-xs font-medium uppercase tracking-wider text-primary bg-primary/10 rounded-full">
+            <span className="inline-block mb-4 text-xs font-medium uppercase tracking-wider text-primary">
               {eyebrow}
             </span>
           )}

@@ -6,6 +6,7 @@ import { ProfileCard } from "../components/domain/profile-card";
 import { CTASection } from "../components/domain/cta-section";
 import { FAQ } from "../components/domain/faq";
 import { PageLayout, PageHero, PageSection } from "../components/layout/page-layout";
+import { Breadcrumbs } from "../components/ui/breadcrumbs";
 import { mockEscortGrid, homeFaqs } from "@/lib/data/mock-data";
 
 export const metadata: Metadata = {
@@ -50,15 +51,12 @@ const filters = [
 
 export default function EscortsOverviewPage() {
   return (
-    <PageLayout
-      breadcrumbs={[
-        { label: "Escorts" },
-      ]}
-    >
+    <PageLayout>
       <PageHero
         eyebrow="Overzicht"
         title="Escorts in Nederland"
         description="Vind snel een passende match met actuele beschikbaarheid. Van escort Amsterdam tot landelijke dekking: filter, vergelijk en boek discreet."
+        breadcrumbs={<Breadcrumbs items={[{ label: "Escorts" }]} />}
       >
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <Link
