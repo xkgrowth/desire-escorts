@@ -32,13 +32,6 @@
   --gradient-ambient: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(247, 208, 99, 0.08) 0%, transparent 70%);
   --gradient-section: linear-gradient(180deg, #161e21 0%, rgba(22, 30, 33, 0.6) 50%, #161e21 100%);
 
-  /* Page-level warm ambient gradients (inspired by design reference) */
-  --gradient-page-top: radial-gradient(ellipse 120% 78% at 50% -12%, rgba(180, 100, 50, 0.08) 0%, rgba(247, 208, 99, 0.035) 34%, transparent 76%);
-  --gradient-page-mid-left: radial-gradient(ellipse 68% 52% at 33% 38%, rgba(180, 100, 50, 0.025) 0%, rgba(247, 208, 99, 0.012) 30%, transparent 74%);
-  --gradient-page-mid-right: radial-gradient(ellipse 68% 52% at 66% 66%, rgba(180, 100, 50, 0.025) 0%, rgba(247, 208, 99, 0.012) 30%, transparent 74%);
-  --gradient-page-bottom: radial-gradient(ellipse 120% 84% at 50% 104%, rgba(180, 100, 50, 0.09) 0%, rgba(247, 208, 99, 0.04) 34%, transparent 76%);
-  --gradient-page-glow: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(247, 208, 99, 0.1) 0%, transparent 60%);
-
   /* Grid system */
   --grid-columns: 12;
   --grid-gutter: 24px;
@@ -84,7 +77,7 @@ body {
 
 /* Ambient glow background */
 .bg-ambient-glow {
-  background: var(--gradient-ambient);
+  background: none;
 }
 
 /* Section gradient */
@@ -361,26 +354,17 @@ body {
 }
 
 /* ============================================
-   PAGE-LEVEL GRADIENT BACKGROUNDS
+   PAGE-LEVEL BACKGROUND UTILITIES
    ============================================ */
 
-/* Full page wrapper with warm ambient gradients */
+/* Keep these classes as no-ops for compatibility. */
 .page-gradient {
   position: relative;
   isolation: isolate;
 }
 
 .page-gradient::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.55;
-  background:
-    var(--gradient-page-top),
-    var(--gradient-page-mid-left),
-    var(--gradient-page-mid-right);
+  content: none;
 }
 
 /* Section-level glow (add to individual sections for emphasis) */
@@ -389,28 +373,20 @@ body {
 }
 
 .section-glow::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: var(--gradient-page-glow);
+  content: none;
 }
 
-/* Warm glow overlay for hero sections */
+/* Disabled page-level glow variants */
 .hero-glow {
-  background: 
-    radial-gradient(ellipse 100% 100% at 50% -30%, rgba(180, 100, 50, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse 80% 60% at 80% 20%, rgba(247, 208, 99, 0.08) 0%, transparent 50%);
+  background: none;
 }
 
-/* Mid-page warm accent */
 .mid-glow {
-  background: radial-gradient(ellipse 100% 80% at 30% 50%, rgba(180, 100, 50, 0.06) 0%, transparent 60%);
+  background: none;
 }
 
-/* Bottom warm glow */
 .bottom-glow {
-  background: radial-gradient(ellipse 120% 100% at 50% 100%, rgba(180, 100, 50, 0.12) 0%, rgba(247, 208, 99, 0.04) 40%, transparent 70%);
+  background: none;
 }
 
 /* ============================================

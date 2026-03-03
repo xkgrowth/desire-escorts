@@ -35,14 +35,6 @@ export function TemplateHeroGlass({
   return (
     <div className={cn("relative isolate", className)}>
       <div
-        className="pointer-events-none absolute left-1/2 top-[-110px] z-0 h-[320px] w-[130%] -translate-x-1/2 blur-2xl"
-        style={{
-          background:
-            "radial-gradient(ellipse 70% 55% at 50% 35%, rgba(180,100,50,0.3) 0%, rgba(247,208,99,0.14) 35%, rgba(247,208,99,0.03) 60%, transparent 78%)",
-        }}
-      />
-
-      <div
         className={cn(
           "relative z-10 rounded-luxury border border-white/10 bg-white/[0.03] p-2 shadow-[0_18px_48px_rgba(0,0,0,0.35)]"
         )}

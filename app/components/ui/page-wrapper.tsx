@@ -11,7 +11,7 @@ type PageWrapperProps = {
 export function PageWrapper({
   children,
   className,
-  withGradient = true,
+  withGradient = false,
 }: PageWrapperProps) {
   return (
     <main className={cn(withGradient && "page-gradient", "min-h-screen", className)}>
