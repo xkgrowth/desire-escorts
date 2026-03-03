@@ -128,7 +128,7 @@ export default function DesignSystemPage() {
         <AnimatedGrid className="grid grid-cols-2 md:grid-cols-5 gap-4" staggerDelay={0.05}>
           <AnimatedGridItem><AnimatedColorSwatch name="Royal Gold" color="#F7D063" token="--primary" /></AnimatedGridItem>
           <AnimatedGridItem><AnimatedColorSwatch name="Vanilla Custard" color="#F2DE9B" token="--accent" /></AnimatedGridItem>
-          <AnimatedGridItem><AnimatedColorSwatch name="Carbon Black" color="#161E21" token="--background" /></AnimatedGridItem>
+          <AnimatedGridItem><AnimatedColorSwatch name="Carbon Black" color="#141A1B" token="--background" /></AnimatedGridItem>
           <AnimatedGridItem><AnimatedColorSwatch name="Dark Olive" color="#161E21" token="--surface" /></AnimatedGridItem>
           <AnimatedGridItem><AnimatedColorSwatch name="White Smoke" color="#F5F4F3" token="--foreground" /></AnimatedGridItem>
         </AnimatedGrid>
@@ -138,10 +138,10 @@ export default function DesignSystemPage() {
         </h4>
         <AnimatedGrid className="grid grid-cols-1 md:grid-cols-2 gap-4" staggerDelay={0.08}>
           <AnimatedGridItem>
-            <AnimatedColorSwatch name="Interactive Surface" color="#141A1B" token="--surface-interactive" />
+            <AnimatedColorSwatch name="Interactive Surface" color="#161E21" token="--surface-interactive" />
           </AnimatedGridItem>
           <AnimatedGridItem>
-            <AnimatedColorSwatch name="Surface Muted" color="#141A1B" token="--surface-muted" />
+            <AnimatedColorSwatch name="Surface Muted" color="#161E21" token="--surface-muted" />
           </AnimatedGridItem>
         </AnimatedGrid>
 

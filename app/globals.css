@@ -11,11 +11,11 @@
   --color-white-smoke: #f5f4f3;
 
   /* Semantic tokens */
-  --background: var(--color-carbon-black);
+  --background: #141a1b;
   --foreground: var(--color-white-smoke);
   --surface: var(--color-dark-olive);
-  --surface-muted: #141a1b;
-  --surface-interactive: #141a1b;
+  --surface-muted: #161e21;
+  --surface-interactive: var(--color-carbon-black);
   --border: #3a3d30;
   --primary: var(--color-royal-gold);
   --primary-foreground: var(--color-carbon-black);
