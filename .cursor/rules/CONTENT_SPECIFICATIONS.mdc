@@ -75,6 +75,12 @@ Define exact content structure, word counts, required sections, and quality stan
 
 ## Location Pages
 
+### URL Hierarchy Rule (City vs District)
+
+- City-intent pages (for example `/escort-amsterdam/`) are the primary targets for city head terms (`escort [city]`).
+- District pages (for example `/escort-amsterdam-centrum/`) target district modifiers (`escort amsterdam centrum`) and must not cannibalize the city head term.
+- City pages must include internal links to district pages; district pages must link back to the city page as parent context.
+
 ### Target Metrics
 - **Word count**: 800-1200 words
 - **Read time**: 2-3 minutes
@@ -135,6 +141,7 @@ Conservatorium en Okura. Outcall service beschikbaar binnen 90 minuten in heel A
 - Preserve genuinely unique local information
 - Extract any location-specific FAQs
 - Keep internal links to city-specific profiles
+- If legacy `/escort-amsterdam/` currently redirects, build it as a dedicated indexable city page during migration.
 
 ---
 

@@ -53,7 +53,8 @@ This plan has been updated from **parity-first** to **optimize-during-build** ba
 | NL URL | EN URL | Type | Primary Keyword |
 |--------|--------|------|-----------------|
 | `/` | `/en` | Homepage | escort service |
-| `/escort-amsterdam-centrum` | `/en/escort-amsterdam-centrum` | Location | escort amsterdam |
+| `/escort-amsterdam` | `/en/escort-amsterdam` | City Location | escort amsterdam |
+| `/escort-amsterdam-centrum` | `/en/escort-amsterdam-centrum` | District Location | escort amsterdam centrum |
 | `/escort-rotterdam` | `/en/escort-rotterdam` | Location | escort rotterdam |
 | `/escort-den-haag` | `/en/escort-den-haag` | Location | escort den haag |
 
@@ -65,6 +66,8 @@ This plan has been updated from **parity-first** to **optimize-during-build** ba
 - [ ] Structure FAQs for schema markup
 - [ ] Optimize metadata for CTR
 - [ ] Preserve high-value internal links
+- [ ] Ensure `/escort-amsterdam/` returns `200` indexable and is not redirected to homepage
+- [ ] Link `/escort-amsterdam/` (city parent) and `/escort-amsterdam-centrum/` (district child) bidirectionally
 
 #### QA Checklist
 - [ ] Word count within specification (homepage <1000, locations <1500)
@@ -300,7 +303,10 @@ For automated extraction support:
 - **Exception**: Only if legacy URL cannot function in Next.js
 
 ### Current Status
-- No redirects required for Batch 1-7
+- Amsterdam intent normalization required:
+  - remove homepage redirect for `/escort-amsterdam/`
+  - set `/escort-amsterdam/` as city-intent canonical page (`200`, indexable)
+  - keep `/escort-amsterdam-centrum/` as district-specific page (not city canonical)
 - Unresolved internal-link targets tracked in: `data/reconcile/gates/link-gate-evidence.json`
 
 ### If Redirect Needed

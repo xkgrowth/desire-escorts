@@ -52,6 +52,7 @@ This strategy shifts from **parity-first** to **optimize-during-build** based on
 - URL structure preserved — no slug changes without redirect mapping.
 - Internal link graph preserved for high-value pathways.
 - Template filler content removed; unique content per page required.
+- City-intent rule: city head terms must resolve to city pages (example: `escort amsterdam` -> `/escort-amsterdam/`, not homepage).
 
 ### Content Extraction from Legacy
 
@@ -118,6 +119,7 @@ All outputs remain required from previous strategy, plus:
 - If internal links point to valuable pages, preserve. If redundant, consolidate.
 - If metadata underperforms (low CTR), optimize during migration.
 - If page cannot be optimized within constraints, escalate for review.
+- If a city head-term URL currently redirects to homepage, restore a dedicated city page as a `200` indexable URL during migration.
 
 ## Risks and Mitigations
 

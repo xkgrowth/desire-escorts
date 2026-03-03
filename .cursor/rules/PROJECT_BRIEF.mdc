@@ -86,6 +86,7 @@ Rebuild the website in Next.js while **recovering and improving organic performa
 - Exact URL preservation — no slug changes without redirect mapping.
 - Keep language paths stable (`/` NL, `/en/` EN).
 - No accidental deindexing of currently valuable pages.
+- City-intent URLs must be indexable landing pages (example: `/escort-amsterdam/`), not redirected to homepage.
 
 ### Content Optimization
 - All pages optimized per Content Specifications.

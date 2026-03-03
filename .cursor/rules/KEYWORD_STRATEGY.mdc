@@ -36,6 +36,7 @@ Keywords are prioritized by:
 |-------------|----------|-----------------|-------|
 | escort | P1 | Top 5 | Brand + generic |
 | escort service | P1 | Top 5 | Primary commercial |
+| escort amsterdam | P1 (supporting) | Top 5 | High-value shared term; homepage supports while city page owns intent |
 | escort nederland | P1 | Top 5 | Geo-modified brand |
 | high class escort | P1 | Top 10 | Quality segment |
 | escort bureau | P2 | Top 10 | Alternative term |
@@ -50,7 +51,8 @@ Keywords are prioritized by:
 
 | Page | Primary Keyword | Secondary Keywords |
 |------|----------------|-------------------|
-| /escort-amsterdam-centrum | escort amsterdam | escort service amsterdam, amsterdam escort, high class escort amsterdam |
+| /escort-amsterdam | escort amsterdam | escort service amsterdam, amsterdam escort, high class escort amsterdam |
+| /escort-amsterdam-centrum | escort amsterdam centrum | escort centrum amsterdam, escort service amsterdam centrum |
 | /escort-rotterdam | escort rotterdam | escort service rotterdam, high class escort rotterdam |
 | /escort-den-haag | escort den haag | escort service den haag, escort the hague |
 | /escort-utrecht | escort utrecht | escort service utrecht |
@@ -114,9 +116,17 @@ All NL pages have EN equivalents targeting:
 
 | NL Page | EN Primary Keyword |
 |---------|-------------------|
-| /escort-amsterdam-centrum | escort amsterdam, amsterdam escorts |
+| /escort-amsterdam | escort amsterdam, amsterdam escorts |
+| /escort-amsterdam-centrum | escort amsterdam centrum, amsterdam center escorts |
 | /escort-rotterdam | escort rotterdam, rotterdam escort service |
 | /aziatische-escorts | asian escorts, asian escort netherlands |
+
+### Amsterdam Intent Ownership Model (Mandatory)
+
+- `/escort-amsterdam/` is the primary URL for `escort amsterdam` intent and must return `200` indexable.
+- `/escort-amsterdam-centrum/` targets district-level long-tail intent (`escort amsterdam centrum`), not the city head term.
+- Homepage supports `escort amsterdam` as a high-authority entry point but must internally route users and crawlers to `/escort-amsterdam/`.
+- Redirect policy: never redirect `/escort-amsterdam/` to homepage. If a redirect is required temporarily, redirect to `/escort-amsterdam/` final canonical target (not `/`).
 
 ---
 
@@ -271,6 +281,7 @@ Before building any page, validate:
 - [ ] Secondary keywords listed (3-5 max)
 - [ ] Keyword not cannibalized by another page
 - [ ] Search intent matches page type
+- [ ] City head-term ownership respected (`escort amsterdam` -> `/escort-amsterdam/`)
 - [ ] Metadata template applied with keywords
 - [ ] Current ranking position documented as baseline
 

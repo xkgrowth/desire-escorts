@@ -30,6 +30,10 @@ Define implementation guardrails for rebuilding Desire Escorts on Next.js with S
   - NL default under `/`
   - EN under `/en/`
 - Keep URL structure stable — no slug changes without redirect mapping.
+- Keep intent hierarchy stable:
+  - city head terms route to city pages (for example `/escort-amsterdam/`)
+  - district modifiers route to district pages (for example `/escort-amsterdam-centrum/`)
+  - do not route city-intent URLs to homepage
 - If route changes are unavoidable, define permanent redirects before release.
 - Locale behavior must remain deterministic and aligned with canonical/hreflang output.
 

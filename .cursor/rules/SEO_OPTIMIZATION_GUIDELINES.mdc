@@ -141,6 +141,13 @@ Google AI Overviews pull from content that:
 
 ## Technical SEO Requirements
 
+### Intent-to-URL Ownership (Critical)
+
+- City head terms must resolve to city pages, not homepage (example: `escort amsterdam` -> `/escort-amsterdam/`).
+- District terms must resolve to district pages (example: `escort amsterdam centrum` -> `/escort-amsterdam-centrum/`).
+- Homepage may support city terms, but must not be the canonical target for those terms.
+- Avoid redirects that collapse specific city intent into `/`.
+
 ### Page-Level Requirements
 
 | Element | Requirement |
@@ -205,9 +212,9 @@ Google AI Overviews pull from content that:
 For NL/EN bilingual pages:
 
 ```html
-<link rel="alternate" hreflang="nl" href="https://desire-escorts.nl/escort-amsterdam-centrum" />
-<link rel="alternate" hreflang="en" href="https://desire-escorts.nl/en/escort-amsterdam-centrum" />
-<link rel="alternate" hreflang="x-default" href="https://desire-escorts.nl/escort-amsterdam-centrum" />
+<link rel="alternate" hreflang="nl" href="https://desire-escorts.nl/escort-amsterdam" />
+<link rel="alternate" hreflang="en" href="https://desire-escorts.nl/en/escort-amsterdam" />
+<link rel="alternate" hreflang="x-default" href="https://desire-escorts.nl/escort-amsterdam" />
 ```
 
 **Rules**:
