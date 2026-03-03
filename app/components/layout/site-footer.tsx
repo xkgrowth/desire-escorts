@@ -8,6 +8,7 @@ import { footerLinks, legalLinks } from "@/lib/navigation";
 import { DesireLogoStatic } from "../desire-logo";
 import { Button } from "../ui/button";
 import { StaticHeart } from "../shiny-heart";
+import { WhatsAppIcon } from "../ui/whatsapp-icon";
 
 const paymentMethods = [
   { name: "Contant", label: "💵" },
@@ -60,7 +61,7 @@ export function SiteFooter() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-start gap-3 px-6 py-2.5 text-base font-heading font-bold rounded-luxury bg-transparent border border-foreground/20 text-foreground/70 hover:border-foreground/40 hover:text-foreground hover:bg-surface/30 transition-all"
                 >
-                  <Mail className="w-5 h-5 text-primary" />
+                  <WhatsAppIcon size={20} className="text-primary" />
                   <span>WhatsApp</span>
                 </a>
               </div>

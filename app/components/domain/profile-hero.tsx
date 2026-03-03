@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { ChevronLeft, ChevronRight, Heart, Share2, User, MessageCircle } from "lucide-react";
+import { WhatsAppIcon } from "../ui/whatsapp-icon";
 
 type ProfileImage = {
   url: string;
@@ -288,7 +289,7 @@ export function ProfileHero({
             </Button>
             {whatsapp && (
               <Button variant="whatsapp" size="lg" className="flex-1 gap-2">
-                <MessageCircle className="w-5 h-5" />
+                <WhatsAppIcon size={20} />
                 WhatsApp
               </Button>
             )}

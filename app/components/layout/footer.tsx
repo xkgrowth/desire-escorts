@@ -7,6 +7,7 @@ import { DesireLogoStatic } from "../desire-logo";
 import { PaymentIcons } from "../ui/payment-icons";
 import { MessageCircle } from "lucide-react";
 import { Button } from "../ui/button";
+import { WhatsAppIcon } from "../ui/whatsapp-icon";
 
 type FooterLink = {
   label: string;
@@ -109,7 +110,7 @@ export function Footer({
             <div className="flex flex-wrap gap-3 mb-6">
               <a href="https://wa.me/31642188911" target="_blank" rel="noopener noreferrer">
                 <Button variant="whatsapp" size="md" className="gap-2">
-                  <MessageCircle className="w-4 h-4" />
+                  <WhatsAppIcon size={16} />
                   WhatsApp
                 </Button>
               </a>

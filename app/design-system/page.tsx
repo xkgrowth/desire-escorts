@@ -1,6 +1,7 @@
 import { GradientTitle } from "../components/ui/gradient-title";
 import { Button } from "../components/ui/button";
 import { Badge } from "../components/ui/badge";
+import { WhatsAppIcon } from "../components/ui/whatsapp-icon";
 import { ShinyHeart, StaticHeart } from "../components/shiny-heart";
 import { DesireLogoAnimated, DesireLogoStatic } from "../components/desire-logo";
 import { PageWrapper, Section as PageSection, Container } from "../components/ui/page-wrapper";
@@ -280,10 +281,22 @@ export default function DesignSystemPage() {
           <div>
             <p className="text-sm text-muted-foreground mb-4">WhatsApp (Green) - Contact CTAs</p>
             <div className="flex flex-wrap items-center gap-6">
-              <Button variant="whatsapp" size="xl">Chat on WhatsApp</Button>
-              <Button variant="whatsapp" size="lg">Large WhatsApp</Button>
-              <Button variant="whatsapp" size="md">Medium WhatsApp</Button>
-              <Button variant="whatsapp" size="sm">Small WhatsApp</Button>
+              <Button variant="whatsapp" size="xl" className="gap-2">
+                <WhatsAppIcon size={24} />
+                Chat on WhatsApp
+              </Button>
+              <Button variant="whatsapp" size="lg" className="gap-2">
+                <WhatsAppIcon size={20} />
+                Large WhatsApp
+              </Button>
+              <Button variant="whatsapp" size="md" className="gap-2">
+                <WhatsAppIcon size={16} />
+                Medium WhatsApp
+              </Button>
+              <Button variant="whatsapp" size="sm" className="gap-2">
+                <WhatsAppIcon size={14} />
+                Small WhatsApp
+              </Button>
             </div>
           </div>
 
@@ -327,7 +340,10 @@ export default function DesignSystemPage() {
             <div className="flex flex-wrap items-center gap-6">
               <Button variant="primary" size="lg" disabled>Disabled Primary</Button>
               <Button variant="premium" size="lg" disabled>Disabled Premium</Button>
-              <Button variant="whatsapp" size="lg" disabled>Disabled WhatsApp</Button>
+              <Button variant="whatsapp" size="lg" disabled className="gap-2">
+                <WhatsAppIcon size={20} />
+                Disabled WhatsApp
+              </Button>
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ import { Phone, MessageCircle, Mail, Clock } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import { GradientTitle } from "../ui/gradient-title";
+import { WhatsAppIcon } from "../ui/whatsapp-icon";
 
 type ContactMethod = {
   icon: React.ReactNode;
@@ -31,7 +32,7 @@ const defaultContactMethods: ContactMethod[] = [
     action: "call",
   },
   {
-    icon: <MessageCircle className="w-5 h-5" />,
+    icon: <WhatsAppIcon size={20} />,
     label: "WhatsApp",
     value: "Chat met ons",
     href: "https://wa.me/31642188911",
@@ -130,7 +131,7 @@ export function CTASection({
             </Button>
 
             <Button variant="whatsapp" size="lg" className="flex-1 gap-2">
-              <MessageCircle className="w-5 h-5" />
+              <WhatsAppIcon size={20} />
               WhatsApp
             </Button>
           </div>

@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { primaryNav, isNavItemActive, isNavItemOrChildActive, type NavItem } from "@/lib/navigation";
 import { DesireLogoAnimated } from "../desire-logo";
 import { Button } from "../ui/button";
+import { WhatsAppIcon } from "../ui/whatsapp-icon";
 
 export function SiteHeader() {
   const pathname = usePathname();
