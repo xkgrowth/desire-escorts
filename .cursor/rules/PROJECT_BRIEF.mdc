@@ -1,5 +1,5 @@
 ---
-description: Project brief for rebuilding Desire Escorts website with SEO-safe migration from WordPress/Elementor to Next.js + Strapi
+description: Project brief for rebuilding Desire Escorts website with SEO-optimized migration from WordPress/Elementor to Next.js + Strapi
 alwaysApply: true
 ---
 
@@ -10,23 +10,28 @@ alwaysApply: true
 Desire Escorts currently runs on WordPress/Elementor with Dutch and English content (`/` and `/en/`) on [desire-escorts.nl](https://desire-escorts.nl/).
 Escort profiles (products) have already moved to Strapi and will remain the source of truth for profile data, profile content, and availability status.
 
-The website will be rebuilt in a modern Next.js/Node.js stack and migrated with SEO continuity as a non-negotiable.
+The website will be rebuilt in a modern Next.js/Node.js stack with content optimization during migration to recover organic performance.
 
 ## Primary Goal
 
-Rebuild the website in Next.js while preserving current organic performance by mirroring existing pages, structure, internal links, and content as closely as possible at launch.
+Rebuild the website in Next.js while **recovering and improving organic performance** through content optimization during migration. This approach was chosen based on:
+- Evidence of traffic decline since September 2025
+- Content audit revealing bloat, poor user intent alignment, and template duplication
+- SEO/GEO/AEO analysis indicating current content patterns contributing to algorithmic penalties
 
 ## Migration Principle
 
-- Launch phase = parity-first migration:
-  - Keep URLs stable.
-  - Keep page intent and content blocks equivalent.
-  - Keep internal linking structure equivalent.
-- Allow minor editorial fixes during migration only when they do not alter:
-  - URL structure
-  - canonical intent
-  - search intent alignment
-- Post-launch phase = structured content optimization.
+- Launch phase = **optimize-during-build** migration:
+  - Keep URLs stable (no slug changes without redirect mapping).
+  - Optimize content structure to serve user intent immediately.
+  - Reduce content bloat by 60-80% while preserving unique value.
+  - Optimize metadata for CTR improvement.
+  - Structure content for AI extraction (featured snippets, AI Overviews).
+  - Preserve high-value internal linking pathways.
+- Content optimization follows documented specifications:
+  - `CONTENT_SPECIFICATIONS.mdc` for page-level structure
+  - `KEYWORD_STRATEGY.mdc` for keyword targeting
+  - `SEO_OPTIMIZATION_GUIDELINES.mdc` for SEO/GEO/AEO best practices
 
 ## Technical Direction
 
@@ -38,42 +43,72 @@ Rebuild the website in Next.js while preserving current organic performance by m
   - WordPress export data
   - Firecrawl site extraction
   - XML sitemaps
+  - Search Console performance data
 - Content domains:
-  - Core pages
-  - Page structure/content blocks
+  - Core pages (optimized from legacy)
+  - Page structure/content blocks (restructured per specifications)
   - Media assets
   - Blog content
-  - Existing internal links
-  - Current URL/sitemap topology
+  - Internal links (high-value pathways preserved)
+  - URL topology (preserved)
 
 ## Scope
 
 ### In Scope (Phase 1)
 
-- Recreate existing NL and EN site architecture.
-- Migrate all indexable pages required for parity launch.
+- Rebuild NL and EN site architecture with URL preservation.
+- Optimize all indexable pages following Content Specifications.
+- Extract unique content from legacy, remove template filler.
+- Optimize metadata for CTR and keyword targeting.
+- Structure FAQs for schema markup and AI extraction.
 - Integrate escort profile data and availability from Strapi.
-- Preserve crawlability/indexability signals (metadata, canonicals, hreflang intent, internal links).
-- Prepare redirect map for any unavoidable URL deltas (target: minimal to zero deltas).
+- Preserve crawlability/indexability signals (canonicals, hreflang, high-value internal links).
+- Implement schema markup (FAQ, LocalBusiness, Person).
+
+### In Scope (Content Optimization)
+
+- Word count reduction per page type specifications.
+- Metadata optimization per Keyword Strategy.
+- FAQ restructuring for AI extraction.
+- Unique content creation for location/attribute pages.
+- Removal of template boilerplate and filler content.
 
 ### Out of Scope (Phase 1)
 
-- Major content rewrites
-- Aggressive IA changes
-- Large-scale CRO redesign experiments
-- Non-essential new page creation unrelated to current indexable footprint
+- URL structure changes (URLs preserved from legacy)
+- New page types not in current sitemap
+- Major IA restructuring beyond content optimization
+- Non-essential feature additions
 
 ## SEO Requirements (Non-Negotiable)
 
-- Exact URL parity where technically possible.
-- For Phase 1 launch, `meta title` and `meta description` must be exact text matches to the live legacy page for each URL+locale (`/` NL, `/en/` EN).
-- Any title/description deviation requires explicit SEO approval and a documented exception before release.
-- Preserve heading hierarchy at launch.
-- Maintain internal linking pathways for key commercial and informational pages.
-- Keep language paths stable (`/` NL, `/en/` EN) unless explicitly redefined.
-- Preserve or improve Core Web Vitals and crawl efficiency.
+### URL Stability
+- Exact URL preservation — no slug changes without redirect mapping.
+- Keep language paths stable (`/` NL, `/en/` EN).
 - No accidental deindexing of currently valuable pages.
-- Preserve technical SEO behavior through deployment (stable redirects, canonical output, and noindex controls per environment).
+
+### Content Optimization
+- All pages optimized per Content Specifications.
+- Word counts within specified limits per page type.
+- Unique content sections required (no template-only pages).
+- FAQs structured for FAQ schema markup.
+
+### Metadata Optimization
+- Meta titles optimized for CTR (50-60 chars, keyword front-loaded).
+- Meta descriptions optimized with CTA intent (150-160 chars).
+- H1 contains primary keyword naturally.
+
+### Technical SEO
+- Self-referencing canonical URLs.
+- Correct hreflang implementation (NL/EN alternates).
+- Schema markup per page type (FAQ, LocalBusiness, etc.).
+- Preserve or improve Core Web Vitals.
+- Preserve technical SEO behavior through deployment.
+
+### Internal Linking
+- Preserve high-value internal link pathways.
+- Maintain hub-and-spoke structure from homepage.
+- No broken internal links.
 
 ## Deployment and Environments
 
@@ -88,68 +123,88 @@ Rebuild the website in Next.js while preserving current organic performance by m
 
 ## Content and Discovery Inputs
 
-Migration discovery should combine:
+Migration discovery combines:
 
-- XML sitemap inventory (current truth for indexable URLs)
+- XML sitemap inventory (URL scope)
 - WordPress export datasets (structured legacy source)
-- Firecrawl outputs (rendered content and link graph)
+- Firecrawl outputs (rendered content, link graph, FAQ extraction)
+- Search Console data (keyword/page prioritization)
 - Media extraction and mapping
-- Blog post archive extraction
-- URL-level inventory + mapping manifest (legacy -> new)
+- URL-level inventory + optimization manifest
 
 ## Expected Deliverables
 
-- URL inventory (NL/EN) with migration status (`include`, `review`, `exclude`)
-- Page-level content parity map
-- Internal link retention map
+- URL inventory (NL/EN) with migration status and keyword assignment
+- Content optimization map (legacy → optimized structure per page type)
+- Internal link preservation map
 - Media inventory + replacement mapping
-- Blog migration dataset
-- Redirect specification (if any deltas)
+- Optimized content per Content Specifications
+- Schema markup implementation
 - Go-live SEO QA checklist and validation report
 
 ## Delivery Phases
 
-1. Discovery and Inventory
+1. **Discovery and Inventory** (Complete)
    - Crawl and export all relevant sources.
    - Build canonical URL inventory and classify by type.
+   - Extract Search Console performance data.
 
-2. Mapping and Modeling
-   - Map legacy content to new templates/components.
-   - Confirm Strapi content model coverage for all required entities.
+2. **Strategy and Specifications** (Complete)
+   - Define Content Specifications per page type.
+   - Define Keyword Strategy and assignments.
+   - Define SEO Optimization Guidelines.
 
-3. Build and Populate
+3. **Build and Optimize**
    - Implement Next.js routes/templates.
-   - Populate content and media with parity checks.
+   - Extract unique content from legacy per page.
+   - Create optimized content per specifications.
+   - Implement schema markup.
 
-4. SEO QA and Pre-Launch
-   - Validate metadata, canonicals, hreflang, indexability, links, and structured signals.
-   - Validate parity versus legacy inventory.
-   - Validate Vercel preview against launch checklist before production promotion.
+4. **SEO QA and Pre-Launch**
+   - Validate content against specifications.
+   - Validate metadata optimization.
+   - Validate schema markup.
+   - Validate internal links.
+   - Validate technical SEO (canonical, hreflang, robots).
 
-5. Launch and Stabilization
+5. **Launch and Monitor**
    - Monitor indexing, rankings, traffic, crawl stats, and 404s.
-   - Fix critical regressions immediately.
+   - Compare performance vs. pre-migration baseline.
+   - Identify pages needing further optimization.
 
 ## Success Criteria
 
-- All in-scope legacy URLs migrated or intentionally redirected.
+- All in-scope legacy URLs live with optimized content.
+- Content follows specifications (word counts, structure, unique sections).
+- Metadata optimized per Keyword Strategy.
+- FAQ schema implemented on applicable pages.
+- NL/EN routing preserved.
+- Internal link pathways maintained.
 - No critical SEO regressions in indexation/crawlability signals at launch.
-- NL/EN parity delivered.
-- `Meta title` and `meta description` exact-match parity is achieved for all in-scope URL+locale pairs, except approved exceptions.
 - Escort profile + availability powered by Strapi in production.
-- Content parity achieved with only approved minor editorial changes.
+- Performance recovery signals visible within 3 months (position/CTR improvement for priority keywords).
 
 ## Risks to Manage
 
-- Hidden legacy pages not present in standard sitemap exports
+- Content optimization removing ranking content (mitigated by preserving unique content, only removing filler)
+- Metadata changes hurting CTR (mitigated by A/B monitoring post-launch)
+- Internal link equity loss (mitigated by preserving high-value pathways)
 - Media mismatches or broken references
-- Internal link graph degradation
-- Metadata drift between old and new templates
 - Hreflang/canonical implementation inconsistencies
 - Unexpected Strapi schema/content gaps during integration
 
 ## Governance
 
-- Any change that may affect SEO parity requires explicit approval.
-- Parity-first decisions override improvement-first decisions during Phase 1.
-- Optimization backlog is recorded and prioritized for post-launch iterations.
+- Content optimization must follow documented specifications (Content Specifications, Keyword Strategy, SEO Guidelines).
+- URL changes require explicit approval and redirect mapping.
+- Deviations from specifications require documented justification.
+- Post-launch performance monitoring informs further optimization.
+
+## Related Documentation
+
+- Content Specifications: `.cursor/rules/CONTENT_SPECIFICATIONS.mdc`
+- Keyword Strategy: `.cursor/rules/KEYWORD_STRATEGY.mdc`
+- SEO Guidelines: `.cursor/rules/SEO_OPTIMIZATION_GUIDELINES.mdc`
+- Migration Strategy: `.cursor/rules/CONTENT_MIGRATION_STRATEGY.mdc`
+- Technical Architecture: `.cursor/rules/TECHNICAL_ARCHITECTURE.mdc`
+- Action Plan: `.cursor/plans/CONTENT_MIGRATION_ACTION_PLAN.md`

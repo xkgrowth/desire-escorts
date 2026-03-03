@@ -1,5 +1,5 @@
 ---
-description: Strategy for SEO-safe content migration from WordPress to Next.js and Strapi, with post-scrape action planning
+description: Strategy for SEO-optimized content migration from WordPress to Next.js, with content improvement during build
 alwaysApply: true
 ---
 
@@ -7,100 +7,176 @@ alwaysApply: true
 
 ## Purpose
 
-Define how legacy content is discovered, validated, and prepared for migration so launch achieves parity-first SEO continuity.
-This strategy is pre-actionable by design; detailed execution planning happens after scrape completion.
+Define how legacy content is discovered, validated, optimized, and migrated to achieve both SEO continuity and performance recovery.
+
+This strategy shifts from **parity-first** to **optimize-during-build** based on evidence that:
+- Current content patterns are contributing to traffic decline (September 2025 onward)
+- Preserving bloated, template-heavy content would maintain algorithmic penalties
+- User intent is not served by current content structure
 
 ## Strategic Objectives
 
-- Preserve organic performance by mirroring legacy URLs, content intent, and internal linking.
-- Build a complete and auditable inventory before implementation decisions.
+- **Recover organic performance** by improving content quality, structure, and user intent alignment.
+- **Preserve SEO equity** through URL stability, internal link preservation, and metadata optimization.
+- **Build for AI** by structuring content for Google AI Overviews, featured snippets, and answer engines.
 - Migrate NL and EN content with consistent language routing (`/` and `/en/`).
 - Keep migration deterministic via manifests, coverage reports, and validation gates.
 
+## Key Strategic Shift
+
+| Aspect | Previous (Parity-First) | New (Optimize-During-Build) |
+|--------|------------------------|----------------------------|
+| Content length | Mirror legacy word count | Reduce 60-80%, increase value density |
+| Metadata | Exact match to legacy | Optimize for CTR and intent |
+| Page structure | Replicate legacy layout | Intent-first architecture |
+| Templates | Preserve template patterns | Lean, unique content per page |
+| FAQs | Mirror existing | Restructure for AI extraction |
+| Internal links | Preserve all | Preserve high-value, consolidate redundant |
+
 ## Source-of-Truth Hierarchy
 
-1. XML sitemaps for indexable URL scope.
-2. WordPress exports for structured legacy fields.
-3. Firecrawl for rendered page content, DOM structure, and internal link graph.
-4. Existing media references from sitemap, page content, and exports.
-5. Strapi for escort profile entities and availability (target runtime source).
+1. **XML sitemaps** for indexable URL scope and canonicalization.
+2. **Search Console data** for keyword/page prioritization and performance benchmarks.
+3. **WordPress exports** for structured legacy fields and existing content extraction.
+4. **Firecrawl renders** for internal link graph, unique content identification, and FAQ extraction.
+5. **Content Specifications** (`.cursor/rules/CONTENT_SPECIFICATIONS.mdc`) for target structure per page type.
+6. **Strapi** for escort profile entities and availability (runtime authority).
 
 ## Migration Scope Policy
 
-- Phase 1 policy: mirror-first with minor editorial fixes only.
-- No changes that alter search intent, canonical URL intent, or core page semantics.
-- For every migrated URL+locale in Phase 1, the launch `meta title` and `meta description` must exactly match the live legacy page text.
-- Metadata deviations are allowed only with explicit SEO signoff and a documented exception (reason, owner, date, affected URL+locale).
-- Any unavoidable URL delta requires explicit redirect mapping and approval.
-- Out-of-scope changes are logged into post-launch optimization backlog.
+### Phase 1: Optimize-During-Build
 
-## Required Discovery Outputs (Before Action Plan)
+- All pages receive structural optimization following Content Specifications.
+- Content reduction targets: homepage <1000 words, locations <1500 words, attributes <800 words.
+- Metadata optimization allowed (improved titles/descriptions for CTR).
+- URL structure preserved — no slug changes without redirect mapping.
+- Internal link graph preserved for high-value pathways.
+- Template filler content removed; unique content per page required.
 
-- Canonical URL inventory (NL + EN), deduped and typed.
-- Page parity inventory: legacy URL -> planned Next.js route.
-- Content block map per page template (headings, body sections, CTA blocks).
-- Internal link graph export (source URL -> destination URL).
-- Media inventory with reusable asset mapping.
-- Blog inventory with taxonomy and publish metadata where available.
-- Strapi coverage check for profile fields and availability dependencies.
+### Content Extraction from Legacy
+
+For each migrated page, extract and preserve:
+- **Unique value content**: Location-specific info, genuine differentiators
+- **Working FAQ questions**: Questions with featured snippet potential
+- **Internal links**: High-value navigation pathways
+- **Trust signals**: License mentions, experience claims, reviews
+
+For each migrated page, remove:
+- **Template boilerplate**: Generic text repeated across pages
+- **Keyword stuffing**: Unnatural keyword repetition
+- **Filler sections**: Content that doesn't serve user intent
+- **Duplicate service lists**: Consolidate to service hub pages
+
+### Metadata Strategy
+
+| Element | Strategy |
+|---------|----------|
+| Title | Optimize for CTR: include location/attribute + clear value prop |
+| Description | Action-oriented, mention price point, include CTA intent |
+| H1 | Match search intent, include primary keyword naturally |
+| Canonical | Self-referencing, aligned with locale |
+| Hreflang | NL/EN alternates for all bilingual pages |
+
+## Required Discovery Outputs
+
+All outputs remain required from previous strategy, plus:
+
+- **Content optimization map**: Legacy content → optimized content plan per page type
+- **Keyword-to-page assignment**: Primary/secondary keywords per URL
+- **FAQ extraction**: FAQs from legacy content marked for preservation/optimization
+- **Unique content audit**: Per-page identification of genuinely unique content
+- **Link consolidation plan**: Internal links to preserve vs. redundant links to simplify
 
 ## Validation Gates (Must Pass Before Build)
 
-- Coverage gate: all in-scope URLs are classified (`include`, `review`, `exclude`).
-- Content gate: critical commercial pages have full content parity records.
-- Link gate: key internal pathways are preserved.
-- Metadata gate: title/meta/canonical/hreflang requirements mapped, with exact-match validation for `meta title` and `meta description` against legacy per URL+locale.
-- Media gate: missing/broken assets are below agreed threshold.
-- Language gate: NL/EN alternates and route strategy are defined for all in-scope pages.
+### Pre-Build Gates
+
+- **Coverage gate**: All in-scope URLs classified (`include`, `review`, `exclude`).
+- **Keyword assignment gate**: All included pages have primary keyword assignment.
+- **Content spec gate**: Content specifications approved for all page types.
+
+### Build Gates (Per Batch)
+
+- **Structure gate**: Page follows Content Specification template.
+- **Word count gate**: Content within specified limits.
+- **Unique content gate**: Page contains required unique content elements.
+- **Link gate**: High-value internal links preserved.
+- **FAQ gate**: FAQs structured for schema markup and AI extraction.
+
+### Pre-Launch Gates
+
+- **Metadata gate**: Title/description optimized per Keyword Strategy.
+- **Technical SEO gate**: Canonical, hreflang, robots correct.
+- **Performance gate**: Core Web Vitals acceptable.
+- **Indexability gate**: No accidental noindex on valuable pages.
 
 ## Decision Rules During Migration
 
-- If source mismatch exists, prefer sitemap + rendered page reality over assumptions.
-- If WP export data is incomplete, proceed with scrape baseline and flag enrichment backlog.
-- If content duplicates exist across locales, preserve locale-specific canonical intent.
-- If a page cannot be mirrored exactly, escalate and decide between:
-  - parity workaround in Next.js, or
-  - controlled URL/content deviation with redirect + SEO signoff.
+- If legacy content contains genuinely unique, valuable information, preserve and restructure it.
+- If legacy content is template filler, remove it entirely.
+- If FAQ questions have featured snippet potential, preserve and format for schema.
+- If internal links point to valuable pages, preserve. If redundant, consolidate.
+- If metadata underperforms (low CTR), optimize during migration.
+- If page cannot be optimized within constraints, escalate for review.
 
 ## Risks and Mitigations
 
-- Hidden legacy URLs not in sitemap:
-  - Mitigation: union sitemap + crawl-discovered URLs, then classify.
-- Internal link loss during component rebuild:
-  - Mitigation: enforce link parity checks before release.
-- Metadata drift from template changes:
-  - Mitigation: page-level metadata mapping and pre-launch QA crawl.
-- Media gaps or mismatched references:
-  - Mitigation: hash-based media inventory and broken-asset reports.
+### Content Optimization Risks
 
-## Post-Scrape Handoff (Actionable Planning Trigger)
+| Risk | Mitigation |
+|------|-----------|
+| Removing content that was ranking | Preserve unique content, only remove template filler |
+| Metadata changes hurting CTR | A/B monitor post-launch, rollback if needed |
+| Lost internal link equity | Preserve all high-value pathways, track in link map |
+| Over-optimization penalties | Follow natural language guidelines, avoid keyword stuffing |
 
-After scraping and inventories are complete, produce a separate actionable plan that converts strategy to execution tickets.
+### Technical Risks
 
-Create:
-- `.cursor/plans/CONTENT_MIGRATION_ACTION_PLAN.md`
+| Risk | Mitigation |
+|------|-----------|
+| URL changes causing 404s | Zero URL changes without redirect mapping |
+| Hreflang mismatches | Automated validation in build pipeline |
+| Indexability issues | Pre-launch crawl with Screaming Frog or equivalent |
 
-This actionable plan must include:
-- Route-by-route migration batches (priority order).
-- Component/template mapping by page type.
-- Exact field mapping (WordPress/Firecrawl -> Next.js/Strapi).
-- Redirect matrix (only where required).
-- QA checklist per batch (content, links, metadata, hreflang, media).
-- Owners, effort estimate, dependencies, and acceptance criteria per batch.
+## Post-Migration Monitoring
 
-## Definition of Ready for Action Plan
+### Week 1-2
+- Monitor Google Search Console for indexing issues
+- Track 404 errors and fix immediately
+- Verify hreflang implementation in GSC
 
-- Scrape run complete with failure report and retries documented.
-- URL inventory finalized and approved.
-- Page and media parity maps available.
-- Strapi model fit reviewed and known gaps logged.
-- SEO parity constraints accepted by project stakeholders.
+### Week 3-4
+- Compare position changes for priority keywords
+- Monitor CTR changes for optimized metadata
+- Track click/impression trends vs. pre-migration baseline
 
-## Definition of Done for Migration Phase 1
+### Month 2-3
+- Assess ranking recovery for target keywords
+- Identify pages needing further optimization
+- Document wins and learnings for future batches
 
-- All approved in-scope pages are live with parity intent preserved.
-- Critical metadata and internal links match migration requirements.
-- `Meta title` and `meta description` are exact text matches to legacy for all approved URL+locale pairs, except approved and documented exceptions.
-- NL/EN routing parity is correct.
-- Redirects and 404 monitoring are in place.
-- Post-launch optimization backlog is documented and prioritized.
+## Related Documentation
+
+- **Content Specifications**: `.cursor/rules/CONTENT_SPECIFICATIONS.mdc`
+- **Keyword Strategy**: `.cursor/rules/KEYWORD_STRATEGY.mdc`
+- **SEO Guidelines**: `.cursor/rules/SEO_OPTIMIZATION_GUIDELINES.mdc`
+- **Action Plan**: `.cursor/plans/CONTENT_MIGRATION_ACTION_PLAN.md`
+
+## Definition of Ready for Build
+
+- Scrape run complete with all URLs extracted.
+- URL inventory finalized and keyword-assigned.
+- Content specifications approved for batch page types.
+- Unique content audit complete for batch pages.
+- Strapi model fit reviewed and gaps logged.
+
+## Definition of Done for Migration
+
+- All included pages live with optimized content following specifications.
+- Metadata optimized per Keyword Strategy guidelines.
+- Internal links preserved for high-value pathways.
+- FAQs structured with FAQ schema markup.
+- NL/EN routing parity correct.
+- Technical SEO validated (canonical, hreflang, robots).
+- Post-launch monitoring plan active.
+- Performance baseline documented for comparison.

@@ -1,0 +1,372 @@
+---
+description: SEO/GEO/AEO best practices and technical requirements for content optimization during build
+alwaysApply: true
+---
+
+# SEO OPTIMIZATION GUIDELINES
+
+## Purpose
+
+Define SEO, GEO (Generative Engine Optimization), and AEO (Answer Engine Optimization) best practices to follow during the optimize-during-build migration.
+
+These guidelines ensure content is optimized for:
+- Traditional search engines (Google, Bing)
+- AI-powered search (Google AI Overviews, Bing Copilot)
+- Answer engines (ChatGPT, Perplexity, Claude)
+
+---
+
+## EEAT Framework
+
+Google's quality evaluation framework: **Experience, Expertise, Authoritativeness, Trustworthiness**
+
+### Implementation Requirements
+
+| Signal | Implementation |
+|--------|---------------|
+| **Experience** | First-person language where appropriate, service-specific details that show real experience |
+| **Expertise** | Specific knowledge about escort industry, local area expertise on location pages |
+| **Authoritativeness** | Verifiable business credentials, license mentions, years in operation |
+| **Trustworthiness** | Clear contact info, privacy policy, transparent pricing, real reviews |
+
+### Trust Signals to Include
+
+Every page should include at least 2-3 trust signals:
+
+- "X jaar ervaring" or "Operating since XXXX"
+- License or registration mention (if applicable)
+- Physical address or service area confirmation
+- Secure booking process mention
+- Discretion guarantees
+- Real client testimonials (where available)
+- Clear pricing with no hidden fees
+
+### Signals to Avoid
+
+- Unverifiable claims ("best in the country")
+- Stock testimonials or fake reviews
+- Anonymous authorship on informational content
+- Missing contact information
+- Hidden pricing
+
+---
+
+## Content Quality Standards
+
+### Google Helpful Content Alignment
+
+The Helpful Content Update rewards content that:
+
+| Criterion | Our Implementation |
+|-----------|-------------------|
+| Created for people, not search engines | Intent-first architecture, answer user questions immediately |
+| Demonstrates expertise | Location-specific knowledge, genuine service details |
+| Has a primary purpose | Each page has clear goal (inform, convert, navigate) |
+| Provides satisfying experience | Fast to scan, easy to convert, mobile-optimized |
+| Avoids thin content | Word count targets in Content Specifications |
+| No excessive automation | Human review of all content |
+
+### Content Quality Checklist
+
+Before publishing any page:
+
+- [ ] Does the content immediately address what users searching this keyword want?
+- [ ] Would someone recommend this page to a friend looking for this service?
+- [ ] Is there unique information not available on competitor pages?
+- [ ] Does the page answer the user's question without them needing to search again?
+- [ ] Is the content written in natural language, not keyword-stuffed?
+- [ ] Does the page provide clear next steps (CTA)?
+
+---
+
+## AI & Answer Engine Optimization
+
+### Content Structure for AI Extraction
+
+AI systems prefer:
+
+1. **Clear hierarchical structure**: H1 → H2 → H3 with logical flow
+2. **Direct answers**: First sentence of sections should answer the implied question
+3. **Factual statements**: Concrete numbers, specific details, verifiable claims
+4. **Lists and tables**: Easy to parse and extract
+5. **FAQ format**: Question-answer pairs with schema markup
+
+### Structuring Content for Featured Snippets
+
+| Snippet Type | Format to Use |
+|--------------|---------------|
+| Paragraph | 40-60 word direct answer under H2 matching the query |
+| List | Bulleted or numbered list (3-8 items) |
+| Table | HTML table with clear headers |
+| FAQ | FAQ schema markup with Q&A pairs |
+
+### Example: Optimized for AI Extraction
+
+**Bad (wall of text)**:
+```
+Onze escort service in Amsterdam biedt al meer dan 15 jaar high-class begeleiding...
+[200 words of continuous text]
+```
+
+**Good (AI-structured)**:
+```
+## Hoe Snel Kan Een Escort in Amsterdam Bij Mij Zijn?
+
+Binnen 90 minuten in heel Amsterdam. Voor het centrum is de gemiddelde wachttijd 45-60 minuten.
+
+**Snelheid per gebied:**
+- Amsterdam Centrum: 45-60 min
+- Zuid/Oost: 60-75 min
+- Schiphol Airport: 60-90 min
+
+*Tip: Boek 2-3 uur vooruit voor gegarandeerde beschikbaarheid.*
+```
+
+### Optimizing for Google AI Overviews
+
+Google AI Overviews pull from content that:
+- Directly answers the search query
+- Contains factual, specific information
+- Has clear structure with headers matching query intent
+- Includes supporting details (numbers, steps, examples)
+- Comes from authoritative, trustworthy sources
+
+**Implementation**:
+- Write H2s that match common search queries
+- Start sections with direct answers
+- Include specific data (response times, pricing, availability)
+- Use schema markup to reinforce content meaning
+
+---
+
+## Technical SEO Requirements
+
+### Page-Level Requirements
+
+| Element | Requirement |
+|---------|-------------|
+| **Title tag** | 50-60 chars, primary keyword front-loaded |
+| **Meta description** | 150-160 chars, includes CTA and differentiator |
+| **H1** | Exactly one per page, contains primary keyword |
+| **URL** | Lowercase, hyphens, descriptive, no parameters |
+| **Canonical** | Self-referencing for all indexable pages |
+| **Robots** | `index, follow` for all public pages |
+
+### Schema Markup Requirements
+
+| Page Type | Required Schema |
+|-----------|-----------------|
+| Homepage | Organization, LocalBusiness |
+| Location pages | LocalBusiness (per location), FAQPage |
+| Attribute pages | FAQPage |
+| Service pages | Service, FAQPage |
+| Profile pages | Person, Review (if applicable) |
+| Blog posts | Article, FAQPage (if FAQ present), Person (author) |
+
+### Schema Implementation Example
+
+**FAQ Schema** (required on most pages):
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hoe snel kan een escort bij mij zijn in Amsterdam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Binnen 90 minuten in heel Amsterdam. Gemiddelde wachttijd in het centrum is 45-60 minuten."
+      }
+    }
+  ]
+}
+```
+
+**LocalBusiness Schema** (location pages):
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Desire Escorts Amsterdam",
+  "description": "High-class escort service in Amsterdam",
+  "areaServed": {
+    "@type": "City",
+    "name": "Amsterdam"
+  },
+  "priceRange": "€€€"
+}
+```
+
+### Hreflang Implementation
+
+For NL/EN bilingual pages:
+
+```html
+<link rel="alternate" hreflang="nl" href="https://desire-escorts.nl/escort-amsterdam-centrum" />
+<link rel="alternate" hreflang="en" href="https://desire-escorts.nl/en/escort-amsterdam-centrum" />
+<link rel="alternate" hreflang="x-default" href="https://desire-escorts.nl/escort-amsterdam-centrum" />
+```
+
+**Rules**:
+- NL pages under `/`
+- EN pages under `/en/`
+- `x-default` points to NL version
+- Every NL page must have EN alternate and vice versa
+
+---
+
+## Internal Linking Strategy
+
+### Link Preservation from Legacy
+
+During migration, preserve internal links that:
+- Connect location pages to profiles
+- Connect attribute pages to relevant profiles
+- Link between related services
+- Create hub-and-spoke structure from homepage
+
+### New Linking Patterns
+
+| From | To | Purpose |
+|------|-----|---------|
+| Homepage | Top 5 location pages | Primary navigation |
+| Homepage | Main attribute pages | Category navigation |
+| Location pages | Profile pages (filtered) | Conversion pathway |
+| Location pages | Nearby location pages | Related content |
+| Attribute pages | Location pages with that attribute | Cross-linking |
+| Blog posts | Relevant service/location pages | Contextual links |
+
+### Anchor Text Guidelines
+
+| Pattern | Example | Use Case |
+|---------|---------|----------|
+| Exact match | "escort amsterdam" | Sparingly, only if natural |
+| Partial match | "onze escorts in Amsterdam" | Preferred |
+| Branded | "Bekijk ons aanbod" | For CTAs |
+| Natural | "in de hoofdstad" | Contextual |
+
+**Avoid**:
+- Over-optimized anchor text
+- "Click here" or generic anchors
+- Excessive links (>3-5 per 500 words)
+
+---
+
+## Mobile & Performance Optimization
+
+### Mobile-First Requirements
+
+- All content scannable on mobile viewport
+- CTAs thumb-friendly and visible without scrolling
+- Images optimized and lazy-loaded
+- No horizontal scrolling
+- Text readable without zooming (16px minimum)
+
+### Core Web Vitals Targets
+
+| Metric | Target |
+|--------|--------|
+| LCP (Largest Contentful Paint) | <2.5s |
+| INP (Interaction to Next Paint) | <200ms |
+| CLS (Cumulative Layout Shift) | <0.1 |
+
+### Performance Guidelines
+
+- Optimize images (WebP, responsive sizes)
+- Minimize third-party scripts
+- Use static generation where possible
+- Implement caching headers
+- Defer non-critical JavaScript
+
+---
+
+## Content Freshness Strategy
+
+### Freshness Signals for AI Systems
+
+AI systems and Google favor fresh content:
+
+- **Last updated dates**: Display prominently on informational content
+- **Recent availability**: Show real-time or daily-updated availability status
+- **News/blog**: Regular publishing cadence (minimum 2x monthly)
+- **Seasonal updates**: Refresh location pages with seasonal info
+
+### Update Triggers
+
+| Trigger | Action |
+|---------|--------|
+| New escort joins | Update relevant location/attribute pages |
+| Price change | Update service and pricing pages |
+| Service change | Update service pages |
+| Monthly | Review and refresh top 10 traffic pages |
+| Quarterly | Full content audit of commercial pages |
+
+---
+
+## Content Governance
+
+### Pre-Publish Checklist
+
+Before any page goes live:
+
+- [ ] Content follows Content Specifications
+- [ ] Primary keyword assigned per Keyword Strategy
+- [ ] Metadata optimized (title, description)
+- [ ] Schema markup implemented
+- [ ] Internal links included
+- [ ] Mobile rendering verified
+- [ ] Hreflang correct
+- [ ] Page indexed (no accidental noindex)
+
+### Quality Assurance Process
+
+1. **Content creation**: Follow specifications
+2. **Keyword check**: Verify keyword placement and density
+3. **Technical check**: Schema, metadata, hreflang
+4. **Mobile preview**: Verify rendering
+5. **Link validation**: Verify internal links work
+6. **Approval**: Sign off before production deployment
+
+### Post-Launch Monitoring
+
+| Timeframe | Check |
+|-----------|-------|
+| Day 1 | Indexing requested, no 404s |
+| Week 1 | Position tracking started |
+| Week 2 | Initial position/CTR review |
+| Month 1 | Performance vs. baseline |
+| Month 3 | Full impact assessment |
+
+---
+
+## Compliance and Legal
+
+### Required Pages
+
+- Privacy Policy (linked from all pages)
+- Terms of Service
+- Age verification mechanism
+- Cookie consent
+
+### Content Restrictions
+
+- No explicit content in indexable text
+- Age-appropriate language in metadata
+- Comply with advertising standards
+- No false or misleading claims
+
+---
+
+## Integration with Other Documents
+
+This document works alongside:
+
+- **Content Specifications** (`CONTENT_SPECIFICATIONS.mdc`): What to write
+- **Keyword Strategy** (`KEYWORD_STRATEGY.mdc`): What keywords to target
+- **Migration Strategy** (`CONTENT_MIGRATION_STRATEGY.mdc`): Overall migration approach
+- **Technical Architecture** (`TECHNICAL_ARCHITECTURE.mdc`): Technical implementation
+
+All content creators and developers should reference these documents during build.

@@ -1,7 +1,15 @@
 # CONTENT MIGRATION ACTION PLAN
 
-Generated: 2026-03-02
-Scope: Phase 1 parity-first migration execution handoff
+**Updated**: 2026-03-03
+**Strategy**: Optimize-during-build migration
+**Scope**: Phase 1 content optimization and migration execution
+
+## Strategic Shift Summary
+
+This plan has been updated from **parity-first** to **optimize-during-build** based on:
+- Evidence of traffic decline since September 2025
+- Content audit revealing bloat, poor user intent alignment, and template duplication
+- SEO/GEO/AEO analysis indicating current content patterns contributing to algorithmic penalties
 
 ## Current Evidence Snapshot
 
@@ -9,105 +17,402 @@ Scope: Phase 1 parity-first migration execution handoff
 - URL decision manifest: `include 781`, `review 0`, `exclude 0`
 - Firecrawl rendered coverage: `781/781` URLs extracted
 - Strapi authority rule: profile URLs under `/escorts/*` and `/en/escorts/*` are Strapi-led
+- **Content optimization status**: Specifications defined, keyword strategy complete
 
-## Batch Plan (Route-by-Route)
+## Leveraging Scraped Content
 
-### Batch 1 — Core Template Routes (highest business impact)
+### What to Extract from Legacy
 
-- Home, contact, service hubs, listing pages, legal pages
-- Representative patterns:
-  - `/`, `/en`
-  - `/contact`, `/en/contact`
-  - `/alle-escorts`, `/en/escorts`
-  - `/blog`, `/en/blog`
+| Source | Extract | Purpose |
+|--------|---------|---------|
+| Firecrawl renders | Unique location-specific content | Preserve genuine local info |
+| Firecrawl renders | Internal link graph | Preserve high-value pathways |
+| Firecrawl renders | FAQ questions | Restructure for AI/schema |
+| WordPress exports | Structured metadata | Baseline for optimization |
+| WordPress exports | Publishing dates | Preserve content age signals |
+| Search Console | Performing keywords | Priority keyword assignment |
+| Strapi | Profile data | Runtime authority source |
 
-### Batch 2 — Profile Detail Routes (Strapi authority, URL parity)
+### What to Remove from Legacy
 
-- All profile detail pages:
-  - `/escorts/:slug`
-  - `/en/escorts/:slug`
-- Enforce host-based site scoping (`x-forwarded-host`) parity behavior.
+- Template boilerplate (generic text repeated across pages)
+- Keyword-stuffed paragraphs
+- Long generic industry descriptions
+- Testimonials without context
+- Duplicate service lists
+- Content not serving user intent
 
-### Batch 3 — Blog Posts and Knowledge Content
+## Batch Plan (Optimization Priority Order)
 
-- All post-like informational pages and knowledge routes captured in inventory.
-- Include both indexed and deep internal-link content discovered during full render extraction.
+### Batch 1 — High-Traffic Commercial Pages
 
-### Batch 4 — Location and Long-Tail Landing Pages
+**Priority**: Highest (direct revenue impact)
+**Timeline**: First
 
-- City/location and service modifier landing pages.
-- Preserve URL and metadata intent exactly for Phase 1 parity.
+#### Pages
+| NL URL | EN URL | Type | Primary Keyword |
+|--------|--------|------|-----------------|
+| `/` | `/en` | Homepage | escort service |
+| `/escort-amsterdam-centrum` | `/en/escort-amsterdam-centrum` | Location | escort amsterdam |
+| `/escort-rotterdam` | `/en/escort-rotterdam` | Location | escort rotterdam |
+| `/escort-den-haag` | `/en/escort-den-haag` | Location | escort den haag |
 
-### Batch 5 — Technical Assets and Edge URLs
+#### Optimization Tasks
+- [ ] Extract unique content from Firecrawl renders
+- [ ] Apply Content Specifications templates
+- [ ] Implement Keyword Strategy assignments
+- [ ] Reduce word count by 60-80%
+- [ ] Structure FAQs for schema markup
+- [ ] Optimize metadata for CTR
+- [ ] Preserve high-value internal links
 
-- Include technical parity assets (for example `locations.kml`) as reachable endpoints.
-- Validate behavior as static asset/route response parity, not page-template parity.
+#### QA Checklist
+- [ ] Word count within specification (homepage <1000, locations <1500)
+- [ ] Primary keyword in H1 and meta title
+- [ ] Unique content section present (min 200 words)
+- [ ] FAQ schema markup implemented
+- [ ] Internal links to profile pages preserved
+- [ ] Hreflang NL/EN correct
+- [ ] Mobile rendering verified
+- [ ] Core Web Vitals acceptable
 
-## Component/Template Mapping by Page Type
+---
 
-- **Core pages** -> Next.js static/ISR templates from WordPress source fields + Firecrawl rendered checks.
-- **Profile listing/detail** -> Next.js templates backed by Strapi profile APIs (`/api/profiles`, `/api/profiles/:id`).
-- **Blog/knowledge** -> Next.js content templates keyed by canonical URL, with metadata parity checks.
-- **Technical assets** -> file/route-level parity handling outside normal content templates.
+### Batch 2 — High-Volume Attribute Pages
 
-## Field Mapping (WordPress/Firecrawl -> Next.js/Strapi)
+**Priority**: High (category-level traffic)
+**Timeline**: After Batch 1
 
-- **Profiles**
-  - Runtime source: Strapi only (authoritative).
-  - WordPress product/profile-like references: fallback comparison only.
-  - URL intent remains legacy path parity.
-- **Pages/Posts**
-  - Primary source: WordPress API exports (`data/wordpress/**`).
-  - Parity validation source: Firecrawl rendered markdown + metadata.
-- **Links/Media**
-  - Firecrawl links/images used for retention and broken-reference checks.
+#### Pages
+| NL URL | EN URL | Primary Keyword |
+|--------|--------|-----------------|
+| `/aziatische-escorts` | `/en/asian-escorts` | aziatische escort |
+| `/blonde-escorts` | `/en/blonde-escorts` | blonde escort |
+| `/milf-escort` | `/en/milf-escort` | milf escort |
+| `/mature-escorts` | `/en/mature-escorts` | mature escort |
+| `/busty-escorts` | `/en/busty-escorts` | busty escort |
 
-## Redirect Matrix (Only If Required)
+#### Optimization Tasks
+- [ ] Extract attribute-specific content
+- [ ] Apply Content Specifications for attribute pages
+- [ ] Create unique "Why [Attribute]" section per page
+- [ ] Reduce word count to 500-800 words
+- [ ] Structure FAQs with attribute-specific questions
+- [ ] Cross-link to location pages with attribute
 
-- Current target: no planned broad URL changes.
-- Redirect candidates should only be created if:
-  - legacy slug cannot be represented in Next.js route structure, or
-  - legacy URL intentionally retired after explicit approval.
-- Current unresolved internal-link targets are tracked in:
-  - `data/reconcile/gates/link-gate-evidence.json`
+#### QA Checklist
+- [ ] Word count 500-800 words
+- [ ] Unique content section (min 150 words)
+- [ ] No template filler remaining
+- [ ] FAQ schema markup
+- [ ] Cross-links to locations functional
+- [ ] Profile grid shows correct filtered escorts
 
-## QA Checklist Per Batch
+---
 
-- **Content parity**
-  - Heading/body parity against rendered extraction for sampled URLs.
-- **Links parity**
-  - Internal links resolve to included canonical targets.
-- **Metadata parity**
-  - Title, description, robots, canonical/hreflang behavior align with legacy intent.
-- **Language parity**
-  - NL (`/`) and EN (`/en/`) mapping preserved.
-- **Media parity**
-  - No broken critical media for migrated pages.
-- **Routing parity**
-  - URL reaches intended template/data source without unexpected redirect chain.
+### Batch 3 — Remaining Location Pages
 
-## Owners, Effort, Dependencies, Acceptance
+**Priority**: Medium-High (geographic coverage)
+**Timeline**: After Batch 2
 
-- **Owner (Engineering)**: Next.js migration implementation
-- **Owner (Content/SEO QA)**: parity verification and signoff
-- **Owner (Backend/Strapi)**: profile endpoint behavior and deployment
+#### Pages (Examples)
+| NL URL | EN URL | Primary Keyword |
+|--------|--------|-----------------|
+| `/escort-utrecht` | `/en/escort-utrecht` | escort utrecht |
+| `/escort-eindhoven` | `/en/escort-eindhoven` | escort eindhoven |
+| `/escort-groningen` | `/en/escort-groningen` | escort groningen |
+| `/escort-breda` | `/en/escort-breda` | escort breda |
+| ... (all remaining location pages) | ... | ... |
 
-- **Dependencies**
-  - Strapi backend fixes deployed for:
-    - `/api/profiles/health` read-only behavior
-    - `/api/profiles/filters` invalid field query path
-  - Existing ingestion artifacts retained as source-of-truth evidence.
+#### Optimization Tasks
+- [ ] Extract location-specific content
+- [ ] Create unique local content per city (neighborhoods, travel times, venue info)
+- [ ] Apply Content Specifications template
+- [ ] Reduce word count to 800-1200 words
+- [ ] Location-specific FAQ questions
 
-- **Effort estimate**
-  - Batch 1: Medium
-  - Batch 2: Medium-High
-  - Batch 3: High
-  - Batch 4: High
-  - Batch 5: Low
+#### QA Checklist
+- [ ] Unique location content present (min 200 words)
+- [ ] No generic content shared across locations
+- [ ] Service area specifics included
+- [ ] Internal links to profiles and attribute pages
 
-- **Acceptance criteria**
-  - `include/review/exclude` manifest remains fully resolved with no open review URLs.
-  - URL parity retained for all included routes.
-  - Profile routes are served from Strapi data with expected host scoping.
-  - Metadata/link/media/language gates have explicit pass/review outcomes and remediation notes.
-  - Handoff artifacts remain reproducible from scripted pipeline in this repo.
+---
+
+### Batch 4 — Profile Detail Routes (Strapi Authority)
+
+**Priority**: Medium (Strapi-led, structural migration)
+**Timeline**: After Batch 3
+
+#### Patterns
+- `/escorts/:slug`
+- `/en/escorts/:slug`
+
+#### Optimization Tasks
+- [ ] Verify Strapi profile data completeness
+- [ ] Apply profile page Content Specifications
+- [ ] Ensure unique description per escort (not template)
+- [ ] Implement Person schema markup
+- [ ] Real-time availability display
+- [ ] Review schema if applicable
+
+#### QA Checklist
+- [ ] Profile data renders correctly from Strapi
+- [ ] Unique description present (300-500 words)
+- [ ] Schema markup (Person, Review if applicable)
+- [ ] Availability status accurate
+- [ ] Cross-links to location and attribute pages
+
+---
+
+### Batch 5 — Service Pages
+
+**Priority**: Medium
+**Timeline**: Parallel with Batch 4
+
+#### Pages
+| NL URL | EN URL | Primary Keyword |
+|--------|--------|-----------------|
+| `/escort-service` | `/en/escort-service` | escort service |
+| `/dinner-date` | `/en/dinner-date` | dinner date escort |
+| `/travel-companion` | `/en/travel-companion` | travel escort |
+| `/girlfriend-experience` | `/en/girlfriend-experience` | gfe escort |
+
+#### Optimization Tasks
+- [ ] Extract service-specific details
+- [ ] Apply Content Specifications for service pages
+- [ ] Clear pricing/duration information
+- [ ] How-it-works steps
+- [ ] Service-specific FAQs
+
+#### QA Checklist
+- [ ] Word count 600-1000 words
+- [ ] Clear service description
+- [ ] Pricing information present
+- [ ] FAQ schema markup
+- [ ] Internal links to relevant profiles/locations
+
+---
+
+### Batch 6 — Blog and Knowledge Content
+
+**Priority**: Medium-Low
+**Timeline**: After core pages
+
+#### Scope
+- All post-like informational pages
+- Knowledge articles
+- Blog archive
+
+#### Optimization Tasks
+- [ ] Audit existing blog content for quality
+- [ ] Remove or consolidate thin posts
+- [ ] Optimize remaining posts for EEAT
+- [ ] Add author bylines with credentials
+- [ ] Update internal linking
+
+#### QA Checklist
+- [ ] Word count 800-1500 words for informational
+- [ ] Author byline present
+- [ ] Article schema markup
+- [ ] Internal links to services/locations
+
+---
+
+### Batch 7 — Technical Assets and Edge URLs
+
+**Priority**: Low
+**Timeline**: Final
+
+#### Scope
+- Technical parity assets (e.g., `locations.kml`)
+- Legal pages (privacy, terms)
+- Contact pages
+- Utility pages
+
+#### Tasks
+- [ ] Validate technical asset accessibility
+- [ ] Update legal pages for compliance
+- [ ] Ensure contact information accurate
+
+---
+
+## Content Extraction Workflow
+
+### Per-Page Process
+
+```
+1. READ: Firecrawl markdown for page
+2. IDENTIFY: Unique content (location-specific, attribute-specific)
+3. IDENTIFY: FAQ questions to preserve
+4. IDENTIFY: Internal links to preserve
+5. MAP: Place extracted content into Content Specification template
+6. WRITE: Missing required sections (unique content, FAQs)
+7. REMOVE: Template filler, generic descriptions
+8. VALIDATE: Word count, keyword placement, technical SEO
+9. IMPLEMENT: Build page with optimized content
+10. QA: Run full checklist before deployment
+```
+
+### Extraction Script Requirements
+
+For automated extraction support:
+- Parse Firecrawl markdown output
+- Identify headers and content blocks
+- Extract internal links
+- Identify FAQ patterns (questions/answers)
+- Flag template text (common across multiple pages)
+- Output structured JSON for page build
+
+---
+
+## Field Mapping
+
+### Legacy → Optimized
+
+| Legacy Source | Field | Target | Transformation |
+|---------------|-------|--------|---------------|
+| WordPress | `title` | Meta title | Optimize per Keyword Strategy |
+| WordPress | `description` | Meta description | Optimize for CTR |
+| WordPress | `content` | Page body | Extract unique only, restructure |
+| Firecrawl | `markdown` | Content sections | Parse and restructure |
+| Firecrawl | `links` | Internal links | Preserve high-value |
+| Strapi | `profile.*` | Profile pages | Direct mapping |
+
+### Profiles (Strapi Authority)
+
+| Strapi Field | Target |
+|--------------|--------|
+| `name` | H1, title |
+| `description` | About section |
+| `services` | Services list |
+| `rates` | Pricing table |
+| `availability` | Availability display |
+| `images` | Gallery |
+| `attributes` | Tags, filtering |
+
+---
+
+## Redirect Matrix
+
+### Policy
+- **Goal**: Zero URL changes
+- **Exception**: Only if legacy URL cannot function in Next.js
+
+### Current Status
+- No redirects required for Batch 1-7
+- Unresolved internal-link targets tracked in: `data/reconcile/gates/link-gate-evidence.json`
+
+### If Redirect Needed
+1. Document reason
+2. Get SEO approval
+3. Add to redirect configuration
+4. Verify 301 implementation
+5. Monitor for 404s post-launch
+
+---
+
+## QA Checklist (Universal)
+
+### Content Quality
+- [ ] Word count within page type specification
+- [ ] Primary keyword in H1 (naturally)
+- [ ] Unique content section present (per specification)
+- [ ] No template filler remaining
+- [ ] FAQs structured for schema
+- [ ] CTA present and clear
+
+### Technical SEO
+- [ ] Meta title optimized (50-60 chars)
+- [ ] Meta description optimized (150-160 chars, includes CTA)
+- [ ] Canonical self-referencing
+- [ ] Hreflang NL/EN correct
+- [ ] Schema markup implemented (page-type appropriate)
+- [ ] Robots: index, follow
+
+### Internal Linking
+- [ ] High-value links from legacy preserved
+- [ ] Related pages linked
+- [ ] No broken internal links
+
+### Performance
+- [ ] Mobile rendering verified
+- [ ] Images optimized
+- [ ] Core Web Vitals acceptable
+
+### Final Sign-off
+- [ ] Content reviewed
+- [ ] Technical QA passed
+- [ ] Approved for deployment
+
+---
+
+## Owners and Dependencies
+
+### Owners
+
+| Role | Responsibility |
+|------|---------------|
+| Engineering | Next.js implementation, technical SEO |
+| Content/SEO | Content optimization, keyword assignment, QA |
+| Backend/Strapi | Profile endpoint, data integrity |
+
+### Dependencies
+
+| Dependency | Status | Blocker |
+|-----------|--------|---------|
+| Content Specifications | Complete | No |
+| Keyword Strategy | Complete | No |
+| SEO Guidelines | Complete | No |
+| Strapi profile endpoints | Needs verification | Potential |
+| Firecrawl extractions | Complete | No |
+
+---
+
+## Acceptance Criteria
+
+### Batch-Level
+- All pages in batch built per Content Specifications
+- Keyword assignments implemented
+- QA checklist passed for all pages
+- No broken internal links
+- Schema markup validated
+
+### Migration Complete
+- All included URLs live with optimized content
+- Metadata optimized per Keyword Strategy
+- FAQ schema on all applicable pages
+- Internal link graph preserved
+- Hreflang correct for all bilingual pages
+- Technical SEO validated
+- Monitoring dashboards active
+
+---
+
+## Post-Launch Monitoring Plan
+
+### Week 1
+- Daily 404 monitoring
+- Indexing verification (Search Console)
+- Critical page position tracking
+
+### Week 2-4
+- Position change analysis for P1 keywords
+- CTR comparison vs. baseline
+- User behavior metrics (bounce rate, time on page)
+
+### Month 2-3
+- Full keyword performance review
+- Content performance by page type
+- Identify pages needing further optimization
+- Document learnings for future batches
+
+---
+
+## Related Documentation
+
+- Content Specifications: `.cursor/rules/CONTENT_SPECIFICATIONS.mdc`
+- Keyword Strategy: `.cursor/rules/KEYWORD_STRATEGY.mdc`
+- SEO Guidelines: `.cursor/rules/SEO_OPTIMIZATION_GUIDELINES.mdc`
+- Migration Strategy: `.cursor/rules/CONTENT_MIGRATION_STRATEGY.mdc`
+- Technical Architecture: `.cursor/rules/TECHNICAL_ARCHITECTURE.mdc`

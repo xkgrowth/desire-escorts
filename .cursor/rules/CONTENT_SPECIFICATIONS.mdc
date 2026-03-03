@@ -1,0 +1,375 @@
+---
+description: Detailed content specifications for each page type during migration build
+alwaysApply: true
+---
+
+# CONTENT SPECIFICATIONS
+
+## Purpose
+
+Define exact content structure, word counts, required sections, and quality standards for each page type. These specifications guide content creation during the optimize-during-build migration.
+
+## Core Principles
+
+1. **Intent-first**: Lead with what users need; defer secondary content.
+2. **Value density**: Every sentence must serve user intent or conversion.
+3. **AI-ready structure**: Format content for featured snippets and AI extraction.
+4. **Unique per page**: No template filler; each page must contain genuinely unique content.
+5. **Scannable**: Headers, bullets, short paragraphs for mobile users.
+
+---
+
+## Homepage
+
+### Target Metrics
+- **Word count**: 600-900 words (currently ~3000+)
+- **Read time**: <2 minutes
+- **CTA placement**: Within first viewport, repeated at bottom
+
+### Required Sections (In Order)
+
+#### 1. Hero Section
+- **H1**: Clear value proposition with primary keyword
+- **Example**: "High-Class Escorts in Nederland"
+- **Subheadline**: Immediate clarity on service area and quality
+- **Primary CTA**: "Bekijk Beschikbare Escorts" or "View Available Escorts"
+- **Trust signals**: License mention, years experience, cities served
+
+#### 2. Escort Preview Grid
+- Featured/available escorts (4-8 profiles)
+- Quick filters: City, Type, Availability
+- Link to full listing
+
+#### 3. Why Choose Us (Condensed)
+- **Format**: 3-4 bullet points maximum
+- **Content**: Unique differentiators only (not generic industry claims)
+- **Example differentiators**:
+  - "Strenge selectie — minder dan 10% van aanmeldingen geaccepteerd"
+  - "Beschikbaarheid binnen 2 uur in Amsterdam, Rotterdam, Den Haag"
+
+#### 4. Service Areas Quick Links
+- Top 5-6 cities as linked cards
+- Do not list all locations (use location hub for that)
+
+#### 5. FAQ (AI-Structured)
+- **Count**: 3-4 questions maximum
+- **Format**: FAQ schema markup ready
+- **Questions to include**:
+  - Booking process question
+  - Pricing/payment question
+  - Safety/discretion question
+- **Answer length**: 2-3 sentences each
+
+#### 6. Footer CTA
+- Repeat primary CTA
+- Contact information
+
+### Content to Remove from Legacy
+- Long "about escort services" essays
+- Generic industry descriptions
+- Repeated service lists
+- Multiple CTA blocks with same message
+- Testimonials section (move to dedicated reviews page if needed)
+
+---
+
+## Location Pages
+
+### Target Metrics
+- **Word count**: 800-1200 words
+- **Read time**: 2-3 minutes
+- **Unique content requirement**: Minimum 200 words of location-specific content
+
+### Required Sections (In Order)
+
+#### 1. Hero Section
+- **H1**: "[Escort Type] in [City]" or "Escort Service [City]"
+- **Example**: "Escort Service Amsterdam" or "High-Class Escorts Amsterdam"
+- **Intro paragraph**: 2-3 sentences with location + service overview
+- **Primary CTA**: View escorts in [City]
+
+#### 2. Available Escorts Grid
+- Filter to city
+- Show availability status
+- Quick booking links
+
+#### 3. Location-Specific Content Block (REQUIRED UNIQUE)
+This section must contain genuinely unique content about escorting in this location:
+
+**Required elements**:
+- Popular areas/neighborhoods served (with specifics)
+- Typical booking patterns for this city
+- Hotel/venue recommendations or considerations
+- Travel/logistics for outcall services
+
+**Example (Amsterdam)**:
+```
+Amsterdam Centrum, de Jordaan en Zuid zijn onze populairste gebieden voor escortafspraken. 
+Voor zakelijke gasten bieden we discrete service bij hotels als het Waldorf Astoria, 
+Conservatorium en Okura. Outcall service beschikbaar binnen 90 minuten in heel Amsterdam.
+```
+
+**Forbidden**:
+- Generic text that could apply to any city
+- Template filler like "Amsterdam is the capital of Netherlands"
+- Repeated service descriptions from homepage
+
+#### 4. Services Available in [City]
+- **Format**: Compact list or icon grid
+- Link to service detail pages where applicable
+- Do NOT repeat full service descriptions
+
+#### 5. FAQ Section (Location-Specific)
+- **Count**: 3-5 questions
+- **Requirement**: At least 2 questions must be location-specific
+- **Example location-specific questions**:
+  - "Hoe snel kunnen escorts in [City] bij mij zijn?"
+  - "Welke hotels in [City] werken jullie mee?"
+  - "Is parkeren beschikbaar bij outcall locaties in [City]?"
+
+#### 6. Related Locations
+- Internal links to nearby cities
+- Format: Simple text links, not cards
+
+### Content Extraction from Legacy
+- Preserve genuinely unique local information
+- Extract any location-specific FAQs
+- Keep internal links to city-specific profiles
+
+---
+
+## Attribute/Type Pages
+
+### Examples
+- `/aziatische-escorts`
+- `/blonde-escorts`
+- `/busty-escorts`
+- `/mature-escorts`
+
+### Target Metrics
+- **Word count**: 500-800 words
+- **Read time**: <2 minutes
+- **Unique content requirement**: Minimum 150 words of attribute-specific content
+
+### Required Sections (In Order)
+
+#### 1. Hero Section
+- **H1**: "[Attribute] Escorts" or "[Type] Escort Service"
+- **Intro**: 2 sentences defining the category and its appeal
+- **Primary CTA**: View [Attribute] Escorts
+
+#### 2. Escort Grid (Filtered)
+- Pre-filtered to attribute
+- Clear visual of available profiles
+- Prominent booking CTAs
+
+#### 3. What Makes [Attribute] Escorts Special (REQUIRED UNIQUE)
+- **Format**: 2-3 short paragraphs
+- **Content**: Genuine differentiators for this escort type
+- **Must answer**: Why would someone specifically seek this type?
+
+**Example (Aziatische Escorts)**:
+```
+Onze Aziatische escorts combineren elegantie met warmte. Populair bij internationale 
+zakenreizigers en gasten die verfijnd gezelschap zoeken. Van Japanse subtiliteit 
+tot Thaise hartelijkheid — diverse achtergronden voor verschillende voorkeuren.
+```
+
+**Forbidden**:
+- Generic stereotypes
+- Offensive or fetishizing content
+- Template text from other attribute pages
+
+#### 4. Availability & Booking
+- Current availability indicator
+- Booking process summary (1-2 sentences)
+- CTA to contact/book
+
+#### 5. FAQ Section (Attribute-Specific)
+- **Count**: 2-3 questions
+- **Requirement**: Questions must be specific to the attribute
+- **Example questions**:
+  - "Spreken de Aziatische escorts Nederlands?"
+  - "Zijn alle blonde escorts natuurlijk blond?"
+
+### Content to Remove from Legacy
+- Long generic descriptions of the attribute
+- Repeated service lists
+- Testimonials unrelated to the attribute
+- City lists (link to location pages instead)
+
+---
+
+## Service Pages
+
+### Examples
+- `/escort-service`
+- `/dinner-date`
+- `/travel-companion`
+
+### Target Metrics
+- **Word count**: 600-1000 words
+- **Read time**: 2-3 minutes
+
+### Required Sections
+
+#### 1. Hero Section
+- **H1**: Service name with clear intent
+- **Intro**: What this service includes, 2-3 sentences
+- **Primary CTA**: Book [Service]
+
+#### 2. Service Details
+- **Format**: Clear breakdown of what's included
+- **Specifics**: Duration options, pricing tiers if applicable
+- Use bullet points or comparison table
+
+#### 3. Who This Is For
+- Target audience description
+- Use cases or scenarios
+- 1-2 paragraphs
+
+#### 4. How It Works
+- **Format**: Numbered steps (3-4 steps)
+- Booking to completion flow
+- Set expectations clearly
+
+#### 5. FAQ Section
+- **Count**: 3-4 questions
+- Service-specific questions about process, expectations, pricing
+
+#### 6. Related Services
+- Internal links to complementary services
+
+---
+
+## Escort Profile Pages (Strapi-Led)
+
+### Target Metrics
+- **Word count**: 300-500 words unique description
+- Profile data from Strapi, content structure from template
+
+### Required Sections
+
+#### 1. Profile Hero
+- High-quality photos (gallery)
+- Name, tagline
+- Key stats: Age, height, languages
+- Availability status (real-time from Strapi)
+
+#### 2. About [Name]
+- Personal description (unique per escort)
+- Personality highlights
+- Experience/background where appropriate
+
+#### 3. Services Offered
+- From Strapi service tags
+- Link to service detail pages
+
+#### 4. Rates & Booking
+- Clear pricing table
+- Duration options
+- Booking CTA
+
+#### 5. Availability
+- Real-time calendar or status from Strapi
+- Location availability
+
+#### 6. Reviews (If Available)
+- Verified reviews only
+- Schema markup for reviews
+
+---
+
+## Blog Posts
+
+### Target Metrics
+- **Word count**: 800-1500 words (informational)
+- **Read time**: 3-5 minutes
+
+### Required Sections
+
+#### 1. Introduction
+- Hook in first paragraph
+- Clear statement of what reader will learn
+- Author byline with credentials (EEAT)
+
+#### 2. Main Content
+- **Format**: H2/H3 structure with scannable sections
+- Include relevant internal links
+- Use bullet points for lists
+
+#### 3. Key Takeaways
+- Summary box or bullet list
+- Highlighted for featured snippet potential
+
+#### 4. Author Bio
+- Short bio with expertise signals
+- Link to author page if available
+
+#### 5. Related Content
+- 2-3 related articles
+- Relevant service/location pages
+
+---
+
+## Technical Content Requirements
+
+### All Pages Must Include
+
+| Element | Requirement |
+|---------|-------------|
+| H1 | Exactly one, containing primary keyword |
+| Meta title | 50-60 characters, keyword-optimized |
+| Meta description | 150-160 characters, include CTA intent |
+| Canonical | Self-referencing |
+| Hreflang | NL/EN alternate for bilingual pages |
+| Schema markup | Page-type appropriate (FAQ, LocalBusiness, etc.) |
+
+### Forbidden Patterns
+
+- Keyword stuffing in headers
+- Invisible text or hidden content
+- Doorway page patterns (thin content redirecting to main page)
+- Duplicate content across locations without unique sections
+- External links to competitors
+- Auto-generated content without human review
+
+---
+
+## Quality Checklist Per Page
+
+Before marking any page complete, verify:
+
+- [ ] Word count within specification
+- [ ] H1 contains primary keyword naturally
+- [ ] Required unique content section present
+- [ ] FAQ section structured for schema markup
+- [ ] Internal links preserved from legacy high-value pathways
+- [ ] No template filler content remaining
+- [ ] CTA present and actionable
+- [ ] Mobile-scannable (short paragraphs, headers, bullets)
+- [ ] Metadata optimized per Keyword Strategy
+- [ ] Technical SEO elements correct
+
+---
+
+## Content Extraction Workflow
+
+### Step 1: Identify Unique Content
+From Firecrawl/WordPress extraction, mark:
+- Location-specific information
+- Genuine testimonials or reviews
+- Unique FAQ questions
+- Differentiating claims (verifiable)
+
+### Step 2: Map to New Structure
+Place extracted unique content into appropriate section per this specification.
+
+### Step 3: Write Missing Sections
+Create new unique content for required sections not covered by extraction.
+
+### Step 4: Remove Filler
+Delete all template text, generic descriptions, and repeated content.
+
+### Step 5: Validate
+Run quality checklist before marking complete.

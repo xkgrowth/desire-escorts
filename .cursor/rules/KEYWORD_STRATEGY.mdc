@@ -1,0 +1,310 @@
+---
+description: Keyword prioritization, targeting by page type, and performance benchmarks for content optimization
+alwaysApply: true
+---
+
+# KEYWORD STRATEGY
+
+## Purpose
+
+Define keyword prioritization, assignment to page types, and performance benchmarks to guide content optimization during migration.
+
+## Strategic Approach
+
+### Recovery vs. Growth
+
+The strategy balances two objectives:
+
+1. **Recovery**: Regain positions lost since September 2025 for high-value keywords
+2. **Growth**: Capture underserved keywords not currently ranking well
+
+### Prioritization Framework
+
+Keywords are prioritized by:
+1. **Revenue potential**: Commercial intent keywords > informational
+2. **Current position**: 4-20 position keywords (quick win potential) > 1-3 (maintain) > 20+ (harder recovery)
+3. **Search volume**: Higher volume with same effort = higher priority
+4. **Competition**: Lower competition with same volume = higher priority
+
+---
+
+## Primary Keyword Assignments by Page Type
+
+### Homepage
+
+| Keyword (NL) | Priority | Target Position | Notes |
+|-------------|----------|-----------------|-------|
+| escort | P1 | Top 5 | Brand + generic |
+| escort service | P1 | Top 5 | Primary commercial |
+| escort nederland | P1 | Top 5 | Geo-modified brand |
+| high class escort | P1 | Top 10 | Quality segment |
+| escort bureau | P2 | Top 10 | Alternative term |
+| escort bestellen | P2 | Top 10 | Transactional intent |
+
+**Secondary keywords** (use naturally in content):
+- escort dames, escort meisjes, escort boeken, escortservice
+
+### Location Pages
+
+#### Tier 1 Cities (Highest Volume)
+
+| Page | Primary Keyword | Secondary Keywords |
+|------|----------------|-------------------|
+| /escort-amsterdam-centrum | escort amsterdam | escort service amsterdam, amsterdam escort, high class escort amsterdam |
+| /escort-rotterdam | escort rotterdam | escort service rotterdam, high class escort rotterdam |
+| /escort-den-haag | escort den haag | escort service den haag, escort the hague |
+| /escort-utrecht | escort utrecht | escort service utrecht |
+
+#### Tier 2 Cities (Moderate Volume)
+
+| Page | Primary Keyword | Secondary Keywords |
+|------|----------------|-------------------|
+| /escort-eindhoven | escort eindhoven | escort service eindhoven |
+| /escort-groningen | escort groningen | escort service groningen |
+| /escort-breda | escort breda | escort service breda |
+| /escort-tilburg | escort tilburg | escort service tilburg |
+| /escort-almere | escort almere | escort service almere |
+| /escort-arnhem | escort arnhem | escort service arnhem |
+
+#### Tier 3 Cities (Long-tail)
+
+Lower volume but often less competitive. Each page should target:
+- `escort [city]`
+- `escort service [city]`
+- `[city] escort`
+
+### Attribute/Type Pages
+
+| Page | Primary Keyword | Volume Estimate | Notes |
+|------|----------------|-----------------|-------|
+| /aziatische-escorts | aziatische escort | High | Top attribute search |
+| /blonde-escorts | blonde escort | High | Popular attribute |
+| /brunette-escorts | brunette escort | Medium | Secondary to blonde |
+| /busty-escorts | busty escort | Medium | Physical attribute |
+| /mature-escorts | mature escort | Medium | Age segment |
+| /petite-escorts | petite escort | Medium | Physical attribute |
+| /curvy-escorts | curvy escort | Medium | Body type |
+| /student-escorts | student escort | Medium | Occupation type |
+| /milf-escort | milf escort | High | Popular search term |
+
+**Underserved Opportunities** (currently weak or missing):
+- latina escort
+- red hair escort / roodharige escort
+- model escort
+- bbw escort
+- ebony escort
+- slank escort / slim escort
+
+### Service Pages
+
+| Page | Primary Keyword | Secondary Keywords |
+|------|----------------|-------------------|
+| /escort-service | escort service | escortservice, escort dienst |
+| /dinner-date | dinner date escort | escort dinner, etentje met escort |
+| /travel-companion | reisgezelschap escort | travel escort, escort travel companion |
+| /girlfriend-experience | girlfriend experience | gfe escort, gfe |
+| /overnight | overnight escort | escort overnachting |
+
+### English Equivalents (/en/ Pages)
+
+All NL pages have EN equivalents targeting:
+- English-speaking tourists
+- International business travelers
+- Expats
+
+| NL Page | EN Primary Keyword |
+|---------|-------------------|
+| /escort-amsterdam-centrum | escort amsterdam, amsterdam escorts |
+| /escort-rotterdam | escort rotterdam, rotterdam escort service |
+| /aziatische-escorts | asian escorts, asian escort netherlands |
+
+---
+
+## Keyword Performance Benchmarks
+
+### Current State (From Search Console)
+
+Based on analysis of Search Console data:
+
+| Metric | Current | Target (3 months) | Target (6 months) |
+|--------|---------|-------------------|-------------------|
+| Average Position (brand) | 5.2 | 3.0 | 2.0 |
+| Average Position (commercial) | 12.4 | 8.0 | 5.0 |
+| CTR (position 1-3) | 18% | 25% | 30% |
+| CTR (position 4-10) | 4% | 8% | 12% |
+
+### CTR Optimization Targets
+
+Position-based CTR benchmarks (industry average vs. target):
+
+| Position | Industry Avg | Our Target |
+|----------|--------------|------------|
+| 1 | 28% | 35% |
+| 2 | 15% | 20% |
+| 3 | 11% | 15% |
+| 4-6 | 6% | 10% |
+| 7-10 | 3% | 6% |
+
+**CTR improvement tactics**:
+- Optimized meta titles with hooks
+- Meta descriptions with CTA and differentiators
+- FAQ schema for expanded SERP presence
+- LocalBusiness schema for local searches
+
+---
+
+## Metadata Templates by Page Type
+
+### Homepage
+
+```
+Title: High-Class Escort Service Nederland | [Brand] — Discrete & Betrouwbaar
+Description: Luxe escorts beschikbaar in Amsterdam, Rotterdam & Den Haag. ✓ 24/7 service ✓ Discrete afhandeling ✓ Binnen 2 uur. Bel nu of bekijk profielen.
+```
+
+### Location Pages
+
+```
+Title: Escort [City] | High-Class Escort Service [City] — [Brand]
+Description: Escorts in [City] beschikbaar voor outcall. ✓ Binnen [X] uur ✓ Discrete service ✓ [Area] & omgeving. Bekijk beschikbare escorts →
+```
+
+### Attribute Pages
+
+```
+Title: [Attribute] Escorts | [Attribute] Escort Boeken — [Brand]
+Description: Selectie [attribute] escorts voor high-class gezelschap. ✓ Geverifieerde profielen ✓ Direct beschikbaar. Bekijk nu →
+```
+
+### Profile Pages
+
+```
+Title: [Name] | [Attribute] Escort [Primary City] — [Brand]
+Description: Maak kennis met [Name], [attribute] escort in [city]. [Age] jaar, [height]cm. [Key differentiator]. Bekijk profiel & beschikbaarheid →
+```
+
+---
+
+## Keyword Mapping to Content Sections
+
+### Where Keywords Should Appear
+
+| Location | Primary KW | Secondary KW | Notes |
+|----------|------------|--------------|-------|
+| H1 | Required | Optional | Natural, not stuffed |
+| First paragraph | Required | 1-2 max | Within first 100 words |
+| H2 headers | Optional | Optional | Only if natural |
+| Body content | 2-3x | 3-5x | Distributed naturally |
+| Meta title | Required | Optional | Front-loaded |
+| Meta description | Required | 1-2 max | With CTA |
+| Alt text | For relevant images | — | Descriptive, not stuffed |
+| URL slug | Required | — | Already set (preserve) |
+
+### Keyword Density Guidelines
+
+- **Target density**: 1-2% for primary keyword
+- **Maximum density**: 3% (avoid over-optimization)
+- **Natural language**: Keywords in flowing sentences, not lists
+
+---
+
+## Underserved Keyword Opportunities
+
+### Analysis Method
+
+Based on Search Console data showing:
+- Keywords with impressions but low clicks (poor CTR = content mismatch)
+- Keywords ranking 15-30 (close but not visible)
+- Related searches not currently targeted
+
+### Identified Opportunities
+
+#### Location + Attribute Combinations
+
+| Keyword | Current Status | Opportunity |
+|---------|---------------|-------------|
+| aziatische escort amsterdam | Partial coverage | Create combined page or strengthen location page |
+| blonde escort rotterdam | Not targeted | Add attribute targeting on location page |
+| milf escort den haag | Weak | Strengthen attribute page with location signals |
+
+#### Service + Location Combinations
+
+| Keyword | Current Status | Opportunity |
+|---------|---------------|-------------|
+| dinner date amsterdam | Weak | Create or optimize service page with location |
+| overnight escort rotterdam | Missing | Add location-specific service content |
+
+#### Underserved Attribute Keywords
+
+| Keyword | Action |
+|---------|--------|
+| latina escort nederland | Create new attribute page |
+| model escorts | Create new attribute page |
+| tattooed escorts | Create new attribute page |
+| duo escorts | Create service/type page |
+| transgender escort | Evaluate market demand and create if appropriate |
+
+---
+
+## Competitor Keyword Gaps
+
+### Top Competing Terms to Target
+
+Based on industry keyword research (not specific competitor analysis):
+
+| Keyword | Difficulty | Volume | Priority |
+|---------|-----------|--------|----------|
+| escort bureau | Medium | High | P1 |
+| escortservice | Medium | High | P1 |
+| private escort | Medium | Medium | P2 |
+| vip escort | Medium | Medium | P2 |
+| luxe escort | Low | Medium | P2 |
+| prive ontvangst | High | Medium | P3 |
+
+---
+
+## Keyword Assignment Validation
+
+Before building any page, validate:
+
+- [ ] Primary keyword assigned
+- [ ] Secondary keywords listed (3-5 max)
+- [ ] Keyword not cannibalized by another page
+- [ ] Search intent matches page type
+- [ ] Metadata template applied with keywords
+- [ ] Current ranking position documented as baseline
+
+---
+
+## Performance Tracking
+
+### Weekly Monitoring
+
+- Position changes for P1 keywords
+- CTR changes for optimized pages
+- Impressions for new keyword targets
+
+### Monthly Review
+
+- Compare clicks/impressions vs. pre-migration baseline
+- Identify keywords needing further optimization
+- Update strategy based on performance data
+
+### Quarterly Assessment
+
+- Full keyword ranking report
+- ROI analysis: Traffic change vs. revenue impact
+- Strategy adjustments for next quarter
+
+---
+
+## Integration with Content Specifications
+
+The Keyword Strategy informs Content Specifications:
+
+1. Primary keyword → H1 and meta title
+2. Secondary keywords → Body content and H2s where natural
+3. Underserved keywords → Inform new page creation priorities
+4. Metadata templates → Direct application in build
+
+All content created must reference this document for keyword assignment before writing.

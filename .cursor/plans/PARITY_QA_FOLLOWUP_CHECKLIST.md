@@ -3,6 +3,8 @@
 Generated: 2026-03-02
 Goal: Resolve remaining review-level parity signals after ingestion/gating completion.
 
+> **Note (2026-03-03)**: The migration strategy has shifted from **parity-first** to **optimize-during-build**. This checklist documents completed QA work from the parity discovery phase. The URL inventory, link triage, and metadata coverage work remains valid as foundation for the optimization phase. Content optimization now follows `CONTENT_SPECIFICATIONS.mdc`, `KEYWORD_STRATEGY.mdc`, and `SEO_OPTIMIZATION_GUIDELINES.mdc`.
+
 ## 1) Link Signal Follow-Up
 
 - [x] Classify unresolved internal link targets in `data/reconcile/gates/link-gate-evidence.json` into:

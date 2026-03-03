@@ -1,5 +1,5 @@
 ---
-description: Technical architecture standards for Next.js, Strapi, Vercel, and SEO-safe migration delivery
+description: Technical architecture standards for Next.js, Strapi, Vercel, and SEO-optimized migration delivery
 alwaysApply: true
 ---
 
@@ -7,12 +7,13 @@ alwaysApply: true
 
 ## Purpose
 
-Define implementation guardrails for rebuilding Desire Escorts on Next.js with Strapi as CMS and Vercel as deployment platform, while preserving SEO continuity during migration.
+Define implementation guardrails for rebuilding Desire Escorts on Next.js with Strapi as CMS and Vercel as deployment platform, with content optimization during migration to recover organic performance.
 
 ## Architecture Goals
 
-- Parity-first launch with minimal behavioral drift from the legacy site.
-- Strong SEO stability across routing, metadata, and indexability.
+- **Optimize-during-build** launch with content quality improvement over legacy.
+- Strong SEO stability across routing, URL structure, and indexability.
+- Content optimization per documented specifications.
 - Clear separation between presentation (Next.js) and content source (Strapi).
 - Fast, observable, and reversible deployments on Vercel.
 
@@ -20,7 +21,7 @@ Define implementation guardrails for rebuilding Desire Escorts on Next.js with S
 
 - Frontend application: Next.js App Router.
 - Content and entity source: Strapi (escort profiles, availability, page/blog content where modeled).
-- Migration sources: WordPress exports + Firecrawl + sitemap-derived inventories.
+- Migration sources: WordPress exports + Firecrawl + sitemap-derived inventories + Search Console data.
 - Hosting/runtime: Vercel preview and production environments.
 
 ## Routing and Locale Strategy
@@ -28,7 +29,7 @@ Define implementation guardrails for rebuilding Desire Escorts on Next.js with S
 - Preserve existing language routing behavior:
   - NL default under `/`
   - EN under `/en/`
-- Keep URL structure parity for all in-scope legacy URLs unless explicitly approved otherwise.
+- Keep URL structure stable — no slug changes without redirect mapping.
 - If route changes are unavoidable, define permanent redirects before release.
 - Locale behavior must remain deterministic and aligned with canonical/hreflang output.
 
@@ -52,16 +53,55 @@ Define implementation guardrails for rebuilding Desire Escorts on Next.js with S
 
 ## SEO and Metadata Contract
 
-- Every indexable page must define:
-  - canonical URL
-  - title and description
-  - robots/indexability intent
-  - locale alternates (NL/EN mapping)
-- For Phase 1 parity launch, `meta title` and `meta description` must exactly match live legacy text for each URL+locale.
-- Metadata deviations are allowed only with explicit SEO approval and a documented exception (reason, owner, date, affected URL+locale).
-- Preserve heading semantics and internal linking parity for migrated pages.
+### Required Elements (Every Indexable Page)
+
+- Canonical URL (self-referencing)
+- Optimized title (50-60 chars, primary keyword front-loaded)
+- Optimized description (150-160 chars, includes CTA intent)
+- Robots/indexability intent
+- Locale alternates (NL/EN hreflang mapping)
+- Schema markup (page-type appropriate)
+
+### Metadata Optimization Strategy
+
+Metadata is optimized per Keyword Strategy (`KEYWORD_STRATEGY.mdc`):
+
+| Element | Optimization Approach |
+|---------|----------------------|
+| Title | CTR-optimized, primary keyword front-loaded |
+| Description | Action-oriented, includes differentiator and CTA |
+| H1 | Contains primary keyword naturally |
+
+### Heading and Content Structure
+
+- Follow Content Specifications (`CONTENT_SPECIFICATIONS.mdc`) for page structure.
+- H1 → H2 → H3 hierarchy with logical flow.
+- Content structured for AI extraction (direct answers, lists, tables, FAQs).
+
+### Schema Markup Requirements
+
+| Page Type | Required Schema |
+|-----------|-----------------|
+| Homepage | Organization, LocalBusiness |
+| Location pages | LocalBusiness, FAQPage |
+| Attribute pages | FAQPage |
+| Service pages | Service, FAQPage |
+| Profile pages | Person, Review (if applicable) |
+| Blog posts | Article, FAQPage (if FAQ present), Person (author) |
+
+### Technical SEO
+
 - Keep metadata generation centralized and deterministic across templates.
 - Prevent preview/staging indexation (environment-specific noindex handling where required).
+- Validate hreflang reciprocity (NL ↔ EN).
+- Ensure canonical URLs are self-referencing.
+
+## Internal Linking Strategy
+
+- Preserve high-value internal linking pathways from legacy.
+- Maintain hub-and-spoke structure from homepage.
+- Cross-link related content (locations ↔ attributes ↔ profiles).
+- No broken internal links.
 
 ## Media and Asset Strategy
 
@@ -75,10 +115,12 @@ Define implementation guardrails for rebuilding Desire Escorts on Next.js with S
 - Keep production config immutable through environment variables and project settings.
 - Required environment variables must be documented and environment-scoped (preview vs production).
 - Production releases must pass architecture QA gates:
-  - route parity checks
-  - metadata checks
-  - internal link checks
-  - redirect validation
+  - URL structure checks (no unintended changes)
+  - Content specification compliance
+  - Metadata optimization checks
+  - Internal link checks
+  - Schema markup validation
+  - Redirect validation
 
 ## Reliability and Observability
 
@@ -86,8 +128,12 @@ Define implementation guardrails for rebuilding Desire Escorts on Next.js with S
 - Log content fetch failures with URL/locale identifiers for fast diagnosis.
 - Monitor launch health signals:
   - 404/500 trends
-  - crawler-visible regressions
-  - key template rendering failures
+  - Crawler-visible regressions
+  - Key template rendering failures
+- Monitor SEO performance signals:
+  - Position changes for priority keywords
+  - CTR changes for optimized pages
+  - Indexing status in Search Console
 
 ## Security and Compliance Baseline
 
@@ -100,9 +146,17 @@ Define implementation guardrails for rebuilding Desire Escorts on Next.js with S
 - Optimize for Core Web Vitals on both desktop and mobile.
 - Keep third-party scripts minimal and defer non-critical scripts.
 - Maintain lean page payloads for key SEO landing pages.
+- Target metrics:
+  - LCP < 2.5s
+  - INP < 200ms
+  - CLS < 0.1
 
 ## Delivery Governance
 
-- Architecture-affecting changes require explicit approval when they risk SEO parity.
-- Prefer additive, low-risk changes during migration phase 1.
-- Record deliberate deviations and route/metadata exceptions in migration artifacts.
+- Content optimization must follow documented specifications:
+  - `CONTENT_SPECIFICATIONS.mdc`
+  - `KEYWORD_STRATEGY.mdc`
+  - `SEO_OPTIMIZATION_GUIDELINES.mdc`
+- URL structure changes require explicit approval and redirect mapping.
+- Prefer additive, low-risk technical changes during migration.
+- Record deliberate deviations and exceptions in migration artifacts.
