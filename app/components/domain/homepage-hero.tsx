@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Badge } from "../ui/badge";
 import { ProfileCard } from "./profile-card";
@@ -52,16 +52,13 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
   const [selectedSlug, setSelectedSlug] = useState<string | null>(
     availableProfiles[0]?.slug ?? null
   );
-  const [autoRotate, setAutoRotate] = useState(true);
+  const hasInitialized = useRef(false);
 
   useEffect(() => {
-    if (availableProfiles.length === 0) {
-      setVisibleAvatarCount(0);
-      setSelectedSlug(null);
-      return;
-    }
+    if (hasInitialized.current) return;
+    if (availableProfiles.length === 0) return;
 
-    setVisibleAvatarCount(0);
+    hasInitialized.current = true;
     setSelectedSlug(availableProfiles[0]?.slug ?? null);
 
     const interval = window.setInterval(() => {
@@ -76,22 +73,6 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
 
     return () => window.clearInterval(interval);
   }, [availableProfiles]);
-
-  useEffect(() => {
-    if (!autoRotate || availableProfiles.length === 0) return;
-
-    const rotationInterval = window.setInterval(() => {
-      setSelectedSlug((currentSlug) => {
-        const currentIndex = availableProfiles.findIndex(
-          (p) => p.slug === currentSlug
-        );
-        const nextIndex = (currentIndex + 1) % availableProfiles.length;
-        return availableProfiles[nextIndex]?.slug ?? null;
-      });
-    }, 5000);
-
-    return () => window.clearInterval(rotationInterval);
-  }, [autoRotate, availableProfiles]);
 
   const selectedProfile =
     availableProfiles.find((profile) => profile.slug === selectedSlug) ??
@@ -145,114 +126,131 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
           </div>
         </div>
 
-        <div className="relative min-h-[360px] lg:min-h-[480px]">
-          <div className="relative h-[320px] rounded-[26px] border border-white/10 bg-surface/20 p-4 backdrop-blur-sm lg:h-[420px]">
+        <div className="flex items-center justify-center">
+          <div className="relative h-[400px] w-full rounded-[26px] border border-white/10 bg-surface/20 p-4 backdrop-blur-sm lg:h-[500px]">
             <div className="absolute inset-0 rounded-[26px] bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,rgba(247,208,99,0.14)_0%,rgba(247,208,99,0.03)_55%,transparent_80%)]" />
+            <div
+              className="pointer-events-none absolute inset-0 rounded-[26px] opacity-[0.12]"
+              style={{
+                backgroundImage: "url(/brand/netherlands-map.svg)",
+                backgroundSize: "contain",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            />
 
-            {availableProfiles.slice(0, visibleAvatarCount).map((profile, index) => {
-              const position = avatarPositions[index % avatarPositions.length];
+            <div className="absolute inset-x-4 top-4 bottom-32 z-30">
+              {availableProfiles.slice(0, visibleAvatarCount).map((profile, index) => {
+                const position = avatarPositions[index % avatarPositions.length];
+                const isSelected = selectedSlug === profile.slug;
 
-              return (
-                <motion.button
-                  key={profile.slug}
-                  type="button"
-                  initial={{ opacity: 0, scale: 0.6, y: 12 }}
-                  animate={{
-                    opacity: 1,
-                    scale: selectedSlug === profile.slug ? 1.08 : 1,
-                    y: [0, -5, 0],
-                  }}
-                  transition={{
-                    duration: 3.6 + (index % 3) * 0.4,
-                    repeat: Number.POSITIVE_INFINITY,
-                    repeatType: "mirror",
-                    delay: index * 0.12,
-                  }}
-                  onClick={() => {
-                    setAutoRotate(false);
-                    setSelectedSlug(profile.slug);
-                  }}
-                  className={cn(
-                    "group absolute -translate-x-1/2 -translate-y-1/2 rounded-full",
-                    "focus-ring outline-none"
-                  )}
-                  style={{ top: position.top, left: position.left }}
-                  aria-label={`Open mini profile card for ${profile.name}`}
-                >
-                  <span
+                return (
+                  <motion.button
+                    key={profile.slug}
+                    type="button"
+                    initial={{ opacity: 0, scale: 0.6 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: index * 0.08 }}
+                    onClick={() => setSelectedSlug(profile.slug)}
                     className={cn(
-                      "absolute inset-0 rounded-full border transition",
-                      selectedSlug === profile.slug
-                        ? "border-primary/60 shadow-[0_0_20px_rgba(247,208,99,0.4)]"
-                        : "border-white/20"
+                      "group absolute -translate-x-1/2 -translate-y-1/2 rounded-full",
+                      "focus-ring outline-none transition-transform duration-300",
+                      isSelected && "z-40 scale-110"
                     )}
-                  />
-                  <span className="relative block h-14 w-14 overflow-hidden rounded-full border border-white/25 bg-surface lg:h-16 lg:w-16">
-                    {profile.imageUrl ? (
+                    style={{ top: position.top, left: position.left }}
+                    aria-label={`Open mini profile card for ${profile.name}`}
+                  >
+                    <motion.span
+                      animate={{ y: [0, -4, 0] }}
+                      transition={{
+                        duration: 3 + (index % 3) * 0.5,
+                        repeat: Number.POSITIVE_INFINITY,
+                        repeatType: "mirror",
+                        ease: "easeInOut",
+                      }}
+                      className="block"
+                    >
+                      <span
+                        className={cn(
+                          "absolute -inset-1 rounded-full transition-all duration-300",
+                          isSelected
+                            ? "border-2 border-primary shadow-[0_0_24px_rgba(247,208,99,0.5)]"
+                            : "border border-transparent"
+                        )}
+                      />
+                      <span
+                        className={cn(
+                          "relative block h-14 w-14 overflow-hidden rounded-full border bg-surface lg:h-16 lg:w-16 transition-all duration-300",
+                          isSelected ? "border-primary/80" : "border-white/25"
+                        )}
+                      >
+                        {profile.imageUrl ? (
+                          <Image
+                            src={profile.imageUrl}
+                            alt={profile.name}
+                            fill
+                            sizes="64px"
+                            className="object-cover transition duration-300 group-hover:scale-105"
+                          />
+                        ) : (
+                          <span className="flex h-full w-full items-center justify-center">
+                            <User className="h-6 w-6 text-foreground/30" />
+                          </span>
+                        )}
+                        <span className="absolute bottom-1 right-1 z-10 h-3 w-3 rounded-full border-2 border-surface bg-green-500" />
+                      </span>
+                    </motion.span>
+                  </motion.button>
+                );
+              })}
+            </div>
+
+            {selectedProfile && (
+              <motion.div
+                key={selectedProfile.slug}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.25 }}
+                className="absolute inset-x-4 bottom-4 z-20 rounded-2xl border border-white/15 bg-surface/90 p-4 backdrop-blur-md"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-full border border-white/20 bg-surface-muted">
+                    {selectedProfile.imageUrl ? (
                       <Image
-                        src={profile.imageUrl}
-                        alt={profile.name}
+                        src={selectedProfile.imageUrl}
+                        alt={selectedProfile.name}
                         fill
-                        sizes="64px"
-                        className="object-cover transition duration-300 group-hover:scale-105"
+                        sizes="48px"
+                        className="object-cover"
                       />
                     ) : (
                       <span className="flex h-full w-full items-center justify-center">
-                        <User className="h-6 w-6 text-foreground/30" />
+                        <User className="h-5 w-5 text-foreground/30" />
                       </span>
                     )}
-                    <span className="absolute bottom-1 right-1 z-10 h-3 w-3 rounded-full border-2 border-surface bg-green-500" />
-                  </span>
-                </motion.button>
-              );
-            })}
-          </div>
-
-          {selectedProfile && (
-            <motion.div
-              key={selectedProfile.slug}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.25 }}
-              className="mt-4 w-full rounded-2xl border border-white/15 bg-surface/80 p-4 backdrop-blur-sm"
-            >
-              <div className="flex items-center gap-3">
-                <div className="relative h-14 w-14 overflow-hidden rounded-full border border-white/20 bg-surface-muted">
-                  {selectedProfile.imageUrl ? (
-                    <Image
-                      src={selectedProfile.imageUrl}
-                      alt={selectedProfile.name}
-                      fill
-                      sizes="56px"
-                      className="object-cover"
-                    />
-                  ) : (
-                    <span className="flex h-full w-full items-center justify-center">
-                      <User className="h-6 w-6 text-foreground/30" />
-                    </span>
-                  )}
-                </div>
-                <div className="min-w-0 flex-1">
-                  <div className="mb-1 flex items-center gap-2">
-                    <p className="truncate font-heading font-bold text-foreground">
-                      {selectedProfile.name}
-                    </p>
-                    {selectedProfile.isVerified && <Badge variant="verified" />}
-                    <Badge variant="available" />
                   </div>
-                  <p className="line-clamp-1 text-sm text-foreground/65">
-                    {selectedProfile.tagline ?? "Available now for a discreet booking."}
-                  </p>
+                  <div className="min-w-0 flex-1">
+                    <div className="mb-0.5 flex items-center gap-2">
+                      <p className="truncate font-heading font-bold text-foreground">
+                        {selectedProfile.name}
+                      </p>
+                      {selectedProfile.isVerified && <Badge variant="verified" />}
+                      <Badge variant="available" />
+                    </div>
+                    <p className="line-clamp-1 text-sm text-foreground/65">
+                      {selectedProfile.tagline ?? "Available now for a discreet booking."}
+                    </p>
+                  </div>
+                  <Link
+                    href={`/escort/${selectedProfile.slug}/`}
+                    className="flex-shrink-0 rounded-full border border-primary/40 px-3 py-1.5 text-xs font-medium text-primary transition hover:border-primary hover:bg-primary/10"
+                  >
+                    View profile
+                  </Link>
                 </div>
-                <Link
-                  href={`/escort/${selectedProfile.slug}/`}
-                  className="rounded-full border border-primary/40 px-3 py-1.5 text-xs font-medium text-primary transition hover:border-primary hover:bg-primary/10"
-                >
-                  View profile
-                </Link>
-              </div>
-            </motion.div>
-          )}
+              </motion.div>
+            )}
+          </div>
         </div>
         </div>
       </div>
