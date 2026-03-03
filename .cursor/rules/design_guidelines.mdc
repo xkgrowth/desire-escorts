@@ -9,7 +9,7 @@ Define visual direction, token usage, and component styling rules for Desire Esc
 Premium dark aesthetic with warm gold luminosity. The design uses subtle gradient washes to create depth and atmosphere against dark surfaces, with 3D-beveled interactive elements that feel tactile and luxurious.
 
 **Core principles:**
-- Dark-first surface hierarchy (Carbon Black base, Dark Olive cards)
+- Dark-first surface hierarchy with unified deep-slate base (`#161E21`) and elevated card layers
 - Gold accents used sparingly for emphasis and interaction
 - Subtle ambient gradients to add warmth without distraction
 - High contrast maintained for accessibility on all text
@@ -23,24 +23,24 @@ Premium dark aesthetic with warm gold luminosity. The design uses subtle gradien
 |------|-----|-------|
 | Vanilla Custard | `#F2DE9B` | Accent, gradient endpoint, hover states |
 | Royal Gold | `#F7D063` | Primary accent, CTAs, headline gradients |
-| Dark Olive | `#202216` | Card surfaces, elevated containers |
-| Carbon Black | `#1A1B17` | Page background, input backgrounds |
+| Dark Olive | `#161E21` | Card surfaces, elevated containers |
+| Carbon Black | `#161E21` | Page background, input backgrounds |
 | White Smoke | `#F5F4F3` | Body text, foreground content |
 
 ### Semantic Tokens
 
 | Token | Value | Purpose |
 |-------|-------|---------|
-| `--background` | `#1A1B17` | Page background |
+| `--background` | `#161E21` | Page background |
 | `--foreground` | `#F5F4F3` | Primary text color |
-| `--surface` | `#202216` | Card/container backgrounds |
+| `--surface` | `#161E21` | Card/container backgrounds |
 | `--surface-muted` | `#24271A` | Elevated surfaces |
 | `--border` | `#3a3d30` | Default borders |
 | `--primary` | `#F7D063` | Primary actions, key accents |
-| `--primary-foreground` | `#1A1B17` | Text on primary backgrounds |
+| `--primary-foreground` | `#161E21` | Text on primary backgrounds |
 | `--accent` | `#F2DE9B` | Secondary accents, gradients |
-| `--accent-foreground` | `#1A1B17` | Text on accent backgrounds |
-| `--muted` | `#202216` | Muted backgrounds |
+| `--accent-foreground` | `#161E21` | Text on accent backgrounds |
+| `--muted` | `#161E21` | Muted backgrounds |
 | `--muted-foreground` | `#D8C98E` | Muted/secondary text |
 | `--ring` | `#F7D063` | Focus rings |
 
@@ -109,7 +109,7 @@ Primary CTAs use inner gradients and a subtle outer rim to create a convex/pillo
 - Fill: `linear-gradient(180deg, #F2DE9B 0%, #F7D063 100%)` — lighter at top creates convex illusion
 - Border: `1px solid rgba(245, 244, 243, 0.25)`
 - Box shadow: `inset 0 1px 0 rgba(255,255,255,0.15)`
-- Text: Carbon Black `#1A1B17` in Sora Bold
+- Text: Carbon Black `#161E21` in Sora Bold
 - Border radius: `9999px` (pill) or `12px` (rounded rect)
 
 **Hover state:**
@@ -130,9 +130,9 @@ Primary CTAs use inner gradients and a subtle outer rim to create a convex/pillo
 
 | Variant | Background | Border | Shadow |
 |---------|------------|--------|--------|
-| Default | `#202216` | `1px solid rgba(245,244,243,0.06)` | `0 4px 24px rgba(0,0,0,0.4)` |
+| Default | `#161E21` | `1px solid rgba(245,244,243,0.06)` | `0 4px 24px rgba(0,0,0,0.4)` |
 | Elevated | `#24271A` | `1px solid rgba(247,208,99,0.1)` | `0 8px 32px rgba(0,0,0,0.5)` |
-| Interactive | `#202216` | `1px solid rgba(245,244,243,0.06)` | Hover adds gold border glow |
+| Interactive | `#161E21` | `1px solid rgba(245,244,243,0.06)` | Hover adds gold border glow |
 
 ### Clickable Tiles (Mandatory)
 
@@ -149,11 +149,11 @@ This rule applies to all future templates and scaled page batches.
 
 | State | Background | Border | Shadow |
 |-------|------------|--------|--------|
-| Default | `#1A1B17` | `1px solid #3a3d30` | none |
-| Hover | `#1A1B17` | `1px solid #4a4d40` | none |
-| Focus | `#1A1B17` | `1px solid #F7D063` | `0 0 0 3px rgba(247,208,99,0.15)` |
-| Error | `#1A1B17` | `1px solid #e53e3e` | `0 0 0 3px rgba(229,62,62,0.15)` |
-| Disabled | `#202216` | `1px solid #3a3d30` | none, 50% opacity |
+| Default | `#161E21` | `1px solid #3a3d30` | none |
+| Hover | `#161E21` | `1px solid #4a4d40` | none |
+| Focus | `#161E21` | `1px solid #F7D063` | `0 0 0 3px rgba(247,208,99,0.15)` |
+| Error | `#161E21` | `1px solid #e53e3e` | `0 0 0 3px rgba(229,62,62,0.15)` |
+| Disabled | `#161E21` | `1px solid #3a3d30` | none, 50% opacity |
 
 ## Layout
 
@@ -175,9 +175,9 @@ This rule applies to all future templates and scaled page batches.
 .section-gradient {
   background: linear-gradient(
     180deg,
-    #1A1B17 0%,
-    rgba(32, 34, 22, 0.6) 50%,
-    #1A1B17 100%
+    #161E21 0%,
+    rgba(22, 30, 33, 0.6) 50%,
+    #161E21 100%
   );
 }
 ```
@@ -205,9 +205,9 @@ All text must meet WCAG 2.1 AA minimum contrast ratios:
 - Large text (18px+ or 14px+ bold): 3:1
 
 Verified combinations:
-- White Smoke `#F5F4F3` on Carbon Black `#1A1B17`: ~15:1 ✓
-- Royal Gold `#F7D063` on Carbon Black `#1A1B17`: ~10:1 ✓
-- Carbon Black `#1A1B17` on Royal Gold `#F7D063`: ~10:1 ✓
+- White Smoke `#F5F4F3` on Carbon Black `#161E21`: passes WCAG AA ✓
+- Royal Gold `#F7D063` on Carbon Black `#161E21`: passes WCAG AA ✓
+- Carbon Black `#161E21` on Royal Gold `#F7D063`: passes WCAG AA ✓
 
 ### Focus States
 

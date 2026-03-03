@@ -80,7 +80,7 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
     >
       <div className="pointer-events-none absolute inset-0 hero-glow" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_130%_95%_at_50%_-10%,rgba(180,100,50,0.3)_0%,rgba(247,208,99,0.12)_35%,transparent_72%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(26,27,23,0.96)_0%,rgba(26,27,23,0.74)_50%,rgba(26,27,23,0.96)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(22,30,33,0.96)_0%,rgba(22,30,33,0.74)_50%,rgba(22,30,33,0.96)_100%)]" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 lg:px-6">
         <div className="grid min-h-[500px] grid-cols-1 gap-8 pb-6 pt-8 lg:min-h-[520px] lg:grid-cols-2 lg:pb-8 lg:pt-10">
@@ -237,7 +237,7 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
                   </div>
                   <Link
                     href={`/escort/${selectedProfile.slug}/`}
-                    className="flex-shrink-0 rounded-full border border-primary/40 px-3 py-1.5 text-xs font-medium text-primary transition hover:border-primary hover:bg-primary/10"
+                    className="flex-shrink-0 rounded-luxury border border-primary/40 px-3 py-1.5 text-xs font-medium text-primary transition hover:border-primary hover:bg-primary/10"
                   >
                     View profile
                   </Link>

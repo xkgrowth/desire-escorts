@@ -192,7 +192,7 @@ export function AnimatedNavPill({ href, children, delay = 0 }: AnimatedNavPillPr
       transition={{ duration: 0.4, delay }}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.98 }}
-      className="px-4 py-2 rounded-full bg-surface/50 border border-white/10 text-sm text-foreground/70 hover:text-foreground hover:border-primary/30 transition-colors"
+      className="px-4 py-2 rounded-luxury bg-surface-interactive border border-white/10 text-sm text-foreground/70 hover:text-foreground hover:border-primary/30 transition-colors"
     >
       {children}
     </motion.a>

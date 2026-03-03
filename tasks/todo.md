@@ -1,5 +1,22 @@
 # WPML Export Enablement
 
+# Design System Refinement Pass
+
+- [x] Update clickable surface color to `#141A1B` and wire to interactive card styles.
+- [x] Replace fully rounded CTA corners in nav/small CTA contexts with luxury radius.
+- [x] Reduce `GradientTitle` XL scale for H1 usage.
+- [x] Switch all Live Chat CTAs to Premium (White) button variant.
+- [x] Remove olive-toned backgrounds from elevated/stagger/blur/enhanced-hover design-system blocks.
+- [x] Run lint diagnostics on touched files and resolve regressions.
+
+## Review Notes (Design System Refinement Pass)
+
+- Added `--surface-interactive` token (`#141A1B`) and new `.card-interactive` utility for clickable cards.
+- Updated design-system demo blocks (Stagger, Blur Reveal, Enhanced Hover, interactive cards) to avoid olive surfaces.
+- Reduced `GradientTitle` XL scale by one step across breakpoints.
+- Switched all visible Live Chat CTA buttons to `premium` (white) variant in header/footer/profile/CTA sections.
+- Standardized CTA corners from `rounded-full` to `rounded-luxury` in nav/hero/detail CTA contexts.
+
 # Homepage Content Enrichment (C2 refinement)
 
 - [x] Expand homepage with additional Dutch SEO/AEO-supporting body content blocks.

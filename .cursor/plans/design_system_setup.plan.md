@@ -180,7 +180,7 @@ The target is visual consistency and maintainability, not arbitrary redesign dri
 ### Step 2.1: Color Tokens
 
 - Keep brand palette fixed:
-  - `#F2DE9B`, `#F7D063`, `#202216`, `#1A1B17`, `#F5F4F3`
+  - `#F2DE9B`, `#F7D063`, `#161E21`, `#161E21`, `#F5F4F3`
 - Extend semantic tokens:
   - `background`, `foreground`, `surface`, `muted`, `border`, `ring`
   - interactive states (`hover`, `active`, `disabled`)

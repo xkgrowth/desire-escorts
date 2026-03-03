@@ -168,7 +168,7 @@ export function AnimatedShowcase() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[1, 2, 3, 4].map((i) => (
               <StaggerItem key={i} variant="slideUp">
-                <div className="card-elevated p-6 rounded-luxury text-center">
+                <div className="card-interactive p-6 rounded-luxury text-center">
                   <div className="text-2xl font-bold text-primary mb-1">{i}</div>
                   <p className="text-xs text-foreground/60">Card {i}</p>
                 </div>
@@ -203,7 +203,7 @@ export function AnimatedShowcase() {
           Blur Reveal
         </h4>
         <Reveal variant="blur">
-          <div className="card-elevated p-8 rounded-luxury text-center">
+          <div className="card-interactive p-8 rounded-luxury text-center">
             <h5 className="font-bold text-xl text-foreground mb-2">Blur Effect</h5>
             <p className="text-foreground/60">Content reveals with blur-to-clear transition</p>
           </div>
@@ -217,7 +217,7 @@ export function CardShowcase() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       <HoverCardEffect>
-        <div className="card-surface p-6 rounded-luxury h-full">
+        <div className="card-interactive p-6 rounded-luxury h-full">
           <h5 className="font-bold text-foreground mb-2">Hover Card</h5>
           <p className="text-sm text-foreground/60">
             Lifts on hover with subtle shadow glow effect.
@@ -225,7 +225,7 @@ export function CardShowcase() {
         </div>
       </HoverCardEffect>
       <HoverCardEffect hoverScale={1.03} hoverY={-6}>
-        <div className="card-elevated p-6 rounded-luxury h-full">
+        <div className="card-interactive p-6 rounded-luxury h-full">
           <h5 className="font-bold text-foreground mb-2">Enhanced Hover</h5>
           <p className="text-sm text-foreground/60">
             Larger scale and lift for emphasis.
@@ -233,7 +233,7 @@ export function CardShowcase() {
         </div>
       </HoverCardEffect>
       <HoverCardEffect glowOnHover={false} hoverScale={1.01}>
-        <div className="card-surface p-6 rounded-luxury h-full">
+        <div className="card-interactive p-6 rounded-luxury h-full">
           <h5 className="font-bold text-foreground mb-2">Subtle Hover</h5>
           <p className="text-sm text-foreground/60">
             Minimal effect without glow, for quieter interactions.

@@ -282,7 +282,7 @@ export function ProfileHero({
             Share your preferred timing, area, and style, and our team will guide you discreetly. Rates are available upon request.
           </p>
           <div className="flex gap-3">
-            <Button variant="primary" size="lg" className="flex-1 gap-2">
+            <Button variant="premium" size="lg" className="flex-1 gap-2">
               <MessageCircle className="w-5 h-5" />
               Live Chat
             </Button>

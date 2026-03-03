@@ -36,7 +36,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       premium: "btn-bevel-premium text-background",
       whatsapp: "btn-bevel-whatsapp text-white",
       secondary:
-        "bg-surface/80 border-2 border-primary/30 text-foreground hover:border-primary/60 hover:bg-surface",
+        "bg-surface-interactive border-2 border-primary/30 text-foreground hover:border-primary/60 hover:bg-surface-interactive",
       ghost:
         "bg-transparent border border-foreground/20 text-foreground/70 hover:border-foreground/40 hover:text-foreground hover:bg-surface/30",
       action:

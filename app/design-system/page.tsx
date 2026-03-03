@@ -123,11 +123,12 @@ export default function DesignSystemPage() {
 
       {/* Colors */}
       <AnimatedSection title="Colors" subtitle="Brand and semantic color tokens">
-        <AnimatedGrid className="grid grid-cols-2 md:grid-cols-5 gap-4" staggerDelay={0.05}>
+        <AnimatedGrid className="grid grid-cols-2 md:grid-cols-6 gap-4" staggerDelay={0.05}>
           <AnimatedGridItem><AnimatedColorSwatch name="Royal Gold" color="#F7D063" token="--primary" /></AnimatedGridItem>
           <AnimatedGridItem><AnimatedColorSwatch name="Vanilla Custard" color="#F2DE9B" token="--accent" /></AnimatedGridItem>
-          <AnimatedGridItem><AnimatedColorSwatch name="Carbon Black" color="#1A1B17" token="--background" /></AnimatedGridItem>
-          <AnimatedGridItem><AnimatedColorSwatch name="Dark Olive" color="#202216" token="--surface" /></AnimatedGridItem>
+          <AnimatedGridItem><AnimatedColorSwatch name="Carbon Black" color="#161E21" token="--background" /></AnimatedGridItem>
+          <AnimatedGridItem><AnimatedColorSwatch name="Dark Olive" color="#161E21" token="--surface" /></AnimatedGridItem>
+          <AnimatedGridItem><AnimatedColorSwatch name="Interactive Surface" color="#141A1B" token="--surface-interactive" /></AnimatedGridItem>
           <AnimatedGridItem><AnimatedColorSwatch name="White Smoke" color="#F5F4F3" token="--foreground" /></AnimatedGridItem>
         </AnimatedGrid>
 
@@ -347,13 +348,13 @@ export default function DesignSystemPage() {
       {/* Cards */}
       <AnimatedSection title="Cards" subtitle="Surface and elevation styles">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <UICard variant="surface" hover>
+          <UICard variant="interactive" hover>
             <CardHeader>
-              <h4 className="font-heading font-bold text-foreground">Surface Card</h4>
+              <h4 className="font-heading font-bold text-foreground">Interactive Card</h4>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-foreground/60">
-                Default surface style with hover effect enabled.
+                Clickable card styling with dedicated interactive surface color.
               </p>
             </CardContent>
           </UICard>

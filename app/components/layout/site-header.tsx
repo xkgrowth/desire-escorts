@@ -38,7 +38,7 @@ export function SiteHeader() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-lg transition-colors",
+                    "flex items-center gap-1.5 px-5 py-2.5 text-base font-medium rounded-lg transition-colors",
                     isActive 
                       ? "text-primary bg-primary/10" 
                       : "text-foreground/70 hover:text-foreground hover:bg-white/5"
@@ -88,14 +88,7 @@ export function SiteHeader() {
 
         {/* Desktop Right Side - Language Toggle Far Right */}
         <div className="hidden lg:flex items-center gap-4">
-          <a 
-            href="tel:+31642188911"
-            className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
-          >
-            <Phone className="w-4 h-4" />
-            <span className="hidden xl:inline">Bel Ons</span>
-          </a>
-          <Button variant="primary" size="sm" className="gap-2">
+          <Button variant="premium" size="md" className="gap-2">
             <MessageCircle className="w-4 h-4" />
             <span>Live Chat</span>
           </Button>
@@ -148,11 +141,11 @@ function LanguageToggle() {
   };
 
   return (
-    <div className="flex items-center rounded-full border border-white/20 overflow-hidden text-sm">
+    <div className="flex h-[46px] items-stretch rounded-luxury border border-white/20 overflow-hidden text-base">
       <Link
         href={switchToLocale("nl")}
         className={cn(
-          "px-3 py-1.5 transition-colors flex items-center gap-1.5",
+          "px-4 h-full transition-colors flex items-center gap-2",
           !isEnglish 
             ? "bg-white/10 text-foreground font-medium" 
             : "text-foreground/60 hover:text-foreground hover:bg-white/5"
@@ -166,7 +159,7 @@ function LanguageToggle() {
       <Link
         href={switchToLocale("en")}
         className={cn(
-          "px-3 py-1.5 transition-colors flex items-center gap-1.5",
+          "px-4 h-full transition-colors flex items-center gap-2",
           isEnglish 
             ? "bg-white/10 text-foreground font-medium" 
             : "text-foreground/60 hover:text-foreground hover:bg-white/5"
@@ -273,7 +266,7 @@ function MobileMenu({ navItems, pathname, onClose }: MobileMenuProps) {
             <Phone className="w-5 h-5" />
             <span>Bel +31 6 42188911</span>
           </a>
-          <Button variant="primary" size="md" className="w-full gap-2">
+          <Button variant="premium" size="md" className="w-full gap-2">
             <MessageCircle className="w-5 h-5" />
             <span>Start Live Chat</span>
           </Button>

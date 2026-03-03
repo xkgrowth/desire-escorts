@@ -172,7 +172,7 @@ export function ProfileCardCompact({
       href={`/escort/${slug}/`}
       className={cn("group block", className)}
     >
-      <div className="flex items-center gap-4 p-3 rounded-lg bg-surface/50 border border-white/5 transition-all duration-300 hover:border-primary/20 hover:bg-surface">
+      <div className="flex items-center gap-4 p-3 rounded-lg card-interactive transition-all duration-300 hover:border-primary/20">
         {/* Avatar with availability dot */}
         <div className="relative flex-shrink-0">
           <div className="relative w-14 h-14 rounded-full overflow-hidden bg-surface-muted">

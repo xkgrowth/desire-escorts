@@ -158,7 +158,7 @@ export function ArticleCard({
       <article className={cn("group", className)}>
         <Link
           href={articleHref}
-          className="flex items-start gap-4 p-4 rounded-lg bg-surface/50 border border-white/5 transition-all hover:border-primary/20 hover:bg-surface"
+          className="flex items-start gap-4 p-4 rounded-lg card-interactive transition-all hover:border-primary/20"
         >
           <div className="flex-1 min-w-0">
             {category && (
@@ -182,7 +182,7 @@ export function ArticleCard({
   return (
     <article className={cn("group", className)}>
       <Link href={articleHref} className="block">
-        <div className="card-surface rounded-luxury overflow-hidden hover:shadow-glow transition-shadow duration-300">
+        <div className="card-interactive rounded-luxury overflow-hidden hover:shadow-glow transition-shadow duration-300">
           <div className="relative aspect-[16/9]">
             {imageUrl ? (
               <Image
@@ -259,7 +259,7 @@ export function ArticleCategoryCard({
 }: ArticleCategoryCardProps) {
   return (
     <Link href={href} className={cn("group block", className)}>
-      <div className="flex items-center gap-4 p-5 rounded-luxury bg-surface/50 border border-white/5 transition-all hover:border-primary/20 hover:bg-surface">
+      <div className="flex items-center gap-4 p-5 rounded-luxury card-interactive transition-all hover:border-primary/20">
         {icon && (
           <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
             {icon}

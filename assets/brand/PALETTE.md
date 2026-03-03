@@ -4,15 +4,15 @@
 
 - `#F2DE9B` - Vanilla Custard
 - `#F7D063` - Royal Gold
-- `#202216` - Dark Olive
-- `#1A1B17` - Carbon Black
+- `#161E21` - Dark Olive
+- `#161E21` - Carbon Black
 - `#F5F4F3` - White Smoke
 
 ## Semantic Mapping
 
-- `background`: `#1A1B17`
+- `background`: `#161E21`
 - `foreground`: `#F5F4F3`
-- `surface`: `#202216`
+- `surface`: `#161E21`
 - `primary`: `#F7D063`
 - `accent`: `#F2DE9B`
 

@@ -126,12 +126,12 @@ export default async function EscortDetailPage({ params }: DetailPageProps) {
             ) : null}
 
             <div className="flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-primary rounded-full px-6 py-3 font-bold text-background">
+              <Link href="/contact" className="btn-primary rounded-luxury px-6 py-3 font-bold text-background">
                 Direct Contact
               </Link>
               <Link
                 href="/escorts"
-                className="inline-flex items-center rounded-full border border-white/20 bg-surface/40 px-5 py-3 text-foreground/90 transition hover:border-primary/40"
+                className="inline-flex items-center rounded-luxury border border-white/20 bg-surface/40 px-5 py-3 text-foreground/90 transition hover:border-primary/40"
               >
                 Terug naar overzicht
               </Link>

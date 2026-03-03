@@ -138,7 +138,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
               <Link
                 href="/escorts"
-                className="btn-primary inline-flex items-center gap-2 px-8 py-3 rounded-full font-bold text-background transition-all hover:scale-105"
+                className="btn-primary inline-flex items-center gap-2 px-8 py-3 rounded-luxury font-bold text-background transition-all hover:scale-105"
               >
                 Bekijk Alle Escorts
               </Link>
@@ -325,7 +325,7 @@ export default function Home() {
               <Link 
                 key={city.name} 
                 href={city.href}
-                className="group card-surface rounded-luxury p-6 flex flex-col items-center justify-center transition-shadow duration-300 hover:shadow-glow"
+                className="group card-interactive rounded-luxury p-6 flex flex-col items-center justify-center transition-shadow duration-300 hover:shadow-glow"
               >
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-3 group-hover:scale-110 transition-transform">
                   <MapPin className="w-5 h-5" />
@@ -431,21 +431,21 @@ export default function Home() {
           <div className="grid gap-3 md:grid-cols-3">
             <Link
               href="/kennisbank/boeken-reserveringen/"
-              className="card-surface rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
+              className="card-interactive rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
             >
               <p className="font-heading font-semibold mb-1">Boeken & reserveren</p>
               <p className="text-sm text-foreground/65">Alles over beschikbaarheid, timing en aanvraagproces.</p>
             </Link>
             <Link
               href="/kennisbank/discretie-privacy/"
-              className="card-surface rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
+              className="card-interactive rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
             >
               <p className="font-heading font-semibold mb-1">Discretie & privacy</p>
               <p className="text-sm text-foreground/65">Hoe wij omgaan met vertrouwelijkheid en gegevensbescherming.</p>
             </Link>
             <Link
               href="/blog"
-              className="card-surface rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
+              className="card-interactive rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
             >
               <p className="font-heading font-semibold mb-1">Nieuws & inzichten</p>
               <p className="text-sm text-foreground/65">Praktische tips en updates uit onze kennisbank en blog.</p>

@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 type CardProps = {
   children: React.ReactNode;
-  variant?: "surface" | "elevated" | "glass";
+  variant?: "surface" | "elevated" | "interactive" | "glass";
   padding?: "none" | "sm" | "md" | "lg";
   hover?: boolean;
   className?: string;
@@ -29,6 +29,7 @@ export function Card({
         "rounded-luxury",
         variant === "surface" && "card-surface",
         variant === "elevated" && "card-elevated",
+        variant === "interactive" && "card-interactive",
         variant === "glass" &&
           "bg-surface/50 backdrop-blur-sm border border-white/10",
         paddingClasses[padding],

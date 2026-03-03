@@ -25,7 +25,7 @@ export function ServiceCard({
   if (variant === "compact") {
     return (
       <Link href={href} className={cn("group block", className)}>
-        <div className="flex items-center gap-4 p-4 rounded-luxury bg-surface/50 border border-white/5 hover:border-primary/20 transition-all duration-300">
+        <div className="flex items-center gap-4 p-4 rounded-luxury card-interactive hover:border-primary/20 transition-all duration-300">
           {icon && (
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
               {icon}
@@ -74,7 +74,7 @@ export function ServiceCard({
 
   return (
     <Link href={href} className={cn("group block h-full", className)}>
-      <div className="card-surface rounded-luxury overflow-hidden hover:shadow-glow transition-shadow duration-300 h-full flex flex-col">
+      <div className="card-interactive rounded-luxury overflow-hidden hover:shadow-glow transition-shadow duration-300 h-full flex flex-col">
         {imageUrl && (
           <div className="relative h-48">
             <Image

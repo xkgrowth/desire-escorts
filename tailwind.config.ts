@@ -20,6 +20,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         surface: "var(--surface)",
         "surface-muted": "var(--surface-muted)",
+        "surface-interactive": "var(--surface-interactive)",
         border: "var(--border)",
         primary: "var(--primary)",
         "primary-foreground": "var(--primary-foreground)",

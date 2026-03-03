@@ -114,7 +114,7 @@ export function Footer({
                 </Button>
               </a>
               <a href="#">
-                <Button variant="primary" size="md" className="gap-2">
+                <Button variant="premium" size="md" className="gap-2">
                   <MessageCircle className="w-4 h-4" />
                   Live Chat
                 </Button>

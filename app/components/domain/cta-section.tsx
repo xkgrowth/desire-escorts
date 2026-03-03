@@ -124,7 +124,7 @@ export function CTASection({
           </p>
 
           <div className="flex gap-3">
-            <Button variant="primary" size="lg" className="flex-1 gap-2">
+            <Button variant="premium" size="lg" className="flex-1 gap-2">
               <MessageCircle className="w-5 h-5" />
               Live Chat
             </Button>
@@ -177,7 +177,7 @@ export function CTABanner({
         )}
       </div>
       <a href={buttonHref}>
-        <Button variant="primary" size="lg" className="flex-shrink-0 gap-2">
+        <Button variant="premium" size="lg" className="flex-shrink-0 gap-2">
           <MessageCircle className="w-5 h-5" />
           {buttonText}
         </Button>
