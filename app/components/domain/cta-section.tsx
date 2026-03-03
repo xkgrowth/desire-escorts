@@ -35,7 +35,7 @@ const defaultContactMethods: ContactMethod[] = [
     icon: <WhatsAppIcon size={20} />,
     label: "WhatsApp",
     value: "Chat met ons",
-    href: "https://wa.me/31642188911",
+    href: "https://steadfast-art-a1f81485c3.strapiapp.com",
     action: "whatsapp",
   },
   {
@@ -130,10 +130,12 @@ export function CTASection({
               Live Chat
             </Button>
 
-            <Button variant="whatsapp" size="lg" className="flex-1 gap-2">
-              <WhatsAppIcon size={20} />
-              WhatsApp
-            </Button>
+            <a href="https://steadfast-art-a1f81485c3.strapiapp.com" target="_blank" rel="noopener noreferrer" className="flex-1">
+              <Button variant="whatsapp" size="lg" className="w-full gap-2">
+                <WhatsAppIcon size={20} />
+                WhatsApp
+              </Button>
+            </a>
           </div>
 
           <p className="text-xs text-foreground/40 text-center mt-6">

@@ -108,7 +108,7 @@ export function Footer({
             
             {/* Contact Buttons */}
             <div className="flex flex-wrap gap-3 mb-6">
-              <a href="https://wa.me/31642188911" target="_blank" rel="noopener noreferrer">
+              <a href="https://steadfast-art-a1f81485c3.strapiapp.com" target="_blank" rel="noopener noreferrer">
                 <Button variant="whatsapp" size="md" className="gap-2">
                   <WhatsAppIcon size={16} />
                   WhatsApp

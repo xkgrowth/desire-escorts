@@ -288,10 +288,12 @@ export function ProfileHero({
               Live Chat
             </Button>
             {whatsapp && (
-              <Button variant="whatsapp" size="lg" className="flex-1 gap-2">
-                <WhatsAppIcon size={20} />
-                WhatsApp
-              </Button>
+              <a href="https://steadfast-art-a1f81485c3.strapiapp.com" target="_blank" rel="noopener noreferrer" className="flex-1">
+                <Button variant="whatsapp" size="lg" className="w-full gap-2">
+                  <WhatsAppIcon size={20} />
+                  WhatsApp
+                </Button>
+              </a>
             )}
           </div>
         </div>
