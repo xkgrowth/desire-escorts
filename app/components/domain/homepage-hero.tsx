@@ -85,9 +85,10 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 lg:px-6">
         <div className="grid min-h-[500px] grid-cols-1 gap-8 pb-6 pt-8 lg:min-h-[520px] lg:grid-cols-2 lg:pb-8 lg:pt-10">
         <div className="flex flex-col justify-center">
-          <h1 className="max-w-xl text-4xl font-heading font-bold leading-tight md:text-5xl lg:text-6xl">
+          <h1 className="max-w-xl text-3xl font-heading font-bold leading-tight md:text-4xl lg:text-5xl">
             <span className="text-gradient-gold">Jouw Perfecte Escort Service</span>
-            <span className="block text-foreground">in Nederland, Discreet en Betrouwbaar</span>
+            <span className="text-gradient-gold"> in Nederland,</span>
+            <span className="text-foreground"> Discreet en Betrouwbaar</span>
           </h1>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-foreground/70 md:text-lg">
