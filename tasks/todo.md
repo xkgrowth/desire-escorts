@@ -91,3 +91,44 @@
 - [x] Export static heart SVG to `public/brand/heart.svg`.
 - [x] Update `SiteHeader` to use always-animated logo.
 - [x] Configure Sora + Inter fonts in layout for logo typography.
+
+## Phase 3.1 Design System Build
+
+- [x] Add gradient utilities to `globals.css` (ambient glow, title gradients, section dividers, button styles).
+- [x] Extend `tailwind.config.ts` with design tokens (radii, shadows, fonts, transitions).
+- [x] Create `lib/utils.ts` with `cn()` class merge utility.
+- [x] Create `GradientTitle` typography component (gold/light variants, multiple sizes).
+- [x] Create `Button` component (3D bevel primary, secondary, ghost variants).
+- [x] Create `Badge` component (verified, vip, service variants).
+- [x] Create `SiteHeader` layout component (desktop nav, dropdowns, mobile toggle, language switcher, CTAs).
+- [x] Create `MobileMenu` component (accordion nav, mobile CTAs).
+- [x] Create `SiteFooter` layout component (contact CTA section, link columns, trust signals, bottom bar).
+- [x] Create `/design-system/` showcase page.
+- [x] Validate build passes with all new components.
+
+## Phase 3.2 Grid, Gradients, and Animations
+
+- [x] Install `framer-motion` for scroll and hover animations.
+- [x] Add page-level gradient CSS utilities (hero-glow, mid-glow, bottom-glow, page-gradient).
+- [x] Add 12-column grid system CSS utilities (grid-container, column spans, section spacing).
+- [x] Create `PageWrapper`, `Section`, `Container`, `Grid` layout components.
+- [x] Create `Reveal` scroll animation component (fade, slideUp, slideLeft, slideRight, scale, blur variants).
+- [x] Create `StaggerContainer` and `StaggerItem` for staggered reveal animations.
+- [x] Create `HoverCardEffect` for interactive card hover states.
+- [x] Update `/design-system/` page with gradient, grid, and animation showcases.
+- [x] Validate build passes with animation system.
+
+# Strategy Alignment — Amsterdam Intent Routing
+
+- [x] Update keyword strategy to define shared homepage support + city page ownership for `escort amsterdam`.
+- [x] Update content specifications with explicit city-vs-district URL hierarchy (`/escort-amsterdam/` vs `/escort-amsterdam-centrum/`).
+- [x] Update migration strategy decision rules to restore dedicated city pages if currently redirected to homepage.
+- [x] Update action plan batches and redirect matrix with Amsterdam intent normalization steps.
+- [x] Update SEO and architecture rules to enforce intent-to-URL ownership.
+
+## Review Notes (Strategy Alignment)
+
+- Final mapping is now explicit across strategy docs:
+  - Homepage supports `escort amsterdam` as secondary high-authority traffic capture.
+  - `/escort-amsterdam/` is the canonical city-intent landing page (`200`, indexable).
+  - `/escort-amsterdam-centrum/` is a district long-tail page and should not own the city head term.

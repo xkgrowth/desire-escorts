@@ -23,10 +23,478 @@
   --muted: var(--color-dark-olive);
   --muted-foreground: #d8c98e;
   --ring: var(--color-royal-gold);
+
+  /* Gradient tokens */
+  --gradient-gold: linear-gradient(180deg, #f7d063 0%, #f2de9b 100%);
+  --gradient-gold-reverse: linear-gradient(180deg, #f2de9b 0%, #f7d063 100%);
+  --gradient-light: linear-gradient(180deg, #ffffff 0%, #f5f4f3 100%);
+  --gradient-ambient: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(247, 208, 99, 0.08) 0%, transparent 70%);
+  --gradient-section: linear-gradient(180deg, #1a1b17 0%, rgba(32, 34, 22, 0.6) 50%, #1a1b17 100%);
+
+  /* Page-level warm ambient gradients (inspired by design reference) */
+  --gradient-page-top: radial-gradient(ellipse 120% 80% at 50% -20%, rgba(180, 100, 50, 0.12) 0%, rgba(247, 208, 99, 0.06) 30%, transparent 70%);
+  --gradient-page-mid: radial-gradient(ellipse 100% 60% at 50% 50%, rgba(180, 100, 50, 0.08) 0%, transparent 60%);
+  --gradient-page-bottom: radial-gradient(ellipse 120% 80% at 50% 120%, rgba(180, 100, 50, 0.1) 0%, rgba(247, 208, 99, 0.05) 30%, transparent 70%);
+  --gradient-page-glow: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(247, 208, 99, 0.1) 0%, transparent 60%);
+
+  /* Grid system */
+  --grid-columns: 12;
+  --grid-gutter: 24px;
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1440px;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-luxury: 20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-default: 200ms ease;
+  --transition-slow: 300ms ease;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Gradient text utilities */
+.text-gradient-gold {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-light {
+  background: var(--gradient-light);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Ambient glow background */
+.bg-ambient-glow {
+  background: var(--gradient-ambient);
+}
+
+/* Section gradient */
+.bg-section-gradient {
+  background: var(--gradient-section);
+}
+
+/* 3D Bevel button base - Gold primary with enhanced glassy border */
+.btn-bevel {
+  position: relative;
+  background: linear-gradient(180deg, #f7d063 0%, #e8c050 50%, #d4a840 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  box-shadow:
+    /* Outer glass rim glow */
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 0 8px rgba(255, 255, 255, 0.1),
+    /* Soft drop shadow */
+    0 6px 20px rgba(0, 0, 0, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.2),
+    /* Inner top highlight - glassy shine */
+    inset 0 1px 1px rgba(255, 255, 255, 0.5),
+    inset 0 2px 4px rgba(255, 255, 255, 0.15),
+    /* Inner bottom shadow for depth */
+    inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  transition: all var(--transition-default);
+}
+
+.btn-bevel:hover {
+  background: linear-gradient(180deg, #fada70 0%, #f0c858 50%, #ddb548 100%);
+  border-color: rgba(255, 255, 255, 0.45);
+  border-top-color: rgba(255, 255, 255, 0.6);
+  box-shadow:
+    /* Enhanced outer glass glow on hover */
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 0 12px rgba(255, 255, 255, 0.15),
+    0 0 20px rgba(247, 208, 99, 0.2),
+    /* Lifted shadow */
+    0 8px 28px rgba(0, 0, 0, 0.4),
+    0 3px 8px rgba(0, 0, 0, 0.25),
+    /* Enhanced inner glass highlights */
+    inset 0 1px 1px rgba(255, 255, 255, 0.6),
+    inset 0 2px 6px rgba(255, 255, 255, 0.2),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.btn-bevel:active {
+  transform: translateY(1px);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 0 4px rgba(255, 255, 255, 0.08),
+    0 3px 10px rgba(0, 0, 0, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.2),
+    inset 0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-bevel:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 0 8px rgba(255, 255, 255, 0.1),
+    0 0 0 4px rgba(247, 208, 99, 0.3),
+    0 6px 20px rgba(0, 0, 0, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.5),
+    inset 0 2px 4px rgba(255, 255, 255, 0.15),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-bevel:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 3px 10px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Premium variant - Light/white with enhanced glassy border */
+.btn-bevel-premium {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f4f3 50%, #e8e7e5 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  border-top-color: rgba(255, 255, 255, 0.9);
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+  border-radius: 9999px;
+  box-shadow:
+    /* Outer glass rim glow */
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 0 12px rgba(255, 255, 255, 0.15),
+    /* Soft drop shadow */
+    0 6px 20px rgba(0, 0, 0, 0.3),
+    0 2px 6px rgba(0, 0, 0, 0.15),
+    /* Inner glass highlights */
+    inset 0 1px 1px rgba(255, 255, 255, 0.9),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.05);
+  text-shadow: none;
+  transition: all var(--transition-default);
+}
+
+.btn-bevel-premium:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 50%, #f0efed 100%);
+  border-color: rgba(255, 255, 255, 0.7);
+  border-top-color: rgba(255, 255, 255, 1);
+  box-shadow:
+    /* Enhanced outer glass glow on hover */
+    0 0 0 1px rgba(255, 255, 255, 0.25),
+    0 0 16px rgba(255, 255, 255, 0.2),
+    0 0 24px rgba(255, 255, 255, 0.1),
+    /* Lifted shadow */
+    0 8px 28px rgba(0, 0, 0, 0.35),
+    0 3px 8px rgba(0, 0, 0, 0.2),
+    /* Enhanced inner glass highlights */
+    inset 0 1px 1px rgba(255, 255, 255, 1),
+    inset 0 2px 6px rgba(255, 255, 255, 0.4),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.03);
+  transform: translateY(-1px);
+}
+
+.btn-bevel-premium:active {
+  transform: translateY(1px);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 0 6px rgba(255, 255, 255, 0.1),
+    0 3px 10px rgba(0, 0, 0, 0.25),
+    0 1px 3px rgba(0, 0, 0, 0.15),
+    inset 0 2px 4px rgba(0, 0, 0, 0.08),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.btn-bevel-premium:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.3),
+    0 0 0 4px rgba(247, 208, 99, 0.3),
+    0 6px 20px rgba(0, 0, 0, 0.3),
+    0 2px 6px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.btn-bevel-premium:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* WhatsApp variant - Green with glassy border */
+.btn-bevel-whatsapp {
+  position: relative;
+  background: linear-gradient(180deg, #25D366 0%, #20BD5A 50%, #1DA851 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: rgba(255, 255, 255, 0.45);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  box-shadow:
+    /* Outer glass rim glow */
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 0 8px rgba(37, 211, 102, 0.15),
+    /* Soft drop shadow */
+    0 6px 20px rgba(0, 0, 0, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.2),
+    /* Inner glass highlights */
+    inset 0 1px 1px rgba(255, 255, 255, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.12),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  transition: all var(--transition-default);
+}
+
+.btn-bevel-whatsapp:hover {
+  background: linear-gradient(180deg, #2EE370 0%, #25D366 50%, #20BD5A 100%);
+  border-color: rgba(255, 255, 255, 0.4);
+  border-top-color: rgba(255, 255, 255, 0.55);
+  box-shadow:
+    /* Enhanced outer glass glow on hover */
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 0 12px rgba(37, 211, 102, 0.25),
+    0 0 20px rgba(37, 211, 102, 0.15),
+    /* Lifted shadow */
+    0 8px 28px rgba(0, 0, 0, 0.4),
+    0 3px 8px rgba(0, 0, 0, 0.25),
+    /* Enhanced inner glass highlights */
+    inset 0 1px 1px rgba(255, 255, 255, 0.5),
+    inset 0 2px 6px rgba(255, 255, 255, 0.15),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.btn-bevel-whatsapp:active {
+  transform: translateY(1px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 0 4px rgba(37, 211, 102, 0.1),
+    0 3px 10px rgba(0, 0, 0, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.2),
+    inset 0 2px 4px rgba(0, 0, 0, 0.12),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn-bevel-whatsapp:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 0 8px rgba(37, 211, 102, 0.15),
+    0 0 0 4px rgba(37, 211, 102, 0.3),
+    0 6px 20px rgba(0, 0, 0, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.12),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-bevel-whatsapp:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 3px 10px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Ghost button */
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  transition: all var(--transition-default);
+}
+
+.btn-ghost:hover {
+  background: rgba(247, 208, 99, 0.1);
+}
+
+.btn-ghost:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(247, 208, 99, 0.3);
+}
+
+/* Card styles */
+.card-surface {
+  background: var(--surface);
+  border: 1px solid rgba(245, 244, 243, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.card-elevated {
+  background: var(--surface-muted);
+  border: 1px solid rgba(247, 208, 99, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Focus ring utility */
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(247, 208, 99, 0.3);
+}
+
+/* ============================================
+   PAGE-LEVEL GRADIENT BACKGROUNDS
+   ============================================ */
+
+/* Full page wrapper with warm ambient gradients */
+.page-gradient {
+  position: relative;
+  background: var(--background);
+}
+
+.page-gradient::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    var(--gradient-page-top),
+    var(--gradient-page-bottom);
+}
+
+/* Section-level glow (add to individual sections for emphasis) */
+.section-glow {
+  position: relative;
+}
+
+.section-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--gradient-page-glow);
+}
+
+/* Warm glow overlay for hero sections */
+.hero-glow {
+  background: 
+    radial-gradient(ellipse 100% 100% at 50% -30%, rgba(180, 100, 50, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 60% at 80% 20%, rgba(247, 208, 99, 0.08) 0%, transparent 50%);
+}
+
+/* Mid-page warm accent */
+.mid-glow {
+  background: radial-gradient(ellipse 100% 80% at 30% 50%, rgba(180, 100, 50, 0.06) 0%, transparent 60%);
+}
+
+/* Bottom warm glow */
+.bottom-glow {
+  background: radial-gradient(ellipse 120% 100% at 50% 100%, rgba(180, 100, 50, 0.12) 0%, rgba(247, 208, 99, 0.04) 40%, transparent 70%);
+}
+
+/* ============================================
+   12-COLUMN GRID SYSTEM
+   ============================================ */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gutter);
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    padding: 0 2rem;
+  }
+}
+
+/* Column spans */
+.col-span-1 { grid-column: span 1; }
+.col-span-2 { grid-column: span 2; }
+.col-span-3 { grid-column: span 3; }
+.col-span-4 { grid-column: span 4; }
+.col-span-5 { grid-column: span 5; }
+.col-span-6 { grid-column: span 6; }
+.col-span-7 { grid-column: span 7; }
+.col-span-8 { grid-column: span 8; }
+.col-span-9 { grid-column: span 9; }
+.col-span-10 { grid-column: span 10; }
+.col-span-11 { grid-column: span 11; }
+.col-span-12 { grid-column: span 12; }
+
+/* Mobile: most things full width */
+@media (max-width: 767px) {
+  .col-span-1, .col-span-2, .col-span-3, .col-span-4,
+  .col-span-5, .col-span-6, .col-span-7, .col-span-8,
+  .col-span-9, .col-span-10, .col-span-11, .col-span-12 {
+    grid-column: span 12;
+  }
+  
+  .col-mobile-6 { grid-column: span 6; }
+  .col-mobile-4 { grid-column: span 4; }
+}
+
+/* Column start positions */
+.col-start-1 { grid-column-start: 1; }
+.col-start-2 { grid-column-start: 2; }
+.col-start-3 { grid-column-start: 3; }
+.col-start-4 { grid-column-start: 4; }
+.col-start-5 { grid-column-start: 5; }
+.col-start-6 { grid-column-start: 6; }
+.col-start-7 { grid-column-start: 7; }
+
+/* ============================================
+   SECTION SPACING
+   ============================================ */
+
+.section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+.section-sm {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .section-sm {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
 }

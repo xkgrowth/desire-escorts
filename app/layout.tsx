@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Sora, Inter } from "next/font/google";
 import "./globals.css";
-import { SiteHeader } from "./components/site-header";
+import { SiteHeader } from "./components/layout/site-header";
+import { SiteFooter } from "./components/layout/site-footer";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -49,6 +50,7 @@ export default function RootLayout({
       <body className="bg-background text-foreground font-sans antialiased">
         <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

@@ -4,34 +4,34 @@ overview: Establish a parity-safe, tokenized design system for Desire Escorts th
 todos:
   - id: p1-validate-inputs
     content: 1.1 Validate inputs (screenshots, brand palette, current logo/favicon usage, missing template states)
-    status: pending
+    status: completed
   - id: p1-brand-refresh-assets
     content: 1.2 Define and produce refreshed brand assets (new logo, animated logo variant, new favicon)
-    status: in_progress
+    status: completed
   - id: p1-template-audit
     content: 1.3 Build template inventory from migrated URL silos and map shared UI patterns
-    status: pending
+    status: completed
   - id: p1-guidelines-rule
     content: 1.4 Create design guideline rule file with tone, contrast, and component constraints
     status: completed
   - id: p2-color-tokens
     content: 2.1 Define color tokens (brand, semantic, and interactive state tokens)
-    status: pending
+    status: completed
   - id: p2-type-scale
     content: 2.2 Define typography tokens and locale-safe text rhythm for NL/EN
-    status: pending
+    status: completed
   - id: p2-spacing-depth
     content: 2.3 Define spatial and motion tokens (spacing, radii, elevation, borders, focus rings, transitions)
-    status: pending
+    status: completed
   - id: p2-grid-breakpoints
     content: 2.4 Define layout grid standards (containers, breakpoints, card-grid behavior)
-    status: pending
+    status: completed
   - id: p3-primitives
     content: 3.1 Build primitive UI components (buttons, typography, form controls, cards, badges, separators)
-    status: pending
+    status: in_progress
   - id: p3-layout-components
     content: 3.2 Build layout components (header, footer, mobile menu, breadcrumbs, locale toggle pattern)
-    status: pending
+    status: in_progress
   - id: p3-content-components
     content: 3.3 Build domain components (profile cards, listing controls, CTA strips, trust blocks)
     status: pending
@@ -80,6 +80,17 @@ The target is visual consistency and maintainability, not arbitrary redesign dri
   - Inter for body copy
 - Screenshot collection folder:
   - `assets/screenshots/`
+- Animation system (framer-motion):
+  - `app/components/ui/reveal.tsx` (scroll reveal animations)
+  - `app/components/ui/stagger-container.tsx` (staggered animations)
+  - `app/components/ui/hover-card-effect.tsx` (card hover effects)
+- Layout primitives:
+  - `app/components/ui/page-wrapper.tsx` (PageWrapper, Section, Container, Grid)
+- Page gradient system:
+  - CSS classes: `page-gradient`, `hero-glow`, `mid-glow`, `bottom-glow`, `bg-ambient-glow`
+- Grid system:
+  - 12-column CSS grid with responsive breakpoints
+  - CSS classes: `grid-container`, `col-span-*`, `section`, `section-sm`
 
 ---
 
