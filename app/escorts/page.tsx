@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import { FilterBar } from "../components/domain/filter-bar";
 import { ProfileCard } from "../components/domain/profile-card";
 import { CTASection } from "../components/domain/cta-section";
@@ -76,7 +77,9 @@ export default function EscortsOverviewPage() {
       </PageHero>
 
       <PageSection size="sm" className="border-y border-white/5 bg-surface/20">
-        <FilterBar filters={filters} basePath="/escorts" />
+        <Suspense fallback={<div className="h-14 rounded-luxury bg-surface/40 animate-pulse" />}>
+          <FilterBar filters={filters} basePath="/escorts" />
+        </Suspense>
       </PageSection>
 
       <PageSection
