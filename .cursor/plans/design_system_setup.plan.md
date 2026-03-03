@@ -7,7 +7,7 @@ todos:
     status: pending
   - id: p1-brand-refresh-assets
     content: 1.2 Define and produce refreshed brand assets (new logo, animated logo variant, new favicon)
-    status: pending
+    status: in_progress
   - id: p1-template-audit
     content: 1.3 Build template inventory from migrated URL silos and map shared UI patterns
     status: pending
@@ -61,13 +61,23 @@ The target is visual consistency and maintainability, not arbitrary redesign dri
 ## Inputs Already Available
 
 - Brand assets in `public/brand/`:
-  - `logo.svg`
-  - `favicon.png`
+  - `logo.svg` (legacy)
+  - `favicon.png` (legacy)
   - `preview-image.jpg`
+  - `heart.svg` (new static gold heart icon)
+- Logo components in `app/components/`:
+  - `desire-logo.tsx` (`DesireLogoStatic`, `DesireLogoAnimated`)
+  - `shiny-heart.tsx` (`StaticHeart`, `ShinyHeart`)
+- Dynamic favicon generation:
+  - `app/icon.tsx` (32×32 PNG)
+  - `app/apple-icon.tsx` (180×180 PNG)
 - Color palette implemented in:
   - `app/globals.css`
   - `tailwind.config.ts`
   - `assets/brand/PALETTE.md`
+- Typography:
+  - Sora (700, 800) for headlines/logo
+  - Inter for body copy
 - Screenshot collection folder:
   - `assets/screenshots/`
 

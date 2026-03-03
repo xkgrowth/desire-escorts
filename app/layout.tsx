@@ -1,18 +1,27 @@
 import type { Metadata } from "next";
+import { Sora, Inter } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "./components/site-header";
+
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+  weight: ["700", "800"],
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://desire-escorts.nl"),
   title: "Desire Escorts",
   description: "Desire Escorts application",
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/brand/favicon.png", type: "image/png" },
-    ],
     shortcut: ["/favicon.ico"],
-    apple: [{ url: "/brand/favicon.png" }],
   },
   openGraph: {
     images: [
@@ -36,8 +45,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="nl">
-      <body>
+    <html lang="nl" className={`${sora.variable} ${inter.variable}`}>
+      <body className="bg-background text-foreground font-sans antialiased">
         <SiteHeader />
         {children}
       </body>

@@ -84,3 +84,10 @@
 - [x] Store palette intent document at `assets/brand/PALETTE.md`.
 - [x] Create Desire-specific design system implementation plan at `.cursor/plans/design_system_setup.plan.md`.
 - [x] Create design guidelines rule file at `.cursor/rules/design_guidelines.mdc` with visual direction, typography, and component specs.
+- [x] Extract and integrate new animated logo components from `logo-v0` prototype.
+- [x] Create `app/components/shiny-heart.tsx` (static + animated heart icon).
+- [x] Create `app/components/desire-logo.tsx` (static + animated logo variants).
+- [x] Set up dynamic favicon generation via `app/icon.tsx` and `app/apple-icon.tsx`.
+- [x] Export static heart SVG to `public/brand/heart.svg`.
+- [x] Update `SiteHeader` to use always-animated logo.
+- [x] Configure Sora + Inter fonts in layout for logo typography.
