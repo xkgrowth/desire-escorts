@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { CheckCircle } from "lucide-react";
 
 type BadgeProps = {
-  variant?: "default" | "verified" | "vip" | "service";
+  variant?: "default" | "verified" | "service" | "available" | "unavailable";
   children?: React.ReactNode;
   className?: string;
 };
@@ -23,17 +23,35 @@ export function Badge({ variant = "default", children, className }: BadgeProps) 
     );
   }
 
-  if (variant === "vip") {
+  if (variant === "available") {
     return (
       <span
         className={cn(
-          "inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider",
-          "bg-gradient-to-r from-primary to-accent text-primary-foreground",
-          "shadow-glow",
+          "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium",
+          "bg-green-950/90 text-green-400 backdrop-blur-sm border border-green-500/30",
           className
         )}
       >
-        VIP Elite
+        <span className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+        </span>
+        <span>Beschikbaar</span>
+      </span>
+    );
+  }
+
+  if (variant === "unavailable") {
+    return (
+      <span
+        className={cn(
+          "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium",
+          "bg-background/90 text-foreground/60 backdrop-blur-sm border border-white/10",
+          className
+        )}
+      >
+        <span className="w-2 h-2 rounded-full bg-foreground/40" />
+        <span>Niet beschikbaar</span>
       </span>
     );
   }

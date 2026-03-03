@@ -20,7 +20,11 @@ export function HoverCardEffect({
 }: HoverCardEffectProps) {
   return (
     <motion.div
-      className={cn("transition-shadow", className)}
+      className={cn(
+        "rounded-luxury transition-shadow duration-300",
+        glowOnHover && "hover:shadow-glow",
+        className
+      )}
       whileHover={{
         scale: hoverScale,
         y: hoverY,
@@ -34,14 +38,7 @@ export function HoverCardEffect({
         willChange: "transform",
       }}
     >
-      <div
-        className={cn(
-          "h-full transition-shadow duration-300",
-          glowOnHover && "hover:shadow-glow"
-        )}
-      >
-        {children}
-      </div>
+      {children}
     </motion.div>
   );
 }

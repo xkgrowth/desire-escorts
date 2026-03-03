@@ -28,13 +28,13 @@ todos:
     status: completed
   - id: p3-primitives
     content: 3.1 Build primitive UI components (buttons, typography, form controls, cards, badges, separators)
-    status: in_progress
+    status: completed
   - id: p3-layout-components
     content: 3.2 Build layout components (header, footer, mobile menu, breadcrumbs, locale toggle pattern)
     status: in_progress
   - id: p3-content-components
     content: 3.3 Build domain components (profile cards, listing controls, CTA strips, trust blocks)
-    status: pending
+    status: completed
   - id: p4-template-rollout
     content: 4.1 Execute template rollout in priority order without URL or metadata drift
     status: pending
@@ -91,6 +91,17 @@ The target is visual consistency and maintainability, not arbitrary redesign dri
 - Grid system:
   - 12-column CSS grid with responsive breakpoints
   - CSS classes: `grid-container`, `col-span-*`, `section`, `section-sm`
+- Form controls:
+  - `app/components/ui/input.tsx` (Input with icons, labels, error states)
+  - `app/components/ui/select.tsx` (Select dropdown)
+  - `app/components/ui/textarea.tsx` (Textarea)
+  - `app/components/ui/checkbox.tsx` (Checkbox with custom styling)
+- Card system:
+  - `app/components/ui/card.tsx` (Card, CardHeader, CardContent, CardFooter)
+- Domain components:
+  - `app/components/domain/profile-card.tsx` (ProfileCard, ProfileCardCompact)
+  - `app/components/domain/cta-section.tsx` (CTASection, CTABanner)
+  - `app/components/domain/usp-bar.tsx` (USPBar, TrustBadges, StatsRow)
 
 ---
 
