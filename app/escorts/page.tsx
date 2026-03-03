@@ -7,7 +7,9 @@ import { CTASection } from "../components/domain/cta-section";
 import { FAQ } from "../components/domain/faq";
 import { PageLayout, PageHero, PageSection } from "../components/layout/page-layout";
 import { Breadcrumbs } from "../components/ui/breadcrumbs";
-import { mockEscortGrid, homeFaqs } from "@/lib/data/mock-data";
+import { getProfiles, profileToCardProps } from "@/lib/api";
+import { deriveFilterOptions } from "@/lib/filters/filter-utils";
+import { homeFaqs } from "@/lib/data/mock-data";
 
 export const metadata: Metadata = {
   title: "Escorts Overzicht Nederland | Desire Escorts",
@@ -18,38 +20,30 @@ export const metadata: Metadata = {
   },
 };
 
-const filters = [
-  {
-    id: "city",
-    label: "Locatie",
-    options: [
-      { value: "amsterdam", label: "Amsterdam" },
-      { value: "rotterdam", label: "Rotterdam" },
-      { value: "den-haag", label: "Den Haag" },
-      { value: "utrecht", label: "Utrecht" },
-    ],
-  },
-  {
-    id: "service",
-    label: "Service",
-    options: [
-      { value: "gfe", label: "Girlfriend Experience" },
-      { value: "massage", label: "Erotische Massage" },
-      { value: "hotel", label: "Hotel Service" },
-    ],
-    multiple: true,
-  },
-  {
-    id: "availability",
-    label: "Beschikbaarheid",
-    options: [
-      { value: "nu", label: "Nu beschikbaar" },
-      { value: "vandaag", label: "Vandaag beschikbaar" },
-    ],
-  },
-];
+export default async function EscortsOverviewPage() {
+  const profiles = await getProfiles();
+  const filterOptions = deriveFilterOptions(profiles);
 
-export default function EscortsOverviewPage() {
+  // Build dynamic filter config from actual data
+  const filters = [
+    {
+      id: "service",
+      label: "Service",
+      options: filterOptions.services.slice(0, 8).map((s) => ({
+        value: s.value,
+        label: s.value.charAt(0).toUpperCase() + s.value.slice(1).replace(/-/g, " "),
+      })),
+      multiple: true,
+    },
+    {
+      id: "availability",
+      label: "Beschikbaarheid",
+      options: [
+        { value: "nu", label: "Nu beschikbaar" },
+      ],
+    },
+  ];
+
   return (
     <PageLayout>
       <PageHero
@@ -82,11 +76,11 @@ export default function EscortsOverviewPage() {
 
       <PageSection
         title="Beschikbare Escorts"
-        description="Bekijk de selectie hieronder en open een profiel voor details, voorkeuren en directe boekingsmogelijkheden."
+        description={`${profiles.length} escorts beschikbaar — bekijk profielen voor details, voorkeuren en directe boekingsmogelijkheden.`}
       >
         <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
-          {mockEscortGrid.map((profile) => (
-            <ProfileCard key={profile.slug} {...profile} />
+          {profiles.map((profile) => (
+            <ProfileCard key={profile.slug} {...profileToCardProps(profile)} />
           ))}
         </div>
       </PageSection>
@@ -105,4 +99,3 @@ export default function EscortsOverviewPage() {
     </PageLayout>
   );
 }
-

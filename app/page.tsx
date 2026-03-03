@@ -19,7 +19,8 @@ import { CTASection } from "./components/domain/cta-section";
 import { PageWrapper, Section, Container, Grid } from "./components/ui/page-wrapper";
 import { GradientTitle } from "./components/ui/gradient-title";
 import { ServiceCard } from "./components/domain/service-card";
-import { mockHeroProfiles, mockEscortGrid, homeFaqs, topCities } from "@/lib/data/mock-data";
+import { getProfiles, profileToCardProps, getProfileImageUrl } from "@/lib/api";
+import { homeFaqs, topCities } from "@/lib/data/mock-data";
 
 export const metadata: Metadata = {
   title: "Escort Service Nederland | Desire Escorts",
@@ -33,7 +34,28 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  // Fetch real profiles from Strapi
+  const allProfiles = await getProfiles();
+  
+  // Map profiles for hero section (available profiles with images)
+  const heroProfiles = allProfiles
+    .filter((p) => p.isAvailable && p.photos.length > 0)
+    .slice(0, 9)
+    .map((p) => ({
+      name: p.name,
+      slug: p.slug,
+      imageUrl: getProfileImageUrl(p.photos, "medium"),
+      tagline: p.shortBio,
+      isVerified: p.verified,
+      isAvailable: p.isAvailable,
+      rankScore: p.sortOrder ? 100 - p.sortOrder : 50,
+    }));
+
+  // Map profiles for grid section (top 8)
+  const gridProfiles = allProfiles
+    .filter((p) => p.isAvailable)
+    .slice(0, 8);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "AdultEntertainment",
@@ -110,7 +132,7 @@ export default function Home() {
 
       {/* 1. Hero Section (Full Bleed) */}
       <div className="relative left-1/2 right-1/2 w-screen -translate-x-1/2">
-        <HomepageHero profiles={mockHeroProfiles} />
+        <HomepageHero profiles={heroProfiles} />
       </div>
 
       {/* 2. Escort Preview Grid */}
@@ -130,8 +152,8 @@ export default function Home() {
             </div>
 
             <Grid cols={4} className="mb-8">
-              {mockEscortGrid.map((profile) => (
-                <ProfileCard key={profile.slug} {...profile} />
+              {gridProfiles.map((profile) => (
+                <ProfileCard key={profile.slug} {...profileToCardProps(profile)} />
               ))}
             </Grid>
 

@@ -172,26 +172,27 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
                             : "border border-transparent"
                         )}
                       />
-                      <span
-                        className={cn(
-                          "relative block h-14 w-14 overflow-hidden rounded-full border bg-surface lg:h-16 lg:w-16 transition-all duration-300",
-                          isSelected ? "border-primary/80" : "border-white/25"
-                        )}
-                      >
-                        {profile.imageUrl ? (
-                          <Image
-                            src={profile.imageUrl}
-                            alt={profile.name}
-                            fill
-                            sizes="64px"
-                            className="object-cover transition duration-300 group-hover:scale-105"
-                          />
-                        ) : (
-                          <span className="flex h-full w-full items-center justify-center">
-                            <User className="h-6 w-6 text-foreground/30" />
-                          </span>
-                        )}
-                        <span className="absolute bottom-1 right-1 z-10 h-3 w-3 rounded-full border-2 border-surface bg-green-500" />
+                      <span className="relative block h-14 w-14 lg:h-16 lg:w-16">
+                        <span
+                          className={cn(
+                            "relative block h-full w-full overflow-hidden rounded-full border bg-surface transition-all duration-300",
+                            isSelected ? "border-primary/80" : "border-white/25"
+                          )}
+                        >
+                          {profile.imageUrl ? (
+                            <Image
+                              src={profile.imageUrl}
+                              alt={profile.name}
+                              fill
+                              sizes="64px"
+                              className="rounded-full object-cover transition duration-300 group-hover:scale-105"
+                            />
+                          ) : (
+                            <span className="flex h-full w-full items-center justify-center">
+                              <User className="h-6 w-6 text-foreground/30" />
+                            </span>
+                          )}
+                        </span>
                       </span>
                     </motion.span>
                   </motion.button>
