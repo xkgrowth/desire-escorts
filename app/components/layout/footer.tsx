@@ -96,7 +96,7 @@ export function Footer({
       )}
     >
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
+      <div className="w-full px-6 py-12 lg:px-10 lg:py-16 xl:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2">
@@ -177,7 +177,7 @@ export function Footer({
 
       {/* Bottom Bar */}
       <div className="border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6 py-6">
+        <div className="w-full px-6 py-6 lg:px-10 xl:px-16">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             {/* Payment Icons */}
             {showPaymentIcons && (
