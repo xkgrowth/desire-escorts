@@ -73,8 +73,8 @@ export function ServiceCard({
   }
 
   return (
-    <Link href={href} className={cn("group block", className)}>
-      <div className="card-surface rounded-luxury overflow-hidden hover:shadow-glow transition-shadow duration-300">
+    <Link href={href} className={cn("group block h-full", className)}>
+      <div className="card-surface rounded-luxury overflow-hidden hover:shadow-glow transition-shadow duration-300 h-full flex flex-col">
         {imageUrl && (
           <div className="relative h-48">
             <Image
@@ -86,7 +86,7 @@ export function ServiceCard({
             />
           </div>
         )}
-        <div className="p-6">
+        <div className="p-6 flex h-full flex-col">
           {icon && !imageUrl && (
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
               {icon}
@@ -98,7 +98,7 @@ export function ServiceCard({
           <p className="text-sm text-foreground/60 line-clamp-3 mb-4">
             {description}
           </p>
-          <div className="flex items-center gap-2 text-primary text-sm font-medium">
+          <div className="mt-auto flex items-center gap-2 text-primary text-sm font-medium">
             <span>Bekijk service</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </div>

@@ -85,14 +85,6 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 lg:px-6">
         <div className="grid min-h-[500px] grid-cols-1 gap-8 pb-6 pt-8 lg:min-h-[520px] lg:grid-cols-2 lg:pb-8 lg:pt-10">
         <div className="flex flex-col justify-center">
-          <div className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-surface/80 px-4 py-2 text-xs text-foreground/80">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
-            </span>
-            {availableProfiles.length} escorts nu beschikbaar
-          </div>
-
           <h1 className="max-w-xl text-4xl font-heading font-bold leading-tight text-foreground md:text-5xl lg:text-6xl">
             Ontdek Jouw Perfecte Match, Discreet en Betrouwbaar
           </h1>
@@ -121,6 +113,13 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
 
         <div className="flex items-center justify-center">
           <div className="relative h-[340px] w-full rounded-[26px] border border-white/10 bg-surface/20 p-4 backdrop-blur-sm lg:h-[400px]">
+            <div className="absolute left-4 top-4 z-40 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-surface/85 px-4 py-2 text-xs text-foreground/80">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
+              </span>
+              {availableProfiles.length} escorts nu beschikbaar
+            </div>
             <div className="absolute inset-0 rounded-[26px] bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,rgba(247,208,99,0.14)_0%,rgba(247,208,99,0.03)_55%,transparent_80%)]" />
             <div
               className="pointer-events-none absolute inset-0 rounded-[26px] opacity-[0.12]"
@@ -132,7 +131,7 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
               }}
             />
 
-            <div className="absolute inset-x-4 top-4 bottom-32 z-30">
+            <div className="absolute inset-x-4 top-14 bottom-32 z-30">
               {availableProfiles.slice(0, visibleAvatarCount).map((profile, index) => {
                 const position = avatarPositions[index % avatarPositions.length];
                 const isSelected = selectedSlug === profile.slug;

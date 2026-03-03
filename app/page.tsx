@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, MapPin, CheckCircle, Clock, Star, Heart } from "lucide-react";
+import {
+  ArrowRight,
+  MapPin,
+  CheckCircle,
+  Clock,
+  Star,
+  Heart,
+  MessageCircle,
+  ShieldCheck,
+  PhoneCall,
+} from "lucide-react";
 import { HomepageHero } from "./components/domain/homepage-hero";
 import { ProfileCard } from "./components/domain/profile-card";
 import { USPBar } from "./components/domain/usp-bar";
@@ -70,6 +80,27 @@ export default function Home() {
     },
   ];
 
+  const bookingSteps = [
+    {
+      icon: <MessageCircle className="w-5 h-5" />,
+      title: "1. Deel je wensen",
+      description:
+        "Vertel ons via chat of telefoon wat je zoekt: locatie, tijdstip en voorkeuren.",
+    },
+    {
+      icon: <CheckCircle className="w-5 h-5" />,
+      title: "2. Kies je match",
+      description:
+        "Je ontvangt direct passende, geverifieerde profielen met actuele beschikbaarheid.",
+    },
+    {
+      icon: <PhoneCall className="w-5 h-5" />,
+      title: "3. Boek discreet",
+      description:
+        "We bevestigen snel en zorgen voor een duidelijke, discrete afhandeling.",
+    },
+  ];
+
   return (
     <PageWrapper withGradient={true}>
       <script
@@ -83,42 +114,100 @@ export default function Home() {
       </div>
 
       {/* 2. Escort Preview Grid */}
-      <Section size="md">
-        <Container>
-          <div className="mb-6">
-            <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
-              Selectie
-            </span>
-            <GradientTitle as="h2" size="lg">
-              Beschikbare Escorts
-            </GradientTitle>
-          </div>
+      <Section
+        size="md"
+        className="bg-surface/5"
+      >
+        <Container size="2xl">
+          <div className="rounded-luxury border border-white/10 bg-surface/25 shadow-[0_12px_28px_rgba(0,0,0,0.18)] p-4 md:p-6">
+            <div className="mb-6">
+              <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
+                Selectie
+              </span>
+              <GradientTitle as="h2" size="lg">
+                Beschikbare Escorts
+              </GradientTitle>
+            </div>
 
-          <Grid cols={4} className="mb-8">
-            {mockEscortGrid.map((profile) => (
-              <ProfileCard key={profile.slug} {...profile} />
-            ))}
-          </Grid>
+            <Grid cols={4} className="mb-8">
+              {mockEscortGrid.map((profile) => (
+                <ProfileCard key={profile.slug} {...profile} />
+              ))}
+            </Grid>
 
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <Link 
-              href="/escorts"
-              className="btn-primary inline-flex items-center gap-2 px-8 py-3 rounded-full font-bold text-background transition-all hover:scale-105"
-            >
-              Bekijk Alle Escorts
-            </Link>
-            <Link 
-              href="/escorts" 
-              className="group flex items-center gap-2 text-foreground/60 hover:text-primary transition-colors font-medium text-sm"
-            >
-              Bekijk alle profielen
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <Link
+                href="/escorts"
+                className="btn-primary inline-flex items-center gap-2 px-8 py-3 rounded-full font-bold text-background transition-all hover:scale-105"
+              >
+                Bekijk Alle Escorts
+              </Link>
+              <Link
+                href="/escorts"
+                className="group flex items-center gap-2 text-foreground/60 hover:text-primary transition-colors font-medium text-sm"
+              >
+                Bekijk alle profielen
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
         </Container>
       </Section>
 
-      {/* 3. Why Choose Us (Condensed) */}
+      {/* 3. Intro / Context Block */}
+      <Section size="md">
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-2">
+            <div>
+              <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
+                Escort Service Nederland
+              </span>
+              <GradientTitle as="h2" size="lg" className="mb-4">
+                Persoonlijke service met echte aandacht
+              </GradientTitle>
+              <p className="text-foreground/70 mb-4">
+                Desire Escorts is actief door heel Nederland en helpt je snel aan een
+                passende match. Of je nu zoekt naar gezelschap voor een avond uit,
+                een hotelafspraak of een rustige privé-setting: we werken discreet,
+                duidelijk en zonder onnodige stappen.
+              </p>
+              <p className="text-foreground/70">
+                Ook voor zoekopdrachten zoals{" "}
+                <Link href="/escort-amsterdam" className="text-primary hover:underline">
+                  escort Amsterdam
+                </Link>{" "}
+                bieden we een duidelijke route: direct profielen bekijken, snel
+                contact leggen en gericht boeken op basis van beschikbaarheid.
+              </p>
+            </div>
+            <div className="rounded-luxury border border-white/10 bg-surface/40 p-6 md:p-8">
+              <h3 className="font-heading text-2xl font-bold mb-4">
+                Waarom bezoekers voor Desire kiezen
+              </h3>
+              <ul className="space-y-3 text-foreground/75">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <span>Geverifieerde profielen met live beschikbaarheidsstatus</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <span>Landelijke dekking met snelle service in Amsterdam en Randstad</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <span>Direct contact en snelle bevestiging van je aanvraag</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <span>Discretie en privacy als vaste standaard</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* 4. Why Choose Us (Condensed) */}
       <Section glow="mid" className="bg-surface/30 border-y border-white/5">
         <Container>
           <USPBar 
@@ -130,7 +219,7 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* 4. Services Overview */}
+      {/* 5. Services Overview */}
       <Section size="lg">
         <Container>
           <div className="text-center mb-12">
@@ -141,7 +230,7 @@ export default function Home() {
               Onze Escort Services
             </GradientTitle>
             <p className="text-foreground/60 max-w-2xl mx-auto">
-              Van ontspannende massages tot een complete Girlfriend Experience.
+              Van ontspannende massages en escort massage tot een complete Girlfriend Experience.
               Ontdek onze veelzijdige services.
             </p>
           </div>
@@ -178,14 +267,42 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* 5. Direct Contact CTA */}
+      {/* 6. Hoe Werkt Boeken */}
+      <Section size="md">
+        <Container>
+          <div className="mb-8 text-center">
+            <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
+              Snel geregeld
+            </span>
+            <GradientTitle as="h2" size="lg">
+              Hoe werkt boeken?
+            </GradientTitle>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {bookingSteps.map((step) => (
+              <div
+                key={step.title}
+                className="rounded-luxury border border-white/10 bg-surface/40 p-6"
+              >
+                <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  {step.icon}
+                </div>
+                <h3 className="mb-2 font-heading text-lg font-bold">{step.title}</h3>
+                <p className="text-sm text-foreground/70">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* 7. Direct Contact CTA */}
       <Section size="lg">
         <Container>
           <CTASection />
         </Container>
       </Section>
 
-      {/* 6. Service Areas / Locaties */}
+      {/* 8. Service Areas / Locaties */}
       <Section size="lg" className="bg-surface/10">
         <Container>
           <div className="text-center mb-12">
@@ -196,13 +313,14 @@ export default function Home() {
               Actief in heel Nederland
             </GradientTitle>
             <p className="text-foreground/60 max-w-2xl mx-auto">
-              Onze escorts zijn beschikbaar in alle grote steden en regio&apos;s.
-              Met snelle responstijden in de Randstad.
+              We werken landelijk: niet per stad met vaste bezetting, maar met
+              flexibele beschikbaarheid door heel Nederland. Voor escort Amsterdam
+              en andere grote steden zijn responstijden vaak het snelst.
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {topCities.map((city) => (
+            {topCities.slice(0, 6).map((city) => (
               <Link 
                 key={city.name} 
                 href={city.href}
@@ -217,10 +335,68 @@ export default function Home() {
               </Link>
             ))}
           </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-sm text-foreground/60">
+              Zoek je een specifieke plaats? Bekijk dan alle gebieden op de{" "}
+              <Link href="/locaties" className="text-primary hover:underline">
+                locatie-overzichtspagina
+              </Link>
+              .
+            </p>
+          </div>
         </Container>
       </Section>
 
-      {/* 7. FAQ */}
+      {/* 9. Vertrouwen & Discretie */}
+      <Section size="md">
+        <Container>
+          <div className="rounded-luxury border border-white/10 bg-surface/30 p-6 md:p-10">
+            <div className="mb-6">
+              <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
+                Vertrouwen
+              </span>
+              <GradientTitle as="h2" size="lg">
+                Discreet, duidelijk en professioneel
+              </GradientTitle>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div>
+                <p className="text-foreground/70 mb-4">
+                  Bij Desire Escorts staat privacy centraal. We delen geen onnodige
+                  gegevens, communiceren helder over het proces en houden afspraken
+                  strak en professioneel.
+                </p>
+                <p className="text-foreground/70">
+                  Voor zowel nieuwe als terugkerende bezoekers betekent dit: minder
+                  onzekerheid, sneller schakelen en een betrouwbare ervaring van
+                  aanvraag tot bevestiging.
+                </p>
+              </div>
+              <ul className="space-y-3 text-foreground/75">
+                <li className="flex items-start gap-3">
+                  <ShieldCheck className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <span>Duidelijke intake en begeleiding bij elke aanvraag</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <ShieldCheck className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <span>Discreet contact via chat en telefoon</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <ShieldCheck className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <span>Heldere prijscommunicatie en verwachtingen vooraf</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <ShieldCheck className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <span>Nationwide service met snelle opvolging</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* 10. FAQ */}
       <Section className="border-t border-white/5">
         <Container size="sm">
           <FAQ 
@@ -235,6 +411,43 @@ export default function Home() {
               className="text-sm text-foreground/60 hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-0.5"
             >
               Bekijk alle veelgestelde vragen →
+            </Link>
+          </div>
+        </Container>
+      </Section>
+
+      {/* 11. Kennisbank Links */}
+      <Section size="sm">
+        <Container size="lg">
+          <div className="text-center mb-8">
+            <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
+              Lees verder
+            </span>
+            <GradientTitle as="h2" size="md">
+              Meer informatie voor een goede voorbereiding
+            </GradientTitle>
+          </div>
+          <div className="grid gap-3 md:grid-cols-3">
+            <Link
+              href="/kennisbank/boeken-reserveringen/"
+              className="rounded-luxury border border-white/10 bg-surface/40 p-5 text-left transition-colors hover:border-primary/30"
+            >
+              <p className="font-heading font-semibold mb-1">Boeken & reserveren</p>
+              <p className="text-sm text-foreground/65">Alles over beschikbaarheid, timing en aanvraagproces.</p>
+            </Link>
+            <Link
+              href="/kennisbank/discretie-privacy/"
+              className="rounded-luxury border border-white/10 bg-surface/40 p-5 text-left transition-colors hover:border-primary/30"
+            >
+              <p className="font-heading font-semibold mb-1">Discretie & privacy</p>
+              <p className="text-sm text-foreground/65">Hoe wij omgaan met vertrouwelijkheid en gegevensbescherming.</p>
+            </Link>
+            <Link
+              href="/blog"
+              className="rounded-luxury border border-white/10 bg-surface/40 p-5 text-left transition-colors hover:border-primary/30"
+            >
+              <p className="font-heading font-semibold mb-1">Nieuws & inzichten</p>
+              <p className="text-sm text-foreground/65">Praktische tips en updates uit onze kennisbank en blog.</p>
             </Link>
           </div>
         </Container>

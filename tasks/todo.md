@@ -1,5 +1,23 @@
 # WPML Export Enablement
 
+# Homepage Content Enrichment (C2 refinement)
+
+- [x] Expand homepage with additional Dutch SEO/AEO-supporting body content blocks.
+- [x] Add "Hoe werkt boeken" conversion explainer section.
+- [x] Add trust/discretion context section to strengthen authority signals.
+- [x] Refine location messaging to nationwide coverage (not per-city fixed escorts).
+- [x] Add knowledge/continuation links for deeper internal navigation.
+
+## Review Notes (Homepage Content Enrichment)
+
+- Homepage moved from thin visual baseline to richer intent-supporting structure.
+- Added multiple scannable sections without overloading above-the-fold.
+- Messaging keeps non-exclusive brand positioning and NL-first language.
+- Location block now explicitly states nationwide flexible availability.
+- Follow-up refinement re-anchored profile cards directly under hero and added stronger visual split.
+- Added explicit `escort amsterdam` supporting mentions on homepage without changing city-page ownership.
+- Added mandatory content-source mix rule in `.cursor/rules/CONTENT_SPECIFICATIONS.mdc` for all templates.
+
 - [x] Add `--lang` support to WordPress export script.
 - [x] Add WPML language probes to healthcheck script.
 - [x] Add npm aliases for NL and EN exports.

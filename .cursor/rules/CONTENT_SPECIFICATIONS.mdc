@@ -17,6 +17,32 @@ Define exact content structure, word counts, required sections, and quality stan
 4. **Unique per page**: No template filler; each page must contain genuinely unique content.
 5. **Scannable**: Headers, bullets, short paragraphs for mobile users.
 
+## Content Source Mix (Required For All Templates)
+
+For each template and locale, copy must be built from a controlled mix of sources:
+
+1. **Legacy high-performing content (40-60%)**
+   - Reuse proven phrasing, sections, and intent blocks from legacy pages that already perform.
+   - Preserve winning user-intent framing unless there is evidence of underperformance.
+
+2. **Current ranking query alignment (20-30%)**
+   - Include exact or close-variant phrasing for currently ranking head/support terms.
+   - Place terms naturally in H2s, intro paragraphs, internal anchors, and FAQ prompts.
+
+3. **Growth keyword opportunities (20-30%)**
+   - Add underserved but relevant terms from strategy datasets.
+   - Prioritize terms with high commercial intent and clear template fit.
+
+### Implementation Rules
+
+- Do not write net-new copy blocks without mapping them to at least one of the three source buckets above.
+- Each template PR/update should include short notes on:
+  - which legacy assets were reused,
+  - which ranking queries were reinforced,
+  - which growth targets were introduced.
+- Avoid keyword stuffing; exact-match phrase use should remain natural and context-led.
+- Preserve URL ownership rules from `KEYWORD_STRATEGY.mdc` (for example city-intent ownership on city pages).
+
 ---
 
 ## Homepage
