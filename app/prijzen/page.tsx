@@ -3,12 +3,15 @@ import Link from "next/link";
 import { ArrowRight, BadgeEuro, Building2, Clock3, CreditCard, MapPin } from "lucide-react";
 import { CTASection } from "../components/domain/cta-section";
 import { FAQ } from "../components/domain/faq";
+import { LocationPricingEstimator } from "../components/domain/location-pricing-estimator";
 import { TemplateHeroGlass } from "../components/domain/template-hero-glass";
 import { PageLayout, PageSection } from "../components/layout/page-layout";
 import {
   formatEuro,
   formatHours,
+  locationPricingEstimates,
 } from "@/lib/data/location-pricing";
+import { getDutchPlaces } from "@/lib/data/nl-places";
 import { allProvincePricingGroups } from "@/lib/data/province-pricing";
 
 const paymentMethods = ["Cash", "Mobiel pinnen", "Debitcard", "Creditcard", "Valuta op aanvraag"];
@@ -49,11 +52,66 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PricesPage() {
+function getProvinceLowestCombo(rows: { minPrice: number; minHours: number }[]): {
+  provinceMinPrice: number;
+  provinceMinHours: number;
+} {
+  if (rows.length === 0) {
+    return { provinceMinPrice: 0, provinceMinHours: 0 };
+  }
+
+  const lowest = rows.reduce((acc, row) => {
+    if (row.minPrice < acc.minPrice) return row;
+    if (row.minPrice === acc.minPrice && row.minHours < acc.minHours) return row;
+    return acc;
+  }, rows[0]);
+
+  return {
+    provinceMinPrice: lowest.minPrice,
+    provinceMinHours: lowest.minHours,
+  };
+}
+
+export default async function PricesPage() {
+  const dutchPlaces = await getDutchPlaces();
+
+  const slugToProvince = new Map<string, string>();
+  for (const group of allProvincePricingGroups) {
+    for (const row of group.rows) {
+      slugToProvince.set(row.slug, group.province);
+    }
+  }
+
+  const knownByCity = new Map<string, (typeof locationPricingEstimates)[number] & { province: string }>();
+  for (const item of locationPricingEstimates) {
+    const province = slugToProvince.get(item.slug);
+    if (!province) continue;
+    const cityKey = item.city.toLowerCase();
+    const existing = knownByCity.get(cityKey);
+    if (!existing) {
+      knownByCity.set(cityKey, { ...item, province });
+      continue;
+    }
+    if (item.minPrice < existing.minPrice) {
+      knownByCity.set(cityKey, { ...item, province });
+      continue;
+    }
+    if (item.minPrice === existing.minPrice && item.minHours < existing.minHours) {
+      knownByCity.set(cityKey, { ...item, province });
+    }
+  }
+
+  const knownLocationEstimates = Array.from(knownByCity.values()).map((item) => ({
+    city: item.city,
+    slug: item.slug,
+    province: item.province,
+    minPrice: item.minPrice,
+    minHours: item.minHours,
+  }));
+
   const provinceSummary = allProvincePricingGroups.map((group) => ({
     province: group.province,
-    provinceMinPrice: group.provinceMinPrice,
-    cityCount: group.rows.length,
+    ...getProvinceLowestCombo(group.rows),
   }));
 
   return (
@@ -64,31 +122,19 @@ export default function PricesPage() {
           title="Escort Prijzen per Regio"
           description="Transparante prijsindicaties op basis van live prijzeninformatie en bestaande locatiepagina's. Gebruik deze bedragen als richtlijn; definitieve prijs en boekduur worden bevestigd bij je aanvraag."
           uspItems={[
-            { icon: <BadgeEuro className="h-5 w-5" />, title: "Vanaf €160" },
+            { icon: <BadgeEuro className="h-5 w-5" />, title: "Vanaf €160 voor 1 uur" },
             { icon: <Clock3 className="h-5 w-5" />, title: "Minimale boekduur per stad" },
             { icon: <MapPin className="h-5 w-5" />, title: "Landelijke dekking" },
           ]}
         />
       </PageSection>
 
-      <PageSection size="sm" title="Snel overzicht (alle 12 provincies)">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {provinceSummary.map((item) => (
-            <div
-              key={item.province}
-              className="rounded-luxury border border-white/10 bg-surface/35 p-5"
-            >
-              <p className="font-heading text-lg font-bold text-foreground">{item.province}</p>
-              <p className="mt-2 text-sm text-foreground/70">
-                Vanaf{" "}
-                <span className="font-semibold text-primary">
-                  {item.provinceMinPrice > 0 ? formatEuro(item.provinceMinPrice) : "op aanvraag"}
-                </span>
-              </p>
-              <p className="mt-1 text-sm text-foreground/55">{item.cityCount} steden in tabel</p>
-            </div>
-          ))}
-        </div>
+      <PageSection size="sm">
+        <LocationPricingEstimator
+          knownLocationEstimates={knownLocationEstimates}
+          provinceEstimates={provinceSummary}
+          dutchPlaces={dutchPlaces}
+        />
       </PageSection>
 
       <PageSection size="sm" title="Prijzen per stad">

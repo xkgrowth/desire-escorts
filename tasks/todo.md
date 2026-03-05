@@ -391,3 +391,32 @@
 - [x] Create reusable `GlowOrbs` background component with subtle gold radial orbs.
 - [x] Add top-left and bottom-right anchor orbs plus alternating middle orbs.
 - [x] Integrate `GlowOrbs` in root layout behind all page content with safe z-index layering.
+
+# Rates Page + Pricing Dataset
+
+- [x] Parse legacy `prijzen` Firecrawl markdown into structured province/city pricing data.
+- [x] Parse location-page topline pricing statements into slug-level estimate dataset.
+- [x] Add shared pricing data module for reuse in rates and location templates.
+- [x] Implement `app/prijzen/page.tsx` with province summary, city tables, payment and cancellation notes, FAQ, and CTA.
+- [x] Validate touched files with lint diagnostics and resolve regressions.
+
+## Review Notes (Rates Page + Pricing Dataset)
+
+- Legacy pricing content is centralized in `lib/data/location-pricing.ts` for a single source of truth.
+- Dataset now includes province-level pricing tables and slug-level location estimates for 250 scraped location slugs.
+- New rates page uses the dataset directly, so extending location pages can reuse the same estimate mapping (`getLocationPricingEstimateBySlug`).
+- `/tarieven` now redirects to `/prijzen` to preserve live URL parity and avoid internal route drift.
+- Added `lib/data/province-pricing.ts` to guarantee all 12 provinces are rendered on `/prijzen`, with fallback rows from existing location pages where legacy province tables were missing.
+
+# Location Search Estimator (No API)
+
+- [x] Validate CBS dataset structure (`WoonplaatsenCodes.csv` + `Observations.csv`) for woonplaats -> provincie mapping.
+- [x] Add local parser/cache (`lib/data/nl-places.ts`) to load Dutch places from the dataset directory without API calls.
+- [x] Build `/prijzen` location search estimator that resolves exact city matches to location-page pricing and falls back to province-level lowest combo.
+- [x] Surface result UX with suggestion chips and clear fallback messaging for towns without location pages.
+
+## Review Notes (Location Search Estimator)
+
+- Uses local CBS files only (no external API), with optional directory override via `CBS_WOONPLAATSEN_DATASET_DIR`.
+- Exact matches return city-level estimate + location page link when available.
+- Unknown-to-site places still return estimate via their province minimum combo, preserving conversion intent.

@@ -55,7 +55,7 @@ export const primaryNav: NavItem[] = [
   { 
     label: "Tarieven", 
     labelEn: "Rates",
-    href: "/tarieven" 
+    href: "/prijzen" 
   },
   { 
     label: "Contact", 

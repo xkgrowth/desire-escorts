@@ -825,7 +825,7 @@ Organize questions by topic:
 ## Rates Page
 
 ### URL
-- `/tarieven/` (NL) / `/en/rates/` (EN)
+- `/prijzen/` (NL) / `/en/rates/` (EN)
 
 ### Target Metrics
 - **Word count**: 400-700 words
