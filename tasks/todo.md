@@ -349,3 +349,39 @@
 - Implemented the first Batch C.4 location overview template on the preserved legacy slug rather than introducing a new `/locaties` route.
 - Navigation and key internal links now point to `/escort-in-nederland` to keep local and production URL structure aligned.
 - Content follows Location Overview spec with concise, scan-friendly blocks and clear city-page routing intent.
+
+# Location Detail Template (Haarlem + Amstelveen)
+
+- [x] Build reusable location detail template component with hero, high-priority contact box, top profiles, FAQ, hotels, quote, crosslinks, and blog section.
+- [x] Build city data model for location pages and populate `escort-haarlem` and `escort-amstelveen`.
+- [x] Use scraped legacy facts for speed/price/hotels/FAQ and trim to concise, intent-focused content blocks.
+- [x] Add production-parity routes at `app/escort-haarlem/page.tsx` and `app/escort-amstelveen/page.tsx`.
+- [x] Add per-page metadata with canonical and locale alternates.
+- [x] Run lint diagnostics on touched files and resolve regressions.
+
+## Review Notes (Location Detail Template)
+
+- Template follows location-page section order while avoiding long filler blocks from legacy.
+- Hero title format is standardized to `Escort Service in [city]` and speed/pricing is surfaced in the opening summary.
+- Contact box is placed high with Live Chat + WhatsApp only, matching current page patterns.
+- Top profile block is driven by Strapi sort priority (`getProfiles()` ordering + availability).
+
+# Template Scroll/Load Animation Rollout
+
+- [x] Add scroll reveal wrappers to homepage sections and key card grids.
+- [x] Add reveal/stagger animations to escorts overview (hero, listing, CTA, FAQ).
+- [x] Add reveal/stagger animations to escort detail (hero, related profiles, FAQ, CTA).
+- [x] Add reveal/stagger animations to location overview (`/escort-in-nederland`).
+- [x] Add reveal/stagger animations to reusable location detail template (hero + all major content blocks).
+- [x] Validate touched files with linter diagnostics.
+
+## Review Notes (Template Scroll/Load Animation Rollout)
+
+- Reused existing `ScrollReveal`, `StaggerContainer`, and `StaggerItem` primitives for consistency with design-system patterns.
+- Animations are now present on all currently built templates plus the in-progress location detail template component, so new city pages inherit motion automatically.
+- Grid/list-heavy sections use staggered reveal while structural blocks (hero/CTA/FAQ/content cards) use single reveal wrappers.
+- Refined the top contact-right panel to metric labels (`Servicetijd`, `Prijs vanaf`, `Minimale afname`) with highlighted values.
+- Switched blog section to visual cards with images and removed redundant bottom CTA block.
+- Added support for two location image slots per city and wired both image placements in the template.
+- Expanded location FAQ datasets to include more legacy questions while keeping concise answers.
+- Added `desire-escorts.nl` as an allowed Next.js image domain for scraped location assets.

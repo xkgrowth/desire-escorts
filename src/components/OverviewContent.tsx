@@ -7,6 +7,7 @@ import { FilterPanel } from "@/src/components/filters/FilterPanel";
 import { MobileFilterModal } from "@/src/components/filters/MobileFilterModal";
 import { FilterProvider } from "@/src/contexts/FilterContext";
 import { useFilterData } from "@/src/hooks/useFilterData";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/app/components/ui/scroll-reveal";
 
 function OverviewContentInner({ profiles }: { profiles: Profile[] }) {
   const data = useFilterData(profiles);
@@ -20,13 +21,17 @@ function OverviewContentInner({ profiles }: { profiles: Profile[] }) {
       </div>
 
       <div className="grid items-start gap-6 lg:grid-cols-[240px_1fr]">
-        <FilterPanel data={data} />
+        <ScrollReveal animation="fade-right" duration={0.45}>
+          <FilterPanel data={data} />
+        </ScrollReveal>
 
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
+        <StaggerContainer className="grid grid-cols-2 gap-6 md:grid-cols-3" staggerDelay={0.05}>
           {data.filteredProfiles.map((profile) => (
-            <ProfileCard key={profile.id} {...profileToCardProps(profile)} />
+            <StaggerItem key={profile.id} animation="fade-up">
+              <ProfileCard {...profileToCardProps(profile)} />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </div>
   );

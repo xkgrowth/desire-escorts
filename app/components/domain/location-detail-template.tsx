@@ -9,7 +9,6 @@ import { ProfileCard } from "./profile-card";
 import { TemplateHeroGlass } from "./template-hero-glass";
 import { FAQ } from "./faq";
 import { TestimonialCard } from "./testimonial-card";
-import { ArticleCard } from "./article-card";
 import { PageLayout, PageSection } from "../layout/page-layout";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "../ui/scroll-reveal";
 import { ResilientImage } from "../ui/resilient-image";
@@ -258,29 +257,6 @@ export async function LocationDetailTemplate({ data }: LocationDetailTemplatePro
         </ScrollReveal>
       </PageSection>
 
-      <PageSection size="sm">
-        <ScrollReveal delay={0.12}>
-          <div className="rounded-luxury border border-white/10 bg-surface/25 p-6">
-            <h2 className="font-heading text-2xl font-bold text-foreground">Blog en nieuws</h2>
-            <p className="mt-2 text-foreground/65">
-              Lees relevante updates en inzichten rondom escort services.
-            </p>
-            <div className="mt-5 grid gap-4 md:grid-cols-3">
-              {data.blogPosts.map((post) => (
-                <ArticleCard
-                  key={post.href}
-                  title={post.title}
-                  slug={post.href}
-                  href={post.href}
-                  imageUrl={post.imageUrl}
-                  publishedAt={post.dateLabel}
-                  variant="default"
-                />
-              ))}
-            </div>
-          </div>
-        </ScrollReveal>
-      </PageSection>
     </PageLayout>
   );
 }
