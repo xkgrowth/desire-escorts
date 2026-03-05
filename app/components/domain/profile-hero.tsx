@@ -93,7 +93,7 @@ export function ProfileHero({
       {/* Gallery Section */}
       <div className="space-y-4">
         {/* Main Image */}
-        <div className="relative aspect-[4/5] rounded-luxury overflow-hidden bg-surface">
+        <div className="relative aspect-[4/5] lg:aspect-[5/6] rounded-luxury overflow-hidden bg-surface">
           {hasImages ? (
             <Image
               src={images[activeImage].url}
@@ -219,18 +219,6 @@ export function ProfileHero({
                   <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                   {service}
                 </span>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Languages */}
-        {languages && languages.length > 0 && (
-          <div className="mb-6">
-            <h3 className="text-sm font-medium text-foreground/50 uppercase tracking-wider mb-3">Talen</h3>
-            <div className="flex flex-wrap gap-2">
-              {languages.map((lang) => (
-                <Badge key={lang} variant="service">{lang}</Badge>
               ))}
             </div>
           </div>
