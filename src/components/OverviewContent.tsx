@@ -1,7 +1,6 @@
 "use client";
 
 import { ProfileCard } from "@/app/components/domain/profile-card";
-import { Button } from "@/app/components/ui/button";
 import { profileToCardProps } from "@/lib/api";
 import type { Profile } from "@/lib/types/profile";
 import { FilterPanel } from "@/src/components/filters/FilterPanel";
@@ -17,11 +16,6 @@ function OverviewContentInner({ profiles }: { profiles: Profile[] }) {
       <div className="flex flex-wrap items-center justify-end gap-3">
         <div className="flex items-center gap-2">
           <MobileFilterModal data={data} />
-          {data.hasActiveFilters && (
-            <Button variant="ghost" size="sm" onClick={data.clearFilters}>
-              Filters wissen
-            </Button>
-          )}
         </div>
       </div>
 

@@ -53,7 +53,7 @@ export function PageLayout({
           "border-b border-white/5",
           !showBreadcrumbsOnMobile && "hidden md:block"
         )}>
-          <Container size="xl" className="py-3">
+          <Container size="2xl" className="py-3">
             {breadcrumbsVariant === "compact" ? (
               <BreadcrumbsCompact items={breadcrumbs} />
             ) : (
@@ -94,7 +94,7 @@ export function PageHero({
 }: PageHeroProps) {
   return (
     <Section glow="hero" size={size} className={className}>
-      <Container size="xl">
+      <Container size="2xl">
         <div className={cn(
           "max-w-3xl",
           align === "center" && "mx-auto text-center"
@@ -146,7 +146,7 @@ export function PageSection({
 }: PageSectionProps) {
   return (
     <Section glow={glow} size={size} className={className}>
-      <Container size="xl">
+      <Container size="2xl">
         {(title || description) && (
           <div className="mb-8">
             {title && (
