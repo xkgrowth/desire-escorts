@@ -498,7 +498,7 @@ export function ProfileHeroShowcase() {
     <ProfileHero
       name="Brianna"
       tagline="Hoi! Ik ben Brianna, 26 jaar en 173 cm lang. Met mijn bruine ogen en bruin-zwart haar hou ik wel van een beetje mysterie. Mijn D cup past perfect bij mijn normale postuur, vind ik zelf!"
-      description="Hoi! Ik ben Brianna, 26 jaar en 173 cm lang. Met mijn bruine ogen en bruin-zwart haar hou ik wel van een beetje mysterie. Mijn D cup past perfect bij mijn normale postuur, vind ik zelf! Ik ben een sophisticated dinner date escort with effortless elegance and warm conversational depth."
+      description="Hoi! Ik ben Brianna, 26 jaar en 173 cm lang. Met mijn bruine ogen en bruin-zwart haar hou ik wel van een beetje mysterie. Mijn D cup past perfect bij mijn normale postuur, vind ik zelf! Ik ben een stijlvolle dinnerdate-escort met verfijnde energie en warme, ontspannen gesprekken."
       images={[
         { url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=1000&fit=crop", alt: "Brianna - foto 1" },
         { url: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&h=1000&fit=crop", alt: "Brianna - foto 2" },
@@ -519,13 +519,14 @@ export function ProfileHeroShowcase() {
       sexuality="Heteroseksueel"
       languages={["Engels", "Nederlands"]}
       services={[
-        "Girlfriend Experience",
-        "Erotische Massage",
+        "Girlfriend experience",
+        "Erotische massage",
         "Orale seks",
         "Overnachting",
         "Trio met man",
         "Uitgaan",
         "Dinnerdate",
+        "Zoenen",
       ]}
       whatsapp="+31642188911"
     />

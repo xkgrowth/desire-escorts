@@ -99,7 +99,7 @@ export function ProfileHero({
               src={images[activeImage].url}
               alt={images[activeImage].alt}
               fill
-              className="object-cover"
+              className="object-cover object-top"
               sizes="(max-width: 1024px) 100vw, 50vw"
               priority
             />
@@ -139,7 +139,7 @@ export function ProfileHero({
 
         {/* Thumbnails */}
         {images.length > 1 && (
-          <div className="flex gap-2 overflow-x-auto pb-2">
+          <div className="flex gap-2 overflow-x-auto px-1 py-1">
             {images.map((image, index) => (
               <button
                 key={index}
@@ -147,7 +147,7 @@ export function ProfileHero({
                 className={cn(
                   "relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden transition-all",
                   activeImage === index
-                    ? "ring-2 ring-primary"
+                    ? "after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:border-2 after:border-primary"
                     : "opacity-60 hover:opacity-100"
                 )}
               >
@@ -155,7 +155,7 @@ export function ProfileHero({
                   src={image.url}
                   alt={image.alt}
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                   sizes="80px"
                 />
               </button>
@@ -238,31 +238,31 @@ export function ProfileHero({
 
         {/* Characteristics Table */}
         {(eyeColor || hairColor || sexuality || languagesText) && (
-          <div className="mb-6">
-            <h3 className="text-sm font-medium text-foreground/50 uppercase tracking-wider mb-3">Kenmerken</h3>
+          <div className="mb-5">
+            <h3 className="text-sm font-medium text-foreground/50 uppercase tracking-wider mb-2">Kenmerken</h3>
             <div className="rounded-lg bg-[#161E21] border border-white/5 overflow-hidden">
               {languagesText && (
-                <div className="flex justify-between px-4 py-2.5 border-b border-white/5">
-                  <span className="text-foreground/60">Talen</span>
-                  <span className="text-foreground font-medium text-right">{languagesText}</span>
+                <div className="flex justify-between px-4 py-2 border-b border-white/5">
+                  <span className="text-sm text-foreground/60">Talen</span>
+                  <span className="text-sm text-foreground font-medium text-right">{languagesText}</span>
                 </div>
               )}
               {eyeColor && (
-                <div className="flex justify-between px-4 py-2.5 border-b border-white/5">
-                  <span className="text-foreground/60">Kleur ogen</span>
-                  <span className="text-foreground font-medium">{eyeColor}</span>
+                <div className="flex justify-between px-4 py-2 border-b border-white/5">
+                  <span className="text-sm text-foreground/60">Kleur ogen</span>
+                  <span className="text-sm text-foreground font-medium">{eyeColor}</span>
                 </div>
               )}
               {hairColor && (
-                <div className="flex justify-between px-4 py-2.5 border-b border-white/5">
-                  <span className="text-foreground/60">Kleur haar</span>
-                  <span className="text-foreground font-medium">{hairColor}</span>
+                <div className="flex justify-between px-4 py-2 border-b border-white/5">
+                  <span className="text-sm text-foreground/60">Kleur haar</span>
+                  <span className="text-sm text-foreground font-medium">{hairColor}</span>
                 </div>
               )}
               {sexuality && (
-                <div className="flex justify-between px-4 py-2.5">
-                  <span className="text-foreground/60">Geaardheid</span>
-                  <span className="text-foreground font-medium">{sexuality}</span>
+                <div className="flex justify-between px-4 py-2">
+                  <span className="text-sm text-foreground/60">Geaardheid</span>
+                  <span className="text-sm text-foreground font-medium">{sexuality}</span>
                 </div>
               )}
             </div>
@@ -276,7 +276,7 @@ export function ProfileHero({
             Plan je ervaring
           </h3>
           <p className="text-sm text-foreground/60 text-center mb-4">
-            Deel je gewenste tijd, locatie en voorkeuren, dan helpt ons team je discreet verder. Tarieven zijn beschikbaar op aanvraag.
+            Deel je gewenste escort, voorkeuren, tijd en locatie. Dan helpt ons team je discreet verder. Tarieven zijn beschikbaar op aanvraag.
           </p>
           <p className="text-xs text-primary/80 text-center mb-4">
             24/7 discreet contact
