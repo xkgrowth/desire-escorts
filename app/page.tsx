@@ -148,10 +148,10 @@ export default async function Home() {
           <div className="rounded-luxury border border-white/10 bg-surface/25 shadow-[0_12px_28px_rgba(0,0,0,0.18)] p-4 md:p-6">
             <div className="mb-6">
               <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
-                Selectie
+                SELECTIE VAN
               </span>
               <GradientTitle as="h2" size="lg">
-                Beschikbare Escorts
+                {availableProfilesCount} Beschikbare Escorts
               </GradientTitle>
             </div>
 
