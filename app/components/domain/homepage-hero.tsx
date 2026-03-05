@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Badge } from "../ui/badge";
 import { cn } from "@/lib/utils";
@@ -50,14 +50,22 @@ export function HomepageHero({
   const [selectedSlug, setSelectedSlug] = useState<string | null>(
     availableProfiles[0]?.slug ?? null
   );
-  const hasInitialized = useRef(false);
 
   useEffect(() => {
-    if (hasInitialized.current) return;
-    if (availableProfiles.length === 0) return;
+    if (availableProfiles.length === 0) {
+      setVisibleAvatarCount(0);
+      setSelectedSlug(null);
+      return;
+    }
 
-    hasInitialized.current = true;
-    setSelectedSlug(availableProfiles[0]?.slug ?? null);
+    // Keep active selection if still present, otherwise fallback to first profile.
+    setSelectedSlug((current) => {
+      if (current && availableProfiles.some((profile) => profile.slug === current)) {
+        return current;
+      }
+      return availableProfiles[0]?.slug ?? null;
+    });
+    setVisibleAvatarCount(0);
 
     const interval = window.setInterval(() => {
       setVisibleAvatarCount((current) => {
@@ -247,7 +255,7 @@ export function HomepageHero({
                     href={`/escort/${selectedProfile.slug}/`}
                     className="flex-shrink-0 rounded-luxury border border-primary/40 px-3 py-1.5 text-xs font-medium text-primary transition hover:border-primary hover:bg-primary/10"
                   >
-                    View profile
+                    Bekijk profiel
                   </Link>
                 </div>
               </motion.div>
