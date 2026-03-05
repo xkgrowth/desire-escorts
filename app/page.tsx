@@ -182,7 +182,7 @@ export default async function Home() {
 
       {/* 3. Intro / Context Block */}
       <Section size="md">
-        <Container>
+        <Container size="2xl">
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
               <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
@@ -236,7 +236,7 @@ export default async function Home() {
 
       {/* 4. Why Choose Us (Condensed) */}
       <Section glow="mid" className="bg-surface/30 border-y border-white/5">
-        <Container>
+        <Container size="2xl">
           <USPBar 
             eyebrow="Waarom Desire"
             title="Betrouwbaar & Discreet"
@@ -248,7 +248,7 @@ export default async function Home() {
 
       {/* 5. Services Overview */}
       <Section size="lg">
-        <Container>
+        <Container size="2xl">
           <div className="text-center mb-12">
             <span className="text-sm font-medium text-primary uppercase tracking-wider mb-3 block">
               Diensten
@@ -296,7 +296,7 @@ export default async function Home() {
 
       {/* 6. Hoe Werkt Boeken */}
       <Section size="md">
-        <Container>
+        <Container size="2xl">
           <div className="mb-8 text-center">
             <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
               Snel geregeld
@@ -324,14 +324,14 @@ export default async function Home() {
 
       {/* 7. Direct Contact CTA */}
       <Section size="lg">
-        <Container>
+        <Container size="2xl">
           <CTASection />
         </Container>
       </Section>
 
       {/* 8. Service Areas / Locaties */}
       <Section size="lg" className="bg-surface/10">
-        <Container>
+        <Container size="2xl">
           <div className="text-center mb-12">
             <span className="text-sm font-medium text-primary uppercase tracking-wider mb-3 block">
               Locaties
@@ -377,7 +377,7 @@ export default async function Home() {
 
       {/* 9. Vertrouwen & Discretie */}
       <Section size="md">
-        <Container>
+        <Container size="2xl">
           <div className="rounded-luxury border border-white/10 bg-surface/30 p-6 md:p-10">
             <div className="mb-6">
               <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
@@ -425,7 +425,7 @@ export default async function Home() {
 
       {/* 10. FAQ */}
       <Section className="border-t border-white/5">
-        <Container size="sm">
+        <Container size="2xl">
           <FAQ 
             eyebrow="Veelgestelde Vragen"
             title="Goed om te weten"
@@ -445,7 +445,7 @@ export default async function Home() {
 
       {/* 11. Kennisbank Links */}
       <Section size="sm">
-        <Container size="lg">
+        <Container size="2xl">
           <div className="text-center mb-8">
             <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
               Lees verder
