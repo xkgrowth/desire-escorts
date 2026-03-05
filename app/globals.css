@@ -394,12 +394,8 @@ body {
 }
 
 .page-gradient {
-  background: linear-gradient(
-    180deg,
-    #141a1b 0%,
-    #161e21 50%,
-    #141a1b 100%
-  );
+  /* Transparent to allow glow orbs to show through */
+  background: transparent;
 }
 
 /* ============================================

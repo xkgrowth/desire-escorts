@@ -385,3 +385,9 @@
 - Added support for two location image slots per city and wired both image placements in the template.
 - Expanded location FAQ datasets to include more legacy questions while keeping concise answers.
 - Added `desire-escorts.nl` as an allowed Next.js image domain for scraped location assets.
+
+# Global Glow Orbs Layer (Second Pass)
+
+- [x] Create reusable `GlowOrbs` background component with subtle gold radial orbs.
+- [x] Add top-left and bottom-right anchor orbs plus alternating middle orbs.
+- [x] Integrate `GlowOrbs` in root layout behind all page content with safe z-index layering.

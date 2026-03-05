@@ -3,6 +3,7 @@ import { Sora, Inter, Caveat } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "./components/layout/site-header";
 import { ConditionalSiteFooter } from "./components/layout/conditional-site-footer";
+import { GlowOrbs } from "@/components/glow-orbs";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -55,9 +56,14 @@ export default function RootLayout({
   return (
     <html lang="nl" className={`${sora.variable} ${inter.variable} ${caveat.variable}`}>
       <body className="bg-background text-foreground font-sans antialiased">
-        <SiteHeader />
-        {children}
-        <ConditionalSiteFooter />
+        <div className="relative min-h-screen">
+          <GlowOrbs middleCount={4} />
+          <div className="relative" style={{ zIndex: 1 }}>
+            <SiteHeader />
+            {children}
+            <ConditionalSiteFooter />
+          </div>
+        </div>
       </body>
     </html>
   );
