@@ -386,12 +386,20 @@ body {
 /* Placeholder classes for future ambient gradient system */
 .site-ambient,
 .site-page-gradient,
-.page-gradient,
 .section-glow,
 .hero-glow,
 .mid-glow,
 .bottom-glow {
   /* Reserved for future use */
+}
+
+.page-gradient {
+  background: linear-gradient(
+    180deg,
+    #141a1b 0%,
+    #161e21 50%,
+    #141a1b 100%
+  );
 }
 
 /* ============================================

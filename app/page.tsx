@@ -37,6 +37,7 @@ export const metadata: Metadata = {
 export default async function Home() {
   // Fetch real profiles from Strapi
   const allProfiles = await getProfiles();
+  const availableProfilesCount = allProfiles.filter((p) => p.isAvailable).length;
   
   // Map profiles for hero section (available profiles with images)
   const heroProfiles = allProfiles
@@ -132,7 +133,10 @@ export default async function Home() {
 
       {/* 1. Hero Section (Full Bleed) */}
       <div className="relative left-1/2 right-1/2 w-screen -translate-x-1/2">
-        <HomepageHero profiles={heroProfiles} />
+        <HomepageHero
+          profiles={heroProfiles}
+          availableCount={availableProfilesCount}
+        />
       </div>
 
       {/* 2. Escort Preview Grid */}

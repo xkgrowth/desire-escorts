@@ -20,6 +20,7 @@ type HeroProfile = {
 
 type HomepageHeroProps = {
   profiles: HeroProfile[];
+  availableCount?: number;
   className?: string;
 };
 
@@ -35,7 +36,11 @@ const avatarPositions = [
   { top: "80%", left: "76%" },
 ];
 
-export function HomepageHero({ profiles, className }: HomepageHeroProps) {
+export function HomepageHero({
+  profiles,
+  availableCount,
+  className,
+}: HomepageHeroProps) {
   const availableProfiles = useMemo(
     () => profiles.filter((profile) => profile.isAvailable),
     [profiles]
@@ -70,11 +75,12 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
   const selectedProfile =
     availableProfiles.find((profile) => profile.slug === selectedSlug) ??
     availableProfiles[0];
+  const activeAvailableCount = availableCount ?? availableProfiles.length;
 
   return (
     <section
       className={cn(
-        "relative overflow-hidden bg-background",
+        "relative overflow-hidden",
         className
       )}
     >
@@ -117,15 +123,20 @@ export function HomepageHero({ profiles, className }: HomepageHeroProps) {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
               </span>
-              {availableProfiles.length} escorts nu beschikbaar
+              {activeAvailableCount} escorts nu beschikbaar
             </div>
             <div
-              className="pointer-events-none absolute inset-0 rounded-[26px] opacity-[0.12]"
+              className="pointer-events-none absolute inset-0 rounded-[26px]"
               style={{
-                backgroundImage: "url(/brand/netherlands-map.svg)",
-                backgroundSize: "contain",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
+                backgroundColor: "rgba(247, 208, 99, 0.12)",
+                WebkitMaskImage: "url(/brand/netherlands-map.svg)",
+                maskImage: "url(/brand/netherlands-map.svg)",
+                WebkitMaskSize: "contain",
+                maskSize: "contain",
+                WebkitMaskPosition: "center",
+                maskPosition: "center",
+                WebkitMaskRepeat: "no-repeat",
+                maskRepeat: "no-repeat",
               }}
             />
 
