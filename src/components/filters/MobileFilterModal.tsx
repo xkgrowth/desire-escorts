@@ -20,10 +20,10 @@ export function MobileFilterModal({ data }: MobileFilterModalProps) {
         size="sm"
         onClick={() => setOpen(true)}
         className="lg:hidden"
-        aria-label="Open filters"
+        aria-label="Open filteropties"
       >
         <SlidersHorizontal className="mr-2 h-4 w-4" />
-        Filters
+        Filter
       </Button>
 
       {open && (
@@ -36,7 +36,7 @@ export function MobileFilterModal({ data }: MobileFilterModalProps) {
           />
           <div className="absolute inset-x-0 bottom-0 max-h-[88vh] overflow-y-auto rounded-t-3xl border border-white/10 bg-background p-4">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-base font-semibold text-foreground">Refine your search</h2>
+              <h2 className="text-base font-semibold text-foreground">Verfijn je zoekopdracht</h2>
               <button
                 type="button"
                 onClick={() => setOpen(false)}

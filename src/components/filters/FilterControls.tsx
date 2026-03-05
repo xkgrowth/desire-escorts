@@ -48,14 +48,14 @@ export function FilterControls({ data }: FilterControlsProps) {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       <RangeSlider
-        label="Age"
+        label="Leeftijd"
         min={options.ageRange.min}
         max={options.ageRange.max}
         valueMin={ageMin}
         valueMax={ageMax}
-        unit=" yrs"
+        unit=" jaar"
         onChange={(next) => {
           setNumberRange(
             "ageMin",
@@ -69,7 +69,7 @@ export function FilterControls({ data }: FilterControlsProps) {
       />
 
       <RangeSlider
-        label="Height"
+        label="Lengte"
         min={options.heightRange.min}
         max={options.heightRange.max}
         valueMin={heightMin}
@@ -88,7 +88,7 @@ export function FilterControls({ data }: FilterControlsProps) {
       />
 
       <RangeSlider
-        label="Cup Size"
+        label="Cupmaat"
         min={cupMinBound}
         max={cupMaxBound}
         valueMin={cupMinIndex}
@@ -109,7 +109,7 @@ export function FilterControls({ data }: FilterControlsProps) {
       />
 
       <DropdownFilter
-        title="Build Type"
+        title="Postuur"
         options={options.buildTypes}
         selectedValue={filters.buildTypes[0]}
         onChange={(value) => setSingleSelect("buildTypes", value)}
@@ -121,13 +121,13 @@ export function FilterControls({ data }: FilterControlsProps) {
         onChange={(value) => setSingleSelect("services", value)}
       />
       <DropdownFilter
-        title="Hair Color"
+        title="Haarkleur"
         options={options.hairColors}
         selectedValue={filters.hairColors[0]}
         onChange={(value) => setSingleSelect("hairColors", value)}
       />
       <DropdownFilter
-        title="Eye Color"
+        title="Oogkleur"
         options={options.eyeColors}
         selectedValue={filters.eyeColors[0]}
         onChange={(value) => setSingleSelect("eyeColors", value)}
@@ -138,9 +138,9 @@ export function FilterControls({ data }: FilterControlsProps) {
         <button
           type="button"
           onClick={clearFilters}
-          className="w-full rounded-3xl border border-white/20 bg-white/[0.08] px-5 py-4 text-center text-lg font-medium text-foreground/95 transition-colors hover:bg-white/[0.12]"
+          className="w-full rounded-xl border border-border bg-surface px-4 py-2.5 text-center text-sm font-medium text-foreground transition-colors hover:border-foreground/20"
         >
-          Reset Filter
+          Filters wissen
         </button>
       </div>
     </div>

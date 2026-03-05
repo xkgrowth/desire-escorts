@@ -1,6 +1,7 @@
 "use client";
 
-import { ChevronDown } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Check, ChevronDown } from "lucide-react";
 import type { FilterOption } from "@/src/lib/filter-types";
 
 type DropdownFilterProps = {
@@ -11,25 +12,105 @@ type DropdownFilterProps = {
 };
 
 export function DropdownFilter({ title, options, selectedValue, onChange }: DropdownFilterProps) {
+  const [open, setOpen] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  const selectedOption = useMemo(
+    () => options.find((option) => option.value === selectedValue),
+    [options, selectedValue]
+  );
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (!wrapperRef.current) {
+        return;
+      }
+
+      if (!wrapperRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    }
+
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
+  const selectedLabel = selectedOption
+    ? `${selectedOption.label} (${selectedOption.count})`
+    : "Alle";
+
   return (
-    <div className="space-y-2">
-      <p className="text-lg font-medium text-foreground">{title}</p>
-      <div className="relative">
-        <select
-          value={selectedValue ?? ""}
-          onChange={(event) => onChange(event.target.value)}
-          className="w-full appearance-none rounded-3xl border border-white/15 bg-white/[0.08] px-5 py-4 pr-12 text-lg text-foreground/95 outline-none transition-colors focus:border-white/35"
+    <div className="space-y-1.5">
+      <p className="text-sm font-medium text-foreground/85">{title}</p>
+      <div className="relative" ref={wrapperRef}>
+        <button
+          type="button"
+          onClick={() => setOpen((prev) => !prev)}
+          className="flex w-full items-center justify-between rounded-xl border border-border bg-surface px-3.5 py-2.5 text-left text-sm text-foreground outline-none transition-all duration-200 hover:border-foreground/20 focus:border-primary focus:ring-2 focus:ring-primary/20"
+          aria-haspopup="listbox"
+          aria-expanded={open}
         >
-          <option value="">All</option>
-          {options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label} ({option.count})
-            </option>
-          ))}
-        </select>
-        <ChevronDown
-          className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-foreground/70"
-        />
+          <span className="truncate">{selectedLabel}</span>
+          <ChevronDown
+            className={`h-4 w-4 shrink-0 text-foreground/60 transition-transform ${
+              open ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+
+        {open && (
+          <div className="absolute z-30 mt-2 w-full overflow-hidden rounded-xl border border-border bg-surface shadow-xl">
+            <div className="max-h-56 overflow-y-auto py-1">
+              <button
+                type="button"
+                onClick={() => {
+                  onChange("");
+                  setOpen(false);
+                }}
+                className="flex w-full items-center justify-between px-3 py-2 text-left text-sm text-foreground transition-colors hover:bg-white/10"
+                role="option"
+                aria-selected={!selectedValue}
+              >
+                <span>Alle</span>
+                {!selectedValue && <Check className="h-4 w-4 text-primary" />}
+              </button>
+
+              {options.map((option) => {
+                const isSelected = option.value === selectedValue;
+
+                return (
+                  <button
+                    key={option.value}
+                    type="button"
+                    onClick={() => {
+                      onChange(option.value);
+                      setOpen(false);
+                    }}
+                    className="flex w-full items-center justify-between px-3 py-2 text-left text-sm text-foreground transition-colors hover:bg-white/10"
+                    role="option"
+                    aria-selected={isSelected}
+                  >
+                    <span className="truncate">
+                      {option.label} ({option.count})
+                    </span>
+                    {isSelected && <Check className="h-4 w-4 text-primary" />}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -44,10 +44,7 @@ export default async function EscortsOverviewPage() {
         />
       </PageSection>
 
-      <PageSection
-        title="Beschikbare Escorts"
-        description={`${profiles.length} escorts beschikbaar — bekijk profielen voor details, voorkeuren en directe boekingsmogelijkheden.`}
-      >
+      <PageSection size="sm" className="pt-4 md:pt-6 lg:pt-8">
         <OverviewContent profiles={profiles} />
       </PageSection>
 

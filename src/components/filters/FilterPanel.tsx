@@ -13,7 +13,7 @@ export function FilterPanel({ data }: FilterPanelProps) {
     <aside className="hidden h-fit rounded-luxury border border-white/10 bg-surface/30 p-4 lg:block">
       <div className="mb-4 flex items-center justify-between">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-foreground/75">
-          Refine your search
+          Verfijn je zoekopdracht
         </h2>
         {data.hasActiveFilters && (
           <Button variant="ghost" size="sm" onClick={data.clearFilters}>

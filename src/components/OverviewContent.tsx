@@ -14,24 +14,21 @@ function OverviewContentInner({ profiles }: { profiles: Profile[] }) {
 
   return (
     <div className="space-y-5">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-sm text-foreground/70" data-testid="filtered-count">
-          {data.filteredCount} van {data.totalCount} escorts getoond
-        </p>
+      <div className="flex flex-wrap items-center justify-end gap-3">
         <div className="flex items-center gap-2">
           <MobileFilterModal data={data} />
           {data.hasActiveFilters && (
             <Button variant="ghost" size="sm" onClick={data.clearFilters}>
-              Reset filters
+              Filters wissen
             </Button>
           )}
         </div>
       </div>
 
-      <div className="grid items-start gap-6 lg:grid-cols-[300px_1fr]">
+      <div className="grid items-start gap-6 lg:grid-cols-[240px_1fr]">
         <FilterPanel data={data} />
 
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
           {data.filteredProfiles.map((profile) => (
             <ProfileCard key={profile.id} {...profileToCardProps(profile)} />
           ))}

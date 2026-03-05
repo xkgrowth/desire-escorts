@@ -41,9 +41,9 @@ export function RangeSlider({
   const renderValue = (value: number) => (formatValue ? formatValue(value) : `${value}${unit}`);
 
   return (
-    <div className="space-y-2">
-      <p className="text-xl font-medium text-foreground">{label}</p>
-      <div className="relative h-9">
+    <div className="space-y-1.5">
+      <p className="text-sm font-medium text-foreground/85">{label}</p>
+      <div className="relative h-8">
         <div className="absolute left-0 right-0 top-1/2 h-2 -translate-y-1/2 rounded-full bg-white/20" />
         <div
           className="absolute top-1/2 h-2 -translate-y-1/2 rounded-full bg-white/70"
@@ -89,7 +89,7 @@ export function RangeSlider({
           aria-label={`${label} maximum`}
         />
       </div>
-      <div className="flex items-center justify-between text-[22px] text-foreground/85">
+      <div className="flex items-center justify-between text-sm text-foreground/85">
         <span>{renderValue(safeMin)}</span>
         <span>{renderValue(safeMax)}</span>
       </div>
