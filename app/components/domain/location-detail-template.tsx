@@ -125,7 +125,7 @@ export async function LocationDetailTemplate({ data }: LocationDetailTemplatePro
       <PageSection size="sm">
         <StaggerContainer className="grid gap-6 lg:grid-cols-12" staggerDelay={0.09}>
           <StaggerItem className="lg:col-span-6">
-            <div className="h-full rounded-luxury border border-white/10 bg-surface/25 p-6">
+            <div className="flex h-full flex-col rounded-luxury border border-white/10 bg-surface/25 p-6">
               <p className="text-sm font-medium uppercase tracking-wider text-primary">
                 {data.city} · {data.province}
               </p>
@@ -133,15 +133,14 @@ export async function LocationDetailTemplate({ data }: LocationDetailTemplatePro
                 Wat je kunt verwachten in {data.city}
               </h2>
               <p className="mt-4 text-foreground/70">{data.locationNarrative}</p>
-              <div className="mt-5">
-                <ResilientImage
-                  src={data.locationImagePrimaryUrl}
-                  alt={data.locationImagePrimaryAlt}
-                  wrapperClassName="h-52 w-full rounded-luxury border border-white/10"
-                  fallbackLabel={`Sfeerbeeld ${data.city}`}
-                  muted
-                />
-              </div>
+              <ResilientImage
+                src={data.locationImagePrimaryUrl}
+                alt={data.locationImagePrimaryAlt}
+                wrapperClassName="mt-5 min-h-[260px] w-full flex-1 rounded-luxury border border-white/10"
+                imageClassName="object-top"
+                fallbackLabel={`Sfeerbeeld ${data.city}`}
+                muted
+              />
             </div>
           </StaggerItem>
           <StaggerItem className="lg:col-span-6">

@@ -61,7 +61,7 @@ export function TestimonialCard({
             <div className="mb-6 flex justify-center gap-1">{renderStars(rating)}</div>
           )}
           <blockquote
-            className="quote-writing quote-writing--cursor mb-6 text-center font-handwritten text-3xl leading-relaxed text-foreground lg:text-4xl"
+            className="quote-writing mb-6 text-center font-handwritten text-3xl leading-relaxed text-foreground lg:text-4xl"
             style={{ fontFamily: "var(--font-caveat)" }}
           >
             <span className="quote-char">&ldquo;</span>
