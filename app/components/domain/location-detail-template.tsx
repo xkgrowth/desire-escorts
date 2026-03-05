@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Award, Clock3, MessageCircle, ShieldCheck } from "lucide-react";
 import { getProfiles, profilesToCardProps } from "@/lib/api";
 import type { LocationDetailPageData } from "@/lib/data/location-detail-pages";
+import { getNearestNearbyLocations } from "@/lib/data/location-proximity";
 import { Button } from "../ui/button";
 import { WhatsAppIcon } from "../ui/whatsapp-icon";
 import { ProfileCard } from "./profile-card";
@@ -33,6 +34,7 @@ export async function LocationDetailTemplate({ data }: LocationDetailTemplatePro
   const fallbackProfiles = topProfiles.length > 0 ? topProfiles : profiles.slice(0, 4);
   const profileCards = profilesToCardProps(fallbackProfiles);
   const quote = getDailyQuote(data.quotePool);
+  const nearbyLocations = getNearestNearbyLocations(data.slug, data.nearbyLocations, 6);
 
   return (
     <PageLayout>
@@ -210,7 +212,7 @@ export async function LocationDetailTemplate({ data }: LocationDetailTemplatePro
                 Verken omliggende steden als je daar sneller wilt boeken.
               </p>
               <ul className="mt-4 flex flex-wrap gap-2">
-                {data.nearbyLocations.map((location) => (
+                {nearbyLocations.map((location) => (
                   <li key={location.href}>
                     <Link
                       href={location.href}
