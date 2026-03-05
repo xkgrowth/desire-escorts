@@ -493,7 +493,7 @@ export default async function Home() {
             <StaggerItem>
               <Link
                 href="/kennisbank/boeken-reserveringen/"
-                className="card-interactive rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
+                className="card-interactive block h-full rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
               >
                 <p className="font-heading font-semibold mb-1">Boeken & reserveren</p>
                 <p className="text-sm text-foreground/65">Alles over beschikbaarheid, timing en aanvraagproces.</p>
@@ -502,7 +502,7 @@ export default async function Home() {
             <StaggerItem>
               <Link
                 href="/kennisbank/discretie-privacy/"
-                className="card-interactive rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
+                className="card-interactive block h-full rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
               >
                 <p className="font-heading font-semibold mb-1">Discretie & privacy</p>
                 <p className="text-sm text-foreground/65">Hoe wij omgaan met vertrouwelijkheid en gegevensbescherming.</p>
@@ -511,7 +511,7 @@ export default async function Home() {
             <StaggerItem>
               <Link
                 href="/blog"
-                className="card-interactive rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
+                className="card-interactive block h-full rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
               >
                 <p className="font-heading font-semibold mb-1">Nieuws & inzichten</p>
                 <p className="text-sm text-foreground/65">Praktische tips en updates uit onze kennisbank en blog.</p>

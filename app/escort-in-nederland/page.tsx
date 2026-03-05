@@ -149,7 +149,7 @@ export default function EscortInNederlandPage() {
               <StaggerItem key={city.href}>
                 <Link
                   href={city.href}
-                  className="card-interactive rounded-luxury p-5 transition-shadow hover:shadow-glow"
+                  className="card-interactive block h-full rounded-luxury p-5 transition-shadow hover:shadow-glow"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div>
