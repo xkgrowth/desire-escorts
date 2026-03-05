@@ -334,3 +334,18 @@
 - Detail route now fetches profile and related cards from Strapi via `lib/api`.
 - Route now renders `ProfileHero`, so `/escort/brianna` uses the same design-system hero component as requested.
 - Added value normalization for display labels (services/languages) and Strapi enum mapping for posture.
+
+# Location Overview Template Parity (`/escort-in-nederland`)
+
+- [x] Build location overview route at legacy URL `app/escort-in-nederland/page.tsx`.
+- [x] Implement required sections (hero, primary city grid, grouped location links, coverage block, CTA).
+- [x] Add page metadata + canonical + NL/EN alternates for parity-safe SEO.
+- [x] Add ItemList JSON-LD schema for location links.
+- [x] Replace `/locaties` navigation/footer/home links with `/escort-in-nederland`.
+- [x] Run lint diagnostics on touched files and resolve regressions.
+
+## Review Notes (Location Overview Template Parity)
+
+- Implemented the first Batch C.4 location overview template on the preserved legacy slug rather than introducing a new `/locaties` route.
+- Navigation and key internal links now point to `/escort-in-nederland` to keep local and production URL structure aligned.
+- Content follows Location Overview spec with concise, scan-friendly blocks and clear city-page routing intent.

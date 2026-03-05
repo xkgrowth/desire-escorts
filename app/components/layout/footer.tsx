@@ -53,7 +53,7 @@ const defaultColumns: FooterColumn[] = [
       { label: "Escort Almere", href: "/escort-almere" },
       { label: "Escort Utrecht", href: "/escort-utrecht" },
       { label: "Escort Diemen", href: "/escort-diemen" },
-      { label: "Alle locaties →", href: "/locaties" },
+      { label: "Alle locaties →", href: "/escort-in-nederland" },
     ],
   },
   {

@@ -366,7 +366,7 @@ export default async function Home() {
           <div className="mt-8 text-center">
             <p className="text-sm text-foreground/60">
               Zoek je een specifieke plaats? Bekijk dan alle gebieden op de{" "}
-              <Link href="/locaties" className="text-primary hover:underline">
+              <Link href="/escort-in-nederland" className="text-primary hover:underline">
                 locatie-overzichtspagina
               </Link>
               .

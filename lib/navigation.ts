@@ -42,14 +42,14 @@ export const primaryNav: NavItem[] = [
   { 
     label: "Locaties", 
     labelEn: "Locations",
-    href: "/locaties",
+    href: "/escort-in-nederland",
     description: "Beschikbaar in heel Nederland",
     children: [
       { label: "Amsterdam", labelEn: "Amsterdam", href: "/escort-amsterdam" },
       { label: "Rotterdam", labelEn: "Rotterdam", href: "/escort-rotterdam" },
       { label: "Den Haag", labelEn: "The Hague", href: "/escort-den-haag" },
       { label: "Utrecht", labelEn: "Utrecht", href: "/escort-utrecht" },
-      { label: "Alle Locaties", labelEn: "All Locations", href: "/locaties" },
+      { label: "Alle Locaties", labelEn: "All Locations", href: "/escort-in-nederland" },
     ],
   },
   { 
@@ -89,7 +89,7 @@ export const footerLinks: Record<string, FooterLinkSection> = {
       { label: "Escort Utrecht", labelEn: "Escort Utrecht", href: "/escort-utrecht" },
       { label: "Escort Haarlem", labelEn: "Escort Haarlem", href: "/escort-haarlem" },
       { label: "Escort Eindhoven", labelEn: "Escort Eindhoven", href: "/escort-eindhoven" },
-      { label: "Bekijk Alle Locaties →", labelEn: "View All Locations →", href: "/locaties" },
+      { label: "Bekijk Alle Locaties →", labelEn: "View All Locations →", href: "/escort-in-nederland" },
     ],
   },
   types: {
