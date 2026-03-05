@@ -1,29 +1,91 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Badge } from "../../components/ui/badge";
+import { ProfileHero } from "../../components/domain/profile-hero";
 import { CTASection } from "../../components/domain/cta-section";
 import { ProfileCard } from "../../components/domain/profile-card";
 import { FAQ } from "../../components/domain/faq";
 import { PageLayout, PageSection } from "../../components/layout/page-layout";
-import { mockEscortGrid, homeFaqs } from "@/lib/data/mock-data";
+import {
+  getAllProfileSlugs,
+  getProfileBySlug,
+  getProfiles,
+  getStrapiImageFormat,
+  profilesToCardProps,
+  formatCupSize,
+  formatHeight,
+} from "@/lib/api";
+import { homeFaqs } from "@/lib/data/mock-data";
+import type { Profile } from "@/lib/types/profile";
 
 type DetailPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-function getProfileBySlug(slug: string) {
-  return mockEscortGrid.find((profile) => profile.slug === slug);
+function prettifyValue(value: string): string {
+  return value
+    .replace(/[-_]+/g, " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
+const serviceLabelNlMap: Record<string, string> = {
+  "girlfriend-experience": "Girlfriend experience",
+  "erotic-massage": "Erotische massage",
+  "oral-sex": "Orale seks",
+  "oral-sex-service": "Orale seks",
+  overnight: "Overnachting",
+  "overnight-escort": "Overnachting",
+  "threesome-with-man": "Trio met man",
+  "threesome-with-woman": "Trio met vrouw",
+  "threesome-with-couple": "Trio met koppel",
+  nightlife: "Uitgaan",
+  "going-out": "Uitgaan",
+  "dinner-date": "Dinnerdate",
+  dinnerdate: "Dinnerdate",
+  "hotel-service": "Hotelservice",
+  "hotel-escort": "Hotelservice",
+  "travel-companion": "Reisgezelschap",
+  bdsm: "BDSM",
+  "sm-role-play": "SM rollenspel",
+  "sm-roleplay": "SM rollenspel",
+  "golden-shower": "Gouden douche",
+  kissing: "Zoenen",
+  "escort-service": "Escortservice",
+};
+
+function normalizeServiceKey(value: string): string {
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/[_\s]+/g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function serviceLabelToDutch(value: string): string {
+  const key = normalizeServiceKey(value);
+  return serviceLabelNlMap[key] || prettifyValue(value);
+}
+
+function mapProfileImages(profile: Profile): { url: string; alt: string }[] {
+  return profile.photos.map((photo, index) => ({
+    url: getStrapiImageFormat(photo, "large"),
+    alt: photo.alternativeText || `${profile.name} foto ${index + 1}`,
+  }));
 }
 
 export async function generateStaticParams() {
-  return mockEscortGrid.map((profile) => ({ slug: profile.slug }));
+  try {
+    const slugs = await getAllProfileSlugs();
+    return slugs.map((slug) => ({ slug }));
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: DetailPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const profile = getProfileBySlug(slug);
+  const profile = await getProfileBySlug(slug);
 
   if (!profile) {
     return {
@@ -32,8 +94,12 @@ export async function generateMetadata({ params }: DetailPageProps): Promise<Met
   }
 
   return {
-    title: `${profile.name} | Escort Profiel Nederland | Desire Escorts`,
-    description: `${profile.name} bekijken? Bekijk profiel, beschikbaarheid en services. Discreet boeken via Desire Escorts.`,
+    title:
+      profile.seo?.metaTitle ||
+      `${profile.name} | Escort Profiel Nederland | Desire Escorts`,
+    description:
+      profile.seo?.metaDescription ||
+      `${profile.name} bekijken? Bekijk profiel, beschikbaarheid en services. Discreet boeken via Desire Escorts.`,
     alternates: {
       canonical: `https://desire-escorts.nl/escort/${profile.slug}`,
     },
@@ -42,15 +108,16 @@ export async function generateMetadata({ params }: DetailPageProps): Promise<Met
 
 export default async function EscortDetailPage({ params }: DetailPageProps) {
   const { slug } = await params;
-  const profile = getProfileBySlug(slug);
+  const profile = await getProfileBySlug(slug);
 
   if (!profile) {
     notFound();
   }
 
-  const relatedProfiles = mockEscortGrid
-    .filter((item) => item.slug !== profile.slug)
-    .slice(0, 4);
+  const allProfiles = await getProfiles();
+  const relatedProfiles = profilesToCardProps(
+    allProfiles.filter((item) => item.slug !== profile.slug).slice(0, 4)
+  );
 
   return (
     <PageLayout
@@ -60,96 +127,24 @@ export default async function EscortDetailPage({ params }: DetailPageProps) {
       ]}
     >
       <PageSection size="sm">
-        <div className="grid gap-8 lg:grid-cols-[420px_1fr]">
-          <div className="relative overflow-hidden rounded-luxury border border-white/10 bg-surface/30">
-            {profile.imageUrl ? (
-              <Image
-                src={profile.imageUrl}
-                alt={profile.name}
-                width={420}
-                height={620}
-                className="h-full w-full object-cover"
-                priority
-              />
-            ) : (
-              <div className="flex h-[620px] items-center justify-center text-foreground/40">
-                Geen afbeelding beschikbaar
-              </div>
-            )}
-          </div>
-
-          <div className="rounded-luxury border border-white/10 bg-surface/30 p-6 md:p-8">
-            <div className="mb-4 flex flex-wrap items-center gap-2">
-              {profile.isVerified && <Badge variant="verified" />}
-              <Badge variant={profile.isAvailable ? "available" : "unavailable"} />
-            </div>
-
-            <h1 className="mb-3 text-3xl font-heading font-bold text-gradient-gold md:text-4xl">
-              {profile.name}
-            </h1>
-
-            {profile.tagline && (
-              <p className="mb-6 text-lg text-foreground/70">{profile.tagline}</p>
-            )}
-
-            <div className="mb-6 grid grid-cols-3 gap-3">
-              <div className="card-surface rounded-luxury p-3 text-center">
-                <p className="text-xs uppercase tracking-wide text-foreground/50">Leeftijd</p>
-                <p className="text-lg font-heading font-bold">{profile.age ?? "-"}</p>
-              </div>
-              <div className="card-surface rounded-luxury p-3 text-center">
-                <p className="text-xs uppercase tracking-wide text-foreground/50">Lengte</p>
-                <p className="text-lg font-heading font-bold">{profile.height ?? "-"}</p>
-              </div>
-              <div className="card-surface rounded-luxury p-3 text-center">
-                <p className="text-xs uppercase tracking-wide text-foreground/50">Cup</p>
-                <p className="text-lg font-heading font-bold">{profile.cupSize ?? "-"}</p>
-              </div>
-            </div>
-
-            {profile.services?.length ? (
-              <div className="mb-6">
-                <p className="mb-2 text-sm uppercase tracking-wide text-foreground/50">
-                  Services
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {profile.services.map((service) => (
-                    <span
-                      key={service}
-                      className="card-surface rounded-full px-3 py-1.5 text-sm text-foreground/80"
-                    >
-                      {service}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ) : null}
-
-            <div className="flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-primary rounded-luxury px-6 py-3 font-bold text-background">
-                Direct Contact
-              </Link>
-              <Link
-                href="/escorts"
-                className="inline-flex items-center rounded-luxury border border-white/20 bg-surface/40 px-5 py-3 text-foreground/90 transition hover:border-primary/40"
-              >
-                Terug naar overzicht
-              </Link>
-            </div>
-          </div>
-        </div>
-      </PageSection>
-
-      <PageSection
-        title={`Over ${profile.name}`}
-        description="Dit profiel is onderdeel van onze landelijke selectie. Zoek je specifiek op escort amsterdam of escort service amsterdam? Gebruik het overzicht en filters om direct passende profielen te vinden."
-      >
-        <p className="max-w-3xl text-foreground/70">
-          We werken met duidelijke communicatie, actuele beschikbaarheid en discreet contact.
-          Voor elke aanvraag kijken we naar jouw voorkeuren, timing en locatie zodat je snel
-          een passende match krijgt. Dit profiel kan in meerdere regio&apos;s geboekt worden,
-          afhankelijk van beschikbaarheid en planning.
-        </p>
+        <ProfileHero
+          name={profile.name}
+          tagline={profile.shortBio}
+          description={profile.bio}
+          images={mapProfileImages(profile)}
+          isVerified={profile.verified}
+          isAvailable={profile.isAvailable}
+          age={profile.age}
+          height={formatHeight(profile.height)}
+          cupSize={formatCupSize(profile.cupSize)}
+          posture={profile.postuur}
+          eyeColor={profile.oogKleur}
+          hairColor={profile.haarKleur}
+          sexuality={profile.geaardheid}
+          languages={profile.languages.map(prettifyValue)}
+          services={profile.services.map(serviceLabelToDutch)}
+          whatsapp={profile.contact?.whatsapp}
+        />
       </PageSection>
 
       <PageSection title="Vergelijkbare profielen">

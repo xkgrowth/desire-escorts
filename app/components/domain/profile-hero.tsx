@@ -5,7 +5,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
-import { ChevronLeft, ChevronRight, Heart, Share2, User, MessageCircle } from "lucide-react";
+import { ChevronLeft, ChevronRight, User, MessageCircle } from "lucide-react";
 import { WhatsAppIcon } from "../ui/whatsapp-icon";
 
 type ProfileImage = {
@@ -24,7 +24,7 @@ type ProfileHeroProps = {
   height?: string;
   weight?: string;
   cupSize?: string;
-  posture?: "Slim" | "Normaal" | "Curvy";
+  posture?: "Slank" | "Normaal" | "Vol" | "Slim" | "Curvy";
   eyeColor?: string;
   hairColor?: string;
   sexuality?: string;
@@ -57,6 +57,28 @@ export function ProfileHero({
   const [activeImage, setActiveImage] = useState(0);
   const [showFullDescription, setShowFullDescription] = useState(false);
   const hasImages = images.length > 0;
+  const primaryStats: Array<{ label: string; value: string }> = [];
+  const whatsappHref = whatsapp
+    ? `https://wa.me/${whatsapp.replace(/[^\d+]/g, "").replace("+", "")}`
+    : null;
+  const normalizedPosture = posture === "Slim" ? "Slank" : posture === "Curvy" ? "Vol" : posture;
+  const languagesText = languages && languages.length > 0 ? languages.join(", ") : "Engels";
+
+  if (cupSize) {
+    primaryStats.push({ label: "Cupmaat", value: `${cupSize} cup` });
+  }
+  if (height) {
+    primaryStats.push({ label: "Lengte", value: height });
+  }
+  if (age) {
+    primaryStats.push({ label: "Leeftijd", value: `${age} jaar` });
+  }
+  if (weight) {
+    primaryStats.push({ label: "Gewicht", value: weight });
+  }
+  if (normalizedPosture) {
+    primaryStats.push({ label: "Postuur", value: normalizedPosture });
+  }
 
   const nextImage = () => {
     setActiveImage((prev) => (prev + 1) % images.length);
@@ -71,7 +93,7 @@ export function ProfileHero({
       {/* Gallery Section */}
       <div className="space-y-4">
         {/* Main Image */}
-        <div className="relative aspect-[3/4] rounded-luxury overflow-hidden bg-surface">
+        <div className="relative aspect-[4/5] rounded-luxury overflow-hidden bg-surface">
           {hasImages ? (
             <Image
               src={images[activeImage].url}
@@ -141,17 +163,6 @@ export function ProfileHero({
           </div>
         )}
 
-        {/* Action Buttons */}
-        <div className="flex gap-2">
-          <Button variant="action" size="sm" className="flex-1 gap-2">
-            <Heart className="w-4 h-4" />
-            Favoriet
-          </Button>
-          <Button variant="action" size="sm" className="flex-1 gap-2">
-            <Share2 className="w-4 h-4" />
-            Delen
-          </Button>
-        </div>
       </div>
 
       {/* Info Section */}
@@ -183,39 +194,17 @@ export function ProfileHero({
           </div>
         )}
 
-        {/* Primary Stats Grid - Simple without icons */}
-        <div className="grid grid-cols-5 gap-2 p-4 rounded-luxury bg-surface/50 border border-white/5 mb-6">
-          {cupSize && (
-            <div className="text-center">
-              <div className="text-lg font-bold text-foreground">{cupSize} cup</div>
-              <div className="text-[10px] uppercase tracking-wider text-foreground/40">Cup</div>
-            </div>
-          )}
-          {height && (
-            <div className="text-center">
-              <div className="text-lg font-bold text-foreground">{height}</div>
-              <div className="text-[10px] uppercase tracking-wider text-foreground/40">Lengte</div>
-            </div>
-          )}
-          {age && (
-            <div className="text-center">
-              <div className="text-lg font-bold text-foreground">{age} yrs</div>
-              <div className="text-[10px] uppercase tracking-wider text-foreground/40">Leeftijd</div>
-            </div>
-          )}
-          {weight && (
-            <div className="text-center">
-              <div className="text-lg font-bold text-foreground">{weight}</div>
-              <div className="text-[10px] uppercase tracking-wider text-foreground/40">Gewicht</div>
-            </div>
-          )}
-          {posture && (
-            <div className="text-center">
-              <div className="text-lg font-bold text-foreground">{posture}</div>
-              <div className="text-[10px] uppercase tracking-wider text-foreground/40">Postuur</div>
-            </div>
-          )}
-        </div>
+        {/* Primary Stats Grid */}
+        {primaryStats.length > 0 && (
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(110px,1fr))] gap-3 p-4 rounded-luxury bg-[#161E21] border border-white/5 mb-6">
+            {primaryStats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-xl font-heading font-bold text-gradient-gold">{stat.value}</div>
+                <div className="text-[10px] uppercase tracking-wider text-foreground/40">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* Services */}
         {services && services.length > 0 && (
@@ -248,10 +237,16 @@ export function ProfileHero({
         )}
 
         {/* Characteristics Table */}
-        {(eyeColor || hairColor || sexuality) && (
+        {(eyeColor || hairColor || sexuality || languagesText) && (
           <div className="mb-6">
             <h3 className="text-sm font-medium text-foreground/50 uppercase tracking-wider mb-3">Kenmerken</h3>
-            <div className="rounded-lg bg-surface/30 border border-white/5 overflow-hidden">
+            <div className="rounded-lg bg-[#161E21] border border-white/5 overflow-hidden">
+              {languagesText && (
+                <div className="flex justify-between px-4 py-2.5 border-b border-white/5">
+                  <span className="text-foreground/60">Talen</span>
+                  <span className="text-foreground font-medium text-right">{languagesText}</span>
+                </div>
+              )}
               {eyeColor && (
                 <div className="flex justify-between px-4 py-2.5 border-b border-white/5">
                   <span className="text-foreground/60">Kleur ogen</span>
@@ -275,20 +270,24 @@ export function ProfileHero({
         )}
 
         {/* CTA Card */}
-        <div className="mt-auto p-6 rounded-luxury bg-surface/50 border border-white/5">
+        <div className="relative overflow-hidden p-6 rounded-luxury bg-[#161E21] border border-primary/25 shadow-[inset_0_1px_0_rgba(247,208,99,0.22)]">
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#F7D063] to-transparent" />
           <h3 className="text-sm font-medium text-primary uppercase tracking-wider mb-2 text-center">
-            Plan Your Experience
+            Plan je ervaring
           </h3>
           <p className="text-sm text-foreground/60 text-center mb-4">
-            Share your preferred timing, area, and style, and our team will guide you discreetly. Rates are available upon request.
+            Deel je gewenste tijd, locatie en voorkeuren, dan helpt ons team je discreet verder. Tarieven zijn beschikbaar op aanvraag.
+          </p>
+          <p className="text-xs text-primary/80 text-center mb-4">
+            24/7 discreet contact
           </p>
           <div className="flex gap-3">
-            <Button variant="premium" size="lg" className="flex-1 gap-2">
+            <Button variant="primary" size="lg" className="flex-1 gap-2">
               <MessageCircle className="w-5 h-5" />
-              Live Chat
+              Live chat
             </Button>
-            {whatsapp && (
-              <a href="https://steadfast-art-a1f81485c3.strapiapp.com" target="_blank" rel="noopener noreferrer" className="flex-1">
+            {whatsappHref && (
+              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="flex-1">
                 <Button variant="whatsapp" size="lg" className="w-full gap-2">
                   <WhatsAppIcon size={20} />
                   WhatsApp

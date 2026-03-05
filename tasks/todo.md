@@ -307,3 +307,30 @@
 - Removed all gradient implementations — ambient color tokens retained in CSS for future use.
 - Layout reverted to simple structure without ambient wrapper layers.
 - Header styling reverted to original opacity/blur values.
+
+# Strapi Language Backfill (Profiles)
+
+- [x] Inspect historical product-attributes CSV and extract `talen` row mapping by profile slug.
+- [x] Validate mapping coverage against current 55 Strapi profiles.
+- [x] Apply bulk language relation updates to all Strapi profiles using writable token.
+- [x] Verify all profiles have populated `languages` relation post-update.
+
+## Review Notes (Strapi Language Backfill)
+
+- CSV mapping covered 53/55 current profile slugs directly; `miki` and `lunnie` were not present in CSV and were set to `Engels` fallback.
+- Bulk update was performed against Strapi documentId endpoint (`/api/profiles/{documentId}`), which this instance requires for writes.
+- Final verification confirms 55/55 profiles now have populated `languages`.
+
+# Escort Detail Strapi + ProfileHero Alignment
+
+- [x] Replace `/escort/[slug]` mock data lookup with Strapi `getProfileBySlug`.
+- [x] Replace legacy detail hero markup with `ProfileHero` component.
+- [x] Map Strapi profile fields (photos/bio/attributes/services/languages/contact) to `ProfileHero` props.
+- [x] Replace related profiles from mock data with Strapi `getProfiles` mapping.
+- [x] Run lint diagnostics on updated route file.
+
+## Review Notes (Escort Detail Strapi + ProfileHero Alignment)
+
+- Detail route now fetches profile and related cards from Strapi via `lib/api`.
+- Route now renders `ProfileHero`, so `/escort/brianna` uses the same design-system hero component as requested.
+- Added value normalization for display labels (services/languages) and Strapi enum mapping for posture.

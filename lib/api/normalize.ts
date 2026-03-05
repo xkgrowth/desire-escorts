@@ -23,6 +23,26 @@ function unwrapRelation<T>(
   return [];
 }
 
+function getNestedValue<T extends object, K extends string>(
+  item: T,
+  key: K
+): string | undefined {
+  const direct = (item as Record<string, unknown>)[key];
+  if (typeof direct === "string" && direct.length > 0) {
+    return direct;
+  }
+
+  const nested = (item as Record<string, unknown>).attributes;
+  if (nested && typeof nested === "object") {
+    const nestedValue = (nested as Record<string, unknown>)[key];
+    if (typeof nestedValue === "string" && nestedValue.length > 0) {
+      return nestedValue;
+    }
+  }
+
+  return undefined;
+}
+
 /**
  * Normalize services relation to slug array.
  */
@@ -31,7 +51,7 @@ function normalizeServices(
 ): string[] {
   const items = unwrapRelation(services);
   return items
-    .map((service) => service.slug || service.name)
+    .map((service) => getNestedValue(service as unknown as object, "slug") || getNestedValue(service as unknown as object, "name"))
     .filter(Boolean);
 }
 
@@ -43,7 +63,7 @@ function normalizeLanguages(
 ): string[] {
   const items = unwrapRelation(languages);
   return items
-    .map((lang) => lang.code || lang.name)
+    .map((lang) => getNestedValue(lang as unknown as object, "code") || getNestedValue(lang as unknown as object, "name"))
     .filter(Boolean);
 }
 
