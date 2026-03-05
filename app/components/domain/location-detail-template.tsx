@@ -8,7 +8,6 @@ import { ProfileCard } from "./profile-card";
 import { TemplateHeroGlass } from "./template-hero-glass";
 import { FAQ } from "./faq";
 import { TestimonialCard } from "./testimonial-card";
-import { TextWithImage } from "./text-with-image";
 import { ArticleCard } from "./article-card";
 import { PageLayout, PageSection } from "../layout/page-layout";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "../ui/scroll-reveal";
@@ -124,29 +123,29 @@ export async function LocationDetailTemplate({ data }: LocationDetailTemplatePro
       </PageSection>
 
       <PageSection size="sm">
-        <ScrollReveal delay={0.07}>
-          <TextWithImage
-            eyebrow={`${data.city} · ${data.province}`}
-            title={`Wat je kunt verwachten in ${data.city}`}
-            content={data.locationNarrative}
-            imageUrl={data.locationImagePrimaryUrl}
-            imageAlt={data.locationImagePrimaryAlt}
-          />
-        </ScrollReveal>
-      </PageSection>
-
-      <PageSection size="sm">
         <StaggerContainer className="grid gap-6 lg:grid-cols-12" staggerDelay={0.09}>
-          <StaggerItem className="lg:col-span-8">
-            <div className="rounded-luxury border border-white/10 bg-surface/25 p-6">
-              <div className="mb-5">
+          <StaggerItem className="lg:col-span-6">
+            <div className="h-full rounded-luxury border border-white/10 bg-surface/25 p-6">
+              <p className="text-sm font-medium uppercase tracking-wider text-primary">
+                {data.city} · {data.province}
+              </p>
+              <h2 className="mt-2 font-heading text-2xl font-bold text-foreground">
+                Wat je kunt verwachten in {data.city}
+              </h2>
+              <p className="mt-4 text-foreground/70">{data.locationNarrative}</p>
+              <div className="mt-5">
                 <ResilientImage
-                  src={data.locationImageSecondaryUrl}
-                  alt={data.locationImageSecondaryAlt}
+                  src={data.locationImagePrimaryUrl}
+                  alt={data.locationImagePrimaryAlt}
                   wrapperClassName="h-52 w-full rounded-luxury border border-white/10"
                   fallbackLabel={`Sfeerbeeld ${data.city}`}
+                  muted
                 />
               </div>
+            </div>
+          </StaggerItem>
+          <StaggerItem className="lg:col-span-6">
+            <div className="rounded-luxury border border-white/10 bg-surface/25 p-6">
               <h2 className="font-heading text-2xl font-bold text-foreground">
                 Hotels in en rond {data.city}
               </h2>
@@ -163,16 +162,17 @@ export async function LocationDetailTemplate({ data }: LocationDetailTemplatePro
               </ul>
             </div>
           </StaggerItem>
-          <StaggerItem className="lg:col-span-4">
-            <div className="h-full rounded-luxury border border-white/10 bg-surface/25 p-6">
-              <h2 className="font-heading text-2xl font-bold text-foreground">
-                Ervaring van een client
-              </h2>
-              <p className="mt-2 text-sm text-foreground/65">Anonieme review van een recente boeking.</p>
-              <TestimonialCard quote={quote} variant="featured" className="mt-4" />
-            </div>
-          </StaggerItem>
         </StaggerContainer>
+      </PageSection>
+
+      <PageSection size="sm">
+        <ScrollReveal delay={0.09}>
+          <div className="rounded-luxury border border-white/10 bg-surface/25 p-6">
+            <h2 className="font-heading text-2xl font-bold text-foreground">Ervaring van een client</h2>
+            <p className="mt-2 text-sm text-foreground/65">Anonieme review van een recente boeking.</p>
+            <TestimonialCard quote={quote} variant="featured" className="mt-4" />
+          </div>
+        </ScrollReveal>
       </PageSection>
 
       <PageSection size="sm">
@@ -235,12 +235,25 @@ export async function LocationDetailTemplate({ data }: LocationDetailTemplatePro
 
       <PageSection size="sm">
         <ScrollReveal delay={0.1}>
-          <FAQ
-            eyebrow={`Veelgestelde vragen ${data.city}`}
-            title={`FAQ escort service ${data.city}`}
-            items={data.faqs}
-            variant="cards"
-          />
+          <div className="grid gap-6 lg:grid-cols-12">
+            <div className="lg:col-span-8">
+              <FAQ
+                eyebrow={`Veelgestelde vragen ${data.city}`}
+                title={`FAQ escort service ${data.city}`}
+                items={data.faqs}
+                variant="cards"
+              />
+            </div>
+            <div className="lg:col-span-4">
+              <ResilientImage
+                src={data.locationImageSecondaryUrl}
+                alt={data.locationImageSecondaryAlt}
+                wrapperClassName="h-full min-h-[320px] w-full rounded-luxury border border-white/10 lg:min-h-[460px]"
+                fallbackLabel={`Hotels ${data.city}`}
+                muted
+              />
+            </div>
+          </div>
         </ScrollReveal>
       </PageSection>
 

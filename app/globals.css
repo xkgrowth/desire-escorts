@@ -491,6 +491,59 @@ body {
   padding-bottom: 2rem;
 }
 
+/* Quote writing animation */
+@keyframes quote-char-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes quote-caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.quote-writing .quote-char {
+  opacity: 0;
+  animation: quote-char-reveal 360ms ease-out forwards;
+}
+
+.quote-writing--cursor::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 0.95em;
+  margin-left: 0.08em;
+  vertical-align: -0.08em;
+  background: rgba(247, 208, 99, 0.9);
+  animation: quote-caret-blink 900ms steps(1, end) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quote-writing .quote-char {
+    opacity: 1;
+    animation: none;
+  }
+
+  .quote-writing--cursor::after {
+    animation: none;
+    opacity: 0;
+  }
+}
+
 @media (min-width: 768px) {
   .section-sm {
     padding-top: 3rem;

@@ -58,13 +58,31 @@ export function TestimonialCard({
         <Quote className="absolute top-6 right-6 w-12 h-12 text-primary/20" />
         <div className="relative">
           {rating && (
-            <div className="flex gap-1 mb-6">{renderStars(rating)}</div>
+            <div className="mb-6 flex justify-center gap-1">{renderStars(rating)}</div>
           )}
-          <blockquote className="text-xl lg:text-2xl text-foreground leading-relaxed mb-6">
-            &ldquo;{quote}&rdquo;
+          <blockquote
+            className="quote-writing quote-writing--cursor mb-6 text-center font-handwritten text-3xl leading-relaxed text-foreground lg:text-4xl"
+            style={{ fontFamily: "var(--font-caveat)" }}
+          >
+            <span className="quote-char">&ldquo;</span>
+            {Array.from(quote).map((char, index) => (
+              <span
+                key={`${char}-${index}`}
+                className="quote-char"
+                style={{ animationDelay: `${80 + index * 28}ms` }}
+              >
+                {char}
+              </span>
+            ))}
+            <span
+              className="quote-char"
+              style={{ animationDelay: `${80 + quote.length * 28}ms` }}
+            >
+              &rdquo;
+            </span>
           </blockquote>
           {author && (
-            <div>
+            <div className="text-center">
               <p className="font-heading font-bold text-foreground">{author}</p>
               {role && <p className="text-sm text-foreground/50">{role}</p>}
             </div>

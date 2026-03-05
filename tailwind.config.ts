@@ -40,6 +40,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         heading: ["var(--font-sora)", "system-ui", "sans-serif"],
+        handwritten: ["var(--font-caveat)", "cursive"],
       },
       transitionDuration: {
         fast: "150ms",

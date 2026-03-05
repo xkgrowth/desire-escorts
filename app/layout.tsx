@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Sora, Inter } from "next/font/google";
+import { Sora, Inter, Caveat } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "./components/layout/site-header";
 import { ConditionalSiteFooter } from "./components/layout/conditional-site-footer";
@@ -14,6 +14,13 @@ const sora = Sora({
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
+  weight: ["500", "700"],
   display: "swap",
 });
 
@@ -46,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="nl" className={`${sora.variable} ${inter.variable}`}>
+    <html lang="nl" className={`${sora.variable} ${inter.variable} ${caveat.variable}`}>
       <body className="bg-background text-foreground font-sans antialiased">
         <SiteHeader />
         {children}

@@ -93,6 +93,11 @@ export const locationDetailPages: Record<string, LocationDetailPageData> = {
           "Dicht bij het Frederikspark met een toegankelijke locatie en ontspannen sfeer.",
       },
       {
+        name: "Hotel Raecks",
+        description:
+          "Stijlvol en gastvrij hotel in het centrum, geschikt voor een discrete en comfortabele ontmoeting.",
+      },
+      {
         name: "Boutiquehotel Staats",
         description:
           "Stijlvolle kamers en een intieme setting die goed past bij een private ontmoeting.",
@@ -244,6 +249,11 @@ export const locationDetailPages: Record<string, LocationDetailPageData> = {
         name: "Cityden The Garden Amsterdam South",
         description:
           "Moderne suites met extra privacy en goede bereikbaarheid in de regio.",
+      },
+      {
+        name: "ibis budget Amsterdam City South",
+        description:
+          "Praktische en comfortabele hoteloptie met snelle toegang tot Amstelveen en Amsterdam-Zuid.",
       },
       {
         name: "Adagio Amsterdam City South",
