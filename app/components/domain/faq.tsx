@@ -65,14 +65,14 @@ export function FAQ({
                 "overflow-hidden transition-all duration-300",
                 variant === "default" && "border-b border-white/10",
                 variant === "cards" &&
-                  "rounded-luxury bg-surface/50 border border-white/5"
+                  "rounded-luxury bg-[#161E21] border border-white"
               )}
             >
               <button
                 onClick={() => toggleItem(index)}
                 className={cn(
-                  "w-full flex items-center justify-between gap-4 text-left transition-colors",
-                  variant === "default" && "py-5",
+                  "w-full flex items-center justify-between gap-4 text-left transition-colors bg-[#161E21]",
+                  variant === "default" && "rounded-luxury px-5 py-5",
                   variant === "cards" && "p-5",
                   isOpen ? "text-foreground" : "text-foreground/80 hover:text-foreground"
                 )}
@@ -98,7 +98,7 @@ export function FAQ({
                   <div
                     className={cn(
                       "text-foreground/70 leading-relaxed",
-                      variant === "default" && "pb-5",
+                      variant === "default" && "px-5 pb-5",
                       variant === "cards" && "px-5 pb-5"
                     )}
                   >

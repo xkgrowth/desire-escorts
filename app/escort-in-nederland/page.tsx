@@ -5,6 +5,7 @@ import { CTASection } from "../components/domain/cta-section";
 import { LocationSearchList } from "../components/domain/location-search-list";
 import { TemplateHeroGlass } from "../components/domain/template-hero-glass";
 import { PageLayout, PageSection } from "../components/layout/page-layout";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "../components/ui/scroll-reveal";
 
 type LocationLink = {
   name: string;
@@ -118,19 +119,22 @@ export default function EscortInNederlandPage() {
       />
 
       <PageSection size="sm" className="pb-0">
-        <TemplateHeroGlass
-          breadcrumbs={[{ label: "Escort in Nederland" }]}
-          title="Escort In Nederland"
-          description="Vind direct de juiste stad of regio voor jouw aanvraag. We zijn actief in heel Nederland met snelle, discrete outcall service en heldere communicatie vooraf."
-          uspItems={[
-            { icon: <MapPin className="h-5 w-5" />, title: "Landelijke dekking" },
-            { icon: <Clock3 className="h-5 w-5" />, title: "Snelle responstijd" },
-            { icon: <Building2 className="h-5 w-5" />, title: "Vanaf €160" },
-          ]}
-        />
+        <ScrollReveal>
+          <TemplateHeroGlass
+            breadcrumbs={[{ label: "Escort in Nederland" }]}
+            title="Escort In Nederland"
+            description="Vind direct de juiste stad of regio voor jouw aanvraag. We zijn actief in heel Nederland met snelle, discrete outcall service en heldere communicatie vooraf."
+            uspItems={[
+              { icon: <MapPin className="h-5 w-5" />, title: "Landelijke dekking" },
+              { icon: <Clock3 className="h-5 w-5" />, title: "Snelle responstijd" },
+              { icon: <Building2 className="h-5 w-5" />, title: "Vanaf €160" },
+            ]}
+          />
+        </ScrollReveal>
       </PageSection>
 
       <PageSection size="sm" className="pt-4 md:pt-6 lg:pt-8">
+        <ScrollReveal delay={0.05}>
         <div className="mb-8 rounded-luxury border border-white/10 bg-surface/35 p-6 md:p-8">
           <h2 className="font-heading text-2xl font-bold text-foreground">
             Populaire steden
@@ -140,68 +144,76 @@ export default function EscortInNederlandPage() {
             minimale afname hangen af van beschikbaarheid, timing en de gekozen escort.
           </p>
 
-          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <StaggerContainer className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0.07}>
             {primaryCities.map((city) => (
-              <Link
-                key={city.href}
-                href={city.href}
-                className="card-interactive rounded-luxury p-5 transition-shadow hover:shadow-glow"
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <p className="font-heading text-lg font-bold text-foreground">{city.name}</p>
-                    <p className="mt-1 text-sm text-foreground/60">
-                      Vanaf {city.minPrice} · Min. afname {city.minDuration}
-                    </p>
+              <StaggerItem key={city.href}>
+                <Link
+                  href={city.href}
+                  className="card-interactive rounded-luxury p-5 transition-shadow hover:shadow-glow"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="font-heading text-lg font-bold text-foreground">{city.name}</p>
+                      <p className="mt-1 text-sm text-foreground/60">
+                        Vanaf {city.minPrice} · Min. afname {city.minDuration}
+                      </p>
+                    </div>
+                    <Navigation className="mt-1 h-5 w-5 text-primary" />
                   </div>
-                  <Navigation className="mt-1 h-5 w-5 text-primary" />
-                </div>
-              </Link>
+                </Link>
+              </StaggerItem>
             ))}
+          </StaggerContainer>
+        </div>
+        </ScrollReveal>
+      </PageSection>
+
+      <PageSection size="sm">
+        <ScrollReveal delay={0.08}>
+          <div className="mb-6">
+            <h2 className="font-heading text-2xl font-bold text-foreground">
+              Alle locaties
+            </h2>
+            <p className="mt-2 text-foreground/65">
+              Een compleet overzicht van de locaties die we bedienen, in lijn met de legacy
+              locatiepagina. Staat jouw plaats er niet tussen? Neem contact op voor maatwerk.
+            </p>
           </div>
-        </div>
+
+          <LocationSearchList locations={allLocations} />
+        </ScrollReveal>
       </PageSection>
 
       <PageSection size="sm">
-        <div className="mb-6">
-          <h2 className="font-heading text-2xl font-bold text-foreground">
-            Alle locaties
-          </h2>
-          <p className="mt-2 text-foreground/65">
-            Een compleet overzicht van de locaties die we bedienen, in lijn met de legacy
-            locatiepagina. Staat jouw plaats er niet tussen? Neem contact op voor maatwerk.
-          </p>
-        </div>
-
-        <LocationSearchList locations={allLocations} />
+        <ScrollReveal delay={0.1}>
+          <div className="rounded-luxury border border-white/10 bg-surface/35 p-6 md:p-8">
+            <h2 className="font-heading text-2xl font-bold text-foreground">
+              Dekking en planning
+            </h2>
+            <p className="mt-3 text-foreground/70">
+              Outcall service is beschikbaar door heel Nederland. In de regio Amsterdam kunnen we
+              in veel gevallen binnen 1 uur service leveren. Buiten Amsterdam plannen we op basis
+              van afstand, beschikbaarheid en het gewenste tijdstip.
+            </p>
+            <p className="mt-3 text-foreground/70">
+              Voor extra snelle selectie kun je direct naar{" "}
+              <Link href="/escorts" className="text-primary hover:underline">
+                alle escorts
+              </Link>{" "}
+              gaan of een aanvraag starten via live chat.
+            </p>
+          </div>
+        </ScrollReveal>
       </PageSection>
 
       <PageSection size="sm">
-        <div className="rounded-luxury border border-white/10 bg-surface/35 p-6 md:p-8">
-          <h2 className="font-heading text-2xl font-bold text-foreground">
-            Dekking en planning
-          </h2>
-          <p className="mt-3 text-foreground/70">
-            Outcall service is beschikbaar door heel Nederland. In de regio Amsterdam kunnen we
-            in veel gevallen binnen 1 uur service leveren. Buiten Amsterdam plannen we op basis
-            van afstand, beschikbaarheid en het gewenste tijdstip.
-          </p>
-          <p className="mt-3 text-foreground/70">
-            Voor extra snelle selectie kun je direct naar{" "}
-            <Link href="/escorts" className="text-primary hover:underline">
-              alle escorts
-            </Link>{" "}
-            gaan of een aanvraag starten via live chat.
-          </p>
-        </div>
-      </PageSection>
-
-      <PageSection size="sm">
-        <CTASection
-          eyebrow="Staat jouw plaats er niet bij?"
-          title="Vraag direct beschikbaarheid op"
-          description="Noem je locatie en gewenste tijdstip, dan koppelen we je aan de best beschikbare match."
-        />
+        <ScrollReveal delay={0.12}>
+          <CTASection
+            eyebrow="Staat jouw plaats er niet bij?"
+            title="Vraag direct beschikbaarheid op"
+            description="Noem je locatie en gewenste tijdstip, dan koppelen we je aan de best beschikbare match."
+          />
+        </ScrollReveal>
       </PageSection>
     </PageLayout>
   );

@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Breadcrumbs } from "../ui/breadcrumbs";
+import { GradientTitle } from "../ui/gradient-title";
 import { USPBar } from "./usp-bar";
 
 type BreadcrumbItem = {
@@ -18,6 +19,7 @@ type TemplateHeroGlassProps = {
   title: string;
   description: string;
   uspItems: HeroUSPItem[];
+  titleVariant?: "default" | "gold";
   className?: string;
 };
 
@@ -30,6 +32,7 @@ export function TemplateHeroGlass({
   title,
   description,
   uspItems,
+  titleVariant = "default",
   className,
 }: TemplateHeroGlassProps) {
   return (
@@ -46,9 +49,15 @@ export function TemplateHeroGlass({
           />
 
           <div className="max-w-3xl">
-            <h1 className="text-3xl font-heading font-bold text-foreground md:text-4xl">
-              {title}
-            </h1>
+            {titleVariant === "gold" ? (
+              <GradientTitle as="h1" size="xl" variant="gold">
+                {title}
+              </GradientTitle>
+            ) : (
+              <h1 className="text-3xl font-heading font-bold text-foreground md:text-4xl">
+                {title}
+              </h1>
+            )}
             <p className="mt-3 text-base text-foreground/75 md:text-lg">{description}</p>
           </div>
 

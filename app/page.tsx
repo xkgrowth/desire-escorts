@@ -19,6 +19,7 @@ import { CTASection } from "./components/domain/cta-section";
 import { PageWrapper, Section, Container, Grid } from "./components/ui/page-wrapper";
 import { GradientTitle } from "./components/ui/gradient-title";
 import { ServiceCard } from "./components/domain/service-card";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "./components/ui/scroll-reveal";
 import { getProfiles, profileToCardProps, getProfileImageUrl } from "@/lib/api";
 import { homeFaqs, topCities } from "@/lib/data/mock-data";
 
@@ -133,10 +134,12 @@ export default async function Home() {
 
       {/* 1. Hero Section (Full Bleed) */}
       <div className="relative left-1/2 right-1/2 w-screen -translate-x-1/2">
-        <HomepageHero
-          profiles={heroProfiles}
-          availableCount={availableProfilesCount}
-        />
+        <ScrollReveal animation="fade" duration={0.7}>
+          <HomepageHero
+            profiles={heroProfiles}
+            availableCount={availableProfilesCount}
+          />
+        </ScrollReveal>
       </div>
 
       {/* 2. Escort Preview Grid */}
@@ -145,7 +148,8 @@ export default async function Home() {
         className="bg-surface/5"
       >
         <Container size="2xl">
-          <div className="rounded-luxury border border-white/10 bg-surface/25 shadow-[0_12px_28px_rgba(0,0,0,0.18)] p-4 md:p-6">
+          <ScrollReveal delay={0.05}>
+            <div className="rounded-luxury border border-white/10 bg-surface/25 shadow-[0_12px_28px_rgba(0,0,0,0.18)] p-4 md:p-6">
             <div className="mb-6">
               <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
                 SELECTIE VAN
@@ -155,11 +159,15 @@ export default async function Home() {
               </GradientTitle>
             </div>
 
-            <Grid cols={4} className="mb-8">
-              {gridProfiles.map((profile) => (
-                <ProfileCard key={profile.slug} {...profileToCardProps(profile)} />
-              ))}
-            </Grid>
+            <StaggerContainer className="mb-8">
+              <Grid cols={4}>
+                {gridProfiles.map((profile) => (
+                  <StaggerItem key={profile.slug}>
+                    <ProfileCard {...profileToCardProps(profile)} />
+                  </StaggerItem>
+                ))}
+              </Grid>
+            </StaggerContainer>
 
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
               <Link
@@ -176,14 +184,16 @@ export default async function Home() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
-          </div>
+            </div>
+          </ScrollReveal>
         </Container>
       </Section>
 
       {/* 3. Intro / Context Block */}
       <Section size="md">
         <Container size="2xl">
-          <div className="grid gap-8 lg:grid-cols-2">
+          <ScrollReveal delay={0.06}>
+            <div className="grid gap-8 lg:grid-cols-2">
             <div>
               <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
                 Escort Service Nederland
@@ -230,26 +240,30 @@ export default async function Home() {
                 </li>
               </ul>
             </div>
-          </div>
+            </div>
+          </ScrollReveal>
         </Container>
       </Section>
 
       {/* 4. Why Choose Us (Condensed) */}
       <Section glow="mid" className="bg-surface/30 border-y border-white/5">
         <Container size="2xl">
-          <USPBar 
-            eyebrow="Waarom Desire"
-            title="Betrouwbaar & Discreet"
-            items={usps}
-            variant="horizontal"
-          />
+          <ScrollReveal delay={0.07}>
+            <USPBar 
+              eyebrow="Waarom Desire"
+              title="Betrouwbaar & Discreet"
+              items={usps}
+              variant="horizontal"
+            />
+          </ScrollReveal>
         </Container>
       </Section>
 
       {/* 5. Services Overview */}
       <Section size="lg">
         <Container size="2xl">
-          <div className="text-center mb-12">
+          <ScrollReveal delay={0.08}>
+            <div className="text-center mb-12">
             <span className="text-sm font-medium text-primary uppercase tracking-wider mb-3 block">
               Diensten
             </span>
@@ -260,28 +274,35 @@ export default async function Home() {
               Van ontspannende massages, escort massage en massage escort tot een complete Girlfriend Experience.
               Ontdek onze veelzijdige services.
             </p>
-          </div>
+            </div>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <ServiceCard 
-              title="Girlfriend Experience" 
-              description="De ultieme date-ervaring met warmte, intimiteit en oprechte connectie, net als met een echte vriendin."
-              href="/services/gfe-escorts"
-              icon={<Heart className="w-6 h-6" />}
-            />
-            <ServiceCard 
-              title="Erotische Massage" 
-              description="Laat je verwennen met een sensuele massage. Ontspanning en opwinding komen samen."
-              href="/services/erotische-massage"
-              icon={<Star className="w-6 h-6" />}
-            />
-            <ServiceCard 
-              title="Hotel Service" 
-              description="Discreet bezoek aan jouw hotelkamer. Wij komen naar alle hotels in Nederland."
-              href="/services/hotel-escort"
-              icon={<MapPin className="w-6 h-6" />}
-            />
-          </div>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.08}>
+            <StaggerItem>
+              <ServiceCard 
+                title="Girlfriend Experience" 
+                description="De ultieme date-ervaring met warmte, intimiteit en oprechte connectie, net als met een echte vriendin."
+                href="/services/gfe-escorts"
+                icon={<Heart className="w-6 h-6" />}
+              />
+            </StaggerItem>
+            <StaggerItem>
+              <ServiceCard 
+                title="Erotische Massage" 
+                description="Laat je verwennen met een sensuele massage. Ontspanning en opwinding komen samen."
+                href="/services/erotische-massage"
+                icon={<Star className="w-6 h-6" />}
+              />
+            </StaggerItem>
+            <StaggerItem>
+              <ServiceCard 
+                title="Hotel Service" 
+                description="Discreet bezoek aan jouw hotelkamer. Wij komen naar alle hotels in Nederland."
+                href="/services/hotel-escort"
+                icon={<MapPin className="w-6 h-6" />}
+              />
+            </StaggerItem>
+          </StaggerContainer>
           
           <div className="mt-8 text-center">
             <Link 
@@ -297,42 +318,46 @@ export default async function Home() {
       {/* 6. Hoe Werkt Boeken */}
       <Section size="md">
         <Container size="2xl">
-          <div className="mb-8 text-center">
+          <ScrollReveal delay={0.08}>
+            <div className="mb-8 text-center">
             <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
               Snel geregeld
             </span>
             <GradientTitle as="h2" size="lg">
               Hoe werkt boeken?
             </GradientTitle>
-          </div>
-          <div className="grid gap-4 md:grid-cols-3">
+            </div>
+          </ScrollReveal>
+          <StaggerContainer className="grid gap-4 md:grid-cols-3" staggerDelay={0.08}>
             {bookingSteps.map((step) => (
-              <div
-                key={step.title}
-                className="rounded-luxury border border-white/10 bg-surface/40 p-6"
-              >
-                <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  {step.icon}
+              <StaggerItem key={step.title}>
+                <div className="rounded-luxury border border-white/10 bg-surface/40 p-6">
+                  <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    {step.icon}
+                  </div>
+                  <h3 className="mb-2 font-heading text-lg font-bold">{step.title}</h3>
+                  <p className="text-sm text-foreground/70">{step.description}</p>
                 </div>
-                <h3 className="mb-2 font-heading text-lg font-bold">{step.title}</h3>
-                <p className="text-sm text-foreground/70">{step.description}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </Container>
       </Section>
 
       {/* 7. Direct Contact CTA */}
       <Section size="lg">
         <Container size="2xl">
-          <CTASection />
+          <ScrollReveal delay={0.1}>
+            <CTASection />
+          </ScrollReveal>
         </Container>
       </Section>
 
       {/* 8. Service Areas / Locaties */}
       <Section size="lg" className="bg-surface/10">
         <Container size="2xl">
-          <div className="text-center mb-12">
+          <ScrollReveal delay={0.08}>
+            <div className="text-center mb-12">
             <span className="text-sm font-medium text-primary uppercase tracking-wider mb-3 block">
               Locaties
             </span>
@@ -344,139 +369,155 @@ export default async function Home() {
               flexibele beschikbaarheid door heel Nederland. Voor escort Amsterdam
               en andere grote steden zijn responstijden vaak het snelst.
             </p>
-          </div>
+            </div>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4" staggerDelay={0.06}>
             {topCities.slice(0, 6).map((city) => (
-              <Link 
-                key={city.name} 
-                href={city.href}
-                className="group card-interactive rounded-luxury p-6 flex flex-col items-center justify-center transition-shadow duration-300 hover:shadow-glow"
-              >
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-3 group-hover:scale-110 transition-transform">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <span className="font-heading font-bold text-foreground group-hover:text-primary transition-colors">
-                  {city.name}
-                </span>
-              </Link>
+              <StaggerItem key={city.name}>
+                <Link 
+                  href={city.href}
+                  className="group card-interactive rounded-luxury p-6 flex flex-col items-center justify-center transition-shadow duration-300 hover:shadow-glow"
+                >
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-3 group-hover:scale-110 transition-transform">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <span className="font-heading font-bold text-foreground group-hover:text-primary transition-colors">
+                    {city.name}
+                  </span>
+                </Link>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
 
-          <div className="mt-8 text-center">
-            <p className="text-sm text-foreground/60">
-              Zoek je een specifieke plaats? Bekijk dan alle gebieden op de{" "}
-              <Link href="/escort-in-nederland" className="text-primary hover:underline">
-                locatie-overzichtspagina
-              </Link>
-              .
-            </p>
-          </div>
+          <ScrollReveal delay={0.1}>
+            <div className="mt-8 text-center">
+              <p className="text-sm text-foreground/60">
+                Zoek je een specifieke plaats? Bekijk dan alle gebieden op de{" "}
+                <Link href="/escort-in-nederland" className="text-primary hover:underline">
+                  locatie-overzichtspagina
+                </Link>
+                .
+              </p>
+            </div>
+          </ScrollReveal>
         </Container>
       </Section>
 
       {/* 9. Vertrouwen & Discretie */}
       <Section size="md">
         <Container size="2xl">
-          <div className="rounded-luxury border border-white/10 bg-surface/30 p-6 md:p-10">
-            <div className="mb-6">
-              <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
-                Vertrouwen
-              </span>
-              <GradientTitle as="h2" size="lg">
-                Discreet, duidelijk en professioneel
-              </GradientTitle>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2">
-              <div>
-                <p className="text-foreground/70 mb-4">
-                  Bij Desire Escorts staat privacy centraal. We delen geen onnodige
-                  gegevens, communiceren helder over het proces en houden afspraken
-                  strak en professioneel.
-                </p>
-                <p className="text-foreground/70">
-                  Voor zowel nieuwe als terugkerende bezoekers betekent dit: minder
-                  onzekerheid, sneller schakelen en een betrouwbare ervaring van
-                  aanvraag tot bevestiging.
-                </p>
+          <ScrollReveal delay={0.09}>
+            <div className="rounded-luxury border border-white/10 bg-surface/30 p-6 md:p-10">
+              <div className="mb-6">
+                <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
+                  Vertrouwen
+                </span>
+                <GradientTitle as="h2" size="lg">
+                  Discreet, duidelijk en professioneel
+                </GradientTitle>
               </div>
-              <ul className="space-y-3 text-foreground/75">
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                  <span>Duidelijke intake en begeleiding bij elke aanvraag</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                  <span>Discreet contact via chat en telefoon</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                  <span>Heldere prijscommunicatie en verwachtingen vooraf</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <ShieldCheck className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                  <span>Nationwide service met snelle opvolging</span>
-                </li>
-              </ul>
+              <div className="grid gap-6 md:grid-cols-2">
+                <div>
+                  <p className="text-foreground/70 mb-4">
+                    Bij Desire Escorts staat privacy centraal. We delen geen onnodige
+                    gegevens, communiceren helder over het proces en houden afspraken
+                    strak en professioneel.
+                  </p>
+                  <p className="text-foreground/70">
+                    Voor zowel nieuwe als terugkerende bezoekers betekent dit: minder
+                    onzekerheid, sneller schakelen en een betrouwbare ervaring van
+                    aanvraag tot bevestiging.
+                  </p>
+                </div>
+                <ul className="space-y-3 text-foreground/75">
+                  <li className="flex items-start gap-3">
+                    <ShieldCheck className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                    <span>Duidelijke intake en begeleiding bij elke aanvraag</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <ShieldCheck className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                    <span>Discreet contact via chat en telefoon</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <ShieldCheck className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                    <span>Heldere prijscommunicatie en verwachtingen vooraf</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <ShieldCheck className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                    <span>Nationwide service met snelle opvolging</span>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         </Container>
       </Section>
 
       {/* 10. FAQ */}
       <Section className="border-t border-white/5">
         <Container size="2xl">
-          <FAQ 
-            eyebrow="Veelgestelde Vragen"
-            title="Goed om te weten"
-            items={homeFaqs}
-            variant="default"
-          />
-          <div className="mt-8 text-center">
-            <Link 
-              href="/faq" 
-              className="text-sm text-foreground/60 hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-0.5"
-            >
-              Bekijk alle veelgestelde vragen →
-            </Link>
-          </div>
+          <ScrollReveal delay={0.11}>
+            <FAQ 
+              eyebrow="Veelgestelde Vragen"
+              title="Goed om te weten"
+              items={homeFaqs}
+              variant="default"
+            />
+            <div className="mt-8 text-center">
+              <Link 
+                href="/faq" 
+                className="text-sm text-foreground/60 hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-0.5"
+              >
+                Bekijk alle veelgestelde vragen →
+              </Link>
+            </div>
+          </ScrollReveal>
         </Container>
       </Section>
 
       {/* 11. Kennisbank Links */}
       <Section size="sm">
         <Container size="2xl">
-          <div className="text-center mb-8">
-            <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
-              Lees verder
-            </span>
-            <GradientTitle as="h2" size="md">
-              Meer informatie voor een goede voorbereiding
-            </GradientTitle>
-          </div>
-          <div className="grid gap-3 md:grid-cols-3">
-            <Link
-              href="/kennisbank/boeken-reserveringen/"
-              className="card-interactive rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
-            >
-              <p className="font-heading font-semibold mb-1">Boeken & reserveren</p>
-              <p className="text-sm text-foreground/65">Alles over beschikbaarheid, timing en aanvraagproces.</p>
-            </Link>
-            <Link
-              href="/kennisbank/discretie-privacy/"
-              className="card-interactive rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
-            >
-              <p className="font-heading font-semibold mb-1">Discretie & privacy</p>
-              <p className="text-sm text-foreground/65">Hoe wij omgaan met vertrouwelijkheid en gegevensbescherming.</p>
-            </Link>
-            <Link
-              href="/blog"
-              className="card-interactive rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
-            >
-              <p className="font-heading font-semibold mb-1">Nieuws & inzichten</p>
-              <p className="text-sm text-foreground/65">Praktische tips en updates uit onze kennisbank en blog.</p>
-            </Link>
-          </div>
+          <ScrollReveal delay={0.1}>
+            <div className="text-center mb-8">
+              <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
+                Lees verder
+              </span>
+              <GradientTitle as="h2" size="md">
+                Meer informatie voor een goede voorbereiding
+              </GradientTitle>
+            </div>
+          </ScrollReveal>
+          <StaggerContainer className="grid gap-3 md:grid-cols-3" staggerDelay={0.08}>
+            <StaggerItem>
+              <Link
+                href="/kennisbank/boeken-reserveringen/"
+                className="card-interactive rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
+              >
+                <p className="font-heading font-semibold mb-1">Boeken & reserveren</p>
+                <p className="text-sm text-foreground/65">Alles over beschikbaarheid, timing en aanvraagproces.</p>
+              </Link>
+            </StaggerItem>
+            <StaggerItem>
+              <Link
+                href="/kennisbank/discretie-privacy/"
+                className="card-interactive rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
+              >
+                <p className="font-heading font-semibold mb-1">Discretie & privacy</p>
+                <p className="text-sm text-foreground/65">Hoe wij omgaan met vertrouwelijkheid en gegevensbescherming.</p>
+              </Link>
+            </StaggerItem>
+            <StaggerItem>
+              <Link
+                href="/blog"
+                className="card-interactive rounded-luxury p-5 text-left transition-shadow duration-300 hover:shadow-glow"
+              >
+                <p className="font-heading font-semibold mb-1">Nieuws & inzichten</p>
+                <p className="text-sm text-foreground/65">Praktische tips en updates uit onze kennisbank en blog.</p>
+              </Link>
+            </StaggerItem>
+          </StaggerContainer>
         </Container>
       </Section>
     </PageWrapper>

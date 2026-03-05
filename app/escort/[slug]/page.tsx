@@ -5,6 +5,7 @@ import { CTASection } from "../../components/domain/cta-section";
 import { ProfileCard } from "../../components/domain/profile-card";
 import { FAQ } from "../../components/domain/faq";
 import { PageLayout, PageSection } from "../../components/layout/page-layout";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "../../components/ui/scroll-reveal";
 import {
   getAllProfileSlugs,
   getProfileBySlug,
@@ -127,44 +128,52 @@ export default async function EscortDetailPage({ params }: DetailPageProps) {
       ]}
     >
       <PageSection size="sm">
-        <ProfileHero
-          name={profile.name}
-          tagline={profile.shortBio}
-          description={profile.bio}
-          images={mapProfileImages(profile)}
-          isVerified={profile.verified}
-          isAvailable={profile.isAvailable}
-          age={profile.age}
-          height={formatHeight(profile.height)}
-          cupSize={formatCupSize(profile.cupSize)}
-          posture={profile.postuur}
-          eyeColor={profile.oogKleur}
-          hairColor={profile.haarKleur}
-          sexuality={profile.geaardheid}
-          languages={profile.languages.map(prettifyValue)}
-          services={profile.services.map(serviceLabelToDutch)}
-          whatsapp={profile.contact?.whatsapp}
-        />
+        <ScrollReveal>
+          <ProfileHero
+            name={profile.name}
+            tagline={profile.shortBio}
+            description={profile.bio}
+            images={mapProfileImages(profile)}
+            isVerified={profile.verified}
+            isAvailable={profile.isAvailable}
+            age={profile.age}
+            height={formatHeight(profile.height)}
+            cupSize={formatCupSize(profile.cupSize)}
+            posture={profile.postuur}
+            eyeColor={profile.oogKleur}
+            hairColor={profile.haarKleur}
+            sexuality={profile.geaardheid}
+            languages={profile.languages.map(prettifyValue)}
+            services={profile.services.map(serviceLabelToDutch)}
+            whatsapp={profile.contact?.whatsapp}
+          />
+        </ScrollReveal>
       </PageSection>
 
       <PageSection title="Vergelijkbare profielen">
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+        <StaggerContainer className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4" staggerDelay={0.07}>
           {relatedProfiles.map((item) => (
-            <ProfileCard key={item.slug} {...item} />
+            <StaggerItem key={item.slug}>
+              <ProfileCard {...item} />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </PageSection>
 
       <PageSection size="sm">
-        <FAQ
-          eyebrow="Veelgestelde vragen"
-          title="Boeken & beschikbaarheid"
-          items={homeFaqs.slice(0, 4)}
-        />
+        <ScrollReveal delay={0.08}>
+          <FAQ
+            eyebrow="Veelgestelde vragen"
+            title="Boeken & beschikbaarheid"
+            items={homeFaqs.slice(0, 4)}
+          />
+        </ScrollReveal>
       </PageSection>
 
       <PageSection size="sm">
-        <CTASection />
+        <ScrollReveal delay={0.12}>
+          <CTASection />
+        </ScrollReveal>
       </PageSection>
     </PageLayout>
   );
