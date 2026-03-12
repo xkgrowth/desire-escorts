@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { ServiceTypeDetailTemplate } from "../components/domain/service-type-detail-template";
-import { hotelEscortPageData } from "@/lib/data/service-type-detail-pages";
+import { getServiceTypePageBySlug } from "@/lib/data/service-type-detail-pages";
 
-const data = hotelEscortPageData;
+const data = getServiceTypePageBySlug("hotel-escort")!;
 
 export const metadata: Metadata = {
   title: `${data.title} | Vanaf €160, Discreet | Desire Escorts`,

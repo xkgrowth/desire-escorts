@@ -745,6 +745,45 @@ Of je nu een rustige avond wilt of gezelschap voor een langer verblijf — wij s
 
 Whether you want a quiet evening or companionship for a longer stay — we tailor the experience to your wishes.`,
 
+  benefitsTitle: "Voordelen van Hotel Escort",
+  benefitsTitleEn: "Benefits of Hotel Escort",
+  benefits: [
+    {
+      title: "Maximale Discretie",
+      description: "Escorts melden zich niet bij receptie, komen direct naar je kamer",
+    },
+    {
+      title: "Flexibele Tijden",
+      description: "24/7 beschikbaar, ook voor late aankomsten of vroege ochtenden",
+    },
+    {
+      title: "Geen Reistijd",
+      description: "Ontspan in je eigen kamer zonder naar buiten te hoeven",
+    },
+    {
+      title: "Premium Hotels",
+      description: "Ervaring bij vijfsterrenhotels tot zakelijke accommodaties",
+    },
+  ],
+  benefitsEn: [
+    {
+      title: "Maximum Discretion",
+      description: "Escorts don't check in at reception, come directly to your room",
+    },
+    {
+      title: "Flexible Hours",
+      description: "Available 24/7, including late arrivals or early mornings",
+    },
+    {
+      title: "No Travel Time",
+      description: "Relax in your own room without going outside",
+    },
+    {
+      title: "Premium Hotels",
+      description: "Experience at five-star hotels to business accommodations",
+    },
+  ],
+
   stepsEyebrow: "Zo werkt het",
   stepsEyebrowEn: "How it works",
   stepsTitle: "Hotel Escort Boeken in 4 Stappen",
@@ -5423,18 +5462,38 @@ function withLegacyPageImage(
   };
 
   const explicitImage = explicitImageOverrides[page.slug];
+  if (explicitImage) {
+    return {
+      ...page,
+      primaryImageUrl: explicitImage,
+      ogImageUrl: explicitImage,
+    };
+  }
+
+  const curatedImageIsWpUrl = page.primaryImageUrl.startsWith(wpUploadsPrefix);
+  if (curatedImageIsWpUrl) {
+    const localImage = toLocalRepoImage(page.primaryImageUrl);
+    return {
+      ...page,
+      primaryImageUrl: localImage,
+      ogImageUrl: localImage,
+    };
+  }
+
   const legacyImage =
     getLegacyPageSnapshot(page.slug, page.title)?.imageUrl ??
     getLivePageImageBySlug(page.slug);
 
-  const resolvedImageSource = explicitImage ?? legacyImage ?? page.primaryImageUrl;
-  const localImage = toLocalRepoImage(resolvedImageSource);
+  if (legacyImage) {
+    const localImage = toLocalRepoImage(legacyImage);
+    return {
+      ...page,
+      primaryImageUrl: localImage,
+      ogImageUrl: localImage,
+    };
+  }
 
-  return {
-    ...page,
-    primaryImageUrl: localImage,
-    ogImageUrl: localImage,
-  };
+  return page;
 }
 
 const allServiceTypeDetailPagesRaw: ServiceTypeDetailPageData[] = [
