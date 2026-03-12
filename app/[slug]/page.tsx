@@ -5,18 +5,86 @@ import { Calendar, Clock, User } from "lucide-react";
 import { PageLayout, PageSection } from "../components/layout/page-layout";
 import { GradientTitle } from "../components/ui/gradient-title";
 import { FAQ } from "../components/domain/faq";
+import { ServiceTypeDetailTemplate } from "../components/domain/service-type-detail-template";
 import { getBlogPostBySlug, getBlogPostSlugs, getRelatedBlogPosts } from "@/lib/data/blog-posts";
+import {
+  allServiceTypeDetailPages,
+  getServiceTypePageBySlug,
+} from "@/lib/data/service-type-detail-pages";
 
 type BlogDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+const reservedRootSlugs = new Set([
+  "blog",
+  "author",
+  "services",
+  "prijzen",
+  "tarieven",
+  "escorts",
+  "design-system",
+  "escort-in-nederland",
+  "escort-haarlem",
+  "escort-amstelveen",
+  // Keep explicit handcrafted routes owning these paths.
+  "hotel-escort",
+  "aziatische-escorts",
+]);
+
 export async function generateStaticParams() {
-  return getBlogPostSlugs().map((slug) => ({ slug }));
+  const blogSlugs = getBlogPostSlugs().filter((slug) => !reservedRootSlugs.has(slug));
+  const serviceTypeSlugs = allServiceTypeDetailPages
+    .map((page) => page.slug)
+    .filter((slug) => !reservedRootSlugs.has(slug));
+
+  const uniqueSlugs = Array.from(new Set([...blogSlugs, ...serviceTypeSlugs]));
+  return uniqueSlugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: BlogDetailPageProps): Promise<Metadata> {
   const { slug } = await params;
+  const serviceTypePage = getServiceTypePageBySlug(slug);
+  if (serviceTypePage) {
+    const seoTitle =
+      serviceTypePage.seoTitle ?? `${serviceTypePage.title} | Vanaf €160 | Desire Escorts`;
+    const ogImage = serviceTypePage.ogImageUrl ?? serviceTypePage.primaryImageUrl;
+
+    return {
+      title: seoTitle,
+      description: serviceTypePage.metaDescription,
+      alternates: {
+        canonical: `https://desire-escorts.nl/${serviceTypePage.slug}/`,
+        languages: {
+          "nl-NL": `https://desire-escorts.nl/${serviceTypePage.slug}/`,
+          "en-US": `https://desire-escorts.nl/en/${serviceTypePage.slug}/`,
+        },
+      },
+      openGraph: {
+        title: seoTitle,
+        description: serviceTypePage.metaDescription,
+        url: `https://desire-escorts.nl/${serviceTypePage.slug}/`,
+        siteName: "Desire Escorts",
+        locale: "nl_NL",
+        type: "website",
+        images: [
+          {
+            url: ogImage,
+            width: 1200,
+            height: 630,
+            alt: serviceTypePage.primaryImageAlt,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: seoTitle,
+        description: serviceTypePage.metaDescription,
+        images: [ogImage],
+      },
+    };
+  }
+
   const post = getBlogPostBySlug(slug);
 
   if (!post) {
@@ -36,6 +104,55 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
 
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   const { slug } = await params;
+  const serviceTypePage = getServiceTypePageBySlug(slug);
+  if (serviceTypePage) {
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: serviceTypePage.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    };
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://desire-escorts.nl" },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: serviceTypePage.pageType === "service" ? "Services" : "Escort Types",
+          item: "https://desire-escorts.nl/services",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: serviceTypePage.title,
+          item: `https://desire-escorts.nl/${serviceTypePage.slug}`,
+        },
+      ],
+    };
+
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+        <ServiceTypeDetailTemplate data={serviceTypePage} locale="nl" />
+      </>
+    );
+  }
+
   const post = getBlogPostBySlug(slug);
 
   if (!post) {

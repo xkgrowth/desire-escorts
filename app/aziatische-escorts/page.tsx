@@ -23,10 +23,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: data.ogImageUrl ?? data.primaryImageUrl,
+        url: "/brand/preview-image-desirev2.png?v=2",
         width: 1200,
         height: 630,
-        alt: data.primaryImageAlt,
+        alt: "Desire Escorts",
       },
     ],
   },
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${data.title} | Desire Escorts`,
     description: data.metaDescription,
-    images: [data.ogImageUrl ?? data.primaryImageUrl],
+    images: ["/brand/preview-image-desirev2.png?v=2"],
   },
 };
 

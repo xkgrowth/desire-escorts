@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "/brand/preview-image.jpg",
+        url: "/brand/preview-image-desirev2.png?v=2",
         width: 1200,
         height: 630,
         alt: "Desire Escorts",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/brand/preview-image.jpg"],
+    images: ["/brand/preview-image-desirev2.png?v=2"],
   },
 };
 
