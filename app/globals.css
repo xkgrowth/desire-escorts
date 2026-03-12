@@ -702,3 +702,15 @@ body {
     padding-top: 1rem;
   }
 }
+
+/* Jotform embed styling */
+.jotform-container iframe {
+  width: 100% !important;
+  min-height: 600px;
+  border: none;
+  border-radius: var(--radius-lg);
+}
+
+.jotform-container {
+  background: transparent;
+}
