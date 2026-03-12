@@ -58,7 +58,7 @@ export function ArticleCard({
 
             <div className="absolute inset-x-0 bottom-0 p-6 lg:p-10">
               {category && (
-                <span className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-medium mb-4">
+                <span className="inline-block px-4 py-1.5 rounded-full border border-primary/70 bg-primary/15 text-primary text-sm font-semibold tracking-wide mb-4">
                   {category}
                 </span>
               )}
@@ -181,8 +181,8 @@ export function ArticleCard({
 
   return (
     <article className={cn("group", className)}>
-      <Link href={articleHref} className="block">
-        <div className="card-interactive rounded-luxury overflow-hidden hover:shadow-glow transition-shadow duration-300">
+      <Link href={articleHref} className="block h-full">
+        <div className="card-interactive rounded-luxury overflow-hidden hover:shadow-glow transition-shadow duration-300 h-full flex flex-col">
           <div className="relative aspect-[16/9]">
             {imageUrl ? (
               <Image
@@ -204,18 +204,18 @@ export function ArticleCard({
             )}
           </div>
 
-          <div className="p-5">
+          <div className="p-5 flex flex-1 flex-col">
             <h3 className="text-lg font-heading font-bold text-foreground group-hover:text-primary transition-colors line-clamp-2 mb-2">
               {title}
             </h3>
 
             {excerpt && (
-              <p className="text-sm text-foreground/60 line-clamp-2 mb-4">
+              <p className="text-sm text-foreground/60 line-clamp-2 mb-4 min-h-[2.75rem]">
                 {excerpt}
               </p>
             )}
 
-            <div className="flex items-center justify-between text-xs text-foreground/50">
+            <div className="mt-auto flex items-center justify-between text-xs text-foreground/50">
               <div className="flex items-center gap-3">
                 {publishedAt && (
                   <div className="flex items-center gap-1">

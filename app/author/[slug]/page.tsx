@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PageLayout, PageSection } from "../../components/layout/page-layout";
 import { GradientTitle } from "../../components/ui/gradient-title";
@@ -62,6 +63,17 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
     >
       <PageSection size="sm">
         <div className="max-w-4xl">
+          {author.imageUrl && (
+            <div className="mb-4">
+              <Image
+                src={author.imageUrl}
+                alt={author.name}
+                width={64}
+                height={64}
+                className="rounded-full border border-white/10"
+              />
+            </div>
+          )}
           <span className="text-sm font-medium text-primary uppercase tracking-wider mb-3 block">
             Auteur
           </span>
@@ -80,6 +92,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
               variant="horizontal"
               title={post.title}
               slug={post.slug}
+              href={`/${post.slug}/`}
               excerpt={post.excerpt}
               imageUrl={post.imageUrl}
               publishedAt={post.publishedAtLabel}

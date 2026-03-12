@@ -23,46 +23,73 @@ export default function BlogOverviewPage() {
 
   return (
     <PageWrapper withGradient={true}>
-      <Section size="sm">
-        <Container size="2xl">
-          <span className="text-sm font-medium text-primary uppercase tracking-wider mb-3 block">
-            Blog
-          </span>
-          <GradientTitle as="h1" size="xl" className="mb-4">
-            Blog Desire Escorts
-          </GradientTitle>
-          <p className="text-foreground/70 max-w-3xl">
-            De laatste updates, nieuws en inzichten over onze services, discretie en
-            veiligheid.
-          </p>
-        </Container>
-      </Section>
-
       {featuredPost ? (
-        <Section size="sm" className="pt-0">
+        <Section size="sm" className="blog-featured-section">
           <Container size="2xl">
-            <ArticleCard
-              variant="featured"
-              title={featuredPost.title}
-              slug={featuredPost.slug}
-              excerpt={featuredPost.excerpt}
-              imageUrl={featuredPost.imageUrl}
-              author={{ name: featuredPost.author.name }}
-              publishedAt={featuredPost.publishedAtLabel}
-              readTime={featuredPost.readTimeLabel}
-            />
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:items-start">
+              <div>
+                <span className="text-sm font-medium text-primary uppercase tracking-wider mb-3 block">
+                  Blog
+                </span>
+                <GradientTitle as="h1" size="xl" className="mb-4">
+                  Blog Desire Escorts
+                </GradientTitle>
+                <p className="text-foreground/70">
+                  De laatste updates, nieuws en inzichten over onze services, discretie en
+                  veiligheid.
+                </p>
+              </div>
+
+              <div className="lg:col-span-2">
+                <ArticleCard
+                  variant="featured"
+                  title={featuredPost.title}
+                  slug={featuredPost.slug}
+                  href={`/${featuredPost.slug}/`}
+                  category="Laatste post"
+                  excerpt={featuredPost.excerpt}
+                  imageUrl={featuredPost.imageUrl}
+                  author={{ name: featuredPost.author.name }}
+                  publishedAt={featuredPost.publishedAtLabel}
+                  readTime={featuredPost.readTimeLabel}
+                />
+              </div>
+            </div>
           </Container>
         </Section>
-      ) : null}
+      ) : (
+        <Section size="sm" className="blog-featured-section">
+          <Container size="2xl">
+            <span className="text-sm font-medium text-primary uppercase tracking-wider mb-3 block">
+              Blog
+            </span>
+            <GradientTitle as="h1" size="xl" className="mb-4">
+              Blog Desire Escorts
+            </GradientTitle>
+            <p className="text-foreground/70 max-w-3xl">
+              De laatste updates, nieuws en inzichten over onze services, discretie en
+              veiligheid.
+            </p>
+          </Container>
+        </Section>
+      )}
 
-      <Section size="md">
+      <Section size="md" className="blog-posts-section">
         <Container size="2xl">
+          <div className="mb-6 flex items-center gap-3">
+            <span className="text-sm font-medium text-primary uppercase tracking-wider">
+              Alle posts
+            </span>
+            <div className="h-px flex-1 bg-white/10" />
+          </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {otherPosts.map((post) => (
               <ArticleCard
                 key={post.id}
+                className="h-full"
                 title={post.title}
                 slug={post.slug}
+                href={`/${post.slug}/`}
                 excerpt={post.excerpt}
                 imageUrl={post.imageUrl}
                 author={{ name: post.author.name }}

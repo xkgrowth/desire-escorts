@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Calendar, Clock, User } from "lucide-react";
 import { PageLayout, PageSection } from "../components/layout/page-layout";
+import { GradientTitle } from "../components/ui/gradient-title";
+import { FAQ } from "../components/domain/faq";
 import { getBlogPostBySlug, getBlogPostSlugs, getRelatedBlogPosts } from "@/lib/data/blog-posts";
 
 type BlogDetailPageProps = {
@@ -40,7 +42,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     notFound();
   }
 
-  const sidebarPosts = getRelatedBlogPosts(post.slug, 12);
+  const sidebarPosts = getRelatedBlogPosts(post.slug, 5);
   const authorHref =
     post.author.slug === "julian-van-dijk" ? `/author/${post.author.slug}/` : null;
 
@@ -56,9 +58,9 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
           <article className="min-w-0">
             <header className="mb-8">
-              <h1 className="text-3xl font-heading font-bold text-foreground md:text-4xl lg:text-5xl">
+              <GradientTitle as="h1" size="xl" className="mb-2">
                 {post.title}
-              </h1>
+              </GradientTitle>
 
               <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-foreground/65">
                 {authorHref ? (
@@ -88,8 +90,21 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
 
             <div
               className="blog-post-content"
-              dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+              dangerouslySetInnerHTML={{ __html: post.contentHtmlMain }}
             />
+
+            {post.faqItems.length > 0 && (
+              <div className="mt-10">
+                <FAQ
+                  title="FAQ"
+                  items={post.faqItems.map((item) => ({
+                    question: item.question,
+                    answer: item.answer,
+                  }))}
+                  variant="default"
+                />
+              </div>
+            )}
           </article>
 
           <aside className="lg:sticky lg:top-24 h-fit rounded-luxury border border-white/10 bg-surface/35 p-5">
@@ -111,6 +126,14 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                 ))}
               </ul>
             </nav>
+            <div className="mt-5 pt-4 border-t border-white/10">
+              <Link
+                href="/blog"
+                className="text-sm font-medium text-primary hover:text-accent transition-colors"
+              >
+                Terug naar blogoverzicht
+              </Link>
+            </div>
           </aside>
         </div>
       </PageSection>
