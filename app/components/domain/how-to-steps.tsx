@@ -33,6 +33,12 @@ export function HowToSteps({
   };
 
   if (variant === "numbered") {
+    const gridCols = steps.length === 4 
+      ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" 
+      : steps.length === 3 
+        ? "grid-cols-1 md:grid-cols-3" 
+        : "grid-cols-1 sm:grid-cols-2";
+    
     return (
       <div className={className}>
         {(eyebrow || title) && (
@@ -49,7 +55,7 @@ export function HowToSteps({
             )}
           </div>
         )}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className={cn("grid gap-6", gridCols)}>
           {steps.map((step, index) => (
             <div key={index} className="text-center">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl font-bold mx-auto mb-4">
