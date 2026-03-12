@@ -121,7 +121,11 @@ export function CTASection({
           </p>
 
           <div className="flex gap-3">
-            <Button variant="ghost" size="lg" className="flex-1 gap-2 text-white">
+            <Button
+              variant="ghost"
+              size="lg"
+              className="flex-1 gap-2 text-white hover:border-primary/40 hover:bg-primary/10"
+            >
               <MessageCircle className="w-5 h-5" />
               Live Chat
             </Button>

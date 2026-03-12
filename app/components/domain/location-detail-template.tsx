@@ -65,7 +65,11 @@ export async function LocationDetailTemplate({ data }: LocationDetailTemplatePro
               Voor snelle beschikbaarheid in {data.city} kun je direct via live chat of WhatsApp boeken.
             </p>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-              <Button variant="ghost" size="md" className="gap-2 text-white sm:w-auto">
+              <Button
+                variant="ghost"
+                size="md"
+                className="gap-2 text-white hover:border-primary/40 hover:bg-primary/10 sm:w-auto"
+              >
                 <MessageCircle className="h-5 w-5" />
                 Live Chat
               </Button>

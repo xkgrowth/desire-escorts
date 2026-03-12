@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Award, CheckCircle2, Clock3, Euro, ShieldCheck, Users } from "lucide-react";
+import { Award, CheckCircle2, Clock3, Euro, Heart, MapPin, ShieldCheck, Users } from "lucide-react";
 import { getProfiles, profilesToCardProps } from "@/lib/api";
 import { getFilteredProfiles, getProfileSectionTitle } from "@/lib/api/profile-filters";
 import type { ServiceTypeDetailPageData } from "@/lib/data/service-type-detail-pages";
@@ -88,6 +88,9 @@ export async function ServiceTypeDetailTemplate({
   const faqs = isNl ? data.faqs : data.faqsEn;
   const primaryImageAlt = isNl ? data.primaryImageAlt : data.primaryImageAltEn;
   const trustBadges = isNl ? data.trustBadges : data.trustBadgesEn;
+  const optionPillClass =
+    "inline-flex items-center gap-2 rounded-luxury border border-white bg-[#161E21] px-3.5 py-2 text-sm text-foreground/80 transition-colors hover:border-primary/30 hover:text-primary";
+  const optionIconClass = "h-4 w-4 text-primary/60";
 
   return (
     <PageLayout>
@@ -314,8 +317,9 @@ export async function ServiceTypeDetailTemplate({
                   <li key={service.slug}>
                     <Link
                       href={`/${service.slug}`}
-                      className="inline-flex rounded-luxury border border-white bg-[#161E21] px-3.5 py-2 text-sm text-foreground/80 transition-colors hover:border-primary/30 hover:text-primary"
+                      className={optionPillClass}
                     >
+                      <Heart className={optionIconClass} />
                       {isNl ? service.label : service.labelEn ?? service.label}
                     </Link>
                   </li>
@@ -343,9 +347,9 @@ export async function ServiceTypeDetailTemplate({
                   <li key={type.slug}>
                     <Link
                       href={`/${type.slug}`}
-                      className="inline-flex items-center gap-2 rounded-luxury border border-white bg-[#161E21] px-3.5 py-2 text-sm text-foreground/80 transition-colors hover:border-primary/30 hover:text-primary"
+                      className={optionPillClass}
                     >
-                      <Users className="h-4 w-4 text-primary/60" />
+                      <Users className={optionIconClass} />
                       {isNl ? type.label : type.labelEn ?? type.label}
                     </Link>
                   </li>
@@ -376,8 +380,9 @@ export async function ServiceTypeDetailTemplate({
                 <li key={location.slug}>
                   <Link
                     href={`/${location.slug}`}
-                    className="inline-flex rounded-luxury border border-white bg-[#161E21] px-3.5 py-2 text-sm text-foreground/80 transition-colors hover:border-primary/30 hover:text-primary"
+                    className={optionPillClass}
                   >
+                    <MapPin className={optionIconClass} />
                     {location.label}
                   </Link>
                 </li>
