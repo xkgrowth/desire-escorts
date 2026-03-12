@@ -39,6 +39,12 @@ export const primaryNav: NavItem[] = [
       { label: "Alle Services", labelEn: "All Services", href: "/services" },
     ],
   },
+  {
+    label: "Hoe Het Werkt",
+    labelEn: "How It Works",
+    href: "/escort-bestellen",
+    description: "Stap voor stap escort boeken",
+  },
   { 
     label: "Locaties", 
     labelEn: "Locations",
@@ -114,6 +120,7 @@ export const footerLinks: Record<string, FooterLinkSection> = {
       { label: "Blog", labelEn: "Blog", href: "/blog" },
       { label: "Kennisbank", labelEn: "Knowledge Centre", href: "/kennisbank" },
       { label: "Veelgestelde Vragen", labelEn: "FAQ", href: "/faq" },
+      { label: "Hoe Het Werkt", labelEn: "How It Works", href: "/escort-bestellen" },
       { label: "Werken als Escort", labelEn: "Work as Escort", href: "/werken-als-escort" },
       { label: "Contact", labelEn: "Contact", href: "/contact" },
     ],

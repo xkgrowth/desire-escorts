@@ -100,7 +100,7 @@ export function HowToSteps({
           {steps.map((step, index) => (
             <div key={index} className="relative">
               {/* Dot */}
-              <div className="absolute -left-8 top-1 w-6 h-6 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center">
+              <div className="absolute -left-8 top-1 w-6 h-6 rounded-full border-2 border-primary bg-background shadow-[0_0_0_2px_rgba(0,0,0,0.35)] flex items-center justify-center">
                 {step.icon || (
                   <span className="text-xs font-bold text-primary">
                     {index + 1}

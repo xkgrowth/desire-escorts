@@ -1,5 +1,20 @@
 # WPML Export Enablement
 
+# Utility Page: Hoe Het Werkt (`/escort-bestellen/`)
+
+- [x] Create `app/escort-bestellen/page.tsx` with SEO-safe metadata, canonical, and NL/EN alternates.
+- [x] Implement conversion-focused page structure (hero, process steps, trust/payment, FAQ, CTA).
+- [x] Add JSON-LD for `HowTo`, `FAQPage`, and `BreadcrumbList`.
+- [x] Preserve legacy intent and key internal links (`/alle-escorts`, `/contact`, `/first-time-experience`).
+- [x] Add navigation exposure for the new route in header/footer link maps.
+- [x] Run lint diagnostics on touched files and resolve any regressions.
+
+## Review Notes (Hoe Het Werkt)
+
+- Built the page on the legacy slug `/escort-bestellen/` to preserve URL continuity.
+- Reused existing UI components (`TemplateHeroGlass`, `HowToSteps`, `FAQ`, `CTASection`) for consistency and lower implementation risk.
+- Structured the page around a clear 6-step booking flow adapted from the legacy content with stronger clarity on discretion and payment transparency.
+
 # FAQ Standalone Page (`/faq`)
 
 - [x] Add dedicated FAQ route with grouped category accordions sourced from shared FAQ data.
