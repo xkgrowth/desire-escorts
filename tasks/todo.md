@@ -606,6 +606,7 @@
 - [x] Add image candidate mapping for each location (primary/secondary) using WordPress media patterns.
 - [x] Define batch manifests for staged implementation (Batch 1 through Batch 6).
 - [x] Implement first rollout batch (Amsterdam + districts) using the shared location template.
+- [x] Download and store location images to `public/images/location/` with manifest coverage output.
 
 ## Review Notes (D.1 Location Pages Scaling)
 
@@ -614,3 +615,5 @@
 - Batch 1 routes added for `escort-amsterdam`, `escort-amsterdam-centrum`, `escort-amsterdam-noord`, `escort-amsterdam-oost`, `escort-amsterdam-west`, and `escort-amsterdam-zuid`.
 - Location detail data map now includes Amsterdam city + district records using the shared location template shape.
 - Amsterdam district data enriched at data-layer level (no template fallback) with 3+ hotels and 5+ FAQs per page.
+- Local image sync completed via `scripts/download-location-images.mjs`; manifest at `data/inventory/location-image-manifest.json` now shows 223/223 slugs with both primary and secondary assets, and `0` global fallbacks.
+- `data/inventory/location-image-fallback-review.md` is now clean (`0` primary fallback slugs, `0` secondary fallback slugs).
