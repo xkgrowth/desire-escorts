@@ -9,13 +9,7 @@ import { DesireLogoStatic } from "../desire-logo";
 import { Button } from "../ui/button";
 import { StaticHeart } from "../shiny-heart";
 import { WhatsAppIcon } from "../ui/whatsapp-icon";
-
-const paymentMethods = [
-  { name: "Contant", label: "💵" },
-  { name: "PIN", label: "💳" },
-  { name: "iDEAL", label: "🏦" },
-  { name: "Creditcard", label: "💳" },
-];
+import { PaymentIcons } from "../ui/payment-icons";
 
 export function SiteFooter() {
   const pathname = usePathname();
@@ -78,18 +72,7 @@ export function SiteFooter() {
                   : "Betaalgemak op zijn best! Kies uit een van de vele opties"
                 }
               </p>
-              <div className="flex flex-wrap gap-2">
-                {paymentMethods.map((payment) => (
-                  <span
-                    key={payment.name}
-                    className="px-3 py-2 bg-surface rounded-lg text-sm border border-white/10 flex items-center gap-2"
-                    title={payment.name}
-                  >
-                    <span>{payment.label}</span>
-                    <span className="text-foreground/60 text-xs">{payment.name}</span>
-                  </span>
-                ))}
-              </div>
+              <PaymentIcons iconSize="sm" className="gap-2" />
             </div>
 
             {/* Trust Badge */}
