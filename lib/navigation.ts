@@ -97,11 +97,13 @@ export const footerLinks: Record<string, FooterLinkSection> = {
     titleEn: "Escort Types",
     links: [
       { label: "Blonde Escorts", labelEn: "Blonde Escorts", href: "/blonde-escort-dames" },
-      { label: "Brunette Escorts", labelEn: "Brunette Escorts", href: "/brunette-escorts" },
+      { label: "Brunette Escorts", labelEn: "Brunette Escorts", href: "/brunette-escort-dames" },
+      { label: "High Class Escorts", labelEn: "High Class Escorts", href: "/high-class-escort" },
+      { label: "Nederlandse Escorts", labelEn: "Dutch Escorts", href: "/nederlandse-escort" },
+      { label: "Turkse Escorts", labelEn: "Turkish Escorts", href: "/turkse-escort" },
       { label: "Aziatische Escorts", labelEn: "Asian Escorts", href: "/aziatische-escorts" },
       { label: "Mature Escorts", labelEn: "Mature Escorts", href: "/mature-escort" },
-      { label: "Busty Escorts", labelEn: "Busty Escorts", href: "/busty-escorts" },
-      { label: "Bekijk Alle Types →", labelEn: "View All Types →", href: "/escort-types" },
+      { label: "Bekijk Alle Types →", labelEn: "View All Types →", href: "/services" },
     ],
   },
   info: {

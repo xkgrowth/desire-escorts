@@ -30,41 +30,38 @@ const defaultColumns: FooterColumn[] = [
   {
     title: "Escort Services",
     links: [
-      { label: "Erotische massage", href: "/services/erotische-massage" },
-      { label: "Escort voor stellen", href: "/services/escort-voor-stellen" },
-      { label: "GFE escorts", href: "/services/gfe-escorts" },
-      { label: "Goedkope escorts", href: "/services/goedkope-escorts" },
-      { label: "SM Escorts", href: "/services/sm-escorts" },
-      { label: "Hotel escorts", href: "/services/hotel-escorts" },
-      { label: "BDSM Escorts", href: "/services/bdsm-escorts" },
-      { label: "Alle escort services →", href: "/services" },
+      { label: "Hotel Escort", href: "/hotel-escort" },
+      { label: "Erotische Massage", href: "/erotische-massage" },
+      { label: "GFE Escorts", href: "/gfe-escorts" },
+      { label: "Dinner Date", href: "/dinnerdate-escort" },
+      { label: "BDSM Escorts", href: "/bdsm-escorts" },
+      { label: "Trio Escort", href: "/trio-escorts" },
+      { label: "Alle Services →", href: "/services" },
     ],
   },
   {
     title: "Escort Locaties",
     links: [
       { label: "Escort Amsterdam", href: "/escort-amsterdam" },
-      { label: "Escort Haarlem", href: "/escort-haarlem" },
-      { label: "Escort Alkmaar", href: "/escort-alkmaar" },
-      { label: "Escort Schiphol", href: "/escort-schiphol" },
-      { label: "Escort Zaandam", href: "/escort-zaandam" },
-      { label: "Escort Hoofddorp", href: "/escort-hoofddorp" },
-      { label: "Escort Amstelveen", href: "/escort-amstelveen" },
-      { label: "Escort Almere", href: "/escort-almere" },
+      { label: "Escort Rotterdam", href: "/escort-rotterdam" },
+      { label: "Escort Den Haag", href: "/escort-den-haag" },
       { label: "Escort Utrecht", href: "/escort-utrecht" },
-      { label: "Escort Diemen", href: "/escort-diemen" },
+      { label: "Escort Haarlem", href: "/escort-haarlem" },
+      { label: "Escort Eindhoven", href: "/escort-eindhoven" },
       { label: "Alle Locaties →", href: "/escort-in-nederland" },
     ],
   },
   {
     title: "Escort Types",
     links: [
-      { label: "Blonde Escorts", href: "/escorts/blonde" },
-      { label: "Brunette Escorts", href: "/escorts/brunette" },
-      { label: "Ervaren Escorts", href: "/escorts/ervaren" },
-      { label: "Nederlandse Escorts", href: "/escorts/nederlandse" },
-      { label: "Turkse Escorts", href: "/escorts/turkse" },
-      { label: "Alle escort types →", href: "/escorts" },
+      { label: "Blonde Escorts", href: "/blonde-escort-dames" },
+      { label: "Brunette Escorts", href: "/brunette-escort-dames" },
+      { label: "High Class Escorts", href: "/high-class-escort" },
+      { label: "Nederlandse Escorts", href: "/nederlandse-escort" },
+      { label: "Turkse Escorts", href: "/turkse-escort" },
+      { label: "Aziatische Escorts", href: "/aziatische-escorts" },
+      { label: "Mature Escorts", href: "/mature-escort" },
+      { label: "Alle Types →", href: "/services" },
     ],
   },
   {
@@ -72,12 +69,11 @@ const defaultColumns: FooterColumn[] = [
     links: [
       { label: "Over Ons", href: "/over-ons" },
       { label: "Blog", href: "/blog" },
-      { label: "Nieuwsbrief", href: "/nieuwsbrief" },
-      { label: "Contact", href: "/contact" },
       { label: "Kennisbank", href: "/kennisbank" },
-      { label: "Veelgestelde Vragen", href: "/veelgestelde-vragen" },
+      { label: "Veelgestelde Vragen", href: "/faq" },
+      { label: "Tarieven", href: "/prijzen" },
+      { label: "Contact", href: "/contact" },
       { label: "Werken als Escort", href: "/werken-als-escort" },
-      { label: "Waarom Desire Escorts?", href: "/waarom-desire-escorts" },
     ],
   },
 ];
@@ -97,9 +93,9 @@ export function Footer({
     >
       {/* Main Footer Content */}
       <div className="w-full px-6 py-12 lg:px-10 lg:py-16 xl:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.35fr_repeat(4,minmax(0,1fr))] gap-10 lg:gap-8">
           {/* Brand Column */}
-          <div className="lg:col-span-2">
+          <div className="lg:max-w-[20rem]">
             <DesireLogoStatic size="md" className="mb-6" />
             <p className="text-foreground/60 text-sm mb-6 max-w-xs">
               Al meer dan 20 jaar de meest betrouwbare escort service van Nederland. 
@@ -107,15 +103,20 @@ export function Footer({
             </p>
             
             {/* Contact Buttons */}
-            <div className="flex flex-wrap gap-3 mb-6">
-              <a href="https://steadfast-art-a1f81485c3.strapiapp.com" target="_blank" rel="noopener noreferrer">
-                <Button variant="whatsapp" size="md" className="gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+              <a
+                href="https://steadfast-art-a1f81485c3.strapiapp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <Button variant="whatsapp" size="md" className="w-full justify-center gap-2">
                   <WhatsAppIcon size={16} />
                   WhatsApp
                 </Button>
               </a>
-              <a href="#">
-                <Button variant="primary" size="md" className="gap-2">
+              <a href="#" className="block">
+                <Button variant="primary" size="md" className="w-full justify-center gap-2">
                   <MessageCircle className="w-4 h-4" />
                   Live Chat
                 </Button>
@@ -128,7 +129,7 @@ export function Footer({
                 href="https://escortkeurmerk.nl/desire-escorts/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-luxury bg-surface border border-white/10 hover:border-primary/20 transition-colors group"
+                className="flex w-full items-center gap-3 p-3 rounded-luxury bg-surface border border-white/10 hover:border-primary/20 transition-colors group"
               >
                 <Image
                   src="/brand/keurmerk.png"
@@ -153,13 +154,13 @@ export function Footer({
               <h3 className="font-heading font-bold text-foreground text-sm mb-4">
                 {column.title}
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {column.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <Link
                       href={link.href}
                       className={cn(
-                        "text-xs transition-colors",
+                        "text-sm transition-colors",
                         link.label.includes("→")
                           ? "text-primary hover:text-accent"
                           : "text-foreground/60 hover:text-primary"
