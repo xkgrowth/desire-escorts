@@ -63,6 +63,7 @@ export function SiteHeader() {
                     <div className="card-surface rounded-luxury p-2 min-w-[220px] shadow-lg">
                       {item.children.map((child) => {
                         const isChildActive = isNavItemActive(pathname, child.href);
+                        const isOverviewLink = child.href === item.href;
                         return (
                           <Link
                             key={child.href}
@@ -71,7 +72,9 @@ export function SiteHeader() {
                               "block px-4 py-2.5 text-sm rounded-lg transition-colors",
                               isChildActive
                                 ? "text-primary bg-primary/10"
-                                : "text-foreground/80 hover:text-foreground hover:bg-white/5"
+                                : isOverviewLink
+                                  ? "text-primary font-medium hover:text-accent hover:bg-white/5"
+                                  : "text-foreground/80 hover:text-foreground hover:bg-white/5"
                             )}
                             aria-current={isChildActive ? "page" : undefined}
                           >
@@ -221,6 +224,7 @@ function MobileMenu({ navItems, pathname, onClose }: MobileMenuProps) {
                     <div className="pl-4 pb-2">
                       {item.children.map((child) => {
                         const isChildActive = isNavItemActive(pathname, child.href);
+                        const isOverviewLink = child.href === item.href;
                         return (
                           <Link
                             key={child.href}
@@ -230,7 +234,9 @@ function MobileMenu({ navItems, pathname, onClose }: MobileMenuProps) {
                               "block px-4 py-2.5 text-sm transition-colors",
                               isChildActive
                                 ? "text-primary"
-                                : "text-foreground/60 hover:text-foreground"
+                                : isOverviewLink
+                                  ? "text-primary font-medium hover:text-accent"
+                                  : "text-foreground/60 hover:text-foreground"
                             )}
                             aria-current={isChildActive ? "page" : undefined}
                           >
