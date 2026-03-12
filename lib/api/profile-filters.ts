@@ -30,28 +30,30 @@ type FilterConfig = {
  */
 const SLUG_FILTER_MAP: Record<string, FilterConfig> = {
   // === SERVICE PAGES (filter by services array) ===
+  // Page slug -> Strapi service slug mapping
+  "bdsm-escorts": { type: "service", value: "bdsm" },
+  "dinnerdate-escort": { type: "service", value: "dinner-date" },
+  "erotische-massage": { type: "service", value: "erotic-massage" },
+  "orale-seks": { type: "service", value: "oral-sex" },
+  "overnight-escort": { type: "service", value: "overnight" },
+  "rollenspel-escort": { type: "service", value: "sm-role-play" },
+  "sm-escort": { type: "service", value: "sm-role-play" },
+  "trio-escorts": { type: "service", value: ["threesome-with-man", "threesome-with-couple"] },
+  "escort-voor-stellen": { type: "service", value: "threesome-with-couple" },
+  "uitgaan-escort": { type: "service", value: "going-out" },
+  // Services not in Strapi yet - keep for future or use none
   "anale-seks": { type: "service", value: "anale-seks" },
   "hotel-escort": { type: "service", value: "hotel-escort" },
   "24-uurs-escort": { type: "service", value: "24-uurs-escort" },
-  "bdsm-escorts": { type: "service", value: "bdsm-escorts" },
   "body-2-body-massage": { type: "service", value: "body-2-body-massage" },
   "bondage-escort": { type: "service", value: "bondage-escort" },
   "business-escort": { type: "service", value: "business-escort" },
   "cardate-escort": { type: "service", value: "cardate-escort" },
-  "dinnerdate-escort": { type: "service", value: "dinnerdate-escort" },
-  "erotische-massage": { type: "service", value: "erotische-massage" },
-  "escort-voor-stellen": { type: "service", value: "escort-voor-stellen" },
   "fetish-escort": { type: "service", value: "fetish-escort" },
   "first-time-experience": { type: "service", value: "first-time-experience" },
   "gfe-escorts": { type: "service", value: "gfe-escorts" },
   "nuru-massage": { type: "service", value: "nuru-massage" },
-  "orale-seks": { type: "service", value: "orale-seks" },
-  "overnight-escort": { type: "service", value: "overnight-escort" },
-  "rollenspel-escort": { type: "service", value: "rollenspel-escort" },
-  "sm-escort": { type: "service", value: "sm-escort" },
   "tantra-escort": { type: "service", value: "tantra-escort" },
-  "trio-escorts": { type: "service", value: "trio-escorts" },
-  "uitgaan-escort": { type: "service", value: "uitgaan-escort" },
   "voetfetish-escort": { type: "service", value: "voetfetish-escort" },
   "vrijgezellenfeest-escort": { type: "service", value: "vrijgezellenfeest-escort" },
 
@@ -95,15 +97,18 @@ function normalizeServiceSlug(slug: string): string {
 function applyFilter(profiles: Profile[], config: FilterConfig): Profile[] {
   switch (config.type) {
     case "service": {
-      const serviceSlug = config.value as string;
-      const normalizedTarget = normalizeServiceSlug(serviceSlug);
+      // Support both single service slug and array of slugs
+      const serviceSlugs = Array.isArray(config.value) ? config.value : [config.value as string];
+      const normalizedTargets = serviceSlugs.map(normalizeServiceSlug);
+      
       return profiles.filter((p) =>
-        p.services.some(
-          (s) =>
-            s === serviceSlug ||
-            normalizeServiceSlug(s) === normalizedTarget ||
-            s.toLowerCase().includes(normalizedTarget) ||
-            normalizedTarget.includes(normalizeServiceSlug(s))
+        p.services.some((s) =>
+          serviceSlugs.some((slug, idx) =>
+            s === slug ||
+            normalizeServiceSlug(s) === normalizedTargets[idx] ||
+            s.toLowerCase().includes(normalizedTargets[idx]) ||
+            normalizedTargets[idx].includes(normalizeServiceSlug(s))
+          )
         )
       );
     }
@@ -168,18 +173,14 @@ export function getFilteredProfiles(
 
   const filtered = applyFilter(allProfiles, config);
 
-  // Not enough matches - use fallback
-  if (filtered.length < minMatches) {
-    return {
-      profiles: allProfiles,
-      hasMatches: false,
-      filterApplied: true,
-    };
-  }
+  // Use filtered profiles if we have enough matches for a meaningful display,
+  // but always report hasMatches=true if there's at least one match (for title)
+  const hasAnyMatches = filtered.length > 0;
+  const useFilteredProfiles = filtered.length >= minMatches;
 
   return {
-    profiles: filtered,
-    hasMatches: true,
+    profiles: useFilteredProfiles ? filtered : allProfiles,
+    hasMatches: hasAnyMatches,
     filterApplied: true,
   };
 }

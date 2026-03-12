@@ -51,7 +51,7 @@ export function TestimonialCard({
         className={cn(
           "relative p-8 lg:p-12 rounded-luxury",
           "bg-gradient-to-br from-primary/10 via-primary/5 to-transparent",
-          "border border-primary/20",
+          "border border-white/10",
           className
         )}
       >

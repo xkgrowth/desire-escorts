@@ -167,11 +167,11 @@ export async function LocationDetailTemplate({ data }: LocationDetailTemplatePro
 
       <PageSection size="sm">
         <ScrollReveal delay={0.09}>
-          <div className="rounded-luxury border border-white/10 bg-surface/25 p-6">
+          <div className="mb-4">
             <h2 className="font-heading text-2xl font-bold text-foreground">Ervaring van een client</h2>
             <p className="mt-2 text-sm text-foreground/65">Anonieme review van een recente boeking.</p>
-            <TestimonialCard quote={quote} variant="featured" className="mt-4" />
           </div>
+          <TestimonialCard quote={quote} variant="featured" />
         </ScrollReveal>
       </PageSection>
 

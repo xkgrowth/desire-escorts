@@ -5484,10 +5484,27 @@ function withLegacyPageImage(
   const fs = require("fs");
   const path = require("path");
 
-  const FALLBACK_IMAGE = "/images/service-type/featured-image-158.jpg";
-
   const explicitImageOverrides: Record<string, string> = {
-    "rollenspel-escort": "/images/service-type/serivce-roleplay.jpg.avif",
+    "erotische-massage": "/images/service-type/erotic-massage-escort.png",
+    "gfe-escorts": "/images/service-type/service-gfe-escort-scaled.jpg",
+    "dinnerdate-escort": "/images/service-type/service-dinnerdate-scaled.jpg",
+    "overnight-escort": "/images/service-type/service-overnight-escort-scaled.jpg",
+    "nuru-massage": "/images/service-type/nuru-massage-escort.jpg",
+    "tantra-escort": "/images/service-type/service-tantra-escort-scaled.jpg",
+    "rollenspel-escort": "/images/service-type/serivce-roleplay.jpg",
+    "escort-voor-stellen": "/images/service-type/service-escort-voor-stellen-scaled.jpg",
+    "bdsm-escorts": "/images/service-type/service-bdsm-escort-scaled.jpg",
+    "bondage-escort": "/images/service-type/service-bondage-scaled.jpg",
+    "business-escort": "/images/service-type/service-business-escort-scaled.jpg",
+    "cardate-escort": "/images/service-type/service-cardate-scaled.jpg",
+    "fetish-escort": "/images/service-type/serivce-fetish-escort-scaled.jpg",
+    "first-time-experience": "/images/service-type/service-first-time-experience-scaled.jpg",
+    "voetfetish-escort": "/images/service-type/service-footfetish-scaled.jpg",
+    "vrijgezellenfeest-escort": "/images/service-type/service-vrijgezellenfeest-escort-scaled.jpg",
+    "uitgaan-escort": "/images/service-type/service-uitgaan-escort-scaled.jpg",
+    "orale-seks": "/images/service-type/service-orale-seks-scaled.jpg",
+    "goedkope-escorts": "/images/service-type/goedkope-escort-service.jpg",
+    "latina-escorts": "/images/service-type/latina-escorts.jpg",
   };
 
   const wpUploadsPrefix = "https://desire-escorts.nl/wp-content/uploads/";
@@ -5534,7 +5551,8 @@ function withLegacyPageImage(
       }
     }
 
-    return FALLBACK_IMAGE;
+    // Return original image URL if no local image found
+    return page.primaryImageUrl;
   };
 
   const resolvedImage = resolveImage();

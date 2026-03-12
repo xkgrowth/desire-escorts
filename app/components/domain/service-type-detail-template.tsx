@@ -389,7 +389,7 @@ export async function ServiceTypeDetailTemplate({
       {data.quotePool.length > 0 && (
         <PageSection size="sm">
           <ScrollReveal delay={0.1}>
-            <div className="rounded-luxury border border-white/10 bg-surface/25 p-6">
+            <div className="mb-4">
               <h2 className="font-heading text-2xl font-bold text-foreground">
                 {isNl ? "Ervaring van een Client" : "Client Experience"}
               </h2>
@@ -398,8 +398,8 @@ export async function ServiceTypeDetailTemplate({
                   ? "Anonieme review van een recente boeking."
                   : "Anonymous review from a recent booking."}
               </p>
-              <TestimonialCard quote={quote} variant="featured" className="mt-4" />
             </div>
+            <TestimonialCard quote={quote} variant="featured" />
           </ScrollReveal>
         </PageSection>
       )}
