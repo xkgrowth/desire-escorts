@@ -274,9 +274,15 @@
 - [ ] C.5 Implement Blog + Knowledge Centre templates
 - [ ] C.6 Implement utility pages (FAQ, Contact, Rates, Legal)
   - [x] C.6.1 Implement standalone FAQ page (`/faq/`) (NL)
-  - [ ] C.6.2 Implement Contact page
+  - [x] C.6.2 Implement Contact page
   - [x] C.6.3 Implement Rates page (`/prijzen/`)
   - [ ] C.6.4 Implement Legal pages
+
+## Review Notes (Contact Page)
+
+- Implemented `app/contact/page.tsx` with hero, direct contact methods (phone/WhatsApp/email), compact contact FAQ, and final contact CTA.
+- Added explicit self-service links to `/faq` and `/kennisbank` to support users who prefer finding answers before contacting.
+- Added `ContactPage` and `FAQPage` JSON-LD plus canonical/hreflang metadata for technical SEO parity.
 
 ## Review Notes (Phase C.2 + C.3)
 
