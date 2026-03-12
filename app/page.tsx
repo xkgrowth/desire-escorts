@@ -146,7 +146,21 @@ export default async function Home() {
     },
   ];
 
-  const liveCityPages = new Set(["/escort-haarlem", "/escort-amstelveen"]);
+  const liveCityPages = new Set([
+    "/escort-haarlem",
+    "/escort-amstelveen",
+    "/escort-amsterdam",
+    "/escort-amsterdam-centrum",
+    "/escort-amsterdam-noord",
+    "/escort-amsterdam-oost",
+    "/escort-amsterdam-west",
+    "/escort-amsterdam-zuid",
+    "/escort-rotterdam",
+    "/escort-den-haag",
+    "/escort-utrecht",
+    "/escort-eindhoven",
+    "/escort-groningen",
+  ]);
 
   return (
     <PageWrapper withGradient={true}>

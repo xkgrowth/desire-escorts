@@ -201,10 +201,10 @@ export const locationDetailPages: Record<string, LocationDetailPageData> = {
     ],
     locationImagePrimaryUrl:
       "https://desire-escorts.nl/wp-content/uploads/escort-haarlem-hotels-scaled.jpg",
-    locationImagePrimaryAlt: "Escort service in Haarlem",
+    locationImagePrimaryAlt: "escort met zwarte lingerie aan, kijken in de camera",
     locationImageSecondaryUrl:
       "https://desire-escorts.nl/wp-content/uploads/escort-haarlem-hotels-1-scaled.jpg",
-    locationImageSecondaryAlt: "Hotels in en rond Haarlem",
+    locationImageSecondaryAlt: "escort-haarlem-hotels",
     locationNarrative:
       "Haarlem is populair voor avondboekingen, hotelafspraken en dates in of rond het centrum. De vraag zit vaak in de avonduren en het weekend, waardoor vroeg boeken de meeste keuze geeft. Voor afspraken in Haarlem-Zuid, het centrum en richting Bloemendaal plannen we doorgaans het snelst. Hotelafspraken worden vaak gecombineerd met services zoals dinner date of een rustige privé-ontmoeting.",
     quotePool: [
@@ -354,10 +354,10 @@ export const locationDetailPages: Record<string, LocationDetailPageData> = {
     ],
     locationImagePrimaryUrl:
       "https://desire-escorts.nl/wp-content/uploads/escort-dames-in-amstelveen-scaled.webp",
-    locationImagePrimaryAlt: "Escort service in Amstelveen",
+    locationImagePrimaryAlt: "Blonde escort met blauwe ogen en rode lingerie in bad met rozenblaadjes",
     locationImageSecondaryUrl:
       "https://desire-escorts.nl/wp-content/uploads/escort-amstelveel-hotels-scaled.jpg",
-    locationImageSecondaryAlt: "Hotels in en rond Amstelveen",
+    locationImageSecondaryAlt: "escort-amstelveel-hotels",
     locationNarrative:
       "Amstelveen is een sterke locatie voor zowel thuisafspraken als hotelbookings. Door de ligging nabij Amsterdam en zakelijke routes is er vraag overdag en in de vroege avond. Voor afspraken rond Amsterdamse Bos, Stadshart en omliggende wijken kunnen we meestal flexibel plannen. Bij last-minute aanvragen is snelle afstemming via live chat of WhatsApp het meest effectief.",
     quotePool: [
@@ -492,9 +492,9 @@ export const locationDetailPages: Record<string, LocationDetailPageData> = {
       "Wil je snel en discreet een escort in Amsterdam boeken? We combineren snelle beschikbaarheid met geverifieerde profielen en duidelijke prijsafspraken vooraf.",
     usps: defaultUsps,
     locationImagePrimaryUrl: "https://desire-escorts.nl/wp-content/uploads/escort-dames-in-amsterdam.webp-scaled.webp",
-    locationImagePrimaryAlt: "Escort service in Amsterdam",
+    locationImagePrimaryAlt: "Blonde escort met lichte ogen en zwarte lingerie liggend op bed",
     locationImageSecondaryUrl: "https://desire-escorts.nl/wp-content/uploads/escort-dames-in-amsterdam-centrum-scaled.jpg",
-    locationImageSecondaryAlt: "Escort in Amsterdam Centrum",
+    locationImageSecondaryAlt: "Blonde escort met donkere ogen en rode lingerie met handen in haar heupej",
     locationNarrative:
       "Amsterdam heeft doorlopend vraag vanuit centrumhotels, de Zuidas en internationale bezoekers. Afspraken in Centrum, Zuid, Oost, West en Noord zijn meestal snel in te plannen wanneer je 1-2 uur vooraf boekt. Voor last-minute aanvragen stemmen we direct beschikbaarheid, locatie en voorkeuren met je af via live chat of WhatsApp. Hotelafspraken in en rond de binnenstad combineren we vaak met services zoals dinner date, GFE en ontspannende massage.",
     quotePool: [

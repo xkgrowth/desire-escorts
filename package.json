@@ -27,6 +27,7 @@
     "reconcile:language-gaps": "node scripts/build-language-parity-gaps.mjs",
     "reconcile:parity-evidence": "node scripts/build-parity-validation-evidence.mjs",
     "images:download:locations": "node scripts/download-location-images.mjs",
+    "location:extract-content": "node scripts/extract-location-content-from-firecrawl.mjs",
     "strapi:audit:coverage": "node scripts/strapi-coverage-audit.mjs",
     "ingest:healthcheck": "npm run wp:healthcheck && npm run strapi:healthcheck"
   },

@@ -6,11 +6,14 @@ import { PageLayout, PageSection } from "../components/layout/page-layout";
 import { GradientTitle } from "../components/ui/gradient-title";
 import { FAQ } from "../components/domain/faq";
 import { ServiceTypeDetailTemplate } from "../components/domain/service-type-detail-template";
+import { LocationDetailTemplate } from "../components/domain/location-detail-template";
 import { getBlogPostBySlug, getBlogPostSlugs, getRelatedBlogPosts } from "@/lib/data/blog-posts";
 import {
   allServiceTypeDetailPages,
   getServiceTypePageBySlug,
 } from "@/lib/data/service-type-detail-pages";
+import { NL_LOCATION_SCOPE_SLUGS } from "@/lib/data/location-registry";
+import { getLocationDetailDataForSlug } from "@/lib/data/location-detail-from-extraction";
 
 type BlogDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -48,8 +51,11 @@ export async function generateStaticParams() {
   const serviceTypeSlugs = allServiceTypeDetailPages
     .map((page) => page.slug)
     .filter((slug) => !reservedRootSlugs.has(slug));
+  const locationSlugs = NL_LOCATION_SCOPE_SLUGS.filter((slug) => !reservedRootSlugs.has(slug));
 
-  const uniqueSlugs = Array.from(new Set([...blogSlugs, ...serviceTypeSlugs]));
+  const uniqueSlugs = Array.from(
+    new Set([...blogSlugs, ...serviceTypeSlugs, ...locationSlugs])
+  );
   return uniqueSlugs.map((slug) => ({ slug }));
 }
 
@@ -57,6 +63,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
   const { slug } = await params;
   const serviceTypePage = getServiceTypePageBySlug(slug);
   if (serviceTypePage) {
+    // service type metadata
     const seoTitle =
       serviceTypePage.seoTitle ?? `${serviceTypePage.title} | Vanaf €160 | Desire Escorts`;
     const ogImage = serviceTypePage.ogImageUrl ?? serviceTypePage.primaryImageUrl;
@@ -96,6 +103,23 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
     };
   }
 
+  const locationData = !reservedRootSlugs.has(slug)
+    ? getLocationDetailDataForSlug(slug)
+    : null;
+  if (locationData) {
+    return {
+      title: locationData.metaTitle,
+      description: locationData.metaDescription,
+      alternates: {
+        canonical: `https://desire-escorts.nl/${locationData.slug}`,
+        languages: {
+          "nl-NL": `https://desire-escorts.nl/${locationData.slug}`,
+          "en-US": `https://desire-escorts.nl/en/${locationData.slug}`,
+        },
+      },
+    };
+  }
+
   const post = getBlogPostBySlug(slug);
 
   if (!post) {
@@ -117,6 +141,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   const { slug } = await params;
   const serviceTypePage = getServiceTypePageBySlug(slug);
   if (serviceTypePage) {
+    // service type page
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -160,6 +185,45 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
         <ServiceTypeDetailTemplate data={serviceTypePage} locale="nl" />
+      </>
+    );
+  }
+
+  const locationData = !reservedRootSlugs.has(slug)
+    ? getLocationDetailDataForSlug(slug)
+    : null;
+  if (locationData) {
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: locationData.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    };
+    const localBusinessSchema = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: `Desire Escorts ${locationData.city}`,
+      description: locationData.metaDescription,
+      areaServed: { "@type": "City", name: locationData.city },
+      priceRange: locationData.priceFromValue,
+    };
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <LocationDetailTemplate data={locationData} />
       </>
     );
   }

@@ -617,3 +617,17 @@
 - Amsterdam district data enriched at data-layer level (no template fallback) with 3+ hotels and 5+ FAQs per page.
 - Local image sync completed via `scripts/download-location-images.mjs`; manifest at `data/inventory/location-image-manifest.json` now shows 223/223 slugs with both primary and secondary assets, and `0` global fallbacks.
 - `data/inventory/location-image-fallback-review.md` is now clean (`0` primary fallback slugs, `0` secondary fallback slugs).
+
+## D.1 Content Extraction (Firecrawl → LocationDetailPageData)
+
+- [x] Create content extraction script to parse Firecrawl JSON into structured content per slug.
+- [x] Output `data/firecrawl/location-extracted-content.json` (heroIntro, locationNarrative, faqs, hotels, meta, speed/pricing summaries).
+- [x] Add `lib/data/location-detail-from-extraction.ts` to build full `LocationDetailPageData` from registry + image manifest + extracted content for use by dynamic routing.
+- [x] Add npm script `location:extract-content` and merge from all NL location manifests for maximum coverage.
+
+## Review Notes (Content Extraction)
+
+- Script: `scripts/extract-location-content-from-firecrawl.mjs`. Reads NL slugs, discovers all `data/firecrawl/*-manifest.json` files, merges NL location entries by slug, loads each `.firecrawl/rendered/full/desire-escorts.nl__escort-*.json`, parses markdown for FAQs, hotels, narrative, hero intro, meta, and speed/pricing.
+- Output: `data/firecrawl/location-extracted-content.json` with `bySlug` keyed by slug. Run: `npm run location:extract-content`.
+- Data layer: `buildLocationDetailPageData(slug)` in `lib/data/location-detail-from-extraction.ts` merges registry, image manifest, and extracted content; returns full `LocationDetailPageData` or null. Ready for dynamic route consumption.
+- Next: implement dynamic routing for location pages and wire `buildLocationDetailPageData` (or prefer batch/static data when present).
