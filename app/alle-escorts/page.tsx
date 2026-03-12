@@ -12,7 +12,7 @@ import { Award, BadgeEuro, Clock3, Shield } from "lucide-react";
 export const metadata: Metadata = {
   title: "Escorts Overzicht Nederland | Desire Escorts",
   description:
-    "Bekijk geverifieerde escorts in Nederland met actuele beschikbaarheid. Filter op locatie en service, met duidelijke prijsindicatie vanaf €160 en minimale boekduur per stad.",
+    "Bekijk geverifieerde escorts in Nederland met actuele beschikbaarheid. Filter op service, uiterlijk en voorkeuren, met duidelijke prijsindicatie vanaf €160 en minimale boekduur per stad.",
   alternates: {
     canonical: "https://desire-escorts.nl/alle-escorts",
   },
@@ -28,7 +28,7 @@ export default async function EscortsOverviewPage() {
           <TemplateHeroGlass
             breadcrumbs={[{ label: "Escorts" }]}
             title="Escorts in Nederland"
-            description="Vind snel een passende match met actuele beschikbaarheid. Filter op locatie en service, vergelijk profielen en boek discreet met duidelijke prijsverwachting vooraf."
+            description="Vind snel een passende match met actuele beschikbaarheid. Filter op service, uiterlijk en voorkeuren, vergelijk profielen en boek discreet met duidelijke prijsverwachting vooraf."
             uspItems={[
               {
                 icon: <Shield className="h-5 w-5" />,
