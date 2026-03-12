@@ -72,8 +72,16 @@ export async function ServiceTypeDetailTemplate({
   const benefits = isNl ? data.benefits : data.benefitsEn;
   const pricingTitle = isNl ? data.pricingTitle : data.pricingTitleEn;
   const pricingContent = isNl ? data.pricingContent : data.pricingContentEn;
-  const targetAudienceTitle = isNl ? data.targetAudienceTitle : data.targetAudienceTitleEn;
-  const targetAudience = isNl ? data.targetAudience : data.targetAudienceEn;
+  const targetAudienceTitle =
+    (isNl ? data.targetAudienceTitle : data.targetAudienceTitleEn) ??
+    (isService ? (isNl ? `Voor wie is ${title}?` : `Who is ${title} for?`) : undefined);
+  const targetAudience =
+    (isNl ? data.targetAudience : data.targetAudienceEn) ??
+    (isService
+      ? isNl
+        ? `${title} is geschikt voor gasten die comfort, discretie en duidelijke afspraken belangrijk vinden.`
+        : `${title} is ideal for guests who value comfort, discretion and clear arrangements.`
+      : undefined);
   const steps = isNl ? data.steps : data.stepsEn;
   const stepsEyebrow = isNl ? data.stepsEyebrow : data.stepsEyebrowEn;
   const stepsTitle = isNl ? data.stepsTitle : data.stepsTitleEn;

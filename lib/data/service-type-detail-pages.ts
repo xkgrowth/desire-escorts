@@ -1345,6 +1345,14 @@ For safety and hygiene, our ladies always use a condom. The session is fully tai
     "Alles was goed geregeld, zeker een aanrader.",
   ],
 
+  targetAudienceTitle: "Voor Wie Is Anale Seks Escort?",
+  targetAudienceTitleEn: "Who Is Anal Sex Escort For?",
+  targetAudience: `Anale escort service is voor mannen die deze specifieke vorm van intimiteit willen ervaren met een ervaren partner. Of je nu ervaren bent of nieuwsgierig naar anaal — onze dames zijn geduldig en respecteren altijd je grenzen.
+
+Belangrijk is open communicatie vooraf. Niet alle escorts bieden dit aan, dus we matchen je met een dame die ervaren is en jouw wensen kan vervullen. Veiligheid en comfort staan altijd voorop.`,
+  targetAudienceEn: `Anal escort service is for men who want to experience this specific form of intimacy with an experienced partner. Whether you're experienced or curious about anal — our ladies are patient and always respect your boundaries.
+
+Important is open communication beforehand. Not all escorts offer this, so we match you with a lady who is experienced and can fulfill your wishes. Safety and comfort always come first.`,
   trustBadges: [
     "Gelicentieerd escortbureau",
     "21+ geverifieerde dames",
@@ -1466,6 +1474,14 @@ A trio is also possible with your partner. Not all escorts are available for thi
     "Een ervaring om nooit te vergeten. Zeker een aanrader.",
     "Professioneel en discreet, precies wat we zochten.",
   ],
+  targetAudienceTitle: "Voor Wie Is Trio Escort?",
+  targetAudienceTitleEn: "Who Is Trio Escort For?",
+  targetAudience: `Trio escort is voor mannen die de ultieme fantasie van twee vrouwen tegelijk willen beleven. Of je nu al ervaring hebt met trio's of dit voor het eerst wilt proberen — onze duo's zijn ervaren in het creëren van een dynamische, opwindende ervaring.
+
+Perfect voor wie iets extra's zoekt dan een reguliere boeking. Sommige duo's werken vaker samen en hebben een natuurlijke chemie, anderen worden op maat samengesteld op basis van jouw voorkeuren.`,
+  targetAudienceEn: `Trio escort is for men who want to experience the ultimate fantasy of two women at once. Whether you have experience with trios or want to try this for the first time — our duos are experienced in creating a dynamic, exciting experience.
+
+Perfect for those looking for something extra beyond a regular booking. Some duos work together frequently and have natural chemistry, others are custom matched based on your preferences.`,
   trustBadges: ["Gelicentieerd escortbureau", "Vaste duo's beschikbaar", "Discreet en veilig"],
   trustBadgesEn: ["Licensed escort agency", "Fixed duos available", "Discreet and safe"],
 };
@@ -1575,6 +1591,14 @@ The setting completes it: dimmed lighting, warm oil and a calm atmosphere ensure
     "Geweldige handen, fantastische ervaring.",
     "Combinatie van massage en sensualiteit was perfect.",
   ],
+  targetAudienceTitle: "Voor Wie Is Erotische Massage?",
+  targetAudienceTitleEn: "Who Is Erotic Massage For?",
+  targetAudience: `Erotische massage is ideaal voor mannen die spanning willen loslaten en tegelijk sensueel verwend willen worden. Of je nu een drukke werkweek achter de rug hebt, behoefte hebt aan fysieke ontspanning, of gewoon nieuwsgierig bent naar een nieuwe ervaring.
+
+Ook stellen die samen iets nieuws willen ontdekken boeken regelmatig een erotische massage. De combinatie van professionele massagetechnieken en opwindende aanraking maakt het geschikt voor zowel beginners als ervaren gasten.`,
+  targetAudienceEn: `Erotic massage is ideal for men who want to release tension while being sensually pampered. Whether you've had a busy work week, need physical relaxation, or are simply curious about a new experience.
+
+Couples looking to discover something new together also regularly book an erotic massage. The combination of professional massage techniques and exciting touch makes it suitable for both beginners and experienced guests.`,
   trustBadges: ["Ervaren masseuses", "Warme olie & sfeer", "Discreet en veilig"],
   trustBadgesEn: ["Experienced masseuses", "Warm oil & atmosphere", "Discreet and safe"],
 };
@@ -1685,6 +1709,14 @@ GFE is ideal for those who miss the emotional side of intimacy. No rush, no busi
     "Eindelijk iemand die luistert en oprecht geïnteresseerd is.",
     "De beste GFE ervaring die ik heb gehad.",
   ],
+  targetAudienceTitle: "Voor Wie Is Girlfriend Experience?",
+  targetAudienceTitleEn: "Who Is Girlfriend Experience For?",
+  targetAudience: `De Girlfriend Experience is perfect voor mannen die meer zoeken dan alleen een fysieke ontmoeting. Denk aan singles die de warmte van een relatie missen, zakenreizigers die behoefte hebben aan oprecht gezelschap, of mannen die graag even ontsnappen aan de dagelijkse sleur.
+
+Ook geschikt voor wie nieuwsgierig is naar intimiteit met echte connectie — zoenen, knuffelen en gesprekken die verder gaan dan oppervlakkig contact.`,
+  targetAudienceEn: `The Girlfriend Experience is perfect for men seeking more than just a physical encounter. Think of singles who miss the warmth of a relationship, business travelers who need genuine companionship, or men who want to escape everyday routine.
+
+Also suitable for those curious about intimacy with real connection — kissing, cuddling and conversations that go beyond superficial contact.`,
   trustBadges: ["Echte connectie", "Zoenen inbegrepen", "Discreet en veilig"],
   trustBadgesEn: ["Real connection", "Kissing included", "Discreet and safe"],
 };
@@ -1795,6 +1827,14 @@ The evening often ends in a hotel or at your place, where the intimate side of t
     "Intelligente gesprekken en daarna een geweldige afsluiting.",
     "Ze paste perfect bij het restaurant en bij mij.",
   ],
+  targetAudienceTitle: "Voor Wie Is Dinner Date Escort?",
+  targetAudienceTitleEn: "Who Is Dinner Date Escort For?",
+  targetAudience: `Dinner date escort is ideaal voor heren die genieten van goed eten in combinatie met charmant gezelschap. Denk aan zakenmannen die een belangrijke klant willen imponeren, singles die een avond uit willen zonder de druk van dating, of mannen die gewoon verfijnd gezelschap waarderen.
+
+Ook perfect voor speciale gelegenheden zoals verjaardagen, jubilea of wanneer je jezelf wilt trakteren op een luxe avond met een intelligente, stijlvolle metgezel.`,
+  targetAudienceEn: `Dinner date escort is ideal for gentlemen who enjoy fine dining combined with charming company. Think of businessmen wanting to impress an important client, singles who want a night out without dating pressure, or men who simply appreciate refined companionship.
+
+Also perfect for special occasions like birthdays, anniversaries, or when you want to treat yourself to a luxurious evening with an intelligent, stylish companion.`,
   trustBadges: ["Sociale vaardigheden", "All-inclusive prijs", "Discreet en veilig"],
   trustBadgesEn: ["Social skills", "All-inclusive price", "Discreet and safe"],
 };
@@ -1905,6 +1945,14 @@ Overnight requires a connection. We advise a lady who offers GFE. The experience
     "Voelde als een mini-relatie in één nacht.",
     "Precies wat ik nodig had tijdens mijn zakenreis.",
   ],
+  targetAudienceTitle: "Voor Wie Is Overnight Escort?",
+  targetAudienceTitleEn: "Who Is Overnight Escort For?",
+  targetAudience: `Overnight escort is perfect voor mannen die meer willen dan een korte ontmoeting. Ideaal voor zakenreizigers die 's avonds gezelschap willen en 's ochtends samen wakker worden, of voor wie de ervaring van een echte date wil zonder de complicaties van een relatie.
+
+Ook geschikt voor speciale gelegenheden zoals een weekendje weg, een verjaardag, of simpelweg wanneer je behoefte hebt aan langdurige intimiteit en connectie.`,
+  targetAudienceEn: `Overnight escort is perfect for men who want more than a brief encounter. Ideal for business travelers who want evening company and to wake up together in the morning, or for those who want the experience of a real date without relationship complications.
+
+Also suitable for special occasions like a weekend away, a birthday, or simply when you need extended intimacy and connection.`,
   trustBadges: ["GFE aanbevolen", "8-12 uur samen", "Discreet en veilig"],
   trustBadgesEn: ["GFE recommended", "8-12 hours together", "Discreet and safe"],
 };
@@ -2012,6 +2060,14 @@ Nuru is more intense than regular erotic massage. The full skin contact creates 
     "Beste massage van mijn leven, zo intens.",
     "Die gel maakt het echt uniek.",
   ],
+  targetAudienceTitle: "Voor Wie Is Nuru Massage?",
+  targetAudienceTitleEn: "Who Is Nuru Massage For?",
+  targetAudience: `Nuru massage is ideaal voor avonturiers die een unieke, intense ervaring zoeken. De Japanse body-to-body techniek met speciale gel biedt sensaties die je nergens anders vindt. Perfect voor mannen die hun grenzen willen verleggen of iets compleet nieuws willen proberen.
+
+Ook geschikt voor wie al ervaring heeft met erotische massage en klaar is voor een intensere variant. De combinatie van gladde gel en volledig lichaamscontact maakt dit een onvergetelijke ervaring.`,
+  targetAudienceEn: `Nuru massage is ideal for adventurers seeking a unique, intense experience. The Japanese body-to-body technique with special gel offers sensations you won't find anywhere else. Perfect for men who want to push their boundaries or try something completely new.
+
+Also suitable for those with erotic massage experience who are ready for a more intense variant. The combination of smooth gel and full body contact makes this an unforgettable experience.`,
   trustBadges: ["Echte Nuru gel", "Ervaren masseuses", "Discreet en veilig"],
   trustBadgesEn: ["Real Nuru gel", "Experienced masseuses", "Discreet and safe"],
 };
@@ -2119,6 +2175,14 @@ Tantra is ideal for those who want more than physical release. It offers a medit
     "Een compleet andere ervaring dan verwacht, veel intenser.",
     "De energie was voelbaar, heel bijzonder.",
   ],
+  targetAudienceTitle: "Voor Wie Is Tantra Massage?",
+  targetAudienceTitleEn: "Who Is Tantra Massage For?",
+  targetAudience: `Tantra massage is geschikt voor mannen die op zoek zijn naar meer dan fysieke ontspanning. Deze spirituele benadering spreekt mensen aan die interesse hebben in energiewerk, mindfulness en een diepere verbinding met hun lichaam en geest.
+
+Ideaal voor wie stress wil verminderen op een holistische manier, nieuwsgierig is naar tantratechnieken, of behoefte heeft aan een rustgevende ervaring die zowel lichaam als geest raakt.`,
+  targetAudienceEn: `Tantra massage is suitable for men seeking more than physical relaxation. This spiritual approach appeals to those interested in energy work, mindfulness, and a deeper connection with their body and mind.
+
+Ideal for those who want to reduce stress holistically, are curious about tantra techniques, or need a calming experience that touches both body and mind.`,
   trustBadges: ["Authentieke techniek", "Ervaren masseuses", "Rustige sfeer"],
   trustBadgesEn: ["Authentic technique", "Experienced masseuses", "Calm atmosphere"],
 };
@@ -2227,6 +2291,14 @@ Our ladies are flexible and creative. Discuss your idea in advance and they will
     "Ze speelde de rol perfect, precies zoals ik het voor me zag.",
     "Creativiteit en meelevendheid maakten het speciaal.",
   ],
+  targetAudienceTitle: "Voor Wie Is Rollenspel Escort?",
+  targetAudienceTitleEn: "Who Is Roleplay Escort For?",
+  targetAudience: `Rollenspel escort is perfect voor mannen met fantasieën die ze veilig willen uitspelen. Denk aan scenario's als secretaresse/baas, verpleegster, vreemden die elkaar ontmoeten, of andere situaties die je altijd al eens wilde ervaren.
+
+Ideaal voor wie creativiteit en theater in intimiteit zoekt, maar ook voor mannen die gewoon eens iets heel anders willen proberen dan de standaard escort ervaring.`,
+  targetAudienceEn: `Roleplay escort is perfect for men with fantasies they want to safely act out. Think scenarios like secretary/boss, nurse, strangers meeting, or other situations you've always wanted to experience.
+
+Ideal for those seeking creativity and theater in intimacy, but also for men who simply want to try something completely different from the standard escort experience.`,
   trustBadges: ["Geen oordeel", "Creativiteit", "Discreet en veilig"],
   trustBadgesEn: ["No judgment", "Creativity", "Discreet and safe"],
 };
@@ -2334,6 +2406,14 @@ We recommend discussing your wishes together before booking. What do you want to
     "Ze wist precies hoe ze ons beiden op gemak moest stellen.",
     "Eindelijk onze fantasie kunnen delen, samen.",
   ],
+  targetAudienceTitle: "Voor Wie Is Escort voor Stellen?",
+  targetAudienceTitleEn: "Who Is Couples Escort For?",
+  targetAudience: `Escort voor stellen is ideaal voor koppels die samen iets nieuws willen ontdekken. Of jullie nu al jaren een fantasie delen over een derde persoon, jullie seksleven willen verrijken, of gewoon nieuwsgierig zijn naar wat het met jullie doet.
+
+Perfect voor stellen met een open relatie, avontuurlijke partners die graag samen grenzen verleggen, of koppels die hun band willen versterken door samen een unieke ervaring te delen.`,
+  targetAudienceEn: `Couples escort is ideal for couples who want to discover something new together. Whether you've shared a fantasy about a third person for years, want to enrich your sex life, or are simply curious about what it does for you.
+
+Perfect for couples in open relationships, adventurous partners who like to push boundaries together, or couples who want to strengthen their bond by sharing a unique experience together.`,
   trustBadges: ["Ervaring met stellen", "Discrete benadering", "Veilig en comfortabel"],
   trustBadgesEn: ["Experience with couples", "Discreet approach", "Safe and comfortable"],
 };
@@ -2441,6 +2521,14 @@ Activities can range from light (blindfolds, soft bondage) to more intense (impa
     "Ze wist precies hoe ver ze kon gaan zonder te ver te gaan.",
     "Eindelijk mijn fantasieën kunnen verkennen zonder oordeel.",
   ],
+  targetAudienceTitle: "Voor Wie Is BDSM Escort?",
+  targetAudienceTitleEn: "Who Is BDSM Escort For?",
+  targetAudience: `BDSM escort is geschikt voor mannen die geïnteresseerd zijn in machtsspel, controle en intense sensaties. Of je nu nieuwsgierig bent naar bondage, een dominante ervaring zoekt, of graag de controle overneemt — onze ervaren dames begeleiden je veilig.
+
+Perfect voor zowel beginners die BDSM willen verkennen in een veilige setting, als voor ervaren beoefenaars die een professionele partner zoeken voor hun sessies.`,
+  targetAudienceEn: `BDSM escort is suitable for men interested in power play, control and intense sensations. Whether you're curious about bondage, seeking a dominant experience, or want to take control — our experienced ladies guide you safely.
+
+Perfect for both beginners who want to explore BDSM in a safe setting, and experienced practitioners looking for a professional partner for their sessions.`,
   trustBadges: ["Veilig & consensueel", "Ervaren BDSM partners", "Discreet en oordeelvrij"],
   trustBadgesEn: ["Safe & consensual", "Experienced BDSM partners", "Discreet and judgment-free"],
 };
@@ -2547,6 +2635,14 @@ You determine the intimate moments together. Some guests spread this throughout 
     "Van ontbijt tot ontbijt, onvergetelijk.",
     "De vrijheid om alles te doen wat we wilden.",
   ],
+  targetAudienceTitle: "Voor Wie Is 24 Uurs Escort?",
+  targetAudienceTitleEn: "Who Is 24h Escort For?",
+  targetAudience: `24 uurs escort is ideaal voor mannen die het ultieme escortgezelschap willen ervaren zonder tijdsdruk. Denk aan zakenreizigers met een vrije dag, mannen die een speciale gelegenheid vieren, of wie gewoon een dag vol verwennerij wil.
+
+Perfect voor wie combinaties zoekt: dagactiviteiten zoals een museumbezoek of lunch, gevolgd door diner en een intieme nacht. Ook populair als reisgezelschap voor dagtripjes.`,
+  targetAudienceEn: `24h escort is ideal for men who want to experience the ultimate escort companionship without time pressure. Think of business travelers with a free day, men celebrating a special occasion, or those who simply want a day full of pampering.
+
+Perfect for those seeking combinations: daytime activities like a museum visit or lunch, followed by dinner and an intimate night. Also popular as travel companion for day trips.`,
   trustBadges: ["Flexibele invulling", "GFE aanbevolen", "Discreet en veilig"],
   trustBadgesEn: ["Flexible arrangement", "GFE recommended", "Discreet and safe"],
 };
@@ -2651,6 +2747,14 @@ The difference with Nuru massage is that B2B usually works with regular massage 
     "Intenser dan ik verwachtte, in positieve zin.",
     "Perfect voor diepe ontspanning.",
   ],
+  targetAudienceTitle: "Voor Wie Is Body to Body Massage?",
+  targetAudienceTitleEn: "Who Is Body to Body Massage For?",
+  targetAudience: `Body to body massage is perfect voor wie volledige fysieke nabijheid zoekt tijdens een massage. De sensatie van huid op huid biedt een intensere ervaring dan reguliere massage. Ideaal voor mannen die intimiteit en ontspanning willen combineren.
+
+Geschikt voor wie al ervaring heeft met erotische massage en een stapje verder wil gaan, of voor nieuwsgierigen die maximaal huidcontact willen ervaren in een veilige, professionele setting.`,
+  targetAudienceEn: `Body to body massage is perfect for those seeking full physical closeness during a massage. The sensation of skin on skin offers a more intense experience than regular massage. Ideal for men who want to combine intimacy and relaxation.
+
+Suitable for those with erotic massage experience who want to go a step further, or for the curious who want to experience maximum skin contact in a safe, professional setting.`,
   trustBadges: ["Warme olie", "Ervaren masseuses", "Discreet en veilig"],
   trustBadgesEn: ["Warm oil", "Experienced masseuses", "Discreet and safe"],
 };
@@ -2757,6 +2861,14 @@ Our bondage escorts know the safety rules: proper knots, communication and a cle
     "Precies de juiste balans tussen spanning en vertrouwen.",
     "Eindelijk mijn bondage fantasie kunnen uitproberen.",
   ],
+  targetAudienceTitle: "Voor Wie Is Bondage Escort?",
+  targetAudienceTitleEn: "Who Is Bondage Escort For?",
+  targetAudience: `Bondage escort is geschikt voor mannen die gefascineerd zijn door vastbinden en overgave. Of je nu zelf de controle wilt nemen door iemand vast te binden, of juist de opwinding zoekt van vastgebonden worden — bondage biedt beide kanten.
+
+Ideaal voor wie BDSM-elementen wil verkennen in een veilige setting, nieuwsgierig is naar machtsspel, of al ervaring heeft en een professionele partner zoekt voor bondage-sessies.`,
+  targetAudienceEn: `Bondage escort is suitable for men fascinated by tying up and surrender. Whether you want to take control by tying someone up, or seek the excitement of being tied — bondage offers both sides.
+
+Ideal for those who want to explore BDSM elements in a safe setting, are curious about power play, or have experience and are looking for a professional partner for bondage sessions.`,
   trustBadges: ["Safeword altijd", "Ervaren escorts", "Discreet en veilig"],
   trustBadgesEn: ["Safeword always", "Experienced escorts", "Discreet and safe"],
 };
@@ -2864,6 +2976,14 @@ The appointment can be purely business, or combined with private time afterwards
     "Intelligente gesprekken, niemand had door dat het een escort was.",
     "Professioneel en charmant, precies wat ik nodig had.",
   ],
+  targetAudienceTitle: "Voor Wie Is Business Escort?",
+  targetAudienceTitleEn: "Who Is Business Escort For?",
+  targetAudience: `Business escort is ontworpen voor zakenmensen die representatief gezelschap nodig hebben. Denk aan directeuren die een partner zoeken voor een gala, ondernemers die indruk willen maken bij een diner met klanten, of managers die begeleiding willen bij netwerkevents.
+
+Perfect voor wie naast sociale vaardigheden ook intelligente gesprekken en professionele uitstraling waardeert. Onze business escorts zijn gewend aan high-end settings en weten zich in elk gezelschap te gedragen.`,
+  targetAudienceEn: `Business escort is designed for businesspeople who need representative companionship. Think of executives looking for a partner for a gala, entrepreneurs who want to impress at a client dinner, or managers who want accompaniment at networking events.
+
+Perfect for those who value intelligent conversations and professional appearance alongside social skills. Our business escorts are accustomed to high-end settings and know how to behave in any company.`,
   trustBadges: ["Zakelijke etiquette", "Representatief", "Discreet"],
   trustBadgesEn: ["Business etiquette", "Representable", "Discreet"],
 };
@@ -2969,6 +3089,14 @@ Car dates are shorter than regular bookings. Ideal for a quick meeting during a 
     "Geen gedoe met hotels, puur en simpel.",
     "Perfect voor een snelle pauze.",
   ],
+  targetAudienceTitle: "Voor Wie Is Cardate?",
+  targetAudienceTitleEn: "Who Is Car Date For?",
+  targetAudience: `Cardate escort is ideaal voor mannen die snel, discreet en zonder gedoe een intieme ontmoeting willen. Perfect voor wie weinig tijd heeft, geen hotelkosten wil maken, of maximale anonimiteit zoekt.
+
+Geschikt voor zakenreizigers onderweg, mannen in hun lunchpauze, of wie liever niet naar een hotel of thuis wil ontvangen. De auto biedt volledige privacy en flexibiliteit.`,
+  targetAudienceEn: `Car date escort is ideal for men who want a quick, discreet and hassle-free intimate meeting. Perfect for those with little time, who don't want hotel costs, or who seek maximum anonymity.
+
+Suitable for business travelers on the go, men on their lunch break, or those who prefer not to meet at a hotel or home. The car offers complete privacy and flexibility.`,
   trustBadges: ["Maximale discretie", "Snel geregeld", "Geen hotelkosten"],
   trustBadgesEn: ["Maximum discretion", "Quickly arranged", "No hotel costs"],
 };
@@ -3075,6 +3203,14 @@ Boundaries are always respected. A fetish session is about mutual pleasure and c
     "Geen oordeel, alleen acceptatie en plezier.",
     "Professioneel en open-minded, precies wat ik zocht.",
   ],
+  targetAudienceTitle: "Voor Wie Is Fetish Escort?",
+  targetAudienceTitleEn: "Who Is Fetish Escort For?",
+  targetAudience: `Fetish escort is voor mannen met specifieke seksuele voorkeuren die ze elders niet kunnen delen. Of je nu gefascineerd bent door voeten, latex, lingerie of andere fetisjen — onze open-minded escorts bieden een oordeelvrije omgeving.
+
+Perfect voor wie eindelijk zijn fantasieën wil verkennen met iemand die begripvol en ervaren is. Van mild tot intenser, van eerste verkenning tot gevestigde voorkeuren — we matchen je met de juiste dame.`,
+  targetAudienceEn: `Fetish escort is for men with specific sexual preferences they can't share elsewhere. Whether you're fascinated by feet, latex, lingerie or other fetishes — our open-minded escorts provide a judgment-free environment.
+
+Perfect for those who finally want to explore their fantasies with someone understanding and experienced. From mild to more intense, from first exploration to established preferences — we match you with the right lady.`,
   trustBadges: ["Oordeelvrij", "Ervaren escorts", "Discreet"],
   trustBadgesEn: ["Judgment-free", "Experienced escorts", "Discreet"],
 };
@@ -3181,6 +3317,14 @@ There's no pressure to do certain things. The session is about your comfort and 
     "Geen druk, alleen geduld en warmte.",
     "Ik was nerveus maar voelde me direct op mijn gemak.",
   ],
+  targetAudienceTitle: "Voor Wie Is First Time Experience?",
+  targetAudienceTitleEn: "Who Is First Time Experience For?",
+  targetAudience: `First Time Experience is speciaal ontworpen voor mannen die nog nooit een escort hebben geboekt. Of je nu nerveus bent, niet weet wat je kunt verwachten, of gewoon een zachte introductie zoekt — onze geduldige dames begeleiden je.
+
+Perfect voor wie al langer overweegt een escort te boeken maar het niet aandurfde, of voor wie recent vrijgezel is geworden en de wereld van intimiteit opnieuw wil verkennen.`,
+  targetAudienceEn: `First Time Experience is specially designed for men who have never booked an escort before. Whether you're nervous, don't know what to expect, or simply want a gentle introduction — our patient ladies guide you.
+
+Perfect for those who have been considering booking an escort for a while but didn't dare, or for those who recently became single and want to re-explore the world of intimacy.`,
   trustBadges: ["Geduldige begeleiding", "Geen oordeel", "Discreet"],
   trustBadgesEn: ["Patient guidance", "No judgment", "Discreet"],
 };
@@ -3287,6 +3431,14 @@ Communicate your preferences beforehand. This way we match you with the right la
     "Ze wist precies wat ze deed.",
     "Wederzijds oraal maakte de ervaring compleet.",
   ],
+  targetAudienceTitle: "Voor Wie Is Orale Seks?",
+  targetAudienceTitleEn: "Who Is Oral Sex For?",
+  targetAudience: `Orale seks als onderdeel van de escortervaring is voor mannen die dit als essentieel onderdeel zien van intimiteit. Of je nu geniet van ontvangen, geven of beiden — onze escorts bieden diverse orale diensten aan.
+
+Belangrijk: bespreek je voorkeuren vooraf. Niet alle escorts bieden hetzelfde aan (met/zonder condoom). Door duidelijke communicatie matchen we je met een dame die past bij jouw wensen.`,
+  targetAudienceEn: `Oral sex as part of the escort experience is for men who see this as an essential part of intimacy. Whether you enjoy receiving, giving or both — our escorts offer various oral services.
+
+Important: discuss your preferences beforehand. Not all escorts offer the same (with/without condom). Through clear communication we match you with a lady who fits your wishes.`,
   trustBadges: ["Diensten per escort", "Duidelijke communicatie", "Discreet"],
   trustBadgesEn: ["Services per escort", "Clear communication", "Discreet"],
 };
@@ -3393,6 +3545,14 @@ Safety is essential. We always work with safewords and discuss boundaries before
     "Ze wist precies hoe ver ze kon gaan.",
     "Eindelijk SM kunnen ervaren met een professional.",
   ],
+  targetAudienceTitle: "Voor Wie Is SM Escort?",
+  targetAudienceTitleEn: "Who Is SM Escort For?",
+  targetAudience: `SM escort is voor mannen die gefascineerd zijn door de combinatie van pijn en plezier. Of je nu wilt domineren en pijn toedienen, of juist wilt overgeven en pijn ontvangen — SM biedt beide kanten van het spectrum.
+
+Perfect voor wie al ervaring heeft met BDSM en specifiek de pijn-plezier dynamiek wil verkennen, maar ook voor nieuwsgierigen die onder veilige begeleiding hun eerste stappen willen zetten.`,
+  targetAudienceEn: `SM escort is for men fascinated by the combination of pain and pleasure. Whether you want to dominate and inflict pain, or surrender and receive pain — SM offers both sides of the spectrum.
+
+Perfect for those with BDSM experience who specifically want to explore the pain-pleasure dynamic, but also for the curious who want to take their first steps under safe guidance.`,
   trustBadges: ["Safeword altijd", "Ervaren partners", "Discreet"],
   trustBadgesEn: ["Safeword always", "Experienced partners", "Discreet"],
 };
@@ -3499,6 +3659,14 @@ The evening often ends intimately — in a hotel or at your place. The combinati
     "Ze was de ster van de dansvloer.",
     "Van club tot hotel, perfecte nacht.",
   ],
+  targetAudienceTitle: "Voor Wie Is Uitgaan Escort?",
+  targetAudienceTitleEn: "Who Is Going Out Escort For?",
+  targetAudience: `Uitgaan escort is voor mannen die niet alleen naar clubs of feesten willen gaan. Of je nu een verjaardag viert, indruk wilt maken op vrienden, of gewoon een gezellige avond uit wilt met aantrekkelijk gezelschap — onze escorts maken je avond compleet.
+
+Perfect voor feestliefhebbers, mannen die het nachtleven willen ontdekken met begeleiding, of wie een speciale avond wil afsluiten met intimiteit. De combinatie van uitgaan en privétijd is wat deze service uniek maakt.`,
+  targetAudienceEn: `Going out escort is for men who don't want to go to clubs or parties alone. Whether you're celebrating a birthday, want to impress friends, or simply want a fun evening out with attractive company — our escorts complete your evening.
+
+Perfect for party lovers, men who want to explore nightlife with accompaniment, or those who want to end a special evening with intimacy. The combination of going out and private time is what makes this service unique.`,
   trustBadges: ["Uitgaan ervaring", "Stijlvol", "Discreet"],
   trustBadgesEn: ["Nightlife experience", "Stylish", "Discreet"],
 };
@@ -3605,6 +3773,14 @@ Discuss beforehand what you're looking for: simply viewing, giving foot massage,
     "Prachtig verzorgde voeten, precies wat ik zocht.",
     "Geen oordeel, alleen acceptatie.",
   ],
+  targetAudienceTitle: "Voor Wie Is Voetfetish Escort?",
+  targetAudienceTitleEn: "Who Is Foot Fetish Escort For?",
+  targetAudience: `Voetfetish escort is voor mannen met een fascinatie voor vrouwenvoeten. Of je nu graag naar mooie voeten kijkt, ze wilt masseren, kussen of meer — voetfetisj is een van de meest voorkomende fetisjen en absoluut niet raar.
+
+Perfect voor wie zijn fetisj wil verkennen in een oordeelvrije omgeving. Van subtiel voeten bewonderen tot intensief aanbidden — je bepaalt zelf hoe ver je wilt gaan.`,
+  targetAudienceEn: `Foot fetish escort is for men with a fascination for women's feet. Whether you like to look at beautiful feet, want to massage them, kiss them or more — foot fetish is one of the most common fetishes and absolutely not weird.
+
+Perfect for those who want to explore their fetish in a judgment-free environment. From subtly admiring feet to intense worship — you decide how far you want to go.`,
   trustBadges: ["Verzorgde voeten", "Geen oordeel", "Discreet"],
   trustBadgesEn: ["Well-groomed feet", "No judgment", "Discreet"],
 };
@@ -3711,6 +3887,14 @@ Discuss beforehand what the wishes are. Is it purely entertainment or is there r
     "De vrijgezel had de avond van zijn leven.",
     "Professioneel geregeld, geweldige dame.",
   ],
+  targetAudienceTitle: "Voor Wie Is Vrijgezellenfeest Escort?",
+  targetAudienceTitleEn: "Who Is Bachelor Party Escort For?",
+  targetAudience: `Vrijgezellenfeest escort is voor groepen die het vrijgezellenfeest van een vriend onvergetelijk willen maken. Of je nu entertainment zoekt voor de hele groep, een striptease wilt regelen, of een privémoment voor de vrijgezel wilt boeken.
+
+Perfect voor wie een unieke verrassing wilt regelen. Van zakelijk tot studentikoos, van stijlvol tot wild — onze escorts passen zich aan de sfeer van het feest aan.`,
+  targetAudienceEn: `Bachelor party escort is for groups who want to make a friend's bachelor party unforgettable. Whether you're looking for entertainment for the whole group, want to arrange a striptease, or want to book a private moment for the bachelor.
+
+Perfect for those who want to arrange a unique surprise. From business to student-style, from stylish to wild — our escorts adapt to the party's atmosphere.`,
   trustBadges: ["Groepservaring", "Professioneel", "Discreet"],
   trustBadgesEn: ["Group experience", "Professional", "Discreet"],
 };

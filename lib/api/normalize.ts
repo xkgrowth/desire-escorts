@@ -52,7 +52,7 @@ function normalizeServices(
   const items = unwrapRelation(services);
   return items
     .map((service) => getNestedValue(service as unknown as object, "slug") || getNestedValue(service as unknown as object, "name"))
-    .filter(Boolean);
+    .filter((s): s is string => Boolean(s));
 }
 
 /**
@@ -64,7 +64,7 @@ function normalizeLanguages(
   const items = unwrapRelation(languages);
   return items
     .map((lang) => getNestedValue(lang as unknown as object, "code") || getNestedValue(lang as unknown as object, "name"))
-    .filter(Boolean);
+    .filter((l): l is string => Boolean(l));
 }
 
 /**
@@ -74,7 +74,7 @@ function normalizeTags(
   tags: { label: string; slug?: string }[] | undefined
 ): string[] {
   if (!tags) return [];
-  return tags.map((tag) => tag.label).filter(Boolean);
+  return tags.map((tag) => tag.label).filter((t): t is string => Boolean(t));
 }
 
 /**
