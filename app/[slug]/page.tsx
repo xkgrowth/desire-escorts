@@ -22,6 +22,7 @@ const reservedRootSlugs = new Set([
   "services",
   "prijzen",
   "tarieven",
+  "faq",
   "escorts",
   "design-system",
   "escort-in-nederland",

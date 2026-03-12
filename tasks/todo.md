@@ -1,5 +1,19 @@
 # WPML Export Enablement
 
+# FAQ Standalone Page (`/faq`)
+
+- [x] Add dedicated FAQ route with grouped category accordions sourced from shared FAQ data.
+- [x] Add FAQPage + Breadcrumb JSON-LD schema and SEO metadata (canonical + hreflang).
+- [x] Add bottom contact CTA section for unanswered questions.
+- [x] Reserve `faq` in root dynamic slug exclusions to avoid route collisions.
+- [x] Run lint diagnostics for touched FAQ files.
+
+## Review Notes (FAQ Standalone Page)
+
+- Implemented `app/faq/page.tsx` as a standalone FAQ collection page aligned with the Kennisbank categories.
+- Added direct links from each FAQ category block to its corresponding Kennisbank category archive.
+- Appended the existing reusable contact CTA block beneath the FAQ collection for follow-up questions.
+
 # Homepage Above-the-Fold USP Repositioning
 
 - [x] Move 4 primary USPs into the homepage hero area, directly under CTA buttons.

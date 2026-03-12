@@ -19,7 +19,10 @@ todos:
     status: pending
   - id: p4-content-pages
     content: 4.6 Apply design system to content pages (contact, pricing, services detail, blog index/post, knowledge centre)
-    status: pending
+    status: in_progress
+  - id: p4-faq-standalone
+    content: 4.6.1 Implement standalone FAQ collection page (`/faq/`) with grouped categories, FAQ schema, and contact CTA
+    status: completed
   - id: p4-legal-pages
     content: 4.7 Apply design system to legal/license pages and remaining long-tail pages
     status: pending
@@ -251,6 +254,14 @@ These buttons currently don't have functional chat widget integration.
 - Forms styled with design system
 - Blog layout consistent with design system
 - FAQ sections using design system accordion
+
+### Progress Update (Current)
+
+- [x] Implemented standalone FAQ route at `app/faq/page.tsx`
+- [x] Added grouped FAQ category sections using shared FAQ dataset (`lib/data/faqs.ts`)
+- [x] Added `FAQPage` and `BreadcrumbList` JSON-LD for `/faq/`
+- [x] Added contact CTA block under FAQ content for unanswered questions
+- [x] Reserved `faq` root slug in `app/[slug]/page.tsx` to avoid dynamic route collisions
 
 ---
 
