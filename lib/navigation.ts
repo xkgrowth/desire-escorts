@@ -125,6 +125,7 @@ export const footerLinks: Record<string, FooterLinkSection> = {
 export const legalLinks: NavItem[] = [
   { label: "Algemene Voorwaarden", labelEn: "Terms & Conditions", href: "/algemene-voorwaarden" },
   { label: "Privacybeleid", labelEn: "Privacy Policy", href: "/privacybeleid" },
+  { label: "Licentie", labelEn: "License", href: "/licentie" },
   { label: "Cookiebeleid", labelEn: "Cookie Policy", href: "/cookiebeleid" },
 ];
 

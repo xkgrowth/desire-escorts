@@ -1,3 +1,40 @@
+# Cookie Consent System
+
+- [x] Add global cookie consent UI component (banner + settings modal).
+- [x] Persist consent choices in localStorage and cookie for reuse.
+- [x] Add category-level controls (necessary, analytics, marketing).
+- [x] Add persistent "reopen settings" control after first choice.
+- [x] Mount consent component in root layout for site-wide behavior.
+- [x] Run lint diagnostics on touched files and resolve issues.
+
+## Review Notes (Cookie Consent System)
+
+- Created `lib/cookies/` module with consent storage, context provider, and tracking hooks.
+- Added `CookieBanner` component with accept all / reject all / settings options.
+- Added `CookieSettingsModal` with per-category toggles (necessary always on, analytics/marketing optional).
+- Added `ManageCookiesButton` for reopening settings from footer after initial choice.
+- Consent persisted in both localStorage and cookie (1 year expiry) with version tracking.
+- Wrapped root layout with `CookieConsent` provider for site-wide availability.
+- Added "Cookie-instellingen" link in footer legal section.
+- Provided `useTracking`, `useAnalyticsTracking`, `useMarketingTracking` hooks for conditional script loading.
+
+# Legal Pages Buildout (`/algemene-voorwaarden`, `/privacybeleid`, `/licentie`, `/cookiebeleid`)
+
+- [x] Add dedicated routes and legal document content for all four pages.
+- [x] Apply SEO metadata (title, description, canonical, hreflang) per page.
+- [x] Add legal page structure blocks (header, ToC, sections, related docs/contact).
+- [x] Update footer legal links to include `Licentie` and `Cookiebeleid`.
+- [x] Reserve legal slugs in root dynamic route exclusions to avoid collisions.
+- [x] Run lint diagnostics on touched files and resolve issues.
+
+## Review Notes (Legal Pages Buildout)
+
+- Added four new legal routes: `app/algemene-voorwaarden/page.tsx`, `app/privacybeleid/page.tsx`, `app/licentie/page.tsx`, and `app/cookiebeleid/page.tsx`.
+- Used existing legal UI building blocks (`LegalDocumentHeader`, `LegalTableOfContents`, `LegalSection`) for consistent legal template structure.
+- Synced footer legal navigation to expose all required legal pages, including the new cookie policy route.
+- Added legal root slugs to `app/[slug]/page.tsx` reserved set to avoid accidental dynamic route takeover.
+- Lint diagnostics are clean for all touched files.
+
 # WPML Export Enablement
 
 # Utility Page: Hoe Het Werkt (`/escort-bestellen/`)

@@ -8,6 +8,7 @@ import { PaymentIcons } from "../ui/payment-icons";
 import { MessageCircle } from "lucide-react";
 import { Button } from "../ui/button";
 import { WhatsAppIcon } from "../ui/whatsapp-icon";
+import { ManageCookiesButton } from "../cookies/manage-cookies-button";
 
 type FooterLink = {
   label: string;
@@ -36,6 +37,7 @@ const defaultColumns: FooterColumn[] = [
       { label: "Dinner Date", href: "/dinnerdate-escort" },
       { label: "BDSM Escorts", href: "/bdsm-escorts" },
       { label: "Trio Escort", href: "/trio-escorts" },
+      { label: "Striptease Escort", href: "/striptease-escort" },
       { label: "Alle Services →", href: "/services" },
     ],
   },
@@ -48,6 +50,7 @@ const defaultColumns: FooterColumn[] = [
       { label: "Escort Utrecht", href: "/escort-utrecht" },
       { label: "Escort Haarlem", href: "/escort-haarlem" },
       { label: "Escort Eindhoven", href: "/escort-eindhoven" },
+      { label: "Escort Schiphol", href: "/escort-schiphol" },
       { label: "Alle Locaties →", href: "/escort-in-nederland" },
     ],
   },
@@ -200,6 +203,16 @@ export function Footer({
               <Link href="/privacybeleid" className="hover:text-foreground/60 transition-colors">
                 Privacybeleid
               </Link>
+              <span className="hidden sm:inline">•</span>
+              <Link href="/licentie" className="hover:text-foreground/60 transition-colors">
+                Licentie
+              </Link>
+              <span className="hidden sm:inline">•</span>
+              <Link href="/cookiebeleid" className="hover:text-foreground/60 transition-colors">
+                Cookiebeleid
+              </Link>
+              <span className="hidden sm:inline">•</span>
+              <ManageCookiesButton className="hover:text-foreground/60 transition-colors" />
             </div>
           </div>
         </div>
