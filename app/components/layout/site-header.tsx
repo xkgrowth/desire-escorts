@@ -157,7 +157,6 @@ function LanguageToggle() {
         aria-label="Nederlands"
         hrefLang="nl"
       >
-        <span className="text-base">🇳🇱</span>
         <span>NL</span>
       </Link>
       <Link
@@ -171,7 +170,6 @@ function LanguageToggle() {
         aria-label="English"
         hrefLang="en"
       >
-        <span className="text-base">🇬🇧</span>
         <span>EN</span>
       </Link>
     </div>
