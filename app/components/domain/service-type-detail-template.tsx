@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Award, Clock3, ShieldCheck, Users } from "lucide-react";
+import { Award, CheckCircle2, Clock3, Euro, ShieldCheck, Users } from "lucide-react";
 import { getProfiles, profilesToCardProps } from "@/lib/api";
+import { getFilteredProfiles, getProfileSectionTitle } from "@/lib/api/profile-filters";
 import type { ServiceTypeDetailPageData } from "@/lib/data/service-type-detail-pages";
 import { ProfileCard } from "./profile-card";
 import { TemplateHeroGlass } from "./template-hero-glass";
@@ -29,13 +30,25 @@ export async function ServiceTypeDetailTemplate({
   data,
   locale = "nl",
 }: ServiceTypeDetailTemplateProps) {
-  const profiles = await getProfiles();
-  const topProfiles = profiles
-    .filter((profile) => profile.isAvailable)
-    .slice(0, data.pageType === "type" ? 8 : 4);
-  const fallbackProfiles =
-    topProfiles.length > 0 ? topProfiles : profiles.slice(0, data.pageType === "type" ? 8 : 4);
-  const profileCards = profilesToCardProps(fallbackProfiles);
+  let allProfiles = [] as Awaited<ReturnType<typeof getProfiles>>;
+  try {
+    allProfiles = await getProfiles();
+  } catch (error) {
+    // Keep page render stable when Strapi is temporarily unavailable.
+    console.error("Unable to load profiles for service/type detail page", error);
+  }
+  const availableProfiles = allProfiles.filter((profile) => profile.isAvailable);
+  
+  // Apply filtering based on page slug
+  const profileCount = data.pageType === "type" ? 8 : 4;
+  const { profiles: filteredProfiles, hasMatches } = getFilteredProfiles(
+    availableProfiles.length > 0 ? availableProfiles : allProfiles,
+    data.slug,
+    2 // minimum matches before fallback
+  );
+  
+  const displayProfiles = filteredProfiles.slice(0, profileCount);
+  const profileCards = profilesToCardProps(displayProfiles);
   const quote = getDailyQuote(data.quotePool);
 
   const isService = data.pageType === "service";
@@ -50,6 +63,10 @@ export async function ServiceTypeDetailTemplate({
   const usps = isNl ? data.usps : data.uspsEn;
   const coreContentTitle = isNl ? data.coreContentTitle : data.coreContentTitleEn;
   const coreContent = isNl ? data.coreContent : data.coreContentEn;
+  const benefitsTitle = isNl ? data.benefitsTitle : data.benefitsTitleEn;
+  const benefits = isNl ? data.benefits : data.benefitsEn;
+  const pricingTitle = isNl ? data.pricingTitle : data.pricingTitleEn;
+  const pricingContent = isNl ? data.pricingContent : data.pricingContentEn;
   const targetAudienceTitle = isNl ? data.targetAudienceTitle : data.targetAudienceTitleEn;
   const targetAudience = isNl ? data.targetAudience : data.targetAudienceEn;
   const steps = isNl ? data.steps : data.stepsEn;
@@ -57,6 +74,7 @@ export async function ServiceTypeDetailTemplate({
   const stepsTitle = isNl ? data.stepsTitle : data.stepsTitleEn;
   const faqs = isNl ? data.faqs : data.faqsEn;
   const primaryImageAlt = isNl ? data.primaryImageAlt : data.primaryImageAltEn;
+  const trustBadges = isNl ? data.trustBadges : data.trustBadgesEn;
 
   return (
     <PageLayout>
@@ -113,43 +131,108 @@ export async function ServiceTypeDetailTemplate({
         </StaggerContainer>
       </PageSection>
 
+      {/* Benefits Section */}
+      {benefits && benefits.length > 0 && (
+        <PageSection size="sm">
+          <ScrollReveal delay={0.09}>
+            <div className="rounded-luxury border border-white/10 bg-surface/25 p-6">
+              <h2 className="font-heading text-2xl font-bold text-foreground">
+                {benefitsTitle}
+              </h2>
+              <ol className="mt-6 space-y-4">
+                {benefits.map((benefit, idx) => (
+                  <li key={idx} className="flex gap-4">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/20 text-sm font-bold text-primary">
+                      {idx + 1}
+                    </span>
+                    <div>
+                      <h3 className="font-heading font-semibold text-foreground">
+                        {benefit.title}
+                      </h3>
+                      <p className="mt-1 text-sm text-foreground/70">{benefit.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </ScrollReveal>
+        </PageSection>
+      )}
+
+      {/* Pricing Section */}
+      {pricingContent && (
+        <PageSection size="sm">
+          <ScrollReveal delay={0.1}>
+            <div className="rounded-luxury border border-primary/20 bg-surface/25 p-6">
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/20">
+                  <Euro className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h2 className="font-heading text-2xl font-bold text-foreground">
+                    {pricingTitle}
+                  </h2>
+                  <p className="mt-2 text-foreground/70">{pricingContent}</p>
+                  <Link
+                    href="/prijzen"
+                    className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+                  >
+                    {isNl ? "Bekijk volledige prijslijst" : "View full price list"} →
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </PageSection>
+      )}
+
       {/* Escort Grid */}
       <PageSection size="sm">
         <div className="mb-6 flex items-end justify-between gap-4">
           <div>
             <h2 className="font-heading text-2xl font-bold text-foreground">
-              {isNl
-                ? isService
-                  ? `Escorts voor ${data.title}`
-                  : `${data.title} Profielen`
-                : isService
-                ? `Escorts for ${data.titleEn}`
-                : `${data.titleEn} Profiles`}
+              {getProfileSectionTitle(hasMatches, title, data.pageType, locale)}
             </h2>
             <p className="mt-1 text-sm text-foreground/65">
-              {isNl
-                ? "Bekijk beschikbare escorts en boek direct."
-                : "View available escorts and book directly."}
+              {hasMatches
+                ? isNl
+                  ? "Bekijk beschikbare escorts en boek direct."
+                  : "View available escorts and book directly."
+                : isNl
+                ? "Bekijk onze populaire escorts en boek direct."
+                : "View our popular escorts and book directly."}
             </p>
           </div>
           <Link href="/escorts" className="text-sm text-primary hover:underline">
             {isNl ? "Bekijk alle escorts" : "View all escorts"}
           </Link>
         </div>
-        <StaggerContainer
-          className={`grid gap-4 ${
-            data.pageType === "type"
-              ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-              : "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-          }`}
-          staggerDelay={0.07}
-        >
-          {profileCards.map((profile) => (
-            <StaggerItem key={profile.slug}>
-              <ProfileCard {...profile} />
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+        {profileCards.length > 0 ? (
+          <StaggerContainer
+            className={`grid gap-4 ${
+              data.pageType === "type"
+                ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+                : "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+            }`}
+            staggerDelay={0.07}
+          >
+            {profileCards.map((profile) => (
+              <StaggerItem key={profile.slug}>
+                <ProfileCard {...profile} />
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        ) : (
+          <div className="rounded-luxury border border-white/10 bg-surface/25 p-5 text-sm text-foreground/75">
+            {isNl
+              ? "Op dit moment konden we geen profielen laden. Bekijk alle escorts via het overzicht."
+              : "We couldn't load profiles at the moment. View all escorts from the overview."}{" "}
+            <Link href="/escorts" className="text-primary hover:underline">
+              {isNl ? "Naar alle escorts" : "Go to all escorts"}
+            </Link>
+            .
+          </div>
+        )}
       </PageSection>
 
       {/* Who This Is For (Services only) */}
@@ -318,6 +401,25 @@ export async function ServiceTypeDetailTemplate({
           />
         </ScrollReveal>
       </PageSection>
+
+      {/* Trust Badges */}
+      {trustBadges && trustBadges.length > 0 && (
+        <PageSection size="sm">
+          <ScrollReveal delay={0.1}>
+            <div className="flex flex-wrap items-center justify-center gap-4 rounded-luxury border border-white/10 bg-surface/25 p-4">
+              {trustBadges.map((badge, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-2 text-sm text-foreground/70"
+                >
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                  <span>{badge}</span>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </PageSection>
+      )}
 
       {/* CTA Section */}
       <PageSection size="sm">

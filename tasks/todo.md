@@ -1,5 +1,20 @@
 # WPML Export Enablement
 
+# Homepage Above-the-Fold USP Repositioning
+
+- [x] Move 4 primary USPs into the homepage hero area, directly under CTA buttons.
+- [x] Keep hero USPs compact (icon + short label) with a mobile-friendly 2x2 layout.
+- [x] Remove duplicate lower USP strip to avoid repeated messaging.
+- [x] Reframe the "Waarom bezoekers..." card as proof/context instead of repeating the same 4 USPs.
+- [x] Run lint diagnostics on touched homepage files.
+
+## Review Notes (Homepage Above-the-Fold USP Repositioning)
+
+- Hero now carries the 4 trust USPs above the fold to restore immediate conversion cues.
+- Lower dedicated USP section was removed to reduce repetition and improve section pacing.
+- Intro right-hand proof card now supports the hero message with trust/process details.
+- Lint diagnostics are clean for `app/page.tsx` and `app/components/domain/homepage-hero.tsx`.
+
 # Design System Refinement Pass
 
 - [x] Update clickable surface color to `#141A1B` and wire to interactive card styles.
@@ -420,3 +435,27 @@
 - Uses local CBS files only (no external API), with optional directory override via `CBS_WOONPLAATSEN_DATASET_DIR`.
 - Exact matches return city-level estimate + location page link when available.
 - Unknown-to-site places still return estimate via their province minimum combo, preserving conversion intent.
+
+# Blog + Author Template Rollout
+
+- [x] Create reusable WordPress blog data layer (normalize content, dates, images, read time).
+- [x] Implement `/blog` overview page using normalized posts.
+- [x] Implement blog detail template on legacy root slug with author/date/read-time/sidebar.
+- [x] Implement `/author/julian-van-dijk/` author page and connect byline links.
+- [x] Run lint diagnostics on all touched files and fix regressions.
+
+## Review Notes (Blog + Author Template Rollout)
+
+- Added `lib/data/blog-posts.ts` to normalize NL WordPress post exports into reusable blog objects with decoded titles, read time, first-image extraction, and author mapping.
+- Implemented `/blog` overview in `app/blog/page.tsx` with featured post + article grid using existing `ArticleCard` component variants.
+- Implemented root-level blog detail route in `app/[slug]/page.tsx` with strict blog-slug lookup, byline metadata, and a sticky sidebar for navigating to other posts.
+- Implemented `/author/julian-van-dijk/` in `app/author/[slug]/page.tsx` with author bio and a list of authored posts.
+- Added scoped migrated-post styling in `app/globals.css` (`.blog-post-content`) so WordPress HTML renders clearly while preserving internal links and inline images.
+- Lint diagnostics pass cleanly; full production build currently fails due an existing unrelated type issue in `lib/api/normalize.ts`.
+
+# Service/Type Detail Scaling Pass
+
+- [x] Make profile-card logic resilient (filter first, fallback second, no hard failure on Strapi outage).
+- [x] Scale `anale-seks` content pattern to all service/type detail pages via shared extraction (SEO title, benefits, pricing, trust signals).
+- [x] Ensure fallback profile title becomes generic when no specific matches exist.
+- [x] Validate key detail pages (`/anale-seks`, `/trio-escorts`, `/shemale-escort`, `/goedkope-escorts`, `/studenten-escort`, `/bdsm-escorts`) locally.
