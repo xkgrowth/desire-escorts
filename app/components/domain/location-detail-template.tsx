@@ -114,23 +114,25 @@ export async function LocationDetailTemplate({ data }: LocationDetailTemplatePro
       </PageSection>
 
       <PageSection size="sm">
-        <div className="mb-6 flex items-end justify-between gap-4">
-          <div>
-            <h2 className="font-heading text-2xl font-bold text-foreground">
-              Top profielen in {data.city}
-            </h2>
+        <ScrollReveal>
+          <div className="mb-6 flex items-end justify-between gap-4">
+            <div>
+              <h2 className="font-heading text-2xl font-bold text-foreground">
+                Top profielen in {data.city}
+              </h2>
+            </div>
+            <Link href="/alle-escorts" className="text-sm text-primary hover:underline">
+              Bekijk alle escorts
+            </Link>
           </div>
-          <Link href="/alle-escorts" className="text-sm text-primary hover:underline">
-            Bekijk alle escorts
-          </Link>
-        </div>
-        <StaggerContainer className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4" staggerDelay={0.07}>
-          {profileCards.map((profile) => (
-            <StaggerItem key={profile.slug}>
-              <ProfileCard {...profile} />
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+          <StaggerContainer className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4" staggerDelay={0.07}>
+            {profileCards.map((profile) => (
+              <StaggerItem key={profile.slug}>
+                <ProfileCard {...profile} />
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </ScrollReveal>
       </PageSection>
 
       <PageSection size="sm">
