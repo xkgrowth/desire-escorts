@@ -109,7 +109,7 @@ export function HomepageHero({
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
-              href="/escorts/"
+              href="/alle-escorts/"
               className="btn-bevel-premium inline-flex items-center justify-center rounded-luxury px-8 py-3 text-base font-heading font-bold text-primary-foreground"
             >
               Alle Escorts

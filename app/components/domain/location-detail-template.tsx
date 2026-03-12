@@ -114,7 +114,7 @@ export async function LocationDetailTemplate({ data }: LocationDetailTemplatePro
               Top profielen in {data.city}
             </h2>
           </div>
-          <Link href="/escorts" className="text-sm text-primary hover:underline">
+          <Link href="/alle-escorts" className="text-sm text-primary hover:underline">
             Bekijk alle escorts
           </Link>
         </div>

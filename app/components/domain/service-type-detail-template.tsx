@@ -215,7 +215,7 @@ export async function ServiceTypeDetailTemplate({
                 : "View our popular escorts and book directly."}
             </p>
           </div>
-          <Link href="/escorts" className="text-sm text-primary hover:underline">
+          <Link href="/alle-escorts" className="text-sm text-primary hover:underline">
             {isNl ? "Bekijk alle escorts" : "View all escorts"}
           </Link>
         </div>
@@ -239,7 +239,7 @@ export async function ServiceTypeDetailTemplate({
             {isNl
               ? "Op dit moment konden we geen profielen laden. Bekijk alle escorts via het overzicht."
               : "We couldn't load profiles at the moment. View all escorts from the overview."}{" "}
-            <Link href="/escorts" className="text-primary hover:underline">
+            <Link href="/alle-escorts" className="text-primary hover:underline">
               {isNl ? "Naar alle escorts" : "Go to all escorts"}
             </Link>
             .

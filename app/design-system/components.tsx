@@ -641,8 +641,8 @@ export function BreadcrumbsShowcase() {
         <p className="text-sm text-muted-foreground mb-4">Full Breadcrumbs with Home</p>
         <Breadcrumbs
           items={[
-            { label: "Escorts", href: "/escorts" },
-            { label: "Amsterdam", href: "/escorts/amsterdam" },
+            { label: "Escorts", href: "/alle-escorts" },
+            { label: "Amsterdam", href: "/alle-escorts/amsterdam" },
             { label: "Sophie" },
           ]}
         />
@@ -676,7 +676,7 @@ export function GlassTemplateHeroShowcase() {
   return (
     <TemplateHeroGlass
       breadcrumbs={[
-        { label: "Escorts", href: "/escorts" },
+        { label: "Escorts", href: "/alle-escorts" },
         { label: "Overzicht" },
       ]}
       title="Escorts in Nederland"

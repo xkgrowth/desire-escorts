@@ -459,3 +459,47 @@
 - [x] Scale `anale-seks` content pattern to all service/type detail pages via shared extraction (SEO title, benefits, pricing, trust signals).
 - [x] Ensure fallback profile title becomes generic when no specific matches exist.
 - [x] Validate key detail pages (`/anale-seks`, `/trio-escorts`, `/shemale-escort`, `/goedkope-escorts`, `/studenten-escort`, `/bdsm-escorts`) locally.
+
+# Knowledge Centre Templates (C.5.3 + C.5.4)
+
+- [x] Build normalized BetterDocs data layer from `data/wordpress/knowledge-centre`.
+- [x] Implement `/kennisbank/` overview page with grouped categories and doc links.
+- [x] Implement `/kennisbank/[category]/[slug]/` detail template with breadcrumb, article body, and related links.
+- [x] Ensure canonical URLs and route slugs match exported legacy structure.
+- [x] Remove D.2 from phase rollout plan list and mark C.5.3/C.5.4 complete after validation.
+- [x] Run lint diagnostics on touched files and resolve regressions.
+
+## Review Notes (Knowledge Centre Templates)
+
+- Added `lib/data/knowledge-centre.ts` to parse BetterDocs CSV exports directly, normalize category/article records, and generate deterministic route paths.
+- Implemented Knowledge Centre overview route at `app/kennisbank/page.tsx` with category-based article grouping and direct question links.
+- Implemented dynamic detail route at `app/kennisbank/[category]/[slug]/page.tsx` with breadcrumb JSON-LD, article rendering, TOC anchors, and related links.
+- Updated phase rollout plan to remove D.2 and mark C.5.3/C.5.4 complete.
+- Lint passes with no warnings/errors after the implementation.
+
+# Knowledge Centre Category Template
+
+- [x] Build category route template at `/kennisbank/[category]/` for curated per-category docs.
+- [x] Restore category canonical path usage in knowledge data mapping and breadcrumb links.
+- [x] Add metadata + schema for category archives.
+- [x] Run lint diagnostics on touched files and resolve regressions.
+
+## Review Notes (Knowledge Centre Category Template)
+
+- Added `app/kennisbank/[category]/page.tsx` to render dedicated category archive pages (e.g. `/kennisbank/discretie-veiligheid/`) with curated article cards.
+- Left column now surfaces all categories with active-state highlighting and per-category document counts.
+- Category page includes page metadata and `ItemList` JSON-LD for discoverability.
+- Restored `categoryPath` mapping in `lib/data/knowledge-centre.ts` to real archive paths for consistent breadcrumb/category linking.
+
+# Knowledge Detail UX Refinements
+
+- [x] Align detail-page sidebar behavior with category-page style while supporting nested article lists.
+- [x] Keep current category expanded by default and allow opening other categories inline.
+- [x] Add smooth-scroll TOC interaction for section links on detail pages.
+- [x] Validate touched files with lint diagnostics.
+
+## Review Notes (Knowledge Detail UX Refinements)
+
+- Added `KnowledgeCategorySidebar` client component to power expandable category navigation with nested docs and active doc highlighting on detail pages.
+- Added `KnowledgeToc` client component to replace jump links with smooth animated scrolling.
+- Added heading scroll offset (`scroll-margin-top`) in `app/globals.css` so smooth TOC scroll lands below sticky UI.

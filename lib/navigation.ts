@@ -22,7 +22,7 @@ export const primaryNav: NavItem[] = [
   { 
     label: "Escorts", 
     labelEn: "Escorts",
-    href: "/escorts",
+    href: "/alle-escorts",
     description: "Bekijk onze selectie escorts"
   },
   {

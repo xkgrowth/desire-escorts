@@ -197,7 +197,7 @@ export default function EscortInNederlandPage() {
             </p>
             <p className="mt-3 text-foreground/70">
               Voor extra snelle selectie kun je direct naar{" "}
-              <Link href="/escorts" className="text-primary hover:underline">
+              <Link href="/alle-escorts" className="text-primary hover:underline">
                 alle escorts
               </Link>{" "}
               gaan of een aanvraag starten via live chat.

@@ -584,6 +584,11 @@ body {
   font-size: clamp(1.15rem, 2.4vw, 1.45rem);
 }
 
+.blog-post-content h2,
+.blog-post-content h3 {
+  scroll-margin-top: 7rem;
+}
+
 .blog-post-content p,
 .blog-post-content ul,
 .blog-post-content ol,

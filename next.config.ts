@@ -3,6 +3,15 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   devIndicators: false,
   trailingSlash: true,
+  async redirects() {
+    return [
+      {
+        source: "/escorts",
+        destination: "/alle-escorts",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {

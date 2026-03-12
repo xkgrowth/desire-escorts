@@ -268,7 +268,7 @@ export default async function ServicesOverviewPage() {
               </p>
             </div>
             <Link
-              href="/escorts"
+              href="/alle-escorts"
               className="inline-flex items-center gap-2 text-primary hover:underline"
             >
               Bekijk alle escorts

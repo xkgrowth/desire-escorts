@@ -123,7 +123,7 @@ export default async function EscortDetailPage({ params }: DetailPageProps) {
   return (
     <PageLayout
       breadcrumbs={[
-        { label: "Escorts", href: "/escorts" },
+        { label: "Escorts", href: "/alle-escorts" },
         { label: profile.name },
       ]}
     >

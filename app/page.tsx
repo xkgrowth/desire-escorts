@@ -191,13 +191,13 @@ export default async function Home() {
 
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
               <Link
-                href="/escorts"
+                href="/alle-escorts"
                 className="btn-primary inline-flex items-center gap-2 px-8 py-3 rounded-luxury font-bold text-background transition-all hover:scale-105"
               >
                 Bekijk Alle Escorts
               </Link>
               <Link
-                href="/escorts"
+                href="/alle-escorts"
                 className="group flex items-center gap-2 text-foreground/60 hover:text-primary transition-colors font-medium text-sm"
               >
                 Bekijk alle profielen

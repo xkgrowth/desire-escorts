@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description:
     "Bekijk geverifieerde escorts in Nederland met actuele beschikbaarheid. Filter op locatie en service, met duidelijke prijsindicatie vanaf €160 en minimale boekduur per stad.",
   alternates: {
-    canonical: "https://desire-escorts.nl/escorts",
+    canonical: "https://desire-escorts.nl/alle-escorts",
   },
 };
 
