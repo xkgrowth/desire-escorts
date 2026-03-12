@@ -6,12 +6,14 @@ import { PageLayout, PageSection } from "@/app/components/layout/page-layout";
 import { GradientTitle } from "@/app/components/ui/gradient-title";
 import { KnowledgeCategorySidebar } from "@/app/components/domain/knowledge-category-sidebar";
 import { KnowledgeToc } from "@/app/components/domain/knowledge-toc";
+import { FaqAccordion } from "@/app/components/domain/faq-accordion";
 import {
   getKnowledgeCategories,
   getKnowledgeDocByCategoryAndSlug,
   getKnowledgeDocPaths,
   getRelatedKnowledgeDocs,
 } from "@/lib/data/knowledge-centre";
+import { getFaqsByCategory } from "@/lib/data/faqs";
 
 type KnowledgeDocPageProps = {
   params: Promise<{ category: string; slug: string }>;
@@ -57,6 +59,7 @@ export default async function KnowledgeDocPage({ params }: KnowledgeDocPageProps
 
   const categories = getKnowledgeCategories();
   const relatedDocs = getRelatedKnowledgeDocs(category, slug, 8);
+  const faqs = getFaqsByCategory(category);
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -84,12 +87,34 @@ export default async function KnowledgeDocPage({ params }: KnowledgeDocPageProps
     ],
   };
 
+  const faqSchema =
+    faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
+        }
+      : null;
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       <PageLayout
         breadcrumbs={[
@@ -97,7 +122,7 @@ export default async function KnowledgeDocPage({ params }: KnowledgeDocPageProps
           { label: doc.categoryName, href: doc.categoryPath },
           { label: doc.title },
         ]}
-        breadcrumbsVariant="compact"
+        breadcrumbsVariant="full"
       >
         <PageSection size="sm" className="pt-6">
           <div className="grid gap-8 xl:grid-cols-[280px_minmax(0,1fr)_260px]">
@@ -167,6 +192,15 @@ export default async function KnowledgeDocPage({ params }: KnowledgeDocPageProps
                       </li>
                     ))}
                   </ul>
+                </section>
+              )}
+
+              {faqs.length > 0 && (
+                <section className="mt-10 rounded-luxury border border-white/10 bg-surface/30 p-5">
+                  <h2 className="mb-4 text-lg font-heading font-bold text-foreground">
+                    Veelgestelde vragen over {doc.categoryName.toLowerCase()}
+                  </h2>
+                  <FaqAccordion faqs={faqs} />
                 </section>
               )}
             </article>
