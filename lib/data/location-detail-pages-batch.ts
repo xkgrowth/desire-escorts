@@ -281,14 +281,105 @@ const groningenFaqs: LocationFaqItem[] = [
   { question: "Hoe gaan jullie om met privacy?", answer: "We behandelen gegevens vertrouwelijk en communiceren discreet." },
 ];
 
+// Batch 3: Tier 2 expansion (Breda, Tilburg, Almere, Arnhem, Leiden, Delft, Gouda, Amersfoort, Zaandam, Hilversum)
+const bredaHotels: LocationHotel[] = [
+  { name: "Hotel Nassau Breda", description: "Centraal aan de Grote Markt met discrete en stijlvolle setting." },
+  { name: "Golden Tulip Keyser Breda", description: "Nabij het centrum, populair voor hotelafspraken." },
+  { name: "Campanile Breda", description: "Rustige locatie met goede bereikbaarheid." },
+  { name: "Holiday Inn Express Breda", description: "Bij het station, geschikt voor snelle inplanning." },
+  { name: "Chassé Hotel", description: "Moderne setting in het Chassé-gebied." },
+];
+
+const tilburgHotels: LocationHotel[] = [
+  { name: "Mercure Tilburg Centrum", description: "Centraal gelegen met discrete ontvangst." },
+  { name: "Van der Valk Hotel Tilburg", description: "Ruime kamers en rustige setting voor afspraken." },
+  { name: "Hotel Reymershoeve", description: "Stijlvol hotel nabij het centrum." },
+  { name: "Ibis Tilburg", description: "Praktische locatie bij het station." },
+  { name: "Bastion Hotel Tilburg", description: "Goede bereikbaarheid, geschikt voor avondafspraken." },
+];
+
+const almereHotels: LocationHotel[] = [
+  { name: "Van der Valk Hotel Almere", description: "Ruime setting met discrete ontvangst, populair voor hotelafspraken." },
+  { name: "Hampton by Hilton Almere", description: "Centraal in Almere Stad, goede bereikbaarheid." },
+  { name: "Fletcher Hotel Almere", description: "Rustige locatie met privacy voor private ontmoetingen." },
+  { name: "Inn Almere", description: "Nabij het centrum, geschikt voor snelle inplanning." },
+  { name: "Van der Valk Hotel Almere Poort", description: "Aan de rand van Almere met ruime kamers." },
+];
+
+const arnhemHotels: LocationHotel[] = [
+  { name: "Parkhotel Arnhem", description: "Centraal aan het Velperplein met discrete en stijlvolle setting." },
+  { name: "NH Arnhem Rijnhotel", description: "Aan de Rijn met goede privacy voor afspraken." },
+  { name: "Hotel Modez Arnhem", description: "Boutique hotel in het centrum." },
+  { name: "Landgoed Hotel Groot Warnsborn", description: "Rustige setting net buiten het centrum." },
+  { name: "Holiday Inn Express Arnhem", description: "Nabij het station, geschikt voor avondafspraken." },
+];
+
+const leidenHotels: LocationHotel[] = [
+  { name: "Van der Valk Hotel Leiden", description: "Net buiten het centrum met ruime kamers en discrete sfeer." },
+  { name: "Holiday Inn Leiden", description: "Centraal gelegen, populair voor hotelafspraken." },
+  { name: "Hotel Mayflower", description: "Aan de gracht met stijlvolle setting." },
+  { name: "Bastion Hotel Leiden", description: "Goede bereikbaarheid, geschikt voor snelle inplanning." },
+  { name: "Inn Leiden Centre", description: "In het centrum nabij de Burcht." },
+];
+
+const delftHotels: LocationHotel[] = [
+  { name: "Hotel Juliana Delft", description: "Centraal aan de Markt met discrete ontvangst." },
+  { name: "Bridges House Hotel", description: "Stijlvol boutique hotel in het centrum." },
+  { name: "Hotel Delft", description: "Nabij het station met goede bereikbaarheid." },
+  { name: "Inntel Hotels Delft Centre", description: "Moderne locatie in het centrum." },
+  { name: "Campanile Delft", description: "Rustige setting voor private ontmoetingen." },
+];
+
+const goudaHotels: LocationHotel[] = [
+  { name: "Best Western Plus Hotel Gouda", description: "Centraal aan de Markt met discrete sfeer." },
+  { name: "Hotel de Utrechtsche Dom", description: "Stijlvol hotel in het centrum van Gouda." },
+  { name: "Fletcher Hotel-Restaurant Gouda", description: "Rustige locatie met goede privacy." },
+  { name: "Hotel Gouda", description: "Nabij de Markt, geschikt voor hotelafspraken." },
+  { name: "B&B Gouda", description: "Kleine setting voor discrete ontmoetingen." },
+];
+
+const amersfoortHotels: LocationHotel[] = [
+  { name: "Berghotel Amersfoort", description: "Centraal met uitzicht op de Onze Lieve Vrouwetoren, discrete setting." },
+  { name: "Kijk over de Kade", description: "Aan de Eem met stijlvolle en rustige sfeer." },
+  { name: "Van der Valk Hotel Amersfoort", description: "Ruime kamers, populair voor hotelafspraken." },
+  { name: "NH Amersfoort", description: "Nabij het centrum, goede bereikbaarheid." },
+  { name: "Hotel Randenbroek", description: "Rustige setting aan de rand van het centrum." },
+];
+
+const zaandamHotels: LocationHotel[] = [
+  { name: "Inntel Hotels Zaandam", description: "Iconisch gebouw bij het station, discrete ontvangst." },
+  { name: "Mercure Hotel Zaandam", description: "Centraal in Inverdan, geschikt voor afspraken." },
+  { name: "Zaan Hotel", description: "Aan de Zaan met rustige setting." },
+  { name: "Hotel Ibis Zaandam", description: "Praktische locatie nabij het centrum." },
+  { name: "Van der Valk Hotel Zaanstad", description: "Net buiten Zaandam met ruime kamers." },
+];
+
+const hilversumHotels: LocationHotel[] = [
+  { name: "Mercure Hotel Hilversum", description: "Centraal gelegen met discrete ontvangst." },
+  { name: "Van der Valk Hotel Hilversum", description: "Ruime kamers en rustige setting, populair voor hotelafspraken." },
+  { name: "Bastion Hotel Hilversum", description: "Nabij het centrum en Mediapark." },
+  { name: "Hotel Hilversum", description: "Stijlvol hotel in het centrum." },
+  { name: "NH Hilversum", description: "Goede bereikbaarheid voor avondafspraken." },
+];
+
+function getBatch3Faqs(city: string): LocationFaqItem[] {
+  return [
+    { question: `Hoe snel is escort service in ${city} beschikbaar?`, answer: `In ${city} is service vaak binnen 45–90 minuten mogelijk.` },
+    { question: `Wat kost een escort in ${city}?`, answer: `De startprijs in ${city} is vanaf €160 voor 1 uur.` },
+    { question: `Zijn hotelafspraken in ${city} mogelijk?`, answer: `Ja, we plannen regelmatig afspraken in hotels in het centrum en omgeving.` },
+    { question: "Welke betaalmethoden zijn mogelijk?", answer: "Betalen kan onder meer via cash, pin of creditcard." },
+    { question: "Hoe gaan jullie om met privacy?", answer: "We behandelen gegevens vertrouwelijk en communiceren discreet." },
+  ];
+}
+
 export type LocationDetailPageOverrides = Partial<LocationDetailPageData>;
 
 export const batchOverrides: Record<string, LocationDetailPageOverrides> = {
   "escort-rotterdam": {
     heroIntro:
-      "Wil je snel en discreet een escort in Rotterdam boeken? We combineren snelle beschikbaarheid met geverifieerde profielen en heldere prijsafspraken vooraf.",
+      "Escort service Rotterdam: snelle beschikbaarheid, geverifieerde profielen en heldere prijsafspraken. Boek discreet via live chat of WhatsApp.",
     locationNarrative:
-      "Rotterdam heeft doorlopend vraag vanuit het centrum, Kop van Zuid en zakelijke gasten in hotels aan de Maas. Afspraken in Centrum, Kralingen, Delfshaven en rond de Erasmusbrug zijn meestal snel in te plannen wanneer je 1–2 uur vooraf boekt. Voor last-minute aanvragen stemmen we beschikbaarheid, locatie en voorkeuren met je af via live chat of WhatsApp. Hotelafspraken in Mainport, nhow of SS Rotterdam combineren we vaak met dinner date of GFE.",
+      "In Rotterdam is doorlopend vraag vanuit het centrum, Kop van Zuid en zakelijke gasten in hotels aan de Maas. Rotterdam escort-afspraken in Centrum, Kralingen, Delfshaven en rond de Erasmusbrug plannen we meestal binnen 1–2 uur vooraf; voor last-minute stemmen we direct beschikbaarheid en voorkeuren met je af. Hotelafspraken in Mainport, nhow of SS Rotterdam combineren we regelmatig met dinner date of GFE.",
     hotels: rotterdamHotels,
     faqs: rotterdamFaqs,
     locationImageSecondaryUrl: "https://desire-escorts.nl/wp-content/uploads/home-featured-3-scaled.jpg.avif",
@@ -296,34 +387,115 @@ export const batchOverrides: Record<string, LocationDetailPageOverrides> = {
   },
   "escort-den-haag": {
     heroIntro:
-      "Wil je snel en discreet een escort in Den Haag boeken? We combineren snelle beschikbaarheid met geverifieerde profielen en heldere prijsafspraken vooraf.",
+      "Wil je een escort in Den Haag boeken? Escort service Den Haag: discreet, snel en met geverifieerde profielen en duidelijke afspraken vooraf.",
     locationNarrative:
-      "Den Haag is populair voor avondboekingen, hotelafspraken in het centrum en in Scheveningen. De vraag zit vaak in de avonduren en het weekend; vroeg boeken geeft de meeste keuze. Voor afspraken bij het Kurhaus, in het centrum en richting het strand plannen we doorgaans het snelst. Hotelafspraken worden vaak gecombineerd met dinner date of een rustige privé-ontmoeting.",
+      "Den Haag en Scheveningen trekken vooral avond- en weekendboekingen; vroeg boeken geeft de meeste keuze. We plannen het snelst voor het centrum, het Kurhaus en richting het strand. Hotelafspraken—vaak gecombineerd met dinner date of een rustige privé-ontmoeting—doen we regelmatig in het centrum en aan de kust.",
     hotels: denHaagHotels,
     faqs: denHaagFaqs,
   },
   "escort-utrecht": {
     heroIntro:
-      "Wil je snel en discreet een escort in Utrecht boeken? We combineren snelle beschikbaarheid met geverifieerde profielen en heldere prijsafspraken vooraf.",
+      "Boek een escort in Utrecht snel en discreet. Geverifieerde profielen, duidelijke prijzen en vaak binnen 45–90 minuten in te plannen.",
     locationNarrative:
-      "Utrecht heeft veel vraag vanuit het centrum, rond de Dom en zakelijke gasten in hotels. Afspraken in het centrum en nabij het station zijn meestal snel in te plannen wanneer je 1–2 uur vooraf boekt. Voor last-minute stemmen we beschikbaarheid en voorkeuren met je af via live chat of WhatsApp. Hotelafspraken in Karel V, Mary K of NH Centre combineren we vaak met dinner date of ontspannende massage.",
+      "Rond de Dom en het station is de meeste vraag; Utrecht escort-afspraken in het centrum plannen we meestal binnen 1–2 uur. Last-minute? We stemmen beschikbaarheid en voorkeuren met je af via live chat of WhatsApp. Hotelafspraken in Karel V, Mary K of NH Centre combineren we vaak met dinner date of ontspannende massage.",
     hotels: utrechtHotels,
     faqs: utrechtFaqs,
   },
   "escort-eindhoven": {
     heroIntro:
-      "Wil je snel en discreet een escort in Eindhoven boeken? We combineren snelle beschikbaarheid met geverifieerde profielen en heldere prijsafspraken vooraf.",
+      "Escort in Eindhoven boeken? Snelle beschikbaarheid, echte profielen en transparante tarieven—discreet en zonder verrassingen.",
     locationNarrative:
-      "Eindhoven heeft veel vraag vanuit het centrum, rond het station en zakelijke gasten in hotels. Afspraken in het centrum en nabij Stratumseind zijn meestal snel in te plannen wanneer je 1–2 uur vooraf boekt. Voor last-minute stemmen we beschikbaarheid en voorkeuren met je af via live chat of WhatsApp. Hotelafspraken in Pullman, Van der Valk of NH Collection combineren we vaak met dinner date of ontspannende massage.",
+      "Veel van de vraag in Eindhoven komt uit het centrum, rond het station en Stratumseind. Escort service Eindhoven plannen we doorgaans snel in; 1–2 uur vooraf boeken geeft de beste match. Last-minute kan via live chat of WhatsApp. Hotelafspraken in Pullman, Van der Valk of NH Collection combineren we vaak met dinner date of ontspannende massage.",
     hotels: eindhovenHotels,
     faqs: eindhovenFaqs,
   },
   "escort-groningen": {
     heroIntro:
-      "Wil je snel en discreet een escort in Groningen boeken? We combineren snelle beschikbaarheid met geverifieerde profielen en heldere prijsafspraken vooraf.",
+      "In Groningen veel vraag naar discrete escort service. We bieden snelle inplanning, geverifieerde profielen en heldere prijzen.",
     locationNarrative:
-      "Groningen is populair voor avondboekingen, hotelafspraken rond de Grote Markt en in het centrum. De vraag zit vaak in de avonduren en het weekend; vroeg boeken geeft de meeste keuze. Voor afspraken bij het Martini Hotel, in het centrum en nabij het station plannen we doorgaans het snelst. Hotelafspraken worden vaak gecombineerd met dinner date of een rustige privé-ontmoeting.",
+      "Groningen escorts worden het meest geboekt in de avond en in het weekend; vroeg boeken geeft de meeste keuze. Rond de Grote Markt, het Martini Hotel en het station plannen we het snelst. Hotelafspraken combineren we vaak met dinner date of een rustige privé-ontmoeting.",
     hotels: groningenHotels,
     faqs: groningenFaqs,
+  },
+  // Batch 3 — Tier 2 expansion (curated: varied hero + narrative per city)
+  "escort-breda": {
+    heroIntro:
+      "Boek een escort in Breda discreet en met duidelijke afspraken. Escort service Breda met geverifieerde profielen en snelle beschikbaarheid.",
+    locationNarrative:
+      "Rond de Grote Markt en het Chassé-gebied plannen we Breda-afspraken het snelst. 1–2 uur vooraf boeken geeft de beste match; last-minute kan via live chat of WhatsApp. Hotelafspraken in Nassau Breda, Golden Tulip of bij het station combineren we vaak met dinner date of ontspannende massage.",
+    hotels: bredaHotels,
+    faqs: getBatch3Faqs("Breda"),
+  },
+  "escort-tilburg": {
+    heroIntro:
+      "Escort service Tilburg: snelle beschikbaarheid en discrete afhandeling. Geverifieerde profielen en heldere prijzen—boek via live chat of WhatsApp.",
+    locationNarrative:
+      "In Tilburg zit de vraag vooral in avond en weekend; vroeg boeken geeft de meeste keuze. Het centrum en de Spoorzone plannen we het snelst; hotelafspraken bij Mercure of Van der Valk combineren we regelmatig met dinner date of een rustige privé-ontmoeting.",
+    hotels: tilburgHotels,
+    faqs: getBatch3Faqs("Tilburg"),
+  },
+  "escort-almere": {
+    heroIntro:
+      "Wil je een escort in Almere boeken? We bieden snelle inplanning, echte profielen en transparante tarieven in Almere Stad en Haven.",
+    locationNarrative:
+      "Almere escort-afspraken in het centrum en nabij het station zijn meestal binnen 1–2 uur in te plannen. Last-minute stemmen we af via live chat of WhatsApp. Hotelafspraken in Van der Valk, Hampton by Hilton of Fletcher combineren we vaak met dinner date of ontspannende massage.",
+    hotels: almereHotels,
+    faqs: getBatch3Faqs("Almere"),
+  },
+  "escort-arnhem": {
+    heroIntro:
+      "Escort in Arnhem boeken? Discrete service, geverifieerde profielen en duidelijke prijsafspraken. Snel in te plannen in het centrum en richting de Veluwe.",
+    locationNarrative:
+      "Arnhem trekt veel zakelijke gasten en avondboekingen; rond het Velperplein en het station plannen we het snelst. Last-minute kan; we stemmen dan beschikbaarheid en voorkeuren met je af. Hotelafspraken in Parkhotel, NH Rijnhotel of Modez combineren we vaak met dinner date of ontspannende massage.",
+    hotels: arnhemHotels,
+    faqs: getBatch3Faqs("Arnhem"),
+  },
+  "escort-leiden": {
+    heroIntro:
+      "Escort service Leiden: discreet en snel. Langs de grachten en in het centrum plannen we vaak binnen 45–90 minuten, met geverifieerde profielen en heldere prijzen.",
+    locationNarrative:
+      "Leiden is populair voor avondboekingen en hotelafspraken in het centrum en nabij de Burcht. Vroeg boeken geeft de meeste keuze; we plannen het snelst bij Van der Valk, Holiday Inn of in het centrum. Hotelafspraken combineren we vaak met dinner date of een rustige privé-ontmoeting.",
+    hotels: leidenHotels,
+    faqs: getBatch3Faqs("Leiden"),
+  },
+  "escort-delft": {
+    heroIntro:
+      "Wil je een escort in Delft boeken? Snelle beschikbaarheid rond de Markt en het station, geverifieerde profielen en duidelijke afspraken vooraf.",
+    locationNarrative:
+      "Delft-afspraken in het centrum plannen we meestal snel in; 1–2 uur vooraf boeken is ideaal. Last-minute kan via live chat of WhatsApp. Hotelafspraken in Hotel Juliana, Bridges House of Inntel combineren we vaak met dinner date of ontspannende massage.",
+    hotels: delftHotels,
+    faqs: getBatch3Faqs("Delft"),
+  },
+  "escort-gouda": {
+    heroIntro:
+      "Boek een escort in Gouda met duidelijke afspraken en discrete service. Geverifieerde profielen, snelle beschikbaarheid rond de Markt.",
+    locationNarrative:
+      "Gouda escort-afspraken zijn het populairst in de avond en het weekend; vroeg boeken geeft de beste keuze. Rond de Markt en in het centrum plannen we het snelst. Hotelafspraken bij Best Western, De Utrechtsche Dom of Fletcher combineren we vaak met dinner date of een rustige privé-ontmoeting.",
+    hotels: goudaHotels,
+    faqs: getBatch3Faqs("Gouda"),
+  },
+  "escort-amersfoort": {
+    heroIntro:
+      "Escort service Amersfoort: snelle beschikbaarheid in het centrum en rond de Eemhaven. Geverifieerde profielen en heldere prijsafspraken.",
+    locationNarrative:
+      "Amersfoort heeft vraag vanuit het centrum, rond de Onze Lieve Vrouwetoren en de Eemhaven. Afspraken plannen we meestal binnen 1–2 uur; last-minute stemmen we af via live chat of WhatsApp. Hotelafspraken in Berghotel, Kijk over de Kade of Van der Valk combineren we vaak met dinner date of ontspannende massage.",
+    hotels: amersfoortHotels,
+    faqs: getBatch3Faqs("Amersfoort"),
+  },
+  "escort-zaandam": {
+    heroIntro:
+      "In Zaandam en Inverdan veel vraag naar discrete escort service. Snelle inplanning, geverifieerde profielen en duidelijke prijzen.",
+    locationNarrative:
+      "Escort Zaandam plannen we het snelst in Inverdan en nabij het station; 1–2 uur vooraf boeken geeft de beste match. Last-minute kan—we stemmen dan direct met je af. Hotelafspraken in Inntel, Mercure of Zaan Hotel combineren we vaak met dinner date of ontspannende massage.",
+    hotels: zaandamHotels,
+    faqs: getBatch3Faqs("Zaandam"),
+  },
+  "escort-hilversum": {
+    heroIntro:
+      "Escort in Hilversum boeken? Discrete service voor centrum en Mediapark. Geverifieerde profielen, snelle beschikbaarheid en heldere afspraken.",
+    locationNarrative:
+      "Hilversum trekt vooral avond- en weekendboekingen; vroeg boeken geeft de meeste keuze. We plannen het snelst in het centrum en richting het Mediapark. Hotelafspraken bij Mercure, Van der Valk of Bastion combineren we vaak met dinner date of een rustige privé-ontmoeting.",
+    hotels: hilversumHotels,
+    faqs: getBatch3Faqs("Hilversum"),
   },
 };

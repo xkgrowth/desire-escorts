@@ -25,6 +25,12 @@ function getDailyQuote(quotes: string[]): string {
   return quotes[daySeed % quotes.length];
 }
 
+/** When the secondary image is the keurmerk (badge) logo, we hide it so we don't show footer-style content in the page body. */
+function isSecondaryImageKeurmerk(alt: string | undefined): boolean {
+  if (!alt) return false;
+  return alt.toLowerCase().includes("keurmerk");
+}
+
 export async function LocationDetailTemplate({ data }: LocationDetailTemplateProps) {
   const profiles = await getProfiles();
   const topProfiles = profiles
@@ -129,23 +135,31 @@ export async function LocationDetailTemplate({ data }: LocationDetailTemplatePro
 
       <PageSection size="sm">
         <StaggerContainer className="grid gap-6 lg:grid-cols-12" staggerDelay={0.09}>
-          <StaggerItem className="lg:col-span-6">
-            <div className="flex h-full flex-col rounded-luxury border border-white/10 bg-surface/25 p-6">
-              <p className="text-sm font-medium uppercase tracking-wider text-primary">
-                {data.city} · {data.province}
-              </p>
-              <h2 className="mt-2 font-heading text-2xl font-bold text-foreground">
-                Wat je kunt verwachten in {data.city}
-              </h2>
-              <p className="mt-4 text-foreground/70">{data.locationNarrative}</p>
+          <StaggerItem className="lg:col-span-6 flex">
+            <div className="relative flex min-h-[380px] h-full w-full flex-col overflow-hidden rounded-luxury border border-white/10 p-6">
+              {/* Primary image as background so it fills the card and avoids poor object-position cropping */}
               <ResilientImage
                 src={data.locationImagePrimaryUrl}
                 alt={data.locationImagePrimaryAlt}
-                wrapperClassName="mt-5 min-h-[260px] w-full flex-1 rounded-luxury border border-white/10"
-                imageClassName="object-top"
+                wrapperClassName="pointer-events-none absolute inset-0"
+                imageClassName="object-cover object-center"
                 fallbackLabel={`Sfeerbeeld ${data.city}`}
                 muted
               />
+              {/* Overlay so text stays readable on top of the image */}
+              <div
+                className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#141A1B]/90 via-[#141A1B]/55 to-[#141A1B]/85"
+                aria-hidden
+              />
+              <div className="relative z-10 flex flex-1 flex-col">
+                <p className="text-sm font-medium uppercase tracking-wider text-primary">
+                  {data.city} · {data.province}
+                </p>
+                <h2 className="mt-2 font-heading text-2xl font-bold text-foreground">
+                  Wat je kunt verwachten in {data.city}
+                </h2>
+                <p className="mt-4 text-foreground/90">{data.locationNarrative}</p>
+              </div>
             </div>
           </StaggerItem>
           <StaggerItem className="lg:col-span-6">
@@ -240,7 +254,7 @@ export async function LocationDetailTemplate({ data }: LocationDetailTemplatePro
       <PageSection size="sm">
         <ScrollReveal delay={0.1}>
           <div className="grid gap-6 lg:grid-cols-12">
-            <div className="lg:col-span-8">
+            <div className={isSecondaryImageKeurmerk(data.locationImageSecondaryAlt) ? "lg:col-span-12" : "lg:col-span-8"}>
               <FAQ
                 eyebrow={`Veelgestelde vragen ${data.city}`}
                 title={`FAQ escort service ${data.city}`}
@@ -248,15 +262,17 @@ export async function LocationDetailTemplate({ data }: LocationDetailTemplatePro
                 variant="cards"
               />
             </div>
-            <div className="lg:col-span-4">
-              <ResilientImage
-                src={data.locationImageSecondaryUrl}
-                alt={data.locationImageSecondaryAlt}
-                wrapperClassName="h-full min-h-[320px] w-full rounded-luxury border border-white/10 lg:min-h-[460px]"
-                fallbackLabel={`Hotels ${data.city}`}
-                muted
-              />
-            </div>
+            {!isSecondaryImageKeurmerk(data.locationImageSecondaryAlt) && (
+              <div className="lg:col-span-4">
+                <ResilientImage
+                  src={data.locationImageSecondaryUrl}
+                  alt={data.locationImageSecondaryAlt}
+                  wrapperClassName="h-full min-h-[320px] w-full rounded-luxury border border-white/10 lg:min-h-[460px]"
+                  fallbackLabel={`Hotels ${data.city}`}
+                  muted
+                />
+              </div>
+            )}
           </div>
         </ScrollReveal>
       </PageSection>

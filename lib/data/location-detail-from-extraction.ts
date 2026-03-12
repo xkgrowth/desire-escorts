@@ -103,7 +103,13 @@ function loadExtractedContent(): ExtractedBySlug {
     cachedExtracted = {};
     return cachedExtracted;
   }
-  const raw = JSON.parse(fs.readFileSync(filePath, "utf8"));
+  const content = fs.readFileSync(filePath, "utf8").trim();
+  if (!content.startsWith("{")) {
+    throw new Error(
+      `Expected JSON object in ${filePath}, got start: ${content.slice(0, 100)}`
+    );
+  }
+  const raw = JSON.parse(content);
   cachedExtracted = (raw.bySlug ?? raw) as ExtractedBySlug;
   return cachedExtracted;
 }
@@ -115,7 +121,13 @@ function loadImageManifest(): Map<string, ImageManifestEntry> {
     cachedImageManifest = new Map();
     return cachedImageManifest;
   }
-  const raw = JSON.parse(fs.readFileSync(filePath, "utf8"));
+  const content = fs.readFileSync(filePath, "utf8").trim();
+  if (!content.startsWith("{")) {
+    throw new Error(
+      `Expected JSON object in ${filePath}, got start: ${content.slice(0, 100)}`
+    );
+  }
+  const raw = JSON.parse(content);
   const entries = Array.isArray(raw.entries) ? raw.entries : [];
   cachedImageManifest = new Map(
     entries.map((e: { slug: string; primary?: { file: string; alt?: string }; secondary?: { file: string; alt?: string } }) => [

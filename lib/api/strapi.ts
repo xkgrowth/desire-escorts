@@ -37,12 +37,20 @@ async function fetchStrapi<T>(endpoint: string): Promise<T> {
     next: { revalidate: 60 }, // ISR: revalidate every 60 seconds
   });
 
+  const text = await response.text();
   if (!response.ok) {
-    const text = await response.text();
     throw new Error(`Strapi request failed ${response.status}: ${text}`);
   }
 
-  return response.json();
+  try {
+    return JSON.parse(text) as T;
+  } catch (err) {
+    const snippet = text.slice(0, 200).replace(/\n/g, " ");
+    const msg = err instanceof Error ? err.message : String(err);
+    throw new Error(
+      `Strapi returned invalid JSON: ${msg}. Body start: ${snippet}`
+    );
+  }
 }
 
 /**
