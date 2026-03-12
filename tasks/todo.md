@@ -597,3 +597,20 @@
 - Reused the existing `HowToSteps` component with `timeline` variant and 6-step copy aligned to `/escort-bestellen/` for consistent process messaging.
 - Added direct post-steps conversion paths (`Bekijk alle 6 stappen`, `Neem contact op`) without introducing a new content block.
 - Homepage schema now outputs both `Organization` and `LocalBusiness`.
+
+# D.1 Location Pages Scaling
+
+- [x] Build unified `location-registry` from the 223-page NL scope file.
+- [x] Add tiering model (Tier 1/2/3) for batch rollout based on keyword and performance priorities.
+- [x] Add scrape-coverage flags (`hasScrape`) and explicit exception handling for `escort-amsterdam`.
+- [x] Add image candidate mapping for each location (primary/secondary) using WordPress media patterns.
+- [x] Define batch manifests for staged implementation (Batch 1 through Batch 6).
+- [x] Implement first rollout batch (Amsterdam + districts) using the shared location template.
+
+## Review Notes (D.1 Location Pages Scaling)
+
+- Scope fixed to 223 NL location pages from `data/wordpress/nl-location-pages-export.csv`.
+- Clean authoritative slug list stored at `data/inventory/nl-location-slugs.txt`.
+- Batch 1 routes added for `escort-amsterdam`, `escort-amsterdam-centrum`, `escort-amsterdam-noord`, `escort-amsterdam-oost`, `escort-amsterdam-west`, and `escort-amsterdam-zuid`.
+- Location detail data map now includes Amsterdam city + district records using the shared location template shape.
+- Amsterdam district data enriched at data-layer level (no template fallback) with 3+ hotels and 5+ FAQs per page.

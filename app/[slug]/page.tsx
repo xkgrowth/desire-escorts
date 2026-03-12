@@ -32,6 +32,12 @@ const reservedRootSlugs = new Set([
   "escort-in-nederland",
   "escort-haarlem",
   "escort-amstelveen",
+  "escort-amsterdam",
+  "escort-amsterdam-centrum",
+  "escort-amsterdam-noord",
+  "escort-amsterdam-oost",
+  "escort-amsterdam-west",
+  "escort-amsterdam-zuid",
   // Keep explicit handcrafted routes owning these paths.
   "hotel-escort",
   "aziatische-escorts",
