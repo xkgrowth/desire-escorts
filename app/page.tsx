@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
+  Camera,
+  Euro,
   MapPin,
   CheckCircle,
   Clock,
@@ -83,19 +85,23 @@ export default async function Home() {
   const usps = [
     {
       icon: <MapPin className="h-4 w-4" />,
-      title: "Heel Nederland",
+      title: "Service in heel Nederland",
     },
     {
-      icon: <Star className="h-4 w-4" />,
-      title: "Scherpe Tarieven",
+      icon: <Euro className="h-4 w-4" />,
+      title: "Tarieven vanaf €160",
     },
     {
       icon: <CheckCircle className="h-4 w-4" />,
-      title: "20 Jaar Ervaring",
+      title: "20 jaar ervaring",
     },
     {
       icon: <Clock className="h-4 w-4" />,
-      title: "Snelle Service",
+      title: "Snelle service",
+    },
+    {
+      icon: <Camera className="h-4 w-4" />,
+      title: "Echte foto's",
     },
   ];
 
@@ -133,12 +139,30 @@ export default async function Home() {
           <HomepageHero
             profiles={heroProfiles}
             availableCount={availableProfilesCount}
-            usps={usps}
           />
         </ScrollReveal>
       </div>
 
-      {/* 2. Escort Preview Grid */}
+      {/* 2. Above-the-fold USP strip */}
+      <div className="relative left-1/2 right-1/2 w-screen -translate-x-1/2 border-y border-white/10 bg-surface/30">
+        <Container size="2xl">
+          <div className="grid grid-cols-1 divide-y divide-white/10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:divide-y-0 lg:divide-x lg:divide-white/10">
+            {usps.map((usp) => (
+              <div
+                key={usp.title}
+                className="flex min-h-[64px] items-center justify-center gap-2 px-3 py-3 text-center"
+              >
+                <span className="shrink-0 text-primary">{usp.icon}</span>
+                <span className="text-xs font-medium uppercase tracking-wide text-foreground/85">
+                  {usp.title}
+                </span>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </div>
+
+      {/* 3. Escort Preview Grid */}
       <Section
         size="sm"
         className="bg-surface/5"
@@ -185,7 +209,7 @@ export default async function Home() {
         </Container>
       </Section>
 
-      {/* 3. Intro / Context Block */}
+      {/* 4. Intro / Context Block */}
       <Section size="md">
         <Container size="2xl">
           <ScrollReveal delay={0.06}>
@@ -241,7 +265,7 @@ export default async function Home() {
         </Container>
       </Section>
 
-      {/* 4. Services Overview */}
+      {/* 5. Services Overview */}
       <Section size="lg">
         <Container size="2xl">
           <ScrollReveal delay={0.08}>
@@ -297,7 +321,7 @@ export default async function Home() {
         </Container>
       </Section>
 
-      {/* 5. Hoe Werkt Boeken */}
+      {/* 6. Hoe Werkt Boeken */}
       <Section size="md">
         <Container size="2xl">
           <ScrollReveal delay={0.08}>
@@ -326,7 +350,7 @@ export default async function Home() {
         </Container>
       </Section>
 
-      {/* 6. Direct Contact CTA */}
+      {/* 7. Direct Contact CTA */}
       <Section size="lg">
         <Container size="2xl">
           <ScrollReveal delay={0.1}>
@@ -335,7 +359,7 @@ export default async function Home() {
         </Container>
       </Section>
 
-      {/* 7. Service Areas / Locaties */}
+      {/* 8. Service Areas / Locaties */}
       <Section size="lg" className="bg-surface/10">
         <Container size="2xl">
           <ScrollReveal delay={0.08}>
@@ -386,7 +410,7 @@ export default async function Home() {
         </Container>
       </Section>
 
-      {/* 8. Vertrouwen & Discretie */}
+      {/* 9. Vertrouwen & Discretie */}
       <Section size="md">
         <Container size="2xl">
           <ScrollReveal delay={0.09}>
@@ -436,7 +460,7 @@ export default async function Home() {
         </Container>
       </Section>
 
-      {/* 9. FAQ */}
+      {/* 10. FAQ */}
       <Section className="border-t border-white/5">
         <Container size="2xl">
           <ScrollReveal delay={0.11}>
@@ -458,7 +482,7 @@ export default async function Home() {
         </Container>
       </Section>
 
-      {/* 10. Kennisbank Links */}
+      {/* 11. Kennisbank Links */}
       <Section size="sm">
         <Container size="2xl">
           <ScrollReveal delay={0.1}>
