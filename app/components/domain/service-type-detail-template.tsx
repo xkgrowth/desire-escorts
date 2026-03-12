@@ -95,7 +95,7 @@ export async function ServiceTypeDetailTemplate({
         </ScrollReveal>
       </PageSection>
 
-      {/* Core Content Block with Image */}
+      {/* Core Content Block with Benefits + Image */}
       <PageSection size="sm">
         <StaggerContainer className="grid gap-6 lg:grid-cols-12" staggerDelay={0.09}>
           <StaggerItem className="lg:col-span-7">
@@ -117,47 +117,43 @@ export async function ServiceTypeDetailTemplate({
                   <p key={idx}>{paragraph}</p>
                 ))}
               </div>
+
+              {/* Benefits inline */}
+              {benefits && benefits.length > 0 && (
+                <div className="mt-8 border-t border-white/10 pt-6">
+                  <h3 className="font-heading text-xl font-bold text-foreground">
+                    {benefitsTitle}
+                  </h3>
+                  <ol className="mt-4 space-y-3">
+                    {benefits.map((benefit, idx) => (
+                      <li key={idx} className="flex gap-3">
+                        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/20 text-xs font-bold text-primary">
+                          {idx + 1}
+                        </span>
+                        <div>
+                          <h4 className="font-heading text-sm font-semibold text-foreground">
+                            {benefit.title}
+                          </h4>
+                          <p className="mt-0.5 text-sm text-foreground/70">{benefit.description}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              )}
             </div>
           </StaggerItem>
           <StaggerItem className="lg:col-span-5">
             <ResilientImage
               src={data.primaryImageUrl}
               alt={primaryImageAlt}
-              wrapperClassName="h-full min-h-[320px] w-full rounded-luxury border border-white/10 lg:min-h-[400px]"
+              wrapperClassName="h-full min-h-[400px] w-full rounded-luxury border border-white/10 lg:min-h-[500px]"
               fallbackLabel={isNl ? data.title : data.titleEn}
               muted
             />
           </StaggerItem>
         </StaggerContainer>
       </PageSection>
-
-      {/* Benefits Section */}
-      {benefits && benefits.length > 0 && (
-        <PageSection size="sm">
-          <ScrollReveal delay={0.09}>
-            <div className="rounded-luxury border border-white/10 bg-surface/25 p-6">
-              <h2 className="font-heading text-2xl font-bold text-foreground">
-                {benefitsTitle}
-              </h2>
-              <ol className="mt-6 space-y-4">
-                {benefits.map((benefit, idx) => (
-                  <li key={idx} className="flex gap-4">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/20 text-sm font-bold text-primary">
-                      {idx + 1}
-                    </span>
-                    <div>
-                      <h3 className="font-heading font-semibold text-foreground">
-                        {benefit.title}
-                      </h3>
-                      <p className="mt-1 text-sm text-foreground/70">{benefit.description}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </ScrollReveal>
-        </PageSection>
-      )}
 
       {/* Pricing Section */}
       {pricingContent && (
@@ -263,6 +259,25 @@ export async function ServiceTypeDetailTemplate({
               steps={steps}
               variant="numbered"
             />
+          </ScrollReveal>
+        </PageSection>
+      )}
+
+      {/* Trust Badges */}
+      {trustBadges && trustBadges.length > 0 && (
+        <PageSection size="sm" className="pt-0">
+          <ScrollReveal delay={0.1}>
+            <div className="flex flex-wrap items-center justify-center gap-4 rounded-luxury border border-white/10 bg-surface/25 p-4">
+              {trustBadges.map((badge, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-2 text-sm text-foreground/70"
+                >
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                  <span>{badge}</span>
+                </div>
+              ))}
+            </div>
           </ScrollReveal>
         </PageSection>
       )}
@@ -401,25 +416,6 @@ export async function ServiceTypeDetailTemplate({
           />
         </ScrollReveal>
       </PageSection>
-
-      {/* Trust Badges */}
-      {trustBadges && trustBadges.length > 0 && (
-        <PageSection size="sm">
-          <ScrollReveal delay={0.1}>
-            <div className="flex flex-wrap items-center justify-center gap-4 rounded-luxury border border-white/10 bg-surface/25 p-4">
-              {trustBadges.map((badge, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-center gap-2 text-sm text-foreground/70"
-                >
-                  <CheckCircle2 className="h-4 w-4 text-primary" />
-                  <span>{badge}</span>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </PageSection>
-      )}
 
       {/* CTA Section */}
       <PageSection size="sm">

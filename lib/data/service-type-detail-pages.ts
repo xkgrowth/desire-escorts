@@ -5405,7 +5405,39 @@ export function getServiceTypePageBySlug(
   return allServiceTypeDetailPages.find((page) => page.slug === slug);
 }
 
-export const allServiceTypeDetailPages: ServiceTypeDetailPageData[] = [
+function withLegacyPageImage(
+  page: ServiceTypeDetailPageData
+): ServiceTypeDetailPageData {
+  const explicitImageOverrides: Record<string, string> = {
+    "rollenspel-escort": "/images/service-type/serivce-roleplay.jpg.avif",
+  };
+
+  const wpUploadsPrefix = "https://desire-escorts.nl/wp-content/uploads/";
+  const toLocalRepoImage = (imageUrl: string): string => {
+    if (!imageUrl.startsWith(wpUploadsPrefix)) {
+      return imageUrl;
+    }
+
+    const filename = imageUrl.slice(wpUploadsPrefix.length);
+    return `/images/service-type/${filename}`;
+  };
+
+  const explicitImage = explicitImageOverrides[page.slug];
+  const legacyImage =
+    getLegacyPageSnapshot(page.slug, page.title)?.imageUrl ??
+    getLivePageImageBySlug(page.slug);
+
+  const resolvedImageSource = explicitImage ?? legacyImage ?? page.primaryImageUrl;
+  const localImage = toLocalRepoImage(resolvedImageSource);
+
+  return {
+    ...page,
+    primaryImageUrl: localImage,
+    ogImageUrl: localImage,
+  };
+}
+
+const allServiceTypeDetailPagesRaw: ServiceTypeDetailPageData[] = [
   hotelEscortPageData,
   aziatischeEscortsPageData,
   analeSeksPageData,
@@ -5453,3 +5485,6 @@ export const allServiceTypeDetailPages: ServiceTypeDetailPageData[] = [
   zwarteEscortPageData,
   ...generatedServiceTypePages,
 ];
+
+export const allServiceTypeDetailPages: ServiceTypeDetailPageData[] =
+  allServiceTypeDetailPagesRaw.map(withLegacyPageImage);
