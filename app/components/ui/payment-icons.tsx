@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 type PaymentIconsProps = {
   className?: string;
   iconSize?: "sm" | "md" | "lg";
+  withTileBackground?: boolean;
 };
 
 const sizeClasses = {
@@ -25,7 +26,11 @@ const paymentIcons = [
   { name: "Cash", src: "/assets/cash.svg" },
 ];
 
-export function PaymentIcons({ className, iconSize = "md" }: PaymentIconsProps) {
+export function PaymentIcons({
+  className,
+  iconSize = "md",
+  withTileBackground = true,
+}: PaymentIconsProps) {
   const iconClass = cn(sizeClasses[iconSize], "w-auto");
 
   return (
@@ -33,7 +38,11 @@ export function PaymentIcons({ className, iconSize = "md" }: PaymentIconsProps) 
       {paymentIcons.map((icon) => (
         <div
           key={icon.name}
-          className={cn(iconClass, "bg-white rounded px-2 py-1 flex items-center justify-center")}
+          className={cn(
+            iconClass,
+            "flex items-center justify-center",
+            withTileBackground && "rounded bg-white px-2 py-1"
+          )}
           title={icon.name}
         >
           <Image

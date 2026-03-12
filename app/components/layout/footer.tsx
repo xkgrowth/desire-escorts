@@ -163,6 +163,7 @@ export function Footer({
                   <li key={linkIndex}>
                     <Link
                       href={link.href}
+                      scroll
                       className={cn(
                         "text-sm transition-colors",
                         link.label.includes("→")
@@ -188,7 +189,7 @@ export function Footer({
             {showPaymentIcons && (
               <div className="flex flex-col sm:flex-row items-center gap-4">
                 <span className="text-xs text-foreground/40">Betaalmethoden:</span>
-                <PaymentIcons iconSize="sm" />
+                <PaymentIcons iconSize="sm" withTileBackground={false} />
               </div>
             )}
 
@@ -196,19 +197,19 @@ export function Footer({
             <div className="flex flex-col sm:flex-row items-center gap-4 text-xs text-foreground/40">
               <span>© 2026 Desire Escorts. Alle rechten voorbehouden.</span>
               <span className="hidden sm:inline">•</span>
-              <Link href="/algemene-voorwaarden" className="hover:text-foreground/60 transition-colors">
+              <Link href="/algemene-voorwaarden" scroll className="hover:text-foreground/60 transition-colors">
                 Algemene Voorwaarden
               </Link>
               <span className="hidden sm:inline">•</span>
-              <Link href="/privacybeleid" className="hover:text-foreground/60 transition-colors">
+              <Link href="/privacybeleid" scroll className="hover:text-foreground/60 transition-colors">
                 Privacybeleid
               </Link>
               <span className="hidden sm:inline">•</span>
-              <Link href="/licentie" className="hover:text-foreground/60 transition-colors">
+              <Link href="/licentie" scroll className="hover:text-foreground/60 transition-colors">
                 Licentie
               </Link>
               <span className="hidden sm:inline">•</span>
-              <Link href="/cookiebeleid" className="hover:text-foreground/60 transition-colors">
+              <Link href="/cookiebeleid" scroll className="hover:text-foreground/60 transition-colors">
                 Cookiebeleid
               </Link>
               <span className="hidden sm:inline">•</span>

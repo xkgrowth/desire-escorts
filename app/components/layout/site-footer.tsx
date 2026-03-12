@@ -72,7 +72,7 @@ export function SiteFooter() {
                   : "Betaalgemak op zijn best! Kies uit een van de vele opties"
                 }
               </p>
-              <PaymentIcons iconSize="sm" className="gap-2" />
+              <PaymentIcons iconSize="sm" className="gap-2" withTileBackground={false} />
             </div>
 
             {/* Trust Badge */}
