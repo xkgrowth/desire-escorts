@@ -15,7 +15,7 @@ type HowToStepsProps = {
   eyebrow?: string;
   title?: string;
   steps: Step[];
-  variant?: "accordion" | "numbered" | "timeline";
+  variant?: "accordion" | "numbered" | "timeline" | "responsive-timeline";
   className?: string;
 };
 
@@ -119,6 +119,132 @@ export function HowToSteps({
               </div>
             </div>
           ))}
+        </div>
+      </div>
+    );
+  }
+
+  if (variant === "responsive-timeline") {
+    const desktopCols =
+      steps.length >= 6
+        ? "md:grid-cols-6"
+        : steps.length === 5
+          ? "md:grid-cols-5"
+          : steps.length === 4
+            ? "md:grid-cols-4"
+            : "md:grid-cols-3";
+
+    return (
+      <div className={className}>
+        {(eyebrow || title) && (
+          <div className="text-center mb-10">
+            {eyebrow && (
+              <span className="text-sm font-medium text-primary uppercase tracking-wider mb-3 block">
+                {eyebrow}
+              </span>
+            )}
+            {title && (
+              <GradientTitle as="h2" size="lg">
+                {title}
+              </GradientTitle>
+            )}
+          </div>
+        )}
+
+        {/* Mobile: accordion interaction */}
+        <div className="md:hidden space-y-3">
+          {steps.map((step, index) => {
+            const isOpen = openIndex === index;
+            const isCompleted = index < openIndex;
+
+            return (
+              <div
+                key={index}
+                className={cn(
+                  "rounded-luxury overflow-hidden transition-all duration-300",
+                  isOpen
+                    ? "bg-surface/80 border border-primary/30"
+                    : "bg-surface/50 border border-white/5"
+                )}
+              >
+                <button
+                  onClick={() => toggleStep(index)}
+                  className="w-full flex items-center gap-4 p-5 text-left"
+                  aria-expanded={isOpen}
+                >
+                  <div
+                    className={cn(
+                      "w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-colors",
+                      isOpen
+                        ? "bg-primary text-primary-foreground"
+                        : isCompleted
+                          ? "bg-green-500/20 text-green-400"
+                          : "bg-surface-muted text-foreground/40"
+                    )}
+                  >
+                    {isCompleted ? (
+                      <Check className="w-5 h-5" />
+                    ) : (
+                      <span className="font-bold">{index + 1}</span>
+                    )}
+                  </div>
+
+                  <span
+                    className={cn(
+                      "flex-1 font-heading font-bold transition-colors",
+                      isOpen ? "text-foreground" : "text-foreground/70"
+                    )}
+                  >
+                    {step.title}
+                  </span>
+
+                  <ChevronDown
+                    className={cn(
+                      "w-5 h-5 flex-shrink-0 text-foreground/40 transition-transform duration-300",
+                      isOpen && "rotate-180 text-primary"
+                    )}
+                  />
+                </button>
+
+                <div
+                  className={cn(
+                    "grid transition-all duration-300",
+                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  )}
+                >
+                  <div className="overflow-hidden">
+                    <div className="px-5 pb-5 pl-[4.5rem] text-foreground/70 leading-relaxed">
+                      {typeof step.description === "string" ? (
+                        <p>{step.description}</p>
+                      ) : (
+                        step.description
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Desktop: horizontal timeline */}
+        <div className="hidden md:block">
+          <div className="relative">
+            <div className="absolute left-0 right-0 top-5 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+            <div className={cn("grid gap-4", desktopCols)}>
+              {steps.map((step, index) => (
+                <div key={index} className="relative text-center">
+                  <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full border border-primary/40 bg-background text-sm font-bold text-primary shadow-[0_0_0_2px_rgba(0,0,0,0.3)]">
+                    {index + 1}
+                  </div>
+                  <h3 className="mb-2 font-heading font-bold text-foreground">{step.title}</h3>
+                  <p className="text-sm leading-relaxed text-foreground/65">
+                    {typeof step.description === "string" ? step.description : step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     );

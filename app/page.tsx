@@ -7,16 +7,15 @@ import {
   MapPin,
   CheckCircle,
   Clock,
-  Star,
   Heart,
-  MessageCircle,
+  HandHeart,
   ShieldCheck,
-  PhoneCall,
 } from "lucide-react";
 import { HomepageHero } from "./components/domain/homepage-hero";
 import { ProfileCard } from "./components/domain/profile-card";
 import { FAQ } from "./components/domain/faq";
 import { CTASection } from "./components/domain/cta-section";
+import { HowToSteps } from "./components/domain/how-to-steps";
 import { PageWrapper, Section, Container, Grid } from "./components/ui/page-wrapper";
 import { GradientTitle } from "./components/ui/gradient-title";
 import { ServiceCard } from "./components/domain/service-card";
@@ -59,27 +58,36 @@ export default async function Home() {
   const gridProfiles = allProfiles
     .filter((p) => p.isAvailable)
     .slice(0, 8);
-  const jsonLd = {
+  const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "AdultEntertainment",
-    "name": "Desire Escorts",
-    "url": "https://desire-escorts.nl",
-    "logo": "https://desire-escorts.nl/brand/logo.svg",
-    "description": "Escort service in Nederland met geverifieerde dames",
-    "address": {
+    "@type": "Organization",
+    name: "Desire Escorts",
+    url: "https://desire-escorts.nl",
+    logo: "https://desire-escorts.nl/brand/logo.svg",
+    description:
+      "Escort service in Nederland met geverifieerde profielen en discrete booking.",
+  };
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Desire Escorts",
+    url: "https://desire-escorts.nl",
+    description: "High-class escort service in Nederland.",
+    address: {
       "@type": "PostalAddress",
-      "addressCountry": "NL"
+      addressCountry: "NL",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCircle",
-      "geoMidpoint": {
+      geoMidpoint: {
         "@type": "GeoCoordinates",
-        "latitude": 52.3676,
-        "longitude": 4.9041
+        latitude: 52.3676,
+        longitude: 4.9041,
       },
-      "geoRadius": 150000
+      geoRadius: 150000,
     },
-    "priceRange": "€€€"
+    priceRange: "€€€",
   };
 
   const usps = [
@@ -107,30 +115,48 @@ export default async function Home() {
 
   const bookingSteps = [
     {
-      icon: <MessageCircle className="w-5 h-5" />,
-      title: "1. Deel je wensen",
+      title: "Kies jouw escort of service",
       description:
-        "Vertel ons via chat of telefoon wat je zoekt: locatie, tijdstip en voorkeuren.",
+        "Bekijk beschikbare profielen en kies wat past bij je voorkeur: type escort, service en gewenste sfeer.",
     },
     {
-      icon: <CheckCircle className="w-5 h-5" />,
-      title: "2. Kies je match",
+      title: "Bepaal waar en wanneer",
       description:
-        "Je ontvangt direct passende, geverifieerde profielen met actuele beschikbaarheid.",
+        "Geef je stad, locatie en gewenste tijd door. We stemmen beschikbaarheid direct af en plannen een discreet tijdslot.",
     },
     {
-      icon: <PhoneCall className="w-5 h-5" />,
-      title: "3. Boek discreet",
+      title: "Bevestig je aanvraag",
       description:
-        "We bevestigen snel en zorgen voor een duidelijke, discrete afhandeling.",
+        "Neem contact op via live chat, WhatsApp of telefoon. Je krijgt snel duidelijkheid over mogelijkheden en totaalprijs vooraf.",
+    },
+    {
+      title: "Discreet ontvangst op locatie",
+      description:
+        "Na bevestiging komt de escort op het afgesproken moment naar jouw locatie. Altijd met focus op privacy en rust.",
+    },
+    {
+      title: "Betalen op een manier die bij je past",
+      description:
+        "Je rekent vooraf de service af via een passende betaalmethode. We bieden meerdere veilige en praktische opties.",
+    },
+    {
+      title: "Ontspan en geniet",
+      description:
+        "Als alles geregeld is, kun je volledig ontspannen. Wij zorgen dat het traject van aanvraag tot afspraak duidelijk en professioneel blijft.",
     },
   ];
+
+  const liveCityPages = new Set(["/escort-haarlem", "/escort-amstelveen"]);
 
   return (
     <PageWrapper withGradient={true}>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
 
       {/* 1. Hero Section (Full Bleed) */}
@@ -288,7 +314,7 @@ export default async function Home() {
               <ServiceCard 
                 title="Girlfriend Experience" 
                 description="De ultieme date-ervaring met warmte, intimiteit en oprechte connectie, net als met een echte vriendin."
-                href="/services/gfe-escorts"
+                href="/gfe-escorts"
                 icon={<Heart className="w-6 h-6" />}
               />
             </StaggerItem>
@@ -296,15 +322,15 @@ export default async function Home() {
               <ServiceCard 
                 title="Erotische Massage" 
                 description="Laat je verwennen met een sensuele massage. Ontspanning en opwinding komen samen."
-                href="/services/erotische-massage"
-                icon={<Star className="w-6 h-6" />}
+                href="/erotische-massage"
+                icon={<HandHeart className="w-6 h-6" />}
               />
             </StaggerItem>
             <StaggerItem>
               <ServiceCard 
                 title="Hotel Service" 
                 description="Discreet bezoek aan jouw hotelkamer. Wij komen naar alle hotels in Nederland."
-                href="/services/hotel-escort"
+                href="/hotel-escort"
                 icon={<MapPin className="w-6 h-6" />}
               />
             </StaggerItem>
@@ -325,28 +351,21 @@ export default async function Home() {
       <Section size="md">
         <Container size="2xl">
           <ScrollReveal delay={0.08}>
-            <div className="mb-8 text-center">
-            <span className="text-sm font-medium text-primary uppercase tracking-wider mb-2 block">
-              Snel geregeld
-            </span>
-            <GradientTitle as="h2" size="lg">
-              Hoe werkt boeken?
-            </GradientTitle>
+            <HowToSteps
+              eyebrow="Stap voor stap"
+              title="In 6 stappen jouw afspraak geregeld"
+              steps={bookingSteps}
+              variant="responsive-timeline"
+            />
+            <div className="mt-8 flex items-center justify-center">
+              <Link
+                href="/escort-bestellen"
+                className="inline-flex items-center gap-2 rounded-luxury bg-primary px-6 py-3 font-heading font-bold text-background transition-colors hover:bg-primary/90"
+              >
+                Hoe het Werkt
+              </Link>
             </div>
           </ScrollReveal>
-          <StaggerContainer className="grid gap-4 md:grid-cols-3" staggerDelay={0.08}>
-            {bookingSteps.map((step) => (
-              <StaggerItem key={step.title}>
-                <div className="rounded-luxury border border-white/10 bg-surface/40 p-6">
-                  <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    {step.icon}
-                  </div>
-                  <h3 className="mb-2 font-heading text-lg font-bold">{step.title}</h3>
-                  <p className="text-sm text-foreground/70">{step.description}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
         </Container>
       </Section>
 
@@ -382,7 +401,7 @@ export default async function Home() {
             {topCities.slice(0, 6).map((city) => (
               <StaggerItem key={city.name}>
                 <Link 
-                  href={city.href}
+                  href={liveCityPages.has(city.href) ? city.href : "/escort-in-nederland"}
                   className="group card-interactive rounded-luxury p-6 flex flex-col items-center justify-center transition-shadow duration-300 hover:shadow-glow"
                 >
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-3 group-hover:scale-110 transition-transform">
@@ -467,7 +486,7 @@ export default async function Home() {
             <FAQ 
               eyebrow="Veelgestelde Vragen"
               title="Goed om te weten"
-              items={homeFaqs}
+              items={homeFaqs.slice(0, 4)}
               variant="default"
             />
             <div className="mt-8 text-center">

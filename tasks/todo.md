@@ -579,3 +579,21 @@
 - Added `KnowledgeCategorySidebar` client component to power expandable category navigation with nested docs and active doc highlighting on detail pages.
 - Added `KnowledgeToc` client component to replace jump links with smooth animated scrolling.
 - Added heading scroll offset (`scroll-margin-top`) in `app/globals.css` so smooth TOC scroll lands below sticky UI.
+
+# Homepage Conversion Tightening (Targeted Pass)
+
+- [x] Fix homepage service card CTA links to valid root-level service routes.
+- [x] Replace custom 3-step booking cards with shared 6-step `HowToSteps` flow pattern.
+- [x] Add focused action row below steps linking to `/escort-bestellen` and `/contact`.
+- [x] Limit homepage FAQ output to top 4 items for scanability.
+- [x] Route top-city cards to live city pages only and fallback to `/escort-in-nederland` when a dedicated city page is not live.
+- [x] Align homepage structured data to `Organization` + `LocalBusiness`.
+- [x] Run lint diagnostics on touched homepage file.
+
+## Review Notes (Homepage Conversion Tightening)
+
+- Updated `app/page.tsx` only to keep risk and review surface minimal.
+- Service CTA links now resolve to `/<service-slug>` routes (`/gfe-escorts`, `/erotische-massage`, `/hotel-escort`) instead of the invalid `/services/...` variants.
+- Reused the existing `HowToSteps` component with `timeline` variant and 6-step copy aligned to `/escort-bestellen/` for consistent process messaging.
+- Added direct post-steps conversion paths (`Bekijk alle 6 stappen`, `Neem contact op`) without introducing a new content block.
+- Homepage schema now outputs both `Organization` and `LocalBusiness`.
