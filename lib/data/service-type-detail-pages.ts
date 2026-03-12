@@ -17,6 +17,45 @@ import path from "node:path";
  * - 20-30% growth keyword opportunities
  */
 
+/**
+ * Top 5 services by Search Console clicks (data from General_Pages.csv)
+ */
+export const TOP_SERVICES_BY_CLICKS: RelatedLink[] = [
+  { slug: "trio-escorts", label: "Trio Escort", labelEn: "Trio Escort" },
+  { slug: "erotische-massage", label: "Erotische Massage", labelEn: "Erotic Massage" },
+  { slug: "24-uurs-escort", label: "24-Uurs Escort", labelEn: "24-Hour Escort" },
+  { slug: "anale-seks", label: "Anale Seks", labelEn: "Anal Escort" },
+  { slug: "hotel-escort", label: "Hotel Escort", labelEn: "Hotel Escort" },
+];
+
+/**
+ * Top 5 escort types by Search Console clicks
+ */
+export const TOP_TYPES_BY_CLICKS: RelatedLink[] = [
+  { slug: "goedkope-escorts", label: "Goedkope Escorts", labelEn: "Budget Escorts" },
+  { slug: "shemale-escorts", label: "Shemale Escorts", labelEn: "Shemale Escorts" },
+  { slug: "aziatische-escorts", label: "Aziatische Escorts", labelEn: "Asian Escorts" },
+  { slug: "turkse-escort", label: "Turkse Escorts", labelEn: "Turkish Escorts" },
+  { slug: "studenten-escort", label: "Studenten Escorts", labelEn: "Student Escorts" },
+];
+
+/**
+ * Standard location list for all service/type detail pages
+ * Based on user specification and service coverage
+ */
+export const STANDARD_LOCATIONS: RelatedLink[] = [
+  { slug: "escort-amsterdam", label: "Amsterdam" },
+  { slug: "escort-haarlem", label: "Haarlem" },
+  { slug: "escort-alkmaar", label: "Alkmaar" },
+  { slug: "escort-schiphol", label: "Schiphol" },
+  { slug: "escort-zaandam", label: "Zaandam" },
+  { slug: "escort-hoofddorp", label: "Hoofddorp" },
+  { slug: "escort-amstelveen", label: "Amstelveen" },
+  { slug: "escort-almere", label: "Almere" },
+  { slug: "escort-utrecht", label: "Utrecht" },
+  { slug: "escort-diemen", label: "Diemen" },
+];
+
 export type FAQItem = {
   question: string;
   answer: string;
@@ -139,12 +178,7 @@ const defaultServiceImage =
 const defaultTypeImage =
   "https://desire-escorts.nl/wp-content/uploads/aziatische-escort.jpg";
 
-const relatedLocationsDefault: RelatedLink[] = [
-  { slug: "escort-amsterdam", label: "Amsterdam" },
-  { slug: "escort-rotterdam", label: "Rotterdam" },
-  { slug: "escort-den-haag", label: "Den Haag" },
-  { slug: "escort-utrecht", label: "Utrecht" },
-];
+const relatedLocationsDefault: RelatedLink[] = STANDARD_LOCATIONS;
 
 function extractFirstImageUrlFromHtml(contentHtml: string): string | undefined {
   const imageMatch = contentHtml.match(/<img[^>]+src="([^"]+)"[^>]*>/i);
@@ -5447,53 +5481,69 @@ export function getServiceTypePageBySlug(
 function withLegacyPageImage(
   page: ServiceTypeDetailPageData
 ): ServiceTypeDetailPageData {
+  const fs = require("fs");
+  const path = require("path");
+
+  const FALLBACK_IMAGE = "/images/service-type/featured-image-158.jpg";
+
   const explicitImageOverrides: Record<string, string> = {
     "rollenspel-escort": "/images/service-type/serivce-roleplay.jpg.avif",
   };
 
   const wpUploadsPrefix = "https://desire-escorts.nl/wp-content/uploads/";
+
   const toLocalRepoImage = (imageUrl: string): string => {
     if (!imageUrl.startsWith(wpUploadsPrefix)) {
       return imageUrl;
     }
-
     const filename = imageUrl.slice(wpUploadsPrefix.length);
     return `/images/service-type/${filename}`;
   };
 
-  const explicitImage = explicitImageOverrides[page.slug];
-  if (explicitImage) {
-    return {
-      ...page,
-      primaryImageUrl: explicitImage,
-      ogImageUrl: explicitImage,
-    };
-  }
+  const localImageExists = (localPath: string): boolean => {
+    try {
+      const fullPath = path.join(process.cwd(), "public", localPath);
+      return fs.existsSync(fullPath);
+    } catch {
+      return false;
+    }
+  };
 
-  const curatedImageIsWpUrl = page.primaryImageUrl.startsWith(wpUploadsPrefix);
-  if (curatedImageIsWpUrl) {
-    const localImage = toLocalRepoImage(page.primaryImageUrl);
-    return {
-      ...page,
-      primaryImageUrl: localImage,
-      ogImageUrl: localImage,
-    };
-  }
+  const resolveImage = (): string => {
+    const explicitImage = explicitImageOverrides[page.slug];
+    if (explicitImage && localImageExists(explicitImage)) {
+      return explicitImage;
+    }
 
-  const legacyImage =
-    getLegacyPageSnapshot(page.slug, page.title)?.imageUrl ??
-    getLivePageImageBySlug(page.slug);
+    const curatedImageIsWpUrl = page.primaryImageUrl.startsWith(wpUploadsPrefix);
+    if (curatedImageIsWpUrl) {
+      const localImage = toLocalRepoImage(page.primaryImageUrl);
+      if (localImageExists(localImage)) {
+        return localImage;
+      }
+    }
 
-  if (legacyImage) {
-    const localImage = toLocalRepoImage(legacyImage);
-    return {
-      ...page,
-      primaryImageUrl: localImage,
-      ogImageUrl: localImage,
-    };
-  }
+    const legacyImage =
+      getLegacyPageSnapshot(page.slug, page.title)?.imageUrl ??
+      getLivePageImageBySlug(page.slug);
 
-  return page;
+    if (legacyImage) {
+      const localImage = toLocalRepoImage(legacyImage);
+      if (localImageExists(localImage)) {
+        return localImage;
+      }
+    }
+
+    return FALLBACK_IMAGE;
+  };
+
+  const resolvedImage = resolveImage();
+
+  return {
+    ...page,
+    primaryImageUrl: resolvedImage,
+    ogImageUrl: resolvedImage,
+  };
 }
 
 const allServiceTypeDetailPagesRaw: ServiceTypeDetailPageData[] = [

@@ -82,13 +82,30 @@ const SLUG_FILTER_MAP: Record<string, FilterConfig> = {
 };
 
 /**
+ * Normalize string for fuzzy service matching.
+ * Handles variations like "erotische-massage" vs "Erotische Massage" vs "erotischemassage"
+ */
+function normalizeServiceSlug(slug: string): string {
+  return slug.toLowerCase().replace(/[-_\s]/g, "");
+}
+
+/**
  * Apply filter to profiles based on configuration.
  */
 function applyFilter(profiles: Profile[], config: FilterConfig): Profile[] {
   switch (config.type) {
     case "service": {
       const serviceSlug = config.value as string;
-      return profiles.filter((p) => p.services.includes(serviceSlug));
+      const normalizedTarget = normalizeServiceSlug(serviceSlug);
+      return profiles.filter((p) =>
+        p.services.some(
+          (s) =>
+            s === serviceSlug ||
+            normalizeServiceSlug(s) === normalizedTarget ||
+            s.toLowerCase().includes(normalizedTarget) ||
+            normalizedTarget.includes(normalizeServiceSlug(s))
+        )
+      );
     }
 
     case "hairColor": {

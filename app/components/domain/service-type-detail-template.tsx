@@ -3,6 +3,11 @@ import { Award, CheckCircle2, Clock3, Euro, ShieldCheck, Users } from "lucide-re
 import { getProfiles, profilesToCardProps } from "@/lib/api";
 import { getFilteredProfiles, getProfileSectionTitle } from "@/lib/api/profile-filters";
 import type { ServiceTypeDetailPageData } from "@/lib/data/service-type-detail-pages";
+import {
+  TOP_SERVICES_BY_CLICKS,
+  TOP_TYPES_BY_CLICKS,
+  STANDARD_LOCATIONS,
+} from "@/lib/data/service-type-detail-pages";
 import { ProfileCard } from "./profile-card";
 import { TemplateHeroGlass } from "./template-hero-glass";
 import { FAQ } from "./faq";
@@ -282,109 +287,103 @@ export async function ServiceTypeDetailTemplate({
         </PageSection>
       )}
 
-      {/* Related Services/Types Grid */}
+      {/* Populaire Services/Types Grid */}
       <PageSection size="sm">
         <StaggerContainer className="grid gap-6 lg:grid-cols-2" staggerDelay={0.09}>
-          {/* Related Services */}
-          {data.relatedServices.length > 0 && (
-            <StaggerItem>
-              <div className="flex h-full flex-col rounded-luxury border border-white/10 bg-surface/25 p-6">
-                <h3 className="font-heading text-xl font-bold text-foreground">
-                  {isNl ? "Gerelateerde Services" : "Related Services"}
-                </h3>
-                <p className="mt-2 text-sm text-foreground/65">
-                  {isNl
-                    ? "Ontdek aanvullende services die goed combineren."
-                    : "Discover complementary services that combine well."}
-                </p>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {data.relatedServices.map((service) => (
-                    <li key={service.slug}>
-                      <Link
-                        href={`/${service.slug}`}
-                        className="inline-flex rounded-luxury border border-white bg-[#161E21] px-3.5 py-2 text-sm text-foreground/80 transition-colors hover:border-primary/30 hover:text-primary"
-                      >
-                        {isNl ? service.label : service.labelEn ?? service.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/services" className="mt-auto pt-4 text-sm text-primary hover:underline">
-                  {isNl ? "Bekijk alle services" : "View all services"}
-                </Link>
-              </div>
-            </StaggerItem>
-          )}
-
-          {/* Related Types */}
-          {data.relatedTypes.length > 0 && (
-            <StaggerItem>
-              <div className="flex h-full flex-col rounded-luxury border border-white/10 bg-surface/25 p-6">
-                <h3 className="font-heading text-xl font-bold text-foreground">
-                  {isNl ? "Populaire Escort Types" : "Popular Escort Types"}
-                </h3>
-                <p className="mt-2 text-sm text-foreground/65">
-                  {isNl
-                    ? "Filter op je voorkeurstype voor de perfecte match."
-                    : "Filter by your preferred type for the perfect match."}
-                </p>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {data.relatedTypes.map((type) => (
-                    <li key={type.slug}>
-                      <Link
-                        href={`/${type.slug}`}
-                        className="inline-flex items-center gap-2 rounded-luxury border border-white bg-[#161E21] px-3.5 py-2 text-sm text-foreground/80 transition-colors hover:border-primary/30 hover:text-primary"
-                      >
-                        <Users className="h-4 w-4 text-primary/60" />
-                        {isNl ? type.label : type.labelEn ?? type.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/services" className="mt-auto pt-4 text-sm text-primary hover:underline">
-                  {isNl ? "Bekijk alle types" : "View all types"}
-                </Link>
-              </div>
-            </StaggerItem>
-          )}
-        </StaggerContainer>
-      </PageSection>
-
-      {/* Location Links */}
-      {data.relatedLocations.length > 0 && (
-        <PageSection size="sm">
-          <ScrollReveal delay={0.1}>
-            <div className="rounded-luxury border border-white/10 bg-surface/25 p-6">
+          {/* Populaire Services - Top 5 by clicks */}
+          <StaggerItem>
+            <div className="flex h-full flex-col rounded-luxury border border-white/10 bg-surface/25 p-6">
               <h3 className="font-heading text-xl font-bold text-foreground">
-                {isNl ? "Beschikbaar in deze Steden" : "Available in these Cities"}
+                {isNl ? "Populaire Services" : "Popular Services"}
               </h3>
               <p className="mt-2 text-sm text-foreground/65">
                 {isNl
-                  ? `${data.title} is beschikbaar in heel Nederland. Populaire locaties:`
-                  : `${data.titleEn} is available throughout the Netherlands. Popular locations:`}
+                  ? "Onze meest gevraagde escort services."
+                  : "Our most requested escort services."}
               </p>
               <ul className="mt-4 flex flex-wrap gap-2">
-                {data.relatedLocations.map((location) => (
-                  <li key={location.slug}>
+                {TOP_SERVICES_BY_CLICKS.map((service) => (
+                  <li key={service.slug}>
                     <Link
-                      href={`/${location.slug}`}
+                      href={`/${service.slug}`}
                       className="inline-flex rounded-luxury border border-white bg-[#161E21] px-3.5 py-2 text-sm text-foreground/80 transition-colors hover:border-primary/30 hover:text-primary"
                     >
-                      {location.label}
+                      {isNl ? service.label : service.labelEn ?? service.label}
                     </Link>
                   </li>
                 ))}
               </ul>
-              <Link
-                href="/escort-in-nederland"
-                className="mt-4 inline-block text-sm text-primary hover:underline"
-              >
-                {isNl ? "Bekijk alle locaties" : "View all locations"}
+              <Link href="/services" className="mt-auto pt-4 text-sm text-primary hover:underline">
+                {isNl ? "Bekijk alle services" : "View all services"}
               </Link>
             </div>
-          </ScrollReveal>
-        </PageSection>
-      )}
+          </StaggerItem>
+
+          {/* Populaire Escort Types - Top 5 by clicks */}
+          <StaggerItem>
+            <div className="flex h-full flex-col rounded-luxury border border-white/10 bg-surface/25 p-6">
+              <h3 className="font-heading text-xl font-bold text-foreground">
+                {isNl ? "Populaire Escort Types" : "Popular Escort Types"}
+              </h3>
+              <p className="mt-2 text-sm text-foreground/65">
+                {isNl
+                  ? "Filter op je voorkeurstype voor de perfecte match."
+                  : "Filter by your preferred type for the perfect match."}
+              </p>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {TOP_TYPES_BY_CLICKS.map((type) => (
+                  <li key={type.slug}>
+                    <Link
+                      href={`/${type.slug}`}
+                      className="inline-flex items-center gap-2 rounded-luxury border border-white bg-[#161E21] px-3.5 py-2 text-sm text-foreground/80 transition-colors hover:border-primary/30 hover:text-primary"
+                    >
+                      <Users className="h-4 w-4 text-primary/60" />
+                      {isNl ? type.label : type.labelEn ?? type.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <Link href="/services" className="mt-auto pt-4 text-sm text-primary hover:underline">
+                {isNl ? "Bekijk alle types" : "View all types"}
+              </Link>
+            </div>
+          </StaggerItem>
+        </StaggerContainer>
+      </PageSection>
+
+      {/* Location Links */}
+      <PageSection size="sm">
+        <ScrollReveal delay={0.1}>
+          <div className="rounded-luxury border border-white/10 bg-surface/25 p-6">
+            <h3 className="font-heading text-xl font-bold text-foreground">
+              {isNl ? "Beschikbaar in deze Steden" : "Available in these Cities"}
+            </h3>
+            <p className="mt-2 text-sm text-foreground/65">
+              {isNl
+                ? `${data.title} is beschikbaar in heel Nederland. Populaire locaties:`
+                : `${data.titleEn} is available throughout the Netherlands. Popular locations:`}
+            </p>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {STANDARD_LOCATIONS.map((location) => (
+                <li key={location.slug}>
+                  <Link
+                    href={`/${location.slug}`}
+                    className="inline-flex rounded-luxury border border-white bg-[#161E21] px-3.5 py-2 text-sm text-foreground/80 transition-colors hover:border-primary/30 hover:text-primary"
+                  >
+                    {location.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/escort-in-nederland"
+              className="mt-4 inline-block text-sm text-primary hover:underline"
+            >
+              {isNl ? "Bekijk alle locaties" : "View all locations"}
+            </Link>
+          </div>
+        </ScrollReveal>
+      </PageSection>
 
       {/* Testimonial */}
       {data.quotePool.length > 0 && (
