@@ -172,19 +172,21 @@ export default async function Home() {
       {/* 2. Above-the-fold USP strip */}
       <div className="relative left-1/2 right-1/2 w-screen -translate-x-1/2 border-y border-white/10 bg-surface/30">
         <Container size="2xl">
-          <div className="grid grid-cols-1 divide-y divide-white/10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:divide-y-0 lg:divide-x lg:divide-white/10">
+          <StaggerContainer
+            className="grid grid-cols-1 divide-y divide-white/10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:divide-y-0 lg:divide-x lg:divide-white/10"
+            staggerDelay={0.08}
+          >
             {usps.map((usp) => (
-              <div
-                key={usp.title}
-                className="flex min-h-[64px] items-center justify-center gap-2 px-3 py-3 text-center"
-              >
-                <span className="shrink-0 text-primary">{usp.icon}</span>
-                <span className="text-xs font-medium uppercase tracking-wide text-foreground/85">
-                  {usp.title}
-                </span>
-              </div>
+              <StaggerItem key={usp.title} animation="fade-up">
+                <div className="flex min-h-[64px] items-center justify-center gap-2 px-3 py-3 text-center">
+                  <span className="shrink-0 text-primary">{usp.icon}</span>
+                  <span className="text-xs font-medium uppercase tracking-wide text-foreground/85">
+                    {usp.title}
+                  </span>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </Container>
       </div>
 
