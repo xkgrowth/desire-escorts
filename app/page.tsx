@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import { HomepageHero } from "./components/domain/homepage-hero";
 import { ProfileCard } from "./components/domain/profile-card";
-import { USPBar } from "./components/domain/usp-bar";
 import { FAQ } from "./components/domain/faq";
 import { CTASection } from "./components/domain/cta-section";
 import { PageWrapper, Section, Container, Grid } from "./components/ui/page-wrapper";
@@ -83,24 +82,20 @@ export default async function Home() {
 
   const usps = [
     {
-      icon: <MapPin className="w-6 h-6" />,
+      icon: <MapPin className="h-4 w-4" />,
       title: "Heel Nederland",
-      description: "Service in elke regio",
     },
     {
-      icon: <Star className="w-6 h-6" />,
+      icon: <Star className="h-4 w-4" />,
       title: "Scherpe Tarieven",
-      description: "Vanaf €160 all-in",
     },
     {
-      icon: <CheckCircle className="w-6 h-6" />,
+      icon: <CheckCircle className="h-4 w-4" />,
       title: "20 Jaar Ervaring",
-      description: "Betrouwbaar & discreet",
     },
     {
-      icon: <Clock className="w-6 h-6" />,
+      icon: <Clock className="h-4 w-4" />,
       title: "Snelle Service",
-      description: "Binnen 1 uur mogelijk",
     },
   ];
 
@@ -138,6 +133,7 @@ export default async function Home() {
           <HomepageHero
             profiles={heroProfiles}
             availableCount={availableProfilesCount}
+            usps={usps}
           />
         </ScrollReveal>
       </div>
@@ -219,24 +215,24 @@ export default async function Home() {
             </div>
             <div className="rounded-luxury border border-white/10 bg-surface/40 p-6 md:p-8">
               <h3 className="font-heading text-2xl font-bold mb-4">
-                Waarom bezoekers voor Desire kiezen
+                Waarom bezoekers ons vertrouwen
               </h3>
+              <p className="mb-4 text-foreground/70">
+                Vanaf het eerste contact houden we het helder en discreet. Je ziet direct
+                wie beschikbaar is, krijgt snel bevestiging en weet vooraf waar je aan toe bent.
+              </p>
               <ul className="space-y-3 text-foreground/75">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                  <span>Geverifieerde profielen met live beschikbaarheidsstatus</span>
+                  <span>Live overzicht van geverifieerde profielen en actuele beschikbaarheid</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <ShieldCheck className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <span>Discreet contact en duidelijke afhandeling, zonder onnodige stappen</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                  <span>Landelijke dekking met snelle service in Amsterdam en Randstad</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                  <span>Direct contact en snelle bevestiging van je aanvraag</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                  <span>Discretie en privacy als vaste standaard</span>
+                  <span>Snelle opvolging in heel Nederland, met focus op Randstad en grote steden</span>
                 </li>
               </ul>
             </div>
@@ -245,21 +241,7 @@ export default async function Home() {
         </Container>
       </Section>
 
-      {/* 4. Why Choose Us (Condensed) */}
-      <Section glow="mid" className="bg-surface/30 border-y border-white/5">
-        <Container size="2xl">
-          <ScrollReveal delay={0.07}>
-            <USPBar 
-              eyebrow="Waarom Desire"
-              title="Betrouwbaar & Discreet"
-              items={usps}
-              variant="horizontal"
-            />
-          </ScrollReveal>
-        </Container>
-      </Section>
-
-      {/* 5. Services Overview */}
+      {/* 4. Services Overview */}
       <Section size="lg">
         <Container size="2xl">
           <ScrollReveal delay={0.08}>
@@ -315,7 +297,7 @@ export default async function Home() {
         </Container>
       </Section>
 
-      {/* 6. Hoe Werkt Boeken */}
+      {/* 5. Hoe Werkt Boeken */}
       <Section size="md">
         <Container size="2xl">
           <ScrollReveal delay={0.08}>
@@ -344,7 +326,7 @@ export default async function Home() {
         </Container>
       </Section>
 
-      {/* 7. Direct Contact CTA */}
+      {/* 6. Direct Contact CTA */}
       <Section size="lg">
         <Container size="2xl">
           <ScrollReveal delay={0.1}>
@@ -353,7 +335,7 @@ export default async function Home() {
         </Container>
       </Section>
 
-      {/* 8. Service Areas / Locaties */}
+      {/* 7. Service Areas / Locaties */}
       <Section size="lg" className="bg-surface/10">
         <Container size="2xl">
           <ScrollReveal delay={0.08}>
@@ -404,7 +386,7 @@ export default async function Home() {
         </Container>
       </Section>
 
-      {/* 9. Vertrouwen & Discretie */}
+      {/* 8. Vertrouwen & Discretie */}
       <Section size="md">
         <Container size="2xl">
           <ScrollReveal delay={0.09}>
@@ -454,7 +436,7 @@ export default async function Home() {
         </Container>
       </Section>
 
-      {/* 10. FAQ */}
+      {/* 9. FAQ */}
       <Section className="border-t border-white/5">
         <Container size="2xl">
           <ScrollReveal delay={0.11}>
@@ -476,7 +458,7 @@ export default async function Home() {
         </Container>
       </Section>
 
-      {/* 11. Kennisbank Links */}
+      {/* 10. Kennisbank Links */}
       <Section size="sm">
         <Container size="2xl">
           <ScrollReveal delay={0.1}>

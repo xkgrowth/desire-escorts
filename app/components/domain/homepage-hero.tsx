@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Badge } from "../ui/badge";
@@ -18,9 +19,15 @@ type HeroProfile = {
   rankScore?: number;
 };
 
+type HeroUSP = {
+  icon: ReactNode;
+  title: string;
+};
+
 type HomepageHeroProps = {
   profiles: HeroProfile[];
   availableCount?: number;
+  usps?: HeroUSP[];
   className?: string;
 };
 
@@ -39,6 +46,7 @@ const avatarPositions = [
 export function HomepageHero({
   profiles,
   availableCount,
+  usps = [],
   className,
 }: HomepageHeroProps) {
   const availableProfiles = useMemo(
@@ -122,6 +130,22 @@ export function HomepageHero({
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
+
+          {usps.length > 0 && (
+            <div className="mt-6 grid grid-cols-2 gap-2 sm:gap-3">
+              {usps.slice(0, 4).map((usp) => (
+                <div
+                  key={usp.title}
+                  className="flex items-center gap-2 rounded-luxury border border-white/12 bg-surface/45 px-3 py-2"
+                >
+                  <span className="text-primary">{usp.icon}</span>
+                  <span className="text-xs font-medium text-foreground/90 sm:text-sm">
+                    {usp.title}
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="flex items-center justify-center">
