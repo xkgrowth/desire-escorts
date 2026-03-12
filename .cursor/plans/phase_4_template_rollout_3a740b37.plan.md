@@ -23,6 +23,9 @@ todos:
   - id: p4-faq-standalone
     content: 4.6.1 Implement standalone FAQ collection page (`/faq/`) with grouped categories, FAQ schema, and contact CTA
     status: completed
+  - id: p4-how-it-works-template
+    content: 4.6.2 Implement How it Works template page (`/hoe-het-werkt/`) with conversion steps and trust/discretion messaging
+    status: pending
   - id: p4-legal-pages
     content: 4.7 Apply design system to legal/license pages and remaining long-tail pages
     status: pending
@@ -237,6 +240,7 @@ These buttons currently don't have functional chat widget integration.
 6. Knowledge Centre Overview (`/kennisbank/`, `/en/knowledge-centre/`)
 7. Knowledge Centre Detail (`/kennisbank/[category]/[slug]/`)
 8. FAQ Page (`/faq/`, `/en/faq/`)
+9. How It Works Page (`/hoe-het-werkt/`, `/en/how-it-works/`)
 
 ### Tasks
 
@@ -262,6 +266,14 @@ These buttons currently don't have functional chat widget integration.
 - [x] Added `FAQPage` and `BreadcrumbList` JSON-LD for `/faq/`
 - [x] Added contact CTA block under FAQ content for unanswered questions
 - [x] Reserved `faq` root slug in `app/[slug]/page.tsx` to avoid dynamic route collisions
+
+### Utility Subtasks (C.6)
+
+- [x] C.6.1 FAQ template page (`/faq/`) - NL complete
+- [ ] C.6.2 Contact template page (`/contact/`)
+- [x] C.6.3 Rates template page (`/prijzen/`)
+- [ ] C.6.4 Legal template pages (`/algemene-voorwaarden/`, `/privacybeleid/`, `/cookiebeleid/`, `/licentie/`)
+- [ ] C.6.5 How it Works template page (`/hoe-het-werkt/`)
 
 ---
 

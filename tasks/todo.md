@@ -273,6 +273,10 @@
 - [ ] C.4 Implement Location, Types, Services templates (overview + detail)
 - [ ] C.5 Implement Blog + Knowledge Centre templates
 - [ ] C.6 Implement utility pages (FAQ, Contact, Rates, Legal)
+  - [x] C.6.1 Implement standalone FAQ page (`/faq/`) (NL)
+  - [ ] C.6.2 Implement Contact page
+  - [x] C.6.3 Implement Rates page (`/prijzen/`)
+  - [ ] C.6.4 Implement Legal pages
 
 ## Review Notes (Phase C.2 + C.3)
 
