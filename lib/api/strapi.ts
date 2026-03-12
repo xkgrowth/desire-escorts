@@ -42,10 +42,15 @@ async function fetchStrapi<T>(endpoint: string): Promise<T> {
     throw new Error(`Strapi request failed ${response.status}: ${text}`);
   }
 
+  const trimmed = text.replace(/^\uFEFF/, "").trim();
+  // Some APIs prepend )]}' or similar; strip to first { for parse
+  const start = trimmed.indexOf("{");
+  const toParse = start >= 0 ? trimmed.slice(start) : trimmed;
+
   try {
-    return JSON.parse(text) as T;
+    return JSON.parse(toParse) as T;
   } catch (err) {
-    const snippet = text.slice(0, 200).replace(/\n/g, " ");
+    const snippet = trimmed.slice(0, 200).replace(/\n/g, " ");
     const msg = err instanceof Error ? err.message : String(err);
     throw new Error(
       `Strapi returned invalid JSON: ${msg}. Body start: ${snippet}`

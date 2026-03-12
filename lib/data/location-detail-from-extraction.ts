@@ -10,6 +10,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { getLocationRegistryEntry } from "./location-registry";
+import { TIER_3_FIRST_100_SLUGS } from "./location-batches";
 import { locationDetailPagesBatch, batchOverrides } from "./location-detail-pages-batch";
 import {
   getLocationPricingEstimateBySlug,
@@ -96,6 +97,66 @@ function getDataRoot(): string {
   return path.join(process.cwd(), "data");
 }
 
+/** Parse JSON; if "after JSON at position" error, parse only the first complete object (handles trailing content or leading null/prefix). */
+function parseJsonSafe(content: string, filePath: string): unknown {
+  const trimmed = content.replace(/^\uFEFF/, "").trim(); // strip BOM
+  try {
+    return JSON.parse(trimmed);
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    if (!msg.includes("after JSON") && !msg.includes("position")) {
+      if (!trimmed.startsWith("{")) {
+        throw new Error(
+          `Expected JSON object in ${filePath}, got start: ${trimmed.slice(0, 100)}`
+        );
+      }
+      throw err;
+    }
+    // Extract first complete {...} and retry (handles e.g. null{"bySlug":...} or {...}trailing)
+    const start = trimmed.indexOf("{");
+    if (start === -1) throw err;
+    let depth = 0;
+    let inString = false;
+    let escape = false;
+    let quote = "";
+    for (let i = start; i < trimmed.length; i++) {
+      const c = trimmed[i];
+      if (inString) {
+        if (escape) {
+          escape = false;
+          continue;
+        }
+        if (c === "\\") {
+          escape = true;
+          continue;
+        }
+        if (c === quote) {
+          inString = false;
+          continue;
+        }
+        continue;
+      }
+      if (c === '"' || c === "'") {
+        inString = true;
+        quote = c;
+        continue;
+      }
+      if (c === "{") depth++;
+      else if (c === "}") {
+        depth--;
+        if (depth === 0) {
+          try {
+            return JSON.parse(trimmed.slice(start, i + 1));
+          } catch {
+            throw err;
+          }
+        }
+      }
+    }
+    throw err;
+  }
+}
+
 function loadExtractedContent(): ExtractedBySlug {
   if (cachedExtracted) return cachedExtracted;
   const filePath = path.join(getDataRoot(), "firecrawl", "location-extracted-content.json");
@@ -103,14 +164,10 @@ function loadExtractedContent(): ExtractedBySlug {
     cachedExtracted = {};
     return cachedExtracted;
   }
-  const content = fs.readFileSync(filePath, "utf8").trim();
-  if (!content.startsWith("{")) {
-    throw new Error(
-      `Expected JSON object in ${filePath}, got start: ${content.slice(0, 100)}`
-    );
-  }
-  const raw = JSON.parse(content);
-  cachedExtracted = (raw.bySlug ?? raw) as ExtractedBySlug;
+  const content = fs.readFileSync(filePath, "utf8");
+  const raw = parseJsonSafe(content, filePath);
+  cachedExtracted = (raw && typeof raw === "object" && "bySlug" in raw ? (raw as { bySlug?: ExtractedBySlug }).bySlug : raw) as ExtractedBySlug;
+  if (!cachedExtracted || typeof cachedExtracted !== "object") cachedExtracted = {};
   return cachedExtracted;
 }
 
@@ -121,14 +178,12 @@ function loadImageManifest(): Map<string, ImageManifestEntry> {
     cachedImageManifest = new Map();
     return cachedImageManifest;
   }
-  const content = fs.readFileSync(filePath, "utf8").trim();
-  if (!content.startsWith("{")) {
-    throw new Error(
-      `Expected JSON object in ${filePath}, got start: ${content.slice(0, 100)}`
-    );
-  }
-  const raw = JSON.parse(content);
-  const entries = Array.isArray(raw.entries) ? raw.entries : [];
+  const content = fs.readFileSync(filePath, "utf8");
+  const raw = parseJsonSafe(content, filePath);
+  const entries =
+    raw && typeof raw === "object" && Array.isArray((raw as { entries?: unknown[] }).entries)
+      ? (raw as { entries: unknown[] }).entries
+      : [];
   cachedImageManifest = new Map(
     entries.map((e: { slug: string; primary?: { file: string; alt?: string }; secondary?: { file: string; alt?: string } }) => [
       e.slug,
@@ -271,6 +326,12 @@ export function buildLocationDetailPageData(slug: string): LocationDetailPageDat
  * Resolve location page data: prefer static batch (Batch 1 + Haarlem/Amstelveen), then build from extraction and apply Batch 2 overrides when present.
  * Image alt text is always taken from the location image manifest when we use the manifest image, so the alt on the page matches the actual image assets.
  */
+const TIER_3_FIRST_100_SET = new Set(TIER_3_FIRST_100_SLUGS);
+
+/**
+ * For Tier 3 first 100: prefer extraction narrative and hotels when present,
+ * so "Wat je kunt verwachten" and hotel list use scraped content instead of generic overrides.
+ */
 export function getLocationDetailDataForSlug(slug: string): LocationDetailPageData | null {
   const batch = locationDetailPagesBatch[slug];
   if (batch) {
@@ -280,5 +341,14 @@ export function getLocationDetailDataForSlug(slug: string): LocationDetailPageDa
   if (!built) return null;
   const overrides = batchOverrides[slug];
   const merged = overrides ? { ...built, ...overrides } : built;
+  if (overrides && TIER_3_FIRST_100_SET.has(slug)) {
+    const extracted = loadExtractedContent()[slug];
+    if (extracted?.locationNarrative?.trim()) {
+      merged.locationNarrative = built.locationNarrative;
+    }
+    if (extracted?.hotels?.length) {
+      merged.hotels = built.hotels;
+    }
+  }
   return applyManifestAlt(slug, merged, overrides);
 }

@@ -59,6 +59,12 @@ const remainingTier3 = locationRegistry
 const BATCH_4_SIZE = 30;
 const BATCH_5_SIZE = 50;
 
+/** First 100 Tier 3 locations (for "Build Tier 3 first 100" batch). */
+export const TIER_3_FIRST_100_SLUGS = remainingTier3.slice(0, 100);
+
+/** Remaining Tier 3 after the first 100 (~95). */
+export const TIER_3_REMAINING_SLUGS = remainingTier3.slice(100);
+
 const BATCH_4_SLUGS = remainingTier3.slice(0, BATCH_4_SIZE);
 const BATCH_5_SLUGS = remainingTier3.slice(BATCH_4_SIZE, BATCH_4_SIZE + BATCH_5_SIZE);
 const BATCH_6_SLUGS = remainingTier3.slice(BATCH_4_SIZE + BATCH_5_SIZE);

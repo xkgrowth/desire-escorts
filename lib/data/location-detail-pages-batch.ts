@@ -6,6 +6,9 @@ import {
   type LocationHotel,
   type LocationLinkItem,
 } from "./location-detail-pages";
+import { TIER_3_FIRST_100_SLUGS } from "./location-batches";
+import { getTier3LocationHotels } from "./location-hotels-tier3";
+import { getLocationRegistryEntry } from "./location-registry";
 
 const defaultUsps = [
   "Alle foto's van escorts zijn echt, geen AI-profielen",
@@ -372,9 +375,57 @@ function getBatch3Faqs(city: string): LocationFaqItem[] {
   ];
 }
 
+/** Hero variants for Tier 3 (index 0–3). Location-focused; no "live chat/WhatsApp" to avoid duplicating the contact block below. */
+function getTier3HeroIntro(city: string, variant: number): string {
+  const v = variant % 4;
+  if (v === 0)
+    return `Escorts in ${city}: geverifieerde profielen en duidelijke afspraken. Meestal binnen 1–2 uur in te plannen in het centrum en omgeving.`;
+  if (v === 1)
+    return `Wil je een escort in ${city}? We bieden geverifieerde profielen, transparante tarieven en snelle inplanning in de regio.`;
+  if (v === 2)
+    return `Escort service ${city} met geverifieerde profielen en heldere prijzen. Snel in te plannen in het centrum en omgeving.`;
+  return `In ${city} kun je discreet een escort boeken: geverifieerde profielen, duidelijke afspraken en snelle beschikbaarheid in de regio.`;
+}
+
+/** Narrative variants for Tier 3 (index 0–3) — demand / pattern / area / hotel-led. */
+function getTier3Narrative(city: string, variant: number): string {
+  const v = variant % 4;
+  if (v === 0)
+    return `${city} heeft veel vraag vanuit het centrum en omgeving. Afspraken plannen we meestal binnen 1–2 uur; last-minute stemmen we af via live chat of WhatsApp. Hotelafspraken combineren we vaak met dinner date of ontspannende massage.`;
+  if (v === 1)
+    return `${city} is populair voor avond- en weekendboekingen; vroeg boeken geeft de meeste keuze. Rond het centrum en nabij het station plannen we het snelst. Hotelafspraken combineren we vaak met dinner date of een rustige privé-ontmoeting.`;
+  if (v === 2)
+    return `Rond het centrum van ${city} plannen we escort-afspraken het snelst. 1–2 uur vooraf boeken geeft de beste match; last-minute kan via live chat of WhatsApp. Hotelafspraken in ${city} combineren we regelmatig met dinner date of ontspannende massage.`;
+  return `Hotelafspraken in ${city} zijn populair in het centrum en omgeving. We plannen meestal binnen 1–2 uur; voor last-minute stemmen we beschikbaarheid en voorkeuren met je af. Vaak gecombineerd met dinner date of ontspannende massage.`;
+}
+
+function getTier3Hotels(city: string): LocationHotel[] {
+  return [
+    { name: `Hotel in ${city}`, description: "Centraal gelegen, discrete ontvangst." },
+    { name: "Hotel nabij het centrum", description: `Goede bereikbaarheid voor afspraken in ${city}.` },
+    { name: "Hotel in de regio", description: "Rustige setting voor private ontmoetingen." },
+  ];
+}
+
+function buildTier3First100Overrides(): Record<string, LocationDetailPageOverrides> {
+  const out: Record<string, LocationDetailPageOverrides> = {};
+  TIER_3_FIRST_100_SLUGS.forEach((slug, index) => {
+    const entry = getLocationRegistryEntry(slug);
+    const city = entry?.city ?? slug.replace(/^escort-/, "").replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    const realHotels = getTier3LocationHotels(slug);
+    out[slug] = {
+      heroIntro: getTier3HeroIntro(city, index),
+      locationNarrative: getTier3Narrative(city, index),
+      ...(realHotels && realHotels.length > 0 && { hotels: realHotels }),
+      faqs: getBatch3Faqs(city),
+    };
+  });
+  return out;
+}
+
 export type LocationDetailPageOverrides = Partial<LocationDetailPageData>;
 
-export const batchOverrides: Record<string, LocationDetailPageOverrides> = {
+const manualBatchOverrides: Record<string, LocationDetailPageOverrides> = {
   "escort-rotterdam": {
     heroIntro:
       "Escort service Rotterdam: snelle beschikbaarheid, geverifieerde profielen en heldere prijsafspraken. Boek discreet via live chat of WhatsApp.",
@@ -498,4 +549,9 @@ export const batchOverrides: Record<string, LocationDetailPageOverrides> = {
     hotels: hilversumHotels,
     faqs: getBatch3Faqs("Hilversum"),
   },
+};
+
+export const batchOverrides: Record<string, LocationDetailPageOverrides> = {
+  ...manualBatchOverrides,
+  ...buildTier3First100Overrides(),
 };
