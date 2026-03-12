@@ -3642,6 +3642,1706 @@ Discuss beforehand what the wishes are. Is it purely entertainment or is there r
   trustBadgesEn: ["Group experience", "Professional", "Discreet"],
 };
 
+/**
+ * Blonde Escort Type Page
+ * High search volume type
+ */
+export const blondeEscortPageData: ServiceTypeDetailPageData = {
+  slug: "blonde-escort-dames",
+  pageType: "type",
+  seoTitle: "Blonde Escorts - Aantrekkelijke Blondines | Vanaf €160",
+  title: "Blonde Escorts",
+  titleEn: "Blonde Escorts",
+  metaDescription:
+    "Boek een blonde escort bij Desire Escorts. ✓ Natuurlijk of geverfd ✓ Diverse types blondines ✓ 24/7 beschikbaar in heel Nederland.",
+  metaDescriptionEn:
+    "Book a blonde escort at Desire Escorts. ✓ Natural or dyed ✓ Various types of blondes ✓ Available 24/7 throughout the Netherlands.",
+  heroIntro:
+    "Blondines zijn tijdloos populair. Onze blonde escorts variëren van platinablond tot donkerblond, van Scandinavisch tot Oost-Europees. Vind de blondine die bij jouw voorkeur past.",
+  heroIntroEn:
+    "Blondes are timelessly popular. Our blonde escorts range from platinum blonde to dark blonde, from Scandinavian to Eastern European. Find the blonde that matches your preference.",
+  usps: ["Diverse blondtinten", "Natuurlijk & geverfd", "Alle types"],
+  uspsEn: ["Various blonde shades", "Natural & dyed", "All types"],
+  priceFrom: "€160",
+  minDuration: "1 uur",
+  responseTime: "90 min",
+  coreContentTitle: "Blonde Escorts bij Desire",
+  coreContentTitleEn: "Blonde Escorts at Desire",
+  coreContent: `Blonde escorts zijn een van de meest gevraagde types. Of je nu houdt van ijsblonde Scandinavische schoonheden, zonnige goudblonde dames of natuurlijke donkerblondes — wij hebben ze.
+
+Onze selectie omvat zowel natuurlijk blonde escorts als dames die hun haar laten kleuren. De kwaliteit van het blond en de verzorging is altijd top.
+
+Blondines hebben vaak een bepaalde uitstraling: fris, energiek en aantrekkelijk. Combineer met andere voorkeuren zoals leeftijd, lengte of services.`,
+  coreContentEn: `Blonde escorts are one of the most requested types. Whether you like ice-blonde Scandinavian beauties, sunny golden blonde ladies or natural dark blondes — we have them.
+
+Our selection includes both naturally blonde escorts and ladies who dye their hair. The quality of the blonde and grooming is always top.
+
+Blondes often have a certain appearance: fresh, energetic and attractive. Combine with other preferences like age, height or services.`,
+  benefitsTitle: "Onze Blonde Escorts",
+  benefitsTitleEn: "Our Blonde Escorts",
+  benefits: [
+    { title: "Diverse tinten", description: "Van platina tot donkerblond, alle schakeringen." },
+    { title: "Verschillende achtergronden", description: "Nederlandse, Poolse, Roemeense blondines en meer." },
+    { title: "Alle leeftijden", description: "Jonge blondines tot mature blonde dames." },
+    { title: "Combineerbaar", description: "Filter op blonde + andere voorkeuren." },
+  ],
+  benefitsEn: [
+    { title: "Various shades", description: "From platinum to dark blonde, all variations." },
+    { title: "Different backgrounds", description: "Dutch, Polish, Romanian blondes and more." },
+    { title: "All ages", description: "Young blondes to mature blonde ladies." },
+    { title: "Combinable", description: "Filter on blonde + other preferences." },
+  ],
+  pricingTitle: "Tarieven Blonde Escorts",
+  pricingTitleEn: "Blonde Escort Rates",
+  pricingContent:
+    "Blonde escorts beginnen bij €160 per uur. De prijs hangt af van de specifieke dame, niet de haarkleur.",
+  pricingContentEn:
+    "Blonde escorts start at €160 per hour. The price depends on the specific lady, not the hair color.",
+  faqs: [
+    { question: "Zijn alle blonde escorts natuurlijk blond?", answer: "Niet allemaal. Sommige zijn natuurlijk blond, anderen verven. De kwaliteit is altijd hoog." },
+    { question: "Kan ik een specifieke tint blond aanvragen?", answer: "Ja, geef je voorkeur door. We hebben platina, goudblond, donkerblond en meer." },
+    { question: "Zijn er Nederlandse blondines?", answer: "Ja, we hebben Nederlandse blonde escorts evenals internationaal." },
+    { question: "Kost een blonde escort meer?", answer: "Nee, de prijs is per dame, niet per haarkleur." },
+  ],
+  faqsEn: [
+    { question: "Are all blonde escorts naturally blonde?", answer: "Not all. Some are naturally blonde, others dye. Quality is always high." },
+    { question: "Can I request a specific shade of blonde?", answer: "Yes, share your preference. We have platinum, golden blonde, dark blonde and more." },
+    { question: "Are there Dutch blondes?", answer: "Yes, we have Dutch blonde escorts as well as international." },
+    { question: "Does a blonde escort cost more?", answer: "No, the price is per lady, not per hair color." },
+  ],
+  relatedServices: [
+    { slug: "gfe-escorts", label: "GFE", labelEn: "GFE" },
+    { slug: "dinnerdate-escort", label: "Dinner Date", labelEn: "Dinner Date" },
+    { slug: "hotel-escort", label: "Hotel Escort", labelEn: "Hotel Escort" },
+  ],
+  relatedTypes: [
+    { slug: "brunette-escort-dames", label: "Brunette Escort", labelEn: "Brunette Escort" },
+    { slug: "jonge-escort", label: "Jonge Escort", labelEn: "Young Escort" },
+    { slug: "petite-escort", label: "Petite Escort", labelEn: "Petite Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+    { slug: "escort-den-haag", label: "Den Haag" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/blonde-escort.jpg",
+  primaryImageAlt: "Blonde escorts - aantrekkelijke blondines",
+  primaryImageAltEn: "Blonde escorts - attractive blondes",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/blonde-escort.jpg",
+  quotePool: [
+    "Precies de blondine die ik zocht.",
+    "Natuurlijk blond en prachtig.",
+    "Scandinavische schoonheid, geweldig.",
+  ],
+  trustBadges: ["Diverse blondtinten", "21+ geverifieerd", "Discreet"],
+  trustBadgesEn: ["Various blonde shades", "21+ verified", "Discreet"],
+};
+
+/**
+ * Brunette Escort Type Page
+ */
+export const brunetteEscortPageData: ServiceTypeDetailPageData = {
+  slug: "brunette-escort-dames",
+  pageType: "type",
+  seoTitle: "Brunette Escorts - Donkerharige Schoonheden | Vanaf €160",
+  title: "Brunette Escorts",
+  titleEn: "Brunette Escorts",
+  metaDescription:
+    "Boek een brunette escort bij Desire Escorts. ✓ Donkerbruin tot lichtbruin ✓ Mysterieuze uitstraling ✓ 24/7 beschikbaar in heel Nederland.",
+  metaDescriptionEn:
+    "Book a brunette escort at Desire Escorts. ✓ Dark brown to light brown ✓ Mysterious appearance ✓ Available 24/7 throughout the Netherlands.",
+  heroIntro:
+    "Brunettes hebben een klassieke, mysterieuze aantrekkingskracht. Van donkerbruin tot kastanjebruin, van Zuid-Europees tot Oost-Europees — onze brunette escorts bieden variatie en klasse.",
+  heroIntroEn:
+    "Brunettes have a classic, mysterious attraction. From dark brown to chestnut, from Southern European to Eastern European — our brunette escorts offer variety and class.",
+  usps: ["Klassieke schoonheid", "Diverse bruintinten", "Mysterieuze uitstraling"],
+  uspsEn: ["Classic beauty", "Various brown shades", "Mysterious appearance"],
+  priceFrom: "€160",
+  minDuration: "1 uur",
+  responseTime: "90 min",
+  coreContentTitle: "Brunette Escorts bij Desire",
+  coreContentTitleEn: "Brunette Escorts at Desire",
+  coreContent: `Brunettes staan bekend om hun tijdloze elegantie. Donker haar geeft vaak een mysterieuze, sensuele uitstraling die veel gasten aanspreekt.
+
+Onze brunette escorts variëren van lichtbruin (bijna donkerblond) tot ravenzwart (donkerbruin). Je vindt hier Spaanse, Italiaanse, Poolse en Nederlandse brunettes.
+
+Brunettes passen bij elke gelegenheid: van zakelijk diner tot intieme nacht. Hun klassieke look is nooit verkeerd.`,
+  coreContentEn: `Brunettes are known for their timeless elegance. Dark hair often gives a mysterious, sensual appearance that appeals to many guests.
+
+Our brunette escorts range from light brown (almost dark blonde) to raven black (dark brown). You'll find Spanish, Italian, Polish and Dutch brunettes here.
+
+Brunettes suit any occasion: from business dinner to intimate night. Their classic look is never wrong.`,
+  benefitsTitle: "Onze Brunette Escorts",
+  benefitsTitleEn: "Our Brunette Escorts",
+  benefits: [
+    { title: "Tijdloze elegantie", description: "Brunettes hebben een klassieke aantrekkingskracht." },
+    { title: "Diverse achtergronden", description: "Mediterraan, Oost-Europees, Nederlands en meer." },
+    { title: "Alle types", description: "Van petite brunettes tot lange donkerharige dames." },
+    { title: "Veelzijdig", description: "Past bij elke gelegenheid en setting." },
+  ],
+  benefitsEn: [
+    { title: "Timeless elegance", description: "Brunettes have a classic attraction." },
+    { title: "Various backgrounds", description: "Mediterranean, Eastern European, Dutch and more." },
+    { title: "All types", description: "From petite brunettes to tall dark-haired ladies." },
+    { title: "Versatile", description: "Suits any occasion and setting." },
+  ],
+  pricingTitle: "Tarieven Brunette Escorts",
+  pricingTitleEn: "Brunette Escort Rates",
+  pricingContent:
+    "Brunette escorts beginnen bij €160 per uur. Prijs varieert per dame.",
+  pricingContentEn:
+    "Brunette escorts start at €160 per hour. Price varies per lady.",
+  faqs: [
+    { question: "Wat telt als brunette?", answer: "Van lichtbruin tot donkerbruin en kastanjebruin. Alles tussen blond en zwart." },
+    { question: "Zijn er Zuid-Europese brunettes?", answer: "Ja, we hebben Spaanse, Italiaanse en andere Mediterrane brunettes." },
+    { question: "Kan ik brunette combineren met andere voorkeuren?", answer: "Ja, filter op brunette + leeftijd, lengte, services etc." },
+    { question: "Hebben brunettes een andere prijs?", answer: "Nee, prijs is per dame, niet per haarkleur." },
+  ],
+  faqsEn: [
+    { question: "What counts as brunette?", answer: "From light brown to dark brown and chestnut. Everything between blonde and black." },
+    { question: "Are there Southern European brunettes?", answer: "Yes, we have Spanish, Italian and other Mediterranean brunettes." },
+    { question: "Can I combine brunette with other preferences?", answer: "Yes, filter on brunette + age, height, services etc." },
+    { question: "Do brunettes have a different price?", answer: "No, price is per lady, not per hair color." },
+  ],
+  relatedServices: [
+    { slug: "gfe-escorts", label: "GFE", labelEn: "GFE" },
+    { slug: "dinnerdate-escort", label: "Dinner Date", labelEn: "Dinner Date" },
+    { slug: "hotel-escort", label: "Hotel Escort", labelEn: "Hotel Escort" },
+  ],
+  relatedTypes: [
+    { slug: "blonde-escort-dames", label: "Blonde Escort", labelEn: "Blonde Escort" },
+    { slug: "mature-escort", label: "Mature Escort", labelEn: "Mature Escort" },
+    { slug: "latina-escorts", label: "Latina Escort", labelEn: "Latina Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/brunette-escort.jpg",
+  primaryImageAlt: "Brunette escorts - donkerharige schoonheden",
+  primaryImageAltEn: "Brunette escorts - dark-haired beauties",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/brunette-escort.jpg",
+  quotePool: [
+    "Klassieke schoonheid, precies mijn type.",
+    "Die donkere ogen, onweerstaanbaar.",
+    "Mediterrane brunette, geweldig.",
+  ],
+  trustBadges: ["Klassieke elegantie", "21+ geverifieerd", "Discreet"],
+  trustBadgesEn: ["Classic elegance", "21+ verified", "Discreet"],
+};
+
+/**
+ * Shemale/Transgender Escort Type Page
+ * High traffic type
+ */
+export const shemaleEscortPageData: ServiceTypeDetailPageData = {
+  slug: "shemale-escort",
+  pageType: "type",
+  seoTitle: "Shemale Escort - Transgender Escorts | Vanaf €160",
+  title: "Shemale Escorts",
+  titleEn: "Shemale Escorts",
+  metaDescription:
+    "Boek een shemale/transgender escort bij Desire Escorts. ✓ Ervaren trans dames ✓ Actief en passief ✓ Discreet en veilig ✓ 24/7 beschikbaar.",
+  metaDescriptionEn:
+    "Book a shemale/transgender escort at Desire Escorts. ✓ Experienced trans ladies ✓ Active and passive ✓ Discreet and safe ✓ Available 24/7.",
+  heroIntro:
+    "Onze transgender escorts combineren het beste van twee werelden. Vrouwelijke schoonheid met mannelijke attributen voor een unieke ervaring. Zowel actieve als passieve rollen beschikbaar.",
+  heroIntroEn:
+    "Our transgender escorts combine the best of both worlds. Feminine beauty with male attributes for a unique experience. Both active and passive roles available.",
+  usps: ["Actief & passief", "Unieke ervaring", "Discreet en veilig"],
+  uspsEn: ["Active & passive", "Unique experience", "Discreet and safe"],
+  priceFrom: "€160",
+  minDuration: "1 uur",
+  responseTime: "90 min",
+  coreContentTitle: "Transgender Escorts bij Desire",
+  coreContentTitleEn: "Transgender Escorts at Desire",
+  coreContent: `Onze shemale escorts bieden een unieke ervaring die je nergens anders vindt. Ze zijn vrouwelijk, verzorgd en hebben mannelijke attributen.
+
+De meeste van onze trans escorts zijn zowel actief als passief. Dit betekent dat je beide rollen kunt verkennen, afhankelijk van je voorkeur.
+
+We benadrukken dat dit met wederzijds respect gebeurt. Onze trans escorts zijn professionals die discretie en waardigheid verwachten en bieden.`,
+  coreContentEn: `Our shemale escorts offer a unique experience you won't find anywhere else. They are feminine, well-groomed and have male attributes.
+
+Most of our trans escorts are both active and passive. This means you can explore both roles, depending on your preference.
+
+We emphasize that this happens with mutual respect. Our trans escorts are professionals who expect and offer discretion and dignity.`,
+  benefitsTitle: "Wat Bieden Trans Escorts",
+  benefitsTitleEn: "What Trans Escorts Offer",
+  benefits: [
+    { title: "Het beste van beide", description: "Vrouwelijke schoonheid met mannelijke attributen." },
+    { title: "Actief of passief", description: "Jij bepaalt de rol, beide opties beschikbaar." },
+    { title: "Ervaren & professioneel", description: "Onze trans dames weten wat ze doen." },
+    { title: "Volledige discretie", description: "Jouw privacy is gegarandeerd." },
+  ],
+  benefitsEn: [
+    { title: "Best of both", description: "Feminine beauty with male attributes." },
+    { title: "Active or passive", description: "You determine the role, both options available." },
+    { title: "Experienced & professional", description: "Our trans ladies know what they're doing." },
+    { title: "Full discretion", description: "Your privacy is guaranteed." },
+  ],
+  pricingTitle: "Tarieven Trans Escorts",
+  pricingTitleEn: "Trans Escort Rates",
+  pricingContent:
+    "Transgender escorts beginnen bij €160 per uur. Prijs varieert per dame en gevraagde services.",
+  pricingContentEn:
+    "Transgender escorts start at €160 per hour. Price varies per lady and requested services.",
+  faqs: [
+    { question: "Wat is het verschil actief en passief?", answer: "Actief betekent dat de escort de penetrerende rol heeft. Passief betekent dat jij die rol hebt." },
+    { question: "Zijn trans escorts ook vrouwelijk?", answer: "Ja, onze trans dames zijn vrouwelijk in uitstraling en verzorging, met mannelijke attributen." },
+    { question: "Is dit voor gay mannen?", answer: "Niet per se. Trans escorts worden geboekt door mannen van alle geaardheden." },
+    { question: "Hoe discreet is dit?", answer: "Volledig discreet. Wij delen nooit informatie over boekingen." },
+  ],
+  faqsEn: [
+    { question: "What is the difference between active and passive?", answer: "Active means the escort has the penetrating role. Passive means you have that role." },
+    { question: "Are trans escorts also feminine?", answer: "Yes, our trans ladies are feminine in appearance and grooming, with male attributes." },
+    { question: "Is this for gay men?", answer: "Not necessarily. Trans escorts are booked by men of all orientations." },
+    { question: "How discreet is this?", answer: "Completely discreet. We never share information about bookings." },
+  ],
+  relatedServices: [
+    { slug: "hotel-escort", label: "Hotel Escort", labelEn: "Hotel Escort" },
+    { slug: "gfe-escorts", label: "GFE", labelEn: "GFE" },
+  ],
+  relatedTypes: [
+    { slug: "gay-escort", label: "Gay Escort", labelEn: "Gay Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/shemale-escort.jpg",
+  primaryImageAlt: "Shemale escort - transgender escorts",
+  primaryImageAltEn: "Shemale escort - transgender escorts",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/shemale-escort.jpg",
+  quotePool: [
+    "Een unieke ervaring, precies wat ik zocht.",
+    "Vrouwelijk en toch iets extras.",
+    "Professioneel en discreet.",
+  ],
+  trustBadges: ["Actief & passief", "21+ geverifieerd", "Volledig discreet"],
+  trustBadgesEn: ["Active & passive", "21+ verified", "Fully discreet"],
+};
+
+/**
+ * Goedkope/Budget Escorts Type Page
+ * High traffic type
+ */
+export const goedkopeEscortsPageData: ServiceTypeDetailPageData = {
+  slug: "goedkope-escorts",
+  pageType: "type",
+  seoTitle: "Goedkope Escorts - Betaalbaar Vanaf €120 | Kwaliteit Behouden",
+  title: "Goedkope Escorts",
+  titleEn: "Budget Escorts",
+  metaDescription:
+    "Boek een betaalbare escort bij Desire Escorts. ✓ Vanaf €120 per uur ✓ Kwaliteit behouden ✓ Geen verborgen kosten ✓ 24/7 beschikbaar.",
+  metaDescriptionEn:
+    "Book an affordable escort at Desire Escorts. ✓ From €120 per hour ✓ Quality maintained ✓ No hidden costs ✓ Available 24/7.",
+  heroIntro:
+    "Kwaliteit hoeft niet duur te zijn. Onze goedkopere escorts bieden dezelfde service-standaard tegen een lager tarief. Perfect voor wie vaker wil boeken of met een budget werkt.",
+  heroIntroEn:
+    "Quality doesn't have to be expensive. Our more affordable escorts offer the same service standard at a lower rate. Perfect for those who want to book more often or work with a budget.",
+  usps: ["Vanaf €120/uur", "Kwaliteit behouden", "Geen verborgen kosten"],
+  uspsEn: ["From €120/hour", "Quality maintained", "No hidden costs"],
+  priceFrom: "€120",
+  minDuration: "1 uur",
+  responseTime: "90 min",
+  coreContentTitle: "Betaalbare Escorts zonder Concessies",
+  coreContentTitleEn: "Affordable Escorts without Compromise",
+  coreContent: `Onze goedkopere escorts zijn niet 'minder'. Het zijn dames die kiezen voor een lager tarief om meer boekingen te krijgen. De kwaliteit van service blijft hoog.
+
+Waarom zijn sommige escorts goedkoper? Soms zijn het nieuwere dames die hun clientèle opbouwen. Soms zijn het dames die simpelweg meer volume prefereren boven hogere prijzen.
+
+Je krijgt dezelfde discretie, dezelfde professionaliteit en dezelfde ervaring. Het enige verschil zit in de prijs.`,
+  coreContentEn: `Our cheaper escorts are not 'less'. They are ladies who choose a lower rate to get more bookings. The quality of service remains high.
+
+Why are some escorts cheaper? Sometimes they are newer ladies building their clientele. Sometimes they are ladies who simply prefer more volume over higher prices.
+
+You get the same discretion, the same professionalism and the same experience. The only difference is in the price.`,
+  benefitsTitle: "Voordelen Budget Escorts",
+  benefitsTitleEn: "Benefits Budget Escorts",
+  benefits: [
+    { title: "Lagere prijs", description: "Vanaf €120 per uur, geen verborgen kosten." },
+    { title: "Zelfde kwaliteit", description: "Onze standaard blijft hoog, ongeacht prijs." },
+    { title: "Vaker boeken", description: "Met lager budget kun je vaker genieten." },
+    { title: "Transparant", description: "Wat je ziet is wat je krijgt, geen surprises." },
+  ],
+  benefitsEn: [
+    { title: "Lower price", description: "From €120 per hour, no hidden costs." },
+    { title: "Same quality", description: "Our standard remains high, regardless of price." },
+    { title: "Book more often", description: "With lower budget you can enjoy more often." },
+    { title: "Transparent", description: "What you see is what you get, no surprises." },
+  ],
+  pricingTitle: "Tarieven Goedkope Escorts",
+  pricingTitleEn: "Budget Escort Rates",
+  pricingContent:
+    "Onze goedkopere escorts beginnen bij €120 per uur. Langere boekingen vaak met korting. Altijd all-inclusive, geen verborgen kosten.",
+  pricingContentEn:
+    "Our more affordable escorts start at €120 per hour. Longer bookings often with discount. Always all-inclusive, no hidden costs.",
+  faqs: [
+    { question: "Waarom zijn sommige escorts goedkoper?", answer: "Verschillende redenen: nieuwer in het vak, voorkeur voor meer boekingen, of simpelweg persoonlijke keuze." },
+    { question: "Is de service minder bij goedkopere escorts?", answer: "Nee, onze standaard is hetzelfde. Alle escorts doorlopen dezelfde selectie." },
+    { question: "Zijn er verborgen kosten?", answer: "Nee, de prijs die je ziet is all-inclusive. Geen extra's achteraf." },
+    { question: "Kan ik ook korting krijgen bij langere boekingen?", answer: "Vaak wel. Vraag naar de tarieven voor 2 uur of langer." },
+  ],
+  faqsEn: [
+    { question: "Why are some escorts cheaper?", answer: "Various reasons: newer in the business, preference for more bookings, or simply personal choice." },
+    { question: "Is the service less with cheaper escorts?", answer: "No, our standard is the same. All escorts go through the same selection." },
+    { question: "Are there hidden costs?", answer: "No, the price you see is all-inclusive. No extras afterwards." },
+    { question: "Can I also get a discount with longer bookings?", answer: "Often yes. Ask about rates for 2 hours or longer." },
+  ],
+  relatedServices: [
+    { slug: "hotel-escort", label: "Hotel Escort", labelEn: "Hotel Escort" },
+    { slug: "cardate-escort", label: "Car Date", labelEn: "Car Date" },
+    { slug: "gfe-escorts", label: "GFE", labelEn: "GFE" },
+  ],
+  relatedTypes: [
+    { slug: "jonge-escort", label: "Jonge Escort", labelEn: "Young Escort" },
+    { slug: "studenten-escort", label: "Studenten Escort", labelEn: "Student Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/goedkope-escort.jpg",
+  primaryImageAlt: "Goedkope escorts - betaalbare kwaliteit",
+  primaryImageAltEn: "Budget escorts - affordable quality",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/goedkope-escort.jpg",
+  quotePool: [
+    "Zelfde kwaliteit, betere prijs.",
+    "Kon vaker boeken dankzij het lagere tarief.",
+    "Geen concessies, gewoon betaalbaar.",
+  ],
+  trustBadges: ["Vanaf €120", "Geen verborgen kosten", "Zelfde kwaliteit"],
+  trustBadgesEn: ["From €120", "No hidden costs", "Same quality"],
+};
+
+/**
+ * Studenten Escort Type Page
+ * High traffic type
+ */
+export const studentenEscortPageData: ServiceTypeDetailPageData = {
+  slug: "studenten-escort",
+  pageType: "type",
+  seoTitle: "Studenten Escorts - Jonge Studentes (21+) | Vanaf €160",
+  title: "Studenten Escorts",
+  titleEn: "Student Escorts",
+  metaDescription:
+    "Boek een student escort bij Desire Escorts. ✓ Jonge studentes (21+) ✓ Fris en energiek ✓ Intelligente gesprekken ✓ 24/7 beschikbaar.",
+  metaDescriptionEn:
+    "Book a student escort at Desire Escorts. ✓ Young students (21+) ✓ Fresh and energetic ✓ Intelligent conversations ✓ Available 24/7.",
+  heroIntro:
+    "Studenten escorts zijn jong, fris en intelligent. Deze dames combineren hun studie met escortwerk en brengen een unieke energie mee. Alle studentes zijn 21+ en geverifieerd.",
+  heroIntroEn:
+    "Student escorts are young, fresh and intelligent. These ladies combine their studies with escort work and bring a unique energy. All students are 21+ and verified.",
+  usps: ["21+ studentes", "Fris & energiek", "Intelligent gesprek"],
+  uspsEn: ["21+ students", "Fresh & energetic", "Intelligent conversation"],
+  priceFrom: "€160",
+  minDuration: "1 uur",
+  responseTime: "90 min",
+  coreContentTitle: "Studenten Escorts bij Desire",
+  coreContentTitleEn: "Student Escorts at Desire",
+  coreContent: `Studenten escorts hebben een bijzondere aantrekkingskracht. Ze zijn jong, ambitieus en combineren hun studie met escortwerk voor extra inkomen.
+
+Onze studentes komen van diverse opleidingen: van geneeskunde tot rechten, van kunstacademie tot bedrijfskunde. Dit maakt gesprekken interessant en gevarieerd.
+
+Alle studenten escorts zijn minimaal 21 jaar en volledig geverifieerd. Jeugdige energie gecombineerd met volwassen professionaliteit.`,
+  coreContentEn: `Student escorts have a special attraction. They are young, ambitious and combine their studies with escort work for extra income.
+
+Our students come from various programs: from medicine to law, from art academy to business. This makes conversations interesting and varied.
+
+All student escorts are at least 21 years old and fully verified. Youthful energy combined with adult professionalism.`,
+  benefitsTitle: "Wat Studenten Escorts Bieden",
+  benefitsTitleEn: "What Student Escorts Offer",
+  benefits: [
+    { title: "Jeugdige energie", description: "Fris, enthousiast en vol leven." },
+    { title: "Intelligent gezelschap", description: "Studentes kunnen interessante gesprekken voeren." },
+    { title: "Ambitieus", description: "Gedreven jonge vrouwen met doelen." },
+    { title: "Flexibele beschikbaarheid", description: "Vaak beschikbaar rond hun rooster." },
+  ],
+  benefitsEn: [
+    { title: "Youthful energy", description: "Fresh, enthusiastic and full of life." },
+    { title: "Intelligent company", description: "Students can have interesting conversations." },
+    { title: "Ambitious", description: "Driven young women with goals." },
+    { title: "Flexible availability", description: "Often available around their schedule." },
+  ],
+  pricingTitle: "Tarieven Studenten Escorts",
+  pricingTitleEn: "Student Escort Rates",
+  pricingContent:
+    "Studenten escorts beginnen bij €160 per uur. Prijs varieert per dame.",
+  pricingContentEn:
+    "Student escorts start at €160 per hour. Price varies per lady.",
+  faqs: [
+    { question: "Hoe oud zijn studenten escorts?", answer: "Minimaal 21 jaar. We verifiëren de leeftijd van alle escorts." },
+    { question: "Zijn het echte studentes?", answer: "Ja, onze studenten escorts volgen daadwerkelijk een opleiding." },
+    { question: "Welke studies hebben ze?", answer: "Variërend: van medisch tot creatief tot zakelijk. Vraag naar specifieke achtergrond." },
+    { question: "Zijn studenten escorts goedkoper?", answer: "Niet per se. De prijs hangt af van de individuele dame." },
+  ],
+  faqsEn: [
+    { question: "How old are student escorts?", answer: "At least 21 years. We verify the age of all escorts." },
+    { question: "Are they real students?", answer: "Yes, our student escorts actually follow an education." },
+    { question: "What studies do they have?", answer: "Varying: from medical to creative to business. Ask about specific background." },
+    { question: "Are student escorts cheaper?", answer: "Not necessarily. The price depends on the individual lady." },
+  ],
+  relatedServices: [
+    { slug: "gfe-escorts", label: "GFE", labelEn: "GFE" },
+    { slug: "dinnerdate-escort", label: "Dinner Date", labelEn: "Dinner Date" },
+    { slug: "rollenspel-escort", label: "Rollenspel", labelEn: "Roleplay" },
+  ],
+  relatedTypes: [
+    { slug: "jonge-escort", label: "Jonge Escort", labelEn: "Young Escort" },
+    { slug: "goedkope-escorts", label: "Goedkope Escort", labelEn: "Budget Escort" },
+    { slug: "blonde-escort-dames", label: "Blonde Escort", labelEn: "Blonde Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+    { slug: "escort-utrecht", label: "Utrecht" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/studenten-escort.jpg",
+  primaryImageAlt: "Studenten escorts - jonge studentes",
+  primaryImageAltEn: "Student escorts - young students",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/studenten-escort.jpg",
+  quotePool: [
+    "Fris, intelligent en energiek.",
+    "Interessante gesprekken over haar studie.",
+    "Jonge energie, volwassen service.",
+  ],
+  trustBadges: ["21+ geverifieerd", "Echte studentes", "Discreet"],
+  trustBadgesEn: ["21+ verified", "Real students", "Discreet"],
+};
+
+/**
+ * Europese Escort Type Page
+ */
+export const europeseEscortPageData: ServiceTypeDetailPageData = {
+  slug: "europese-escort",
+  pageType: "type",
+  seoTitle: "Europese Escorts - Internationale Schoonheden | Vanaf €160",
+  title: "Europese Escorts",
+  titleEn: "European Escorts",
+  metaDescription:
+    "Boek een Europese escort bij Desire Escorts. ✓ Poolse, Roemeense, Spaanse en meer ✓ Internationale schoonheid ✓ 24/7 beschikbaar.",
+  metaDescriptionEn:
+    "Book a European escort at Desire Escorts. ✓ Polish, Romanian, Spanish and more ✓ International beauty ✓ Available 24/7.",
+  heroIntro:
+    "Europa biedt een diversiteit aan schoonheid. Van Scandinavische blondines tot Mediterrane brunettes, van Oost-Europese elegantie tot West-Europese stijl.",
+  heroIntroEn:
+    "Europe offers a diversity of beauty. From Scandinavian blondes to Mediterranean brunettes, from Eastern European elegance to Western European style.",
+  usps: ["Diverse achtergronden", "Oost & West Europa", "Internationale schoonheid"],
+  uspsEn: ["Diverse backgrounds", "East & West Europe", "International beauty"],
+  priceFrom: "€160",
+  minDuration: "1 uur",
+  responseTime: "90 min",
+  coreContentTitle: "Europese Escorts bij Desire",
+  coreContentTitleEn: "European Escorts at Desire",
+  coreContent: `Onze Europese escorts komen uit landen door heel Europa. Van Polen en Roemenië in het oosten tot Spanje en Portugal in het zuiden. Van Duitsland en Nederland in het westen tot Scandinavië in het noorden.
+
+Elke regio brengt eigen schoonheidskenmerken mee. Oost-Europese dames staan bekend om hun elegantie, Mediterrane vrouwen om hun temperament, Scandinavische schoonheden om hun frisse uitstraling.
+
+Spreek je voorkeur uit voor een specifieke regio of nationaliteit, dan matchen we je met de juiste dame.`,
+  coreContentEn: `Our European escorts come from countries throughout Europe. From Poland and Romania in the east to Spain and Portugal in the south. From Germany and the Netherlands in the west to Scandinavia in the north.
+
+Each region brings its own beauty characteristics. Eastern European ladies are known for their elegance, Mediterranean women for their temperament, Scandinavian beauties for their fresh appearance.
+
+Express your preference for a specific region or nationality, and we'll match you with the right lady.`,
+  benefitsTitle: "Europese Variatie",
+  benefitsTitleEn: "European Variety",
+  benefits: [
+    { title: "Oost-Europees", description: "Poolse, Roemeense, Russische elegantie." },
+    { title: "Zuid-Europees", description: "Spaans, Italiaans, Portugees temperament." },
+    { title: "West-Europees", description: "Nederlandse, Duitse, Belgische stijl." },
+    { title: "Noord-Europees", description: "Scandinavische frisse schoonheid." },
+  ],
+  benefitsEn: [
+    { title: "Eastern European", description: "Polish, Romanian, Russian elegance." },
+    { title: "Southern European", description: "Spanish, Italian, Portuguese temperament." },
+    { title: "Western European", description: "Dutch, German, Belgian style." },
+    { title: "Northern European", description: "Scandinavian fresh beauty." },
+  ],
+  pricingTitle: "Tarieven Europese Escorts",
+  pricingTitleEn: "European Escort Rates",
+  pricingContent: "Europese escorts beginnen bij €160 per uur. Prijs varieert per dame.",
+  pricingContentEn: "European escorts start at €160 per hour. Price varies per lady.",
+  faqs: [
+    { question: "Welke Europese landen zijn vertegenwoordigd?", answer: "Veel: Polen, Roemenië, Spanje, Italië, Nederland, Duitsland en meer." },
+    { question: "Kan ik een specifieke nationaliteit vragen?", answer: "Ja, geef je voorkeur door. We matchen op nationaliteit indien beschikbaar." },
+    { question: "Spreken Europese escorts Nederlands?", answer: "Veel wel, anders Engels. Communicatie is altijd mogelijk." },
+  ],
+  faqsEn: [
+    { question: "Which European countries are represented?", answer: "Many: Poland, Romania, Spain, Italy, Netherlands, Germany and more." },
+    { question: "Can I request a specific nationality?", answer: "Yes, share your preference. We match on nationality if available." },
+    { question: "Do European escorts speak Dutch?", answer: "Many do, otherwise English. Communication is always possible." },
+  ],
+  relatedServices: [
+    { slug: "gfe-escorts", label: "GFE", labelEn: "GFE" },
+    { slug: "hotel-escort", label: "Hotel Escort", labelEn: "Hotel Escort" },
+  ],
+  relatedTypes: [
+    { slug: "poolse-escort", label: "Poolse Escort", labelEn: "Polish Escort" },
+    { slug: "roemeense-escort", label: "Roemeense Escort", labelEn: "Romanian Escort" },
+    { slug: "nederlandse-escort", label: "Nederlandse Escort", labelEn: "Dutch Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/europese-escort.jpg",
+  primaryImageAlt: "Europese escorts - internationale schoonheden",
+  primaryImageAltEn: "European escorts - international beauties",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/europese-escort.jpg",
+  quotePool: ["Internationale klasse.", "Oost-Europese elegantie is uniek.", "Mediterraans temperament."],
+  trustBadges: ["Diverse nationaliteiten", "21+ geverifieerd", "Discreet"],
+  trustBadgesEn: ["Diverse nationalities", "21+ verified", "Discreet"],
+};
+
+/**
+ * Gay Escort Type Page
+ */
+export const gayEscortPageData: ServiceTypeDetailPageData = {
+  slug: "gay-escort",
+  pageType: "type",
+  seoTitle: "Gay Escorts - Mannelijke Escorts voor Mannen | Vanaf €160",
+  title: "Gay Escorts",
+  titleEn: "Gay Escorts",
+  metaDescription:
+    "Boek een gay escort bij Desire Escorts. ✓ Mannelijke escorts ✓ Actief en passief ✓ Discreet en veilig ✓ 24/7 beschikbaar.",
+  metaDescriptionEn:
+    "Book a gay escort at Desire Escorts. ✓ Male escorts ✓ Active and passive ✓ Discreet and safe ✓ Available 24/7.",
+  heroIntro:
+    "Gay escorts voor mannen die gezelschap van een man zoeken. Onze mannelijke escorts zijn ervaren, discreet en beschikbaar in zowel actieve als passieve rollen.",
+  heroIntroEn:
+    "Gay escorts for men seeking male companionship. Our male escorts are experienced, discreet and available in both active and passive roles.",
+  usps: ["Mannelijke escorts", "Actief & passief", "Volledig discreet"],
+  uspsEn: ["Male escorts", "Active & passive", "Fully discreet"],
+  priceFrom: "€160",
+  minDuration: "1 uur",
+  responseTime: "2 uur",
+  coreContentTitle: "Gay Escorts bij Desire",
+  coreContentTitleEn: "Gay Escorts at Desire",
+  coreContent: `Onze gay escorts zijn mannelijke escorts voor mannelijke klanten. Of je nu openlijk gay bent of dit discreet wilt verkennen — wij bieden een veilige, oordeelvrije omgeving.
+
+De escorts kunnen zowel actief als passief zijn, afhankelijk van jouw voorkeur. Bespreek vooraf wat je zoekt, dan matchen we je met de juiste escort.
+
+Discretie is gegarandeerd. Je privacy wordt te allen tijde beschermd.`,
+  coreContentEn: `Our gay escorts are male escorts for male clients. Whether you're openly gay or want to explore this discreetly — we offer a safe, judgment-free environment.
+
+The escorts can be both active and passive, depending on your preference. Discuss beforehand what you're looking for, then we match you with the right escort.
+
+Discretion is guaranteed. Your privacy is protected at all times.`,
+  benefitsTitle: "Gay Escort Service",
+  benefitsTitleEn: "Gay Escort Service",
+  benefits: [
+    { title: "Mannelijke escorts", description: "Aantrekkelijke mannen voor mannelijke klanten." },
+    { title: "Beide rollen", description: "Actief of passief, of beide — jij bepaalt." },
+    { title: "Geen oordeel", description: "Veilige ruimte voor verkenning." },
+    { title: "Volledige discretie", description: "Je privacy is gegarandeerd." },
+  ],
+  benefitsEn: [
+    { title: "Male escorts", description: "Attractive men for male clients." },
+    { title: "Both roles", description: "Active or passive, or both — you decide." },
+    { title: "No judgment", description: "Safe space for exploration." },
+    { title: "Full discretion", description: "Your privacy is guaranteed." },
+  ],
+  pricingTitle: "Tarieven Gay Escorts",
+  pricingTitleEn: "Gay Escort Rates",
+  pricingContent: "Gay escorts beginnen bij €160 per uur. Prijs varieert per escort.",
+  pricingContentEn: "Gay escorts start at €160 per hour. Price varies per escort.",
+  faqs: [
+    { question: "Zijn gay escorts ook voor bi-curious mannen?", answer: "Ja, ook mannen die willen verkennen zijn welkom. Geen oordeel." },
+    { question: "Wat betekent actief en passief?", answer: "Actief = penetrerend, passief = ontvangend. Beide rollen zijn beschikbaar." },
+    { question: "Is dit volledig discreet?", answer: "Absoluut. Wij delen nooit informatie over boekingen." },
+  ],
+  faqsEn: [
+    { question: "Are gay escorts also for bi-curious men?", answer: "Yes, men who want to explore are also welcome. No judgment." },
+    { question: "What does active and passive mean?", answer: "Active = penetrating, passive = receiving. Both roles are available." },
+    { question: "Is this fully discreet?", answer: "Absolutely. We never share information about bookings." },
+  ],
+  relatedServices: [
+    { slug: "hotel-escort", label: "Hotel Escort", labelEn: "Hotel Escort" },
+    { slug: "overnight-escort", label: "Overnight", labelEn: "Overnight" },
+  ],
+  relatedTypes: [
+    { slug: "shemale-escort", label: "Shemale Escort", labelEn: "Shemale Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/gay-escort.jpg",
+  primaryImageAlt: "Gay escorts - mannelijke escorts",
+  primaryImageAltEn: "Gay escorts - male escorts",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/gay-escort.jpg",
+  quotePool: ["Professioneel en discreet.", "Veilige ruimte om te verkennen.", "Geen oordeel, alleen plezier."],
+  trustBadges: ["Volledig discreet", "Geen oordeel", "Veilig"],
+  trustBadgesEn: ["Fully discreet", "No judgment", "Safe"],
+};
+
+/**
+ * High Class Escort Type Page
+ */
+export const highClassEscortPageData: ServiceTypeDetailPageData = {
+  slug: "high-class-escort",
+  pageType: "type",
+  seoTitle: "High Class Escorts - Premium Service | Vanaf €250",
+  title: "High Class Escorts",
+  titleEn: "High Class Escorts",
+  metaDescription:
+    "Boek een high class escort bij Desire Escorts. ✓ Premium service ✓ Exceptionele schoonheid ✓ Intelligent gezelschap ✓ Ultieme discretie.",
+  metaDescriptionEn:
+    "Book a high class escort at Desire Escorts. ✓ Premium service ✓ Exceptional beauty ✓ Intelligent companionship ✓ Ultimate discretion.",
+  heroIntro:
+    "High class escorts zijn onze premium selectie. Exceptionele schoonheid, intelligentie en klasse. Voor veeleisende gasten die het beste zoeken.",
+  heroIntroEn:
+    "High class escorts are our premium selection. Exceptional beauty, intelligence and class. For discerning guests who seek the best.",
+  usps: ["Premium selectie", "Exceptionele schoonheid", "Ultieme discretie"],
+  uspsEn: ["Premium selection", "Exceptional beauty", "Ultimate discretion"],
+  priceFrom: "€250",
+  minDuration: "2 uur",
+  responseTime: "3 uur",
+  coreContentTitle: "High Class bij Desire",
+  coreContentTitleEn: "High Class at Desire",
+  coreContent: `High class escorts zijn onze elite selectie. Deze dames voldoen aan de hoogste standaarden qua uiterlijk, intelligentie en sociale vaardigheden.
+
+Ze zijn perfect voor: executive dinners, zakelijke evenementen, reisgezelschap naar het buitenland, of simpelweg een luxe privé-ervaring.
+
+High class betekent ook high service. Verwacht perfecte verzorging, designer kleding, meertaligheid en een niveau van gezelschap dat past bij de meest veeleisende situaties.`,
+  coreContentEn: `High class escorts are our elite selection. These ladies meet the highest standards in terms of appearance, intelligence and social skills.
+
+They are perfect for: executive dinners, business events, travel companionship abroad, or simply a luxury private experience.
+
+High class also means high service. Expect perfect grooming, designer clothing, multilingualism and a level of companionship that suits the most demanding situations.`,
+  benefitsTitle: "High Class Ervaring",
+  benefitsTitleEn: "High Class Experience",
+  benefits: [
+    { title: "Exceptioneel uiterlijk", description: "Model-kwaliteit schoonheid en verzorging." },
+    { title: "Intellectueel niveau", description: "Universitair opgeleid, meertalig." },
+    { title: "Sociale gratie", description: "Perfect gedrag in elke setting." },
+    { title: "Premium service", description: "Alles wordt tot in perfectie verzorgd." },
+  ],
+  benefitsEn: [
+    { title: "Exceptional appearance", description: "Model-quality beauty and grooming." },
+    { title: "Intellectual level", description: "University educated, multilingual." },
+    { title: "Social grace", description: "Perfect behavior in any setting." },
+    { title: "Premium service", description: "Everything is arranged to perfection." },
+  ],
+  pricingTitle: "Tarieven High Class",
+  pricingTitleEn: "High Class Rates",
+  pricingContent:
+    "High class escorts beginnen bij €250 per uur met een minimum van 2 uur. Langere boekingen en reizen op maat.",
+  pricingContentEn:
+    "High class escorts start at €250 per hour with a minimum of 2 hours. Longer bookings and travel custom priced.",
+  faqs: [
+    { question: "Wat maakt high class anders?", answer: "Strengere selectie op uiterlijk, intelligentie, opleiding en sociale vaardigheden." },
+    { question: "Is high class alleen voor zakelijk?", answer: "Nee, ook voor privé-ervaringen waar je het beste wilt." },
+    { question: "Waarom een minimum van 2 uur?", answer: "High class escorts nemen de tijd om een complete ervaring te bieden." },
+  ],
+  faqsEn: [
+    { question: "What makes high class different?", answer: "Stricter selection on appearance, intelligence, education and social skills." },
+    { question: "Is high class only for business?", answer: "No, also for private experiences where you want the best." },
+    { question: "Why a minimum of 2 hours?", answer: "High class escorts take time to provide a complete experience." },
+  ],
+  relatedServices: [
+    { slug: "dinnerdate-escort", label: "Dinner Date", labelEn: "Dinner Date" },
+    { slug: "business-escort", label: "Business Escort", labelEn: "Business Escort" },
+    { slug: "reisgezelschap", label: "Reisgezelschap", labelEn: "Travel Companion" },
+  ],
+  relatedTypes: [
+    { slug: "blonde-escort-dames", label: "Blonde Escort", labelEn: "Blonde Escort" },
+    { slug: "brunette-escort-dames", label: "Brunette Escort", labelEn: "Brunette Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/high-class-escort.jpg",
+  primaryImageAlt: "High class escorts - premium service",
+  primaryImageAltEn: "High class escorts - premium service",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/high-class-escort.jpg",
+  quotePool: ["Absoluut premium niveau.", "Intelligentie en schoonheid gecombineerd.", "Het beste wat er is."],
+  trustBadges: ["Premium selectie", "Elite service", "Ultieme discretie"],
+  trustBadgesEn: ["Premium selection", "Elite service", "Ultimate discretion"],
+};
+
+/**
+ * Jonge Escort Type Page
+ */
+export const jongeEscortPageData: ServiceTypeDetailPageData = {
+  slug: "jonge-escort",
+  pageType: "type",
+  seoTitle: "Jonge Escorts - Dames 21-25 Jaar | Vanaf €160",
+  title: "Jonge Escorts",
+  titleEn: "Young Escorts",
+  metaDescription:
+    "Boek een jonge escort (21-25) bij Desire Escorts. ✓ Geverifieerde leeftijd ✓ Fris en energiek ✓ 24/7 beschikbaar in heel Nederland.",
+  metaDescriptionEn:
+    "Book a young escort (21-25) at Desire Escorts. ✓ Verified age ✓ Fresh and energetic ✓ Available 24/7 throughout the Netherlands.",
+  heroIntro:
+    "Jonge escorts in de leeftijd van 21-25 jaar. Fris, energiek en vol levenslust. Alle leeftijden zijn geverifieerd — minimaal 21 jaar.",
+  heroIntroEn:
+    "Young escorts aged 21-25. Fresh, energetic and full of zest for life. All ages are verified — minimum 21 years.",
+  usps: ["21-25 jaar", "Leeftijd geverifieerd", "Fris & energiek"],
+  uspsEn: ["21-25 years", "Age verified", "Fresh & energetic"],
+  priceFrom: "€160",
+  minDuration: "1 uur",
+  responseTime: "90 min",
+  coreContentTitle: "Jonge Escorts bij Desire",
+  coreContentTitleEn: "Young Escorts at Desire",
+  coreContent: `Jonge escorts bieden een energieke, frisse ervaring. In de leeftijd van 21 tot 25 jaar zijn ze vaak nieuwsgierig, enthousiast en vol levenslust.
+
+We verifiëren de leeftijd van al onze escorts. Niemand jonger dan 21 jaar werkt bij ons. Dit is essentieel voor veilige, legale dienstverlening.
+
+Jonge dames passen goed bij wie energie en spontaniteit zoekt. Of je nu zelf jong bent of juist de jeugdige vibe waardeert — onze jonge escorts leveren.`,
+  coreContentEn: `Young escorts offer an energetic, fresh experience. Aged 21 to 25, they are often curious, enthusiastic and full of zest for life.
+
+We verify the age of all our escorts. No one under 21 works with us. This is essential for safe, legal service.
+
+Young ladies suit those seeking energy and spontaneity. Whether you're young yourself or appreciate the youthful vibe — our young escorts deliver.`,
+  benefitsTitle: "Jonge Escorts",
+  benefitsTitleEn: "Young Escorts",
+  benefits: [
+    { title: "Jeugdige energie", description: "21-25 jaar, vol leven en enthousiasme." },
+    { title: "Geverifieerde leeftijd", description: "100% legaal, alle leeftijden gecontroleerd." },
+    { title: "Frisse uitstraling", description: "Moderne, hedendaagse schoonheid." },
+    { title: "Nieuwsgierig", description: "Open voor nieuwe ervaringen." },
+  ],
+  benefitsEn: [
+    { title: "Youthful energy", description: "21-25 years, full of life and enthusiasm." },
+    { title: "Verified age", description: "100% legal, all ages checked." },
+    { title: "Fresh appearance", description: "Modern, contemporary beauty." },
+    { title: "Curious", description: "Open to new experiences." },
+  ],
+  pricingTitle: "Tarieven Jonge Escorts",
+  pricingTitleEn: "Young Escort Rates",
+  pricingContent: "Jonge escorts beginnen bij €160 per uur. Prijs varieert per dame.",
+  pricingContentEn: "Young escorts start at €160 per hour. Price varies per lady.",
+  faqs: [
+    { question: "Hoe jong zijn 'jonge escorts'?", answer: "21 tot 25 jaar. Niemand jonger dan 21 werkt bij ons." },
+    { question: "Wordt de leeftijd gecontroleerd?", answer: "Ja, we verifiëren de leeftijd van alle escorts met ID." },
+    { question: "Zijn jonge escorts ook ervaren?", answer: "Ja, leeftijd zegt niets over ervaring. Veel jonge dames zijn zeer bekwaam." },
+  ],
+  faqsEn: [
+    { question: "How young are 'young escorts'?", answer: "21 to 25 years. No one under 21 works with us." },
+    { question: "Is age verified?", answer: "Yes, we verify the age of all escorts with ID." },
+    { question: "Are young escorts also experienced?", answer: "Yes, age says nothing about experience. Many young ladies are very capable." },
+  ],
+  relatedServices: [
+    { slug: "gfe-escorts", label: "GFE", labelEn: "GFE" },
+    { slug: "uitgaan-escort", label: "Uitgaan", labelEn: "Going Out" },
+  ],
+  relatedTypes: [
+    { slug: "studenten-escort", label: "Studenten Escort", labelEn: "Student Escort" },
+    { slug: "blonde-escort-dames", label: "Blonde Escort", labelEn: "Blonde Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/jonge-escort.jpg",
+  primaryImageAlt: "Jonge escorts - 21-25 jaar",
+  primaryImageAltEn: "Young escorts - 21-25 years",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/jonge-escort.jpg",
+  quotePool: ["Frisse energie, geweldig.", "Jong en toch professioneel.", "Enthousiasme dat aanstekelijk werkt."],
+  trustBadges: ["21+ geverifieerd", "Leeftijd gecontroleerd", "Legaal"],
+  trustBadgesEn: ["21+ verified", "Age checked", "Legal"],
+};
+
+/**
+ * Latina Escorts Type Page
+ */
+export const latinaEscortsPageData: ServiceTypeDetailPageData = {
+  slug: "latina-escorts",
+  pageType: "type",
+  seoTitle: "Latina Escorts - Latijns-Amerikaanse Schoonheid | Vanaf €160",
+  title: "Latina Escorts",
+  titleEn: "Latina Escorts",
+  metaDescription:
+    "Boek een Latina escort bij Desire Escorts. ✓ Latijns-Amerikaans temperament ✓ Passie en vuur ✓ 24/7 beschikbaar in heel Nederland.",
+  metaDescriptionEn:
+    "Book a Latina escort at Desire Escorts. ✓ Latin American temperament ✓ Passion and fire ✓ Available 24/7 throughout the Netherlands.",
+  heroIntro:
+    "Latina escorts brengen Latijns-Amerikaans temperament naar Nederland. Vurig, sensueel en met een aanstekelijke levenslust. Van Braziliaans tot Colombiaans, van Cubaans tot Mexicaans.",
+  heroIntroEn:
+    "Latina escorts bring Latin American temperament to the Netherlands. Fiery, sensual and with an infectious zest for life. From Brazilian to Colombian, from Cuban to Mexican.",
+  usps: ["Latijns temperament", "Vurig & sensueel", "Diverse achtergronden"],
+  uspsEn: ["Latin temperament", "Fiery & sensual", "Diverse backgrounds"],
+  priceFrom: "€160",
+  minDuration: "1 uur",
+  responseTime: "90 min",
+  coreContentTitle: "Latina Escorts bij Desire",
+  coreContentTitleEn: "Latina Escorts at Desire",
+  coreContent: `Latina escorts zijn bekend om hun vurige persoonlijkheid en sensuele uitstraling. De Latijns-Amerikaanse cultuur straalt passie uit in alles — ook in intimiteit.
+
+Onze Latina's komen uit verschillende landen: Brazilië, Colombia, Dominicaanse Republiek, Mexico en meer. Elke achtergrond brengt eigen charme.
+
+Verwacht energie, warmte en een directheid die verfrissend is. Latinas zijn niet verlegen en weten wat ze willen.`,
+  coreContentEn: `Latina escorts are known for their fiery personality and sensual appearance. Latin American culture radiates passion in everything — including intimacy.
+
+Our Latinas come from various countries: Brazil, Colombia, Dominican Republic, Mexico and more. Each background brings its own charm.
+
+Expect energy, warmth and a directness that is refreshing. Latinas are not shy and know what they want.`,
+  benefitsTitle: "Latina Ervaring",
+  benefitsTitleEn: "Latina Experience",
+  benefits: [
+    { title: "Vurig temperament", description: "Passie die je voelt in elke interactie." },
+    { title: "Sensuele curves", description: "Latinas staan bekend om hun lichaamsbouw." },
+    { title: "Warm en direct", description: "Geen spelletjes, eerlijke connectie." },
+    { title: "Dans en ritme", description: "Veel Latinas kunnen fantastisch bewegen." },
+  ],
+  benefitsEn: [
+    { title: "Fiery temperament", description: "Passion you feel in every interaction." },
+    { title: "Sensual curves", description: "Latinas are known for their body shape." },
+    { title: "Warm and direct", description: "No games, honest connection." },
+    { title: "Dance and rhythm", description: "Many Latinas can move fantastically." },
+  ],
+  pricingTitle: "Tarieven Latina Escorts",
+  pricingTitleEn: "Latina Escort Rates",
+  pricingContent: "Latina escorts beginnen bij €160 per uur. Prijs varieert per dame.",
+  pricingContentEn: "Latina escorts start at €160 per hour. Price varies per lady.",
+  faqs: [
+    { question: "Uit welke landen komen jullie Latinas?", answer: "Brazilië, Colombia, Dominicaanse Republiek, Mexico en andere Latijns-Amerikaanse landen." },
+    { question: "Spreken Latinas Nederlands?", answer: "Sommigen wel, allen spreken Engels en Spaans/Portugees." },
+    { question: "Klopt het stereotype van temperament?", answer: "Onze Latinas zijn inderdaad vurig en passievol — geen stereotype, gewoon cultuur." },
+  ],
+  faqsEn: [
+    { question: "Which countries do your Latinas come from?", answer: "Brazil, Colombia, Dominican Republic, Mexico and other Latin American countries." },
+    { question: "Do Latinas speak Dutch?", answer: "Some do, all speak English and Spanish/Portuguese." },
+    { question: "Is the stereotype of temperament true?", answer: "Our Latinas are indeed fiery and passionate — not a stereotype, just culture." },
+  ],
+  relatedServices: [
+    { slug: "gfe-escorts", label: "GFE", labelEn: "GFE" },
+    { slug: "uitgaan-escort", label: "Uitgaan", labelEn: "Going Out" },
+  ],
+  relatedTypes: [
+    { slug: "brunette-escort-dames", label: "Brunette Escort", labelEn: "Brunette Escort" },
+    { slug: "zwarte-escort", label: "Zwarte Escort", labelEn: "Black Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/latina-escort.jpg",
+  primaryImageAlt: "Latina escorts - Latijns-Amerikaanse schoonheid",
+  primaryImageAltEn: "Latina escorts - Latin American beauty",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/latina-escort.jpg",
+  quotePool: ["Dat Latijnse vuur is echt.", "Passie en warmte gecombineerd.", "Aanstekelijke energie."],
+  trustBadges: ["Latijns temperament", "21+ geverifieerd", "Discreet"],
+  trustBadgesEn: ["Latin temperament", "21+ verified", "Discreet"],
+};
+
+/**
+ * Mature Escort Type Page
+ */
+export const matureEscortPageData: ServiceTypeDetailPageData = {
+  slug: "mature-escort",
+  pageType: "type",
+  seoTitle: "Mature Escorts - Ervaren Dames 35+ | Vanaf €160",
+  title: "Mature Escorts",
+  titleEn: "Mature Escorts",
+  metaDescription:
+    "Boek een mature escort bij Desire Escorts. ✓ Ervaren dames 35+ ✓ Levenswijsheid en sensuele expertise ✓ 24/7 beschikbaar.",
+  metaDescriptionEn:
+    "Book a mature escort at Desire Escorts. ✓ Experienced ladies 35+ ✓ Life wisdom and sensual expertise ✓ Available 24/7.",
+  heroIntro:
+    "Mature escorts bieden wat jongere dames nog moeten leren: ervaring, zelfvertrouwen en sensuele expertise. Dames van 35+ die precies weten wat mannen willen.",
+  heroIntroEn:
+    "Mature escorts offer what younger ladies still have to learn: experience, confidence and sensual expertise. Ladies 35+ who know exactly what men want.",
+  usps: ["35+ ervaren", "Zelfverzekerd", "Sensuele expertise"],
+  uspsEn: ["35+ experienced", "Confident", "Sensual expertise"],
+  priceFrom: "€160",
+  minDuration: "1 uur",
+  responseTime: "90 min",
+  coreContentTitle: "Mature Escorts bij Desire",
+  coreContentTitleEn: "Mature Escorts at Desire",
+  coreContent: `Mature escorts zijn voor gasten die ervaring waarderen. Deze dames van 35 jaar en ouder hebben levenservaring die zich vertaalt naar sensuele expertise.
+
+Ze zijn zelfverzekerd, weten wat ze willen en zijn niet verlegen. Er is geen ongemak, geen onzekerheid — alleen volwassen plezier tussen volwassenen.
+
+Veel gasten prefereren mature escorts juist vanwege die ervaring. Ze weten hoe ze een man moeten lezen en geven je precies wat je nodig hebt.`,
+  coreContentEn: `Mature escorts are for guests who appreciate experience. These ladies aged 35 and older have life experience that translates to sensual expertise.
+
+They are confident, know what they want and are not shy. There is no awkwardness, no uncertainty — just adult pleasure between adults.
+
+Many guests prefer mature escorts precisely because of that experience. They know how to read a man and give you exactly what you need.`,
+  benefitsTitle: "Voordelen Mature Escorts",
+  benefitsTitleEn: "Benefits Mature Escorts",
+  benefits: [
+    { title: "Levenservaring", description: "35+ jaar wijsheid in en buiten de slaapkamer." },
+    { title: "Zelfvertrouwen", description: "Geen onzekerheid, weten wat ze willen." },
+    { title: "Sensuele kennis", description: "Jarenlange ervaring in wat mannen fijn vinden." },
+    { title: "Geen games", description: "Volwassen, directe communicatie." },
+  ],
+  benefitsEn: [
+    { title: "Life experience", description: "35+ years of wisdom in and out of the bedroom." },
+    { title: "Confidence", description: "No uncertainty, know what they want." },
+    { title: "Sensual knowledge", description: "Years of experience in what men like." },
+    { title: "No games", description: "Adult, direct communication." },
+  ],
+  pricingTitle: "Tarieven Mature Escorts",
+  pricingTitleEn: "Mature Escort Rates",
+  pricingContent: "Mature escorts beginnen bij €160 per uur. Prijs varieert per dame.",
+  pricingContentEn: "Mature escorts start at €160 per hour. Price varies per lady.",
+  faqs: [
+    { question: "Vanaf welke leeftijd is 'mature'?", answer: "Wij hanteren 35 jaar en ouder voor mature escorts." },
+    { question: "Zijn mature escorts minder aantrekkelijk?", answer: "Absoluut niet. Mature schoonheid is tijdloos en vaak verfijnder." },
+    { question: "Waarom kiezen voor mature?", answer: "Ervaring, zelfvertrouwen en expertise die jonge dames nog moeten ontwikkelen." },
+  ],
+  faqsEn: [
+    { question: "From what age is 'mature'?", answer: "We use 35 years and older for mature escorts." },
+    { question: "Are mature escorts less attractive?", answer: "Absolutely not. Mature beauty is timeless and often more refined." },
+    { question: "Why choose mature?", answer: "Experience, confidence and expertise that young ladies still have to develop." },
+  ],
+  relatedServices: [
+    { slug: "gfe-escorts", label: "GFE", labelEn: "GFE" },
+    { slug: "tantra-escort", label: "Tantra", labelEn: "Tantra" },
+  ],
+  relatedTypes: [
+    { slug: "brunette-escort-dames", label: "Brunette Escort", labelEn: "Brunette Escort" },
+    { slug: "blonde-escort-dames", label: "Blonde Escort", labelEn: "Blonde Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/mature-escort.jpg",
+  primaryImageAlt: "Mature escorts - ervaren dames 35+",
+  primaryImageAltEn: "Mature escorts - experienced ladies 35+",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/mature-escort.jpg",
+  quotePool: ["Ervaring maakt echt verschil.", "Ze wist precies wat ik nodig had.", "Volwassen plezier."],
+  trustBadges: ["35+ ervaring", "Zelfverzekerd", "Discreet"],
+  trustBadgesEn: ["35+ experience", "Confident", "Discreet"],
+};
+
+/**
+ * Petite Escort Type Page
+ */
+export const petiteEscortPageData: ServiceTypeDetailPageData = {
+  slug: "petite-escort",
+  pageType: "type",
+  seoTitle: "Petite Escorts - Kleine Sierlijke Dames | Vanaf €160",
+  title: "Petite Escorts",
+  titleEn: "Petite Escorts",
+  metaDescription:
+    "Boek een petite escort bij Desire Escorts. ✓ Kleine sierlijke dames ✓ Tot 165cm ✓ Compact en elegant ✓ 24/7 beschikbaar.",
+  metaDescriptionEn:
+    "Book a petite escort at Desire Escorts. ✓ Small graceful ladies ✓ Up to 165cm ✓ Compact and elegant ✓ Available 24/7.",
+  heroIntro:
+    "Petite escorts zijn klein, sierlijk en compact. Dames tot 165cm die veel gasten aantrekkelijk vinden. Klein van stuk, groot van persoonlijkheid.",
+  heroIntroEn:
+    "Petite escorts are small, graceful and compact. Ladies up to 165cm that many guests find attractive. Small in stature, big in personality.",
+  usps: ["Tot 165cm", "Sierlijk & compact", "Veel variatie"],
+  uspsEn: ["Up to 165cm", "Graceful & compact", "Lots of variety"],
+  priceFrom: "€160",
+  minDuration: "1 uur",
+  responseTime: "90 min",
+  coreContentTitle: "Petite Escorts bij Desire",
+  coreContentTitleEn: "Petite Escorts at Desire",
+  coreContent: `Petite escorts zijn dames met een lengte tot 165cm. Ze zijn compact, sierlijk en vaak atletisch of slank gebouwd.
+
+Veel mannen vinden kleine vrouwen extra aantrekkelijk. Het contrast, de behoefte om te beschermen, of simpelweg esthetische voorkeur — petites zijn populair.
+
+Onderschat hun energie niet: kleine dames zijn vaak bijzonder vurig. Hun compacte formaat betekent niet minder passie.`,
+  coreContentEn: `Petite escorts are ladies with a height up to 165cm. They are compact, graceful and often athletic or slender build.
+
+Many men find small women extra attractive. The contrast, the need to protect, or simply aesthetic preference — petites are popular.
+
+Don't underestimate their energy: small ladies are often particularly fiery. Their compact size doesn't mean less passion.`,
+  benefitsTitle: "Petite Escorts",
+  benefitsTitleEn: "Petite Escorts",
+  benefits: [
+    { title: "Compact formaat", description: "Klein en sierlijk, tot 165cm." },
+    { title: "Atletisch/slank", description: "Veel petites zijn getraind en fit." },
+    { title: "Vurige energie", description: "Klein van stuk, groot van passie." },
+    { title: "Diverse types", description: "Blonde, brunette, Aziatisch — allemaal petite." },
+  ],
+  benefitsEn: [
+    { title: "Compact size", description: "Small and graceful, up to 165cm." },
+    { title: "Athletic/slim", description: "Many petites are trained and fit." },
+    { title: "Fiery energy", description: "Small in stature, big in passion." },
+    { title: "Diverse types", description: "Blonde, brunette, Asian — all petite." },
+  ],
+  pricingTitle: "Tarieven Petite Escorts",
+  pricingTitleEn: "Petite Escort Rates",
+  pricingContent: "Petite escorts beginnen bij €160 per uur. Prijs varieert per dame.",
+  pricingContentEn: "Petite escorts start at €160 per hour. Price varies per lady.",
+  faqs: [
+    { question: "Hoe klein is petite?", answer: "Tot 165cm. Dit is een richtlijn; sommige dames zijn nog kleiner." },
+    { question: "Zijn petites ook atletisch?", answer: "Veel wel. Klein hoeft niet fragiel te betekenen." },
+    { question: "Kan ik petite combineren met andere kenmerken?", answer: "Ja, filter op petite + haarkleur, leeftijd, nationaliteit etc." },
+  ],
+  faqsEn: [
+    { question: "How small is petite?", answer: "Up to 165cm. This is a guideline; some ladies are even smaller." },
+    { question: "Are petites also athletic?", answer: "Many are. Small doesn't have to mean fragile." },
+    { question: "Can I combine petite with other features?", answer: "Yes, filter on petite + hair color, age, nationality etc." },
+  ],
+  relatedServices: [
+    { slug: "gfe-escorts", label: "GFE", labelEn: "GFE" },
+    { slug: "erotische-massage", label: "Erotische Massage", labelEn: "Erotic Massage" },
+  ],
+  relatedTypes: [
+    { slug: "aziatische-escorts", label: "Aziatische Escort", labelEn: "Asian Escort" },
+    { slug: "jonge-escort", label: "Jonge Escort", labelEn: "Young Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/petite-escort.jpg",
+  primaryImageAlt: "Petite escorts - kleine sierlijke dames",
+  primaryImageAltEn: "Petite escorts - small graceful ladies",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/petite-escort.jpg",
+  quotePool: ["Klein maar vurig.", "Sierlijk en energiek.", "Precies mijn type."],
+  trustBadges: ["Tot 165cm", "21+ geverifieerd", "Discreet"],
+  trustBadgesEn: ["Up to 165cm", "21+ verified", "Discreet"],
+};
+
+/**
+ * Marokkaanse Escort Type Page
+ */
+export const marokkaanseEscortPageData: ServiceTypeDetailPageData = {
+  slug: "marokkaanse-escort",
+  pageType: "type",
+  seoTitle: "Marokkaanse Escorts - Exotische Schoonheid | Vanaf €160",
+  title: "Marokkaanse Escorts",
+  titleEn: "Moroccan Escorts",
+  metaDescription:
+    "Boek een Marokkaanse escort bij Desire Escorts. ✓ Exotische schoonheid ✓ Warm temperament ✓ 24/7 discreet beschikbaar.",
+  metaDescriptionEn:
+    "Book a Moroccan escort at Desire Escorts. ✓ Exotic beauty ✓ Warm temperament ✓ Available 24/7 discreetly.",
+  heroIntro:
+    "Marokkaanse escorts brengen Noord-Afrikaanse schoonheid en warmte. Donkere ogen, olijfkleurige huid en een gastvrij temperament.",
+  heroIntroEn:
+    "Moroccan escorts bring North African beauty and warmth. Dark eyes, olive skin and a hospitable temperament.",
+  usps: ["Exotische schoonheid", "Warm temperament", "Noord-Afrikaans"],
+  uspsEn: ["Exotic beauty", "Warm temperament", "North African"],
+  priceFrom: "€160",
+  minDuration: "1 uur",
+  responseTime: "90 min",
+  coreContentTitle: "Marokkaanse Escorts",
+  coreContentTitleEn: "Moroccan Escorts",
+  coreContent: `Marokkaanse escorts combineren exotische schoonheid met een warm, gastvrij karakter. De Marokkaanse cultuur waardeert gastvrijheid hoog — dat merk je in de service.
+
+Typische kenmerken: donkere ogen, olijfkleurige huid, vaak donker haar en een mediterraan temperament. Marokkaanse vrouwen staan bekend om hun schoonheid.
+
+De combinatie van westerse professionaliteit en oosterse warmte maakt Marokkaanse escorts bijzonder.`,
+  coreContentEn: `Moroccan escorts combine exotic beauty with a warm, hospitable character. Moroccan culture values hospitality highly — you notice that in the service.
+
+Typical features: dark eyes, olive skin, often dark hair and a Mediterranean temperament. Moroccan women are known for their beauty.
+
+The combination of Western professionalism and Eastern warmth makes Moroccan escorts special.`,
+  benefitsTitle: "Marokkaanse Schoonheid",
+  benefitsTitleEn: "Moroccan Beauty",
+  benefits: [
+    { title: "Exotisch uiterlijk", description: "Donkere ogen, olijfhuid, mediterraan." },
+    { title: "Gastvrij karakter", description: "Warmte en aandacht zijn cultureel." },
+    { title: "Sensueel", description: "Noord-Afrikaanse passie." },
+    { title: "Discreet", description: "Discretie is cultureel belangrijk." },
+  ],
+  benefitsEn: [
+    { title: "Exotic appearance", description: "Dark eyes, olive skin, Mediterranean." },
+    { title: "Hospitable character", description: "Warmth and attention are cultural." },
+    { title: "Sensual", description: "North African passion." },
+    { title: "Discreet", description: "Discretion is culturally important." },
+  ],
+  pricingTitle: "Tarieven Marokkaanse Escorts",
+  pricingTitleEn: "Moroccan Escort Rates",
+  pricingContent: "Marokkaanse escorts beginnen bij €160 per uur.",
+  pricingContentEn: "Moroccan escorts start at €160 per hour.",
+  faqs: [
+    { question: "Spreken Marokkaanse escorts Nederlands?", answer: "Veel wel, zij zijn vaak in Nederland opgegroeid of wonen hier lang." },
+    { question: "Is dit discreet?", answer: "Absoluut. Discretie is cultureel belangrijk en wij garanderen privacy." },
+  ],
+  faqsEn: [
+    { question: "Do Moroccan escorts speak Dutch?", answer: "Many do, they often grew up in the Netherlands or have lived here long." },
+    { question: "Is this discreet?", answer: "Absolutely. Discretion is culturally important and we guarantee privacy." },
+  ],
+  relatedServices: [
+    { slug: "gfe-escorts", label: "GFE", labelEn: "GFE" },
+    { slug: "hotel-escort", label: "Hotel Escort", labelEn: "Hotel Escort" },
+  ],
+  relatedTypes: [
+    { slug: "turkse-escort", label: "Turkse Escort", labelEn: "Turkish Escort" },
+    { slug: "brunette-escort-dames", label: "Brunette Escort", labelEn: "Brunette Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/marokkaanse-escort.jpg",
+  primaryImageAlt: "Marokkaanse escorts - exotische schoonheid",
+  primaryImageAltEn: "Moroccan escorts - exotic beauty",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/marokkaanse-escort.jpg",
+  quotePool: ["Exotisch en warm.", "Die donkere ogen...", "Gastvrij en sensueel."],
+  trustBadges: ["Exotisch", "21+ geverifieerd", "Volledig discreet"],
+  trustBadgesEn: ["Exotic", "21+ verified", "Fully discreet"],
+};
+
+/**
+ * Nederlandse Escort Type Page
+ */
+export const nederlandseEscortPageData: ServiceTypeDetailPageData = {
+  slug: "nederlandse-escort",
+  pageType: "type",
+  seoTitle: "Nederlandse Escorts - Autochtone Nederlandse Dames | Vanaf €160",
+  title: "Nederlandse Escorts",
+  titleEn: "Dutch Escorts",
+  metaDescription:
+    "Boek een Nederlandse escort bij Desire Escorts. ✓ Autochtone Nederlandse dames ✓ Spreekt vloeiend Nederlands ✓ 24/7 beschikbaar.",
+  metaDescriptionEn:
+    "Book a Dutch escort at Desire Escorts. ✓ Native Dutch ladies ✓ Speaks fluent Dutch ✓ Available 24/7.",
+  heroIntro:
+    "Nederlandse escorts voor wie communicatie in het Nederlands waardeert. Autochtone dames die de Nederlandse cultuur en humor kennen.",
+  heroIntroEn:
+    "Dutch escorts for those who appreciate communication in Dutch. Native ladies who know Dutch culture and humor.",
+  usps: ["Vloeiend Nederlands", "Nederlandse cultuur", "Autochtoon"],
+  uspsEn: ["Fluent Dutch", "Dutch culture", "Native"],
+  priceFrom: "€160",
+  minDuration: "1 uur",
+  responseTime: "90 min",
+  coreContentTitle: "Nederlandse Escorts",
+  coreContentTitleEn: "Dutch Escorts",
+  coreContent: `Nederlandse escorts zijn voor gasten die communicatie in het Nederlands waarderen. Deze autochtone dames begrijpen Nederlandse cultuur, humor en gewoonten.
+
+Veel gasten vinden het fijn om in hun moedertaal te kunnen praten. Het maakt de ervaring persoonlijker en relaxter.
+
+Nederlandse dames staan bekend om hun directheid — wat je ziet is wat je krijgt. Geen spelletjes, eerlijke communicatie.`,
+  coreContentEn: `Dutch escorts are for guests who appreciate communication in Dutch. These native ladies understand Dutch culture, humor and customs.
+
+Many guests find it nice to be able to talk in their native language. It makes the experience more personal and relaxed.
+
+Dutch ladies are known for their directness — what you see is what you get. No games, honest communication.`,
+  benefitsTitle: "Nederlandse Escorts",
+  benefitsTitleEn: "Dutch Escorts",
+  benefits: [
+    { title: "Vloeiend Nederlands", description: "Praat in je moedertaal, relaxter en persoonlijker." },
+    { title: "Cultureel begrip", description: "Begrijpt Nederlandse humor en gewoonten." },
+    { title: "Direct en eerlijk", description: "Typisch Nederlands: wat je ziet is wat je krijgt." },
+    { title: "Diverse looks", description: "Nederlandse dames in alle types en vormen." },
+  ],
+  benefitsEn: [
+    { title: "Fluent Dutch", description: "Talk in your native language, more relaxed and personal." },
+    { title: "Cultural understanding", description: "Understands Dutch humor and customs." },
+    { title: "Direct and honest", description: "Typically Dutch: what you see is what you get." },
+    { title: "Diverse looks", description: "Dutch ladies in all types and shapes." },
+  ],
+  pricingTitle: "Tarieven Nederlandse Escorts",
+  pricingTitleEn: "Dutch Escort Rates",
+  pricingContent: "Nederlandse escorts beginnen bij €160 per uur.",
+  pricingContentEn: "Dutch escorts start at €160 per hour.",
+  faqs: [
+    { question: "Zijn alle Nederlandse escorts autochtoon?", answer: "Wij selecteren op vloeiend Nederlands en cultureel begrip. Meestal autochtoon of hier opgegroeid." },
+    { question: "Zijn er veel Nederlandse escorts?", answer: "We hebben een selectie; niet alle escorts zijn Nederlands, maar vraag naar beschikbaarheid." },
+  ],
+  faqsEn: [
+    { question: "Are all Dutch escorts native?", answer: "We select for fluent Dutch and cultural understanding. Usually native or raised here." },
+    { question: "Are there many Dutch escorts?", answer: "We have a selection; not all escorts are Dutch, but ask about availability." },
+  ],
+  relatedServices: [
+    { slug: "gfe-escorts", label: "GFE", labelEn: "GFE" },
+    { slug: "dinnerdate-escort", label: "Dinner Date", labelEn: "Dinner Date" },
+  ],
+  relatedTypes: [
+    { slug: "blonde-escort-dames", label: "Blonde Escort", labelEn: "Blonde Escort" },
+    { slug: "europese-escort", label: "Europese Escort", labelEn: "European Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/nederlandse-escort.jpg",
+  primaryImageAlt: "Nederlandse escorts - autochtone dames",
+  primaryImageAltEn: "Dutch escorts - native ladies",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/nederlandse-escort.jpg",
+  quotePool: ["Fijn om Nederlands te praten.", "Typisch direct, no-nonsense.", "Cultureel begrip maakt verschil."],
+  trustBadges: ["Vloeiend Nederlands", "21+ geverifieerd", "Discreet"],
+  trustBadgesEn: ["Fluent Dutch", "21+ verified", "Discreet"],
+};
+
+/**
+ * Japanse Escort Type Page
+ */
+export const japanseEscortPageData: ServiceTypeDetailPageData = {
+  slug: "japanse-escort",
+  pageType: "type",
+  seoTitle: "Japanse Escorts - Verfijnde Schoonheid | Vanaf €160",
+  title: "Japanse Escorts",
+  titleEn: "Japanese Escorts",
+  metaDescription:
+    "Boek een Japanse escort bij Desire Escorts. ✓ Verfijnde schoonheid ✓ Elegantie en gratie ✓ 24/7 discreet beschikbaar.",
+  metaDescriptionEn:
+    "Book a Japanese escort at Desire Escorts. ✓ Refined beauty ✓ Elegance and grace ✓ Available 24/7 discreetly.",
+  heroIntro:
+    "Japanse escorts brengen Oosterse verfijning naar Nederland. Bekend om elegantie, gratie en een unieke mix van traditionele en moderne schoonheid.",
+  heroIntroEn:
+    "Japanese escorts bring Eastern refinement to the Netherlands. Known for elegance, grace and a unique mix of traditional and modern beauty.",
+  usps: ["Verfijnde elegantie", "Japanse gratie", "Unieke schoonheid"],
+  uspsEn: ["Refined elegance", "Japanese grace", "Unique beauty"],
+  priceFrom: "€160",
+  minDuration: "1 uur",
+  responseTime: "2 uur",
+  coreContentTitle: "Japanse Escorts",
+  coreContentTitleEn: "Japanese Escorts",
+  coreContent: `Japanse escorts zijn zeldzamer maar zeer gewild. De Japanse cultuur staat voor verfijning, beleefdheid en een unieke esthetiek.
+
+Onze Japanse dames combineren traditionele elegantie met moderne sensualiteit. Ze zijn vaak kleiner, sierlijk en met een zachte, vrouwelijke energie.
+
+Voor liefhebbers van Japanse cultuur of gewoon Aziatische schoonheid zijn deze escorts een bijzondere ervaring.`,
+  coreContentEn: `Japanese escorts are rarer but highly sought after. Japanese culture stands for refinement, politeness and a unique aesthetic.
+
+Our Japanese ladies combine traditional elegance with modern sensuality. They are often smaller, graceful and with soft, feminine energy.
+
+For lovers of Japanese culture or just Asian beauty, these escorts are a special experience.`,
+  benefitsTitle: "Japanse Schoonheid",
+  benefitsTitleEn: "Japanese Beauty",
+  benefits: [
+    { title: "Verfijnd", description: "Japanse esthetiek is uniek en elegant." },
+    { title: "Beleefd", description: "Cultuur van respect en aandacht." },
+    { title: "Sierlijk", description: "Vaak petite met zachte energie." },
+    { title: "Zeldzaam", description: "Beperkte beschikbaarheid maakt het speciaal." },
+  ],
+  benefitsEn: [
+    { title: "Refined", description: "Japanese aesthetics are unique and elegant." },
+    { title: "Polite", description: "Culture of respect and attention." },
+    { title: "Graceful", description: "Often petite with soft energy." },
+    { title: "Rare", description: "Limited availability makes it special." },
+  ],
+  pricingTitle: "Tarieven Japanse Escorts",
+  pricingTitleEn: "Japanese Escort Rates",
+  pricingContent: "Japanse escorts beginnen bij €160 per uur. Beperkte beschikbaarheid.",
+  pricingContentEn: "Japanese escorts start at €160 per hour. Limited availability.",
+  faqs: [
+    { question: "Zijn er veel Japanse escorts beschikbaar?", answer: "Ze zijn zeldzamer. Vraag naar huidige beschikbaarheid." },
+    { question: "Spreken ze Nederlands of Engels?", answer: "Engels altijd, Nederlands soms. Japans natuurlijk ook." },
+  ],
+  faqsEn: [
+    { question: "Are there many Japanese escorts available?", answer: "They are rarer. Ask about current availability." },
+    { question: "Do they speak Dutch or English?", answer: "Always English, sometimes Dutch. Japanese of course too." },
+  ],
+  relatedServices: [
+    { slug: "nuru-massage", label: "Nuru Massage", labelEn: "Nuru Massage" },
+    { slug: "tantra-escort", label: "Tantra", labelEn: "Tantra" },
+  ],
+  relatedTypes: [
+    { slug: "aziatische-escorts", label: "Aziatische Escort", labelEn: "Asian Escort" },
+    { slug: "petite-escort", label: "Petite Escort", labelEn: "Petite Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/japanse-escort.jpg",
+  primaryImageAlt: "Japanse escorts - verfijnde schoonheid",
+  primaryImageAltEn: "Japanese escorts - refined beauty",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/japanse-escort.jpg",
+  quotePool: ["Verfijnde elegantie.", "Unieke Japanse schoonheid.", "Zeldzaam en speciaal."],
+  trustBadges: ["Japanse verfijning", "21+ geverifieerd", "Discreet"],
+  trustBadgesEn: ["Japanese refinement", "21+ verified", "Discreet"],
+};
+
+/**
+ * Poolse Escort Type Page
+ */
+export const poolseEscortPageData: ServiceTypeDetailPageData = {
+  slug: "poolse-escort",
+  pageType: "type",
+  seoTitle: "Poolse Escorts - Oost-Europese Elegantie | Vanaf €160",
+  title: "Poolse Escorts",
+  titleEn: "Polish Escorts",
+  metaDescription:
+    "Boek een Poolse escort bij Desire Escorts. ✓ Oost-Europese elegantie ✓ Natuurlijke schoonheid ✓ 24/7 beschikbaar.",
+  metaDescriptionEn:
+    "Book a Polish escort at Desire Escorts. ✓ Eastern European elegance ✓ Natural beauty ✓ Available 24/7.",
+  heroIntro:
+    "Poolse escorts zijn bekend om hun natuurlijke schoonheid en elegantie. Oost-Europese vrouwen met vaak blonde of lichtbruine haren en sierlijke lichaamsbouw.",
+  heroIntroEn:
+    "Polish escorts are known for their natural beauty and elegance. Eastern European women with often blonde or light brown hair and graceful build.",
+  usps: ["Oost-Europese elegantie", "Natuurlijke schoonheid", "Slank & sierlijk"],
+  uspsEn: ["Eastern European elegance", "Natural beauty", "Slim & graceful"],
+  priceFrom: "€160",
+  minDuration: "1 uur",
+  responseTime: "90 min",
+  coreContentTitle: "Poolse Escorts",
+  coreContentTitleEn: "Polish Escorts",
+  coreContent: `Poolse escorts vertegenwoordigen de Oost-Europese schoonheidsstandaard. Vaak blond of lichtbruin, slank en met klassieke gelaatstrekken.
+
+Polen levert al jaren enkele van de mooiste modellen ter wereld. Die schoonheid vind je terug in onze Poolse escorts.
+
+Poolse vrouwen staan ook bekend als hardwerkend en professioneel. Je krijgt schoonheid gecombineerd met goede service.`,
+  coreContentEn: `Polish escorts represent the Eastern European beauty standard. Often blonde or light brown, slim and with classic features.
+
+Poland has been producing some of the most beautiful models in the world for years. You find that beauty in our Polish escorts.
+
+Polish women are also known as hardworking and professional. You get beauty combined with good service.`,
+  benefitsTitle: "Poolse Schoonheid",
+  benefitsTitleEn: "Polish Beauty",
+  benefits: [
+    { title: "Natuurlijk mooi", description: "Oost-Europese genen zorgen voor klassieke schoonheid." },
+    { title: "Slank & fit", description: "Poolse vrouwen zorgen goed voor hun lichaam." },
+    { title: "Professioneel", description: "Hardwerkende mentaliteit." },
+    { title: "Toegankelijk", description: "Veel Poolse dames wonen in Nederland." },
+  ],
+  benefitsEn: [
+    { title: "Naturally beautiful", description: "Eastern European genes provide classic beauty." },
+    { title: "Slim & fit", description: "Polish women take good care of their body." },
+    { title: "Professional", description: "Hardworking mentality." },
+    { title: "Accessible", description: "Many Polish ladies live in the Netherlands." },
+  ],
+  pricingTitle: "Tarieven Poolse Escorts",
+  pricingTitleEn: "Polish Escort Rates",
+  pricingContent: "Poolse escorts beginnen bij €160 per uur.",
+  pricingContentEn: "Polish escorts start at €160 per hour.",
+  faqs: [
+    { question: "Spreken Poolse escorts Nederlands?", answer: "Sommigen wel, allen spreken Engels. Veel wonen lang in NL." },
+    { question: "Zijn er veel Poolse escorts?", answer: "Ja, Polen is goed vertegenwoordigd in onze selectie." },
+  ],
+  faqsEn: [
+    { question: "Do Polish escorts speak Dutch?", answer: "Some do, all speak English. Many live long in NL." },
+    { question: "Are there many Polish escorts?", answer: "Yes, Poland is well represented in our selection." },
+  ],
+  relatedServices: [
+    { slug: "gfe-escorts", label: "GFE", labelEn: "GFE" },
+    { slug: "hotel-escort", label: "Hotel Escort", labelEn: "Hotel Escort" },
+  ],
+  relatedTypes: [
+    { slug: "europese-escort", label: "Europese Escort", labelEn: "European Escort" },
+    { slug: "blonde-escort-dames", label: "Blonde Escort", labelEn: "Blonde Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/poolse-escort.jpg",
+  primaryImageAlt: "Poolse escorts - Oost-Europese elegantie",
+  primaryImageAltEn: "Polish escorts - Eastern European elegance",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/poolse-escort.jpg",
+  quotePool: ["Klassieke Oost-Europese schoonheid.", "Professioneel en mooi.", "Poolse elegantie."],
+  trustBadges: ["Oost-Europees", "21+ geverifieerd", "Discreet"],
+  trustBadgesEn: ["Eastern European", "21+ verified", "Discreet"],
+};
+
+/**
+ * Roemeense Escort Type Page
+ */
+export const roemeenseEscortPageData: ServiceTypeDetailPageData = {
+  slug: "roemeense-escort",
+  pageType: "type",
+  seoTitle: "Roemeense Escorts - Zuidoost-Europese Charme | Vanaf €160",
+  title: "Roemeense Escorts",
+  titleEn: "Romanian Escorts",
+  metaDescription:
+    "Boek een Roemeense escort bij Desire Escorts. ✓ Zuidoost-Europese schoonheid ✓ Donkerharige charme ✓ 24/7 beschikbaar.",
+  metaDescriptionEn:
+    "Book a Romanian escort at Desire Escorts. ✓ Southeast European beauty ✓ Dark-haired charm ✓ Available 24/7.",
+  heroIntro:
+    "Roemeense escorts brengen Zuidoost-Europese charme. Vaak donkerharig met mediterrane trekken en een warme, passionele energie.",
+  heroIntroEn:
+    "Romanian escorts bring Southeast European charm. Often dark-haired with Mediterranean features and warm, passionate energy.",
+  usps: ["Zuidoost-Europees", "Mediterrane trekken", "Passioneel"],
+  uspsEn: ["Southeast European", "Mediterranean features", "Passionate"],
+  priceFrom: "€160",
+  minDuration: "1 uur",
+  responseTime: "90 min",
+  coreContentTitle: "Roemeense Escorts",
+  coreContentTitleEn: "Romanian Escorts",
+  coreContent: `Roemeense escorts zijn vaak donkerharig met mediterrane gelaatstrekken. Roemenië ligt op de grens van Oost-Europa en de Balkan, wat een unieke mix oplevert.
+
+Roemeense vrouwen staan bekend om hun schoonheid — niet voor niets komen veel modellen uit deze regio. Ze combineren elegantie met warmte.
+
+Veel Roemeense dames wonen in Nederland en spreken goed Nederlands of Engels.`,
+  coreContentEn: `Romanian escorts are often dark-haired with Mediterranean features. Romania is on the border of Eastern Europe and the Balkans, which produces a unique mix.
+
+Romanian women are known for their beauty — not for nothing many models come from this region. They combine elegance with warmth.
+
+Many Romanian ladies live in the Netherlands and speak good Dutch or English.`,
+  benefitsTitle: "Roemeense Charme",
+  benefitsTitleEn: "Romanian Charm",
+  benefits: [
+    { title: "Mediterraan uiterlijk", description: "Donker haar, warme huidskleur, expressieve ogen." },
+    { title: "Balkan temperament", description: "Warmte en passie zijn cultureel." },
+    { title: "Elegant", description: "Roemeense vrouwen verzorgen zich goed." },
+    { title: "Toegankelijk", description: "Veel Roemeense dames in Nederland." },
+  ],
+  benefitsEn: [
+    { title: "Mediterranean appearance", description: "Dark hair, warm skin tone, expressive eyes." },
+    { title: "Balkan temperament", description: "Warmth and passion are cultural." },
+    { title: "Elegant", description: "Romanian women take good care of themselves." },
+    { title: "Accessible", description: "Many Romanian ladies in the Netherlands." },
+  ],
+  pricingTitle: "Tarieven Roemeense Escorts",
+  pricingTitleEn: "Romanian Escort Rates",
+  pricingContent: "Roemeense escorts beginnen bij €160 per uur.",
+  pricingContentEn: "Romanian escorts start at €160 per hour.",
+  faqs: [
+    { question: "Spreken Roemeense escorts Nederlands?", answer: "Veel wel, of Engels. Roemeens natuurlijk ook." },
+    { question: "Wat maakt Roemeense escorts anders?", answer: "De mix van Oost-Europese elegantie en Balkan warmte." },
+  ],
+  faqsEn: [
+    { question: "Do Romanian escorts speak Dutch?", answer: "Many do, or English. Romanian of course too." },
+    { question: "What makes Romanian escorts different?", answer: "The mix of Eastern European elegance and Balkan warmth." },
+  ],
+  relatedServices: [
+    { slug: "gfe-escorts", label: "GFE", labelEn: "GFE" },
+    { slug: "hotel-escort", label: "Hotel Escort", labelEn: "Hotel Escort" },
+  ],
+  relatedTypes: [
+    { slug: "europese-escort", label: "Europese Escort", labelEn: "European Escort" },
+    { slug: "brunette-escort-dames", label: "Brunette Escort", labelEn: "Brunette Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/roemeense-escort.jpg",
+  primaryImageAlt: "Roemeense escorts - Zuidoost-Europese charme",
+  primaryImageAltEn: "Romanian escorts - Southeast European charm",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/roemeense-escort.jpg",
+  quotePool: ["Balkan warmte, Europese elegantie.", "Donkere schoonheid.", "Passioneel en warm."],
+  trustBadges: ["Zuidoost-Europees", "21+ geverifieerd", "Discreet"],
+  trustBadgesEn: ["Southeast European", "21+ verified", "Discreet"],
+};
+
+/**
+ * Striptease Escort Type Page
+ */
+export const stripteaseEscortPageData: ServiceTypeDetailPageData = {
+  slug: "striptease-escort",
+  pageType: "type",
+  seoTitle: "Striptease Escorts - Sensuele Dans | Vanaf €160",
+  title: "Striptease Escorts",
+  titleEn: "Striptease Escorts",
+  metaDescription:
+    "Boek een striptease escort bij Desire Escorts. ✓ Professionele striptease ✓ Privé of evenement ✓ 24/7 beschikbaar.",
+  metaDescriptionEn:
+    "Book a striptease escort at Desire Escorts. ✓ Professional striptease ✓ Private or event ✓ Available 24/7.",
+  heroIntro:
+    "Striptease escorts combineren sensuele dans met escortservice. Geniet van een privé striptease of entertainment voor een evenement, gevolgd door intimiteit als je dat wilt.",
+  heroIntroEn:
+    "Striptease escorts combine sensual dance with escort service. Enjoy a private striptease or entertainment for an event, followed by intimacy if you want.",
+  usps: ["Professionele striptease", "Privé of evenement", "Gecombineerd met escort"],
+  uspsEn: ["Professional striptease", "Private or event", "Combined with escort"],
+  priceFrom: "€160",
+  minDuration: "1 uur",
+  responseTime: "2 uur",
+  coreContentTitle: "Striptease Escorts",
+  coreContentTitleEn: "Striptease Escorts",
+  coreContent: `Striptease escorts zijn dames met ervaring in sensuele dans. Ze kunnen een privé show geven of entertainment bieden voor een groep (zoals een vrijgezellenfeest).
+
+Het verschil met een gewone stripper? Na de show is er mogelijkheid tot intimiteit. Je krijgt entertainment én escort in één boeking.
+
+De striptease kan variëren van langzaam en verleidelijk tot energiek en opzwepend — afhankelijk van de situatie en je voorkeur.`,
+  coreContentEn: `Striptease escorts are ladies with experience in sensual dance. They can give a private show or provide entertainment for a group (like a bachelor party).
+
+The difference with a regular stripper? After the show there is possibility for intimacy. You get entertainment and escort in one booking.
+
+The striptease can range from slow and seductive to energetic and exciting — depending on the situation and your preference.`,
+  benefitsTitle: "Striptease + Escort",
+  benefitsTitleEn: "Striptease + Escort",
+  benefits: [
+    { title: "Entertainment + intimiteit", description: "Twee ervaringen in één boeking." },
+    { title: "Privé of groep", description: "Solo show of voor een feest." },
+    { title: "Professionele dansers", description: "Dames met striptease-ervaring." },
+    { title: "Flexibel", description: "Stijl aangepast aan de situatie." },
+  ],
+  benefitsEn: [
+    { title: "Entertainment + intimacy", description: "Two experiences in one booking." },
+    { title: "Private or group", description: "Solo show or for a party." },
+    { title: "Professional dancers", description: "Ladies with striptease experience." },
+    { title: "Flexible", description: "Style adapted to the situation." },
+  ],
+  pricingTitle: "Tarieven Striptease Escorts",
+  pricingTitleEn: "Striptease Escort Rates",
+  pricingContent: "Striptease escorts beginnen bij €160 per uur inclusief show én intimiteit.",
+  pricingContentEn: "Striptease escorts start at €160 per hour including show and intimacy.",
+  faqs: [
+    { question: "Is intimiteit inbegrepen na de striptease?", answer: "Ja, het is een escort boeking. De striptease is onderdeel van de ervaring." },
+    { question: "Kan dit ook voor een groep?", answer: "Ja, voor vrijgezellenfeesten of andere groepsevents. De striptease is dan voor de groep, intimiteit optioneel." },
+    { question: "Hoe lang duurt een striptease?", answer: "Typisch 15-30 minuten als onderdeel van een langere boeking." },
+  ],
+  faqsEn: [
+    { question: "Is intimacy included after the striptease?", answer: "Yes, it's an escort booking. The striptease is part of the experience." },
+    { question: "Can this also be for a group?", answer: "Yes, for bachelor parties or other group events. The striptease is for the group, intimacy optional." },
+    { question: "How long does a striptease last?", answer: "Typically 15-30 minutes as part of a longer booking." },
+  ],
+  relatedServices: [
+    { slug: "vrijgezellenfeest-escort", label: "Vrijgezellenfeest", labelEn: "Bachelor Party" },
+    { slug: "hotel-escort", label: "Hotel Escort", labelEn: "Hotel Escort" },
+  ],
+  relatedTypes: [
+    { slug: "jonge-escort", label: "Jonge Escort", labelEn: "Young Escort" },
+    { slug: "blonde-escort-dames", label: "Blonde Escort", labelEn: "Blonde Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/striptease-escort.jpg",
+  primaryImageAlt: "Striptease escorts - sensuele dans",
+  primaryImageAltEn: "Striptease escorts - sensual dance",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/striptease-escort.jpg",
+  quotePool: ["Show én intimiteit in één.", "Professionele dans, geweldige afsluiting.", "Perfect voor het vrijgezellenfeest."],
+  trustBadges: ["Professionele dansers", "Show + escort", "Discreet"],
+  trustBadgesEn: ["Professional dancers", "Show + escort", "Discreet"],
+};
+
+/**
+ * Turkse Escort Type Page
+ */
+export const turkseEscortPageData: ServiceTypeDetailPageData = {
+  slug: "turkse-escort",
+  pageType: "type",
+  seoTitle: "Turkse Escorts - Exotische Schoonheid | Vanaf €160",
+  title: "Turkse Escorts",
+  titleEn: "Turkish Escorts",
+  metaDescription:
+    "Boek een Turkse escort bij Desire Escorts. ✓ Exotische schoonheid ✓ Mediterraan temperament ✓ 24/7 discreet beschikbaar.",
+  metaDescriptionEn:
+    "Book a Turkish escort at Desire Escorts. ✓ Exotic beauty ✓ Mediterranean temperament ✓ Available 24/7 discreetly.",
+  heroIntro:
+    "Turkse escorts brengen Mediterrane schoonheid met Oosterse invloeden. Donkere ogen, olijfhuid en een warm, gastvrij karakter.",
+  heroIntroEn:
+    "Turkish escorts bring Mediterranean beauty with Eastern influences. Dark eyes, olive skin and a warm, hospitable character.",
+  usps: ["Mediterraan-Oosters", "Exotische schoonheid", "Warm karakter"],
+  uspsEn: ["Mediterranean-Eastern", "Exotic beauty", "Warm character"],
+  priceFrom: "€160",
+  minDuration: "1 uur",
+  responseTime: "90 min",
+  coreContentTitle: "Turkse Escorts",
+  coreContentTitleEn: "Turkish Escorts",
+  coreContent: `Turkse escorts combineren Europese en Aziatische invloeden — een unieke mix die Turkije kenmerkt. Het resultaat is exotische schoonheid met Mediterraans temperament.
+
+Typische kenmerken zijn donkere ogen, olijfhuid, donker haar en een warm, gastvrij karakter. Turkse vrouwen staan bekend om hun schoonheid.
+
+Veel Turkse dames wonen in Nederland en spreken vloeiend Nederlands.`,
+  coreContentEn: `Turkish escorts combine European and Asian influences — a unique mix that characterizes Turkey. The result is exotic beauty with Mediterranean temperament.
+
+Typical features are dark eyes, olive skin, dark hair and a warm, hospitable character. Turkish women are known for their beauty.
+
+Many Turkish ladies live in the Netherlands and speak fluent Dutch.`,
+  benefitsTitle: "Turkse Schoonheid",
+  benefitsTitleEn: "Turkish Beauty",
+  benefits: [
+    { title: "Exotisch", description: "Mix van Europa en Azië." },
+    { title: "Warm karakter", description: "Gastvrijheid is cultureel." },
+    { title: "Mediterraan", description: "Passie en temperament." },
+    { title: "Toegankelijk", description: "Veel Turkse dames in Nederland." },
+  ],
+  benefitsEn: [
+    { title: "Exotic", description: "Mix of Europe and Asia." },
+    { title: "Warm character", description: "Hospitality is cultural." },
+    { title: "Mediterranean", description: "Passion and temperament." },
+    { title: "Accessible", description: "Many Turkish ladies in the Netherlands." },
+  ],
+  pricingTitle: "Tarieven Turkse Escorts",
+  pricingTitleEn: "Turkish Escort Rates",
+  pricingContent: "Turkse escorts beginnen bij €160 per uur.",
+  pricingContentEn: "Turkish escorts start at €160 per hour.",
+  faqs: [
+    { question: "Spreken Turkse escorts Nederlands?", answer: "Veel wel, vaak opgegroeid in Nederland." },
+    { question: "Is dit discreet?", answer: "Volledig. Discretie is gegarandeerd." },
+  ],
+  faqsEn: [
+    { question: "Do Turkish escorts speak Dutch?", answer: "Many do, often raised in the Netherlands." },
+    { question: "Is this discreet?", answer: "Completely. Discretion is guaranteed." },
+  ],
+  relatedServices: [
+    { slug: "gfe-escorts", label: "GFE", labelEn: "GFE" },
+    { slug: "hotel-escort", label: "Hotel Escort", labelEn: "Hotel Escort" },
+  ],
+  relatedTypes: [
+    { slug: "marokkaanse-escort", label: "Marokkaanse Escort", labelEn: "Moroccan Escort" },
+    { slug: "brunette-escort-dames", label: "Brunette Escort", labelEn: "Brunette Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/turkse-escort.jpg",
+  primaryImageAlt: "Turkse escorts - exotische schoonheid",
+  primaryImageAltEn: "Turkish escorts - exotic beauty",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/turkse-escort.jpg",
+  quotePool: ["Exotisch en warm.", "Die donkere ogen...", "Mediterraans temperament."],
+  trustBadges: ["Exotisch", "21+ geverifieerd", "Volledig discreet"],
+  trustBadgesEn: ["Exotic", "21+ verified", "Fully discreet"],
+};
+
+/**
+ * Zwarte Escort Type Page
+ */
+export const zwarteEscortPageData: ServiceTypeDetailPageData = {
+  slug: "zwarte-escort",
+  pageType: "type",
+  seoTitle: "Zwarte Escorts - Afrikaanse Schoonheid | Vanaf €160",
+  title: "Zwarte Escorts",
+  titleEn: "Black Escorts",
+  metaDescription:
+    "Boek een zwarte escort bij Desire Escorts. ✓ Afrikaanse en Caribische schoonheid ✓ Diverse achtergronden ✓ 24/7 beschikbaar.",
+  metaDescriptionEn:
+    "Book a black escort at Desire Escorts. ✓ African and Caribbean beauty ✓ Diverse backgrounds ✓ Available 24/7.",
+  heroIntro:
+    "Zwarte escorts brengen Afrikaanse en Caribische schoonheid. Diverse achtergronden, van Surinaams tot Afrikaans, elk met eigen charme.",
+  heroIntroEn:
+    "Black escorts bring African and Caribbean beauty. Diverse backgrounds, from Surinamese to African, each with their own charm.",
+  usps: ["Afrikaans & Caribisch", "Diverse achtergronden", "Unieke schoonheid"],
+  uspsEn: ["African & Caribbean", "Diverse backgrounds", "Unique beauty"],
+  priceFrom: "€160",
+  minDuration: "1 uur",
+  responseTime: "90 min",
+  coreContentTitle: "Zwarte Escorts",
+  coreContentTitleEn: "Black Escorts",
+  coreContent: `Zwarte escorts bij Desire komen uit diverse achtergronden: Surinaams, Antilliaans, Afrikaans en meer. Elke achtergrond brengt eigen cultuur en charme.
+
+Van Caribische warmte tot Afrikaanse elegantie — de diversiteit is groot. Wat ze delen is een unieke schoonheid en vaak een uitgesproken persoonlijkheid.
+
+Veel van onze zwarte escorts zijn in Nederland opgegroeid en spreken vloeiend Nederlands.`,
+  coreContentEn: `Black escorts at Desire come from diverse backgrounds: Surinamese, Antillean, African and more. Each background brings its own culture and charm.
+
+From Caribbean warmth to African elegance — the diversity is great. What they share is a unique beauty and often an outspoken personality.
+
+Many of our black escorts grew up in the Netherlands and speak fluent Dutch.`,
+  benefitsTitle: "Diversiteit in Schoonheid",
+  benefitsTitleEn: "Diversity in Beauty",
+  benefits: [
+    { title: "Caribische warmte", description: "Surinaamse en Antilliaanse dames." },
+    { title: "Afrikaanse elegantie", description: "Diverse Afrikaanse achtergronden." },
+    { title: "Uniek", description: "Schoonheid die opvalt." },
+    { title: "Nederlands", description: "Veel spreken vloeiend Nederlands." },
+  ],
+  benefitsEn: [
+    { title: "Caribbean warmth", description: "Surinamese and Antillean ladies." },
+    { title: "African elegance", description: "Various African backgrounds." },
+    { title: "Unique", description: "Beauty that stands out." },
+    { title: "Dutch", description: "Many speak fluent Dutch." },
+  ],
+  pricingTitle: "Tarieven Zwarte Escorts",
+  pricingTitleEn: "Black Escort Rates",
+  pricingContent: "Zwarte escorts beginnen bij €160 per uur.",
+  pricingContentEn: "Black escorts start at €160 per hour.",
+  faqs: [
+    { question: "Uit welke landen komen zwarte escorts?", answer: "Suriname, Antillen, diverse Afrikaanse landen — grote variatie." },
+    { question: "Spreken ze Nederlands?", answer: "Veel wel, vooral Surinaamse en Antilliaanse dames." },
+  ],
+  faqsEn: [
+    { question: "Which countries do black escorts come from?", answer: "Suriname, Antilles, various African countries — great variety." },
+    { question: "Do they speak Dutch?", answer: "Many do, especially Surinamese and Antillean ladies." },
+  ],
+  relatedServices: [
+    { slug: "gfe-escorts", label: "GFE", labelEn: "GFE" },
+    { slug: "hotel-escort", label: "Hotel Escort", labelEn: "Hotel Escort" },
+  ],
+  relatedTypes: [
+    { slug: "latina-escorts", label: "Latina Escort", labelEn: "Latina Escort" },
+    { slug: "brunette-escort-dames", label: "Brunette Escort", labelEn: "Brunette Escort" },
+  ],
+  relatedLocations: [
+    { slug: "escort-amsterdam", label: "Amsterdam" },
+    { slug: "escort-rotterdam", label: "Rotterdam" },
+  ],
+  primaryImageUrl: "https://desire-escorts.nl/wp-content/uploads/zwarte-escort.jpg",
+  primaryImageAlt: "Zwarte escorts - Afrikaanse en Caribische schoonheid",
+  primaryImageAltEn: "Black escorts - African and Caribbean beauty",
+  ogImageUrl: "https://desire-escorts.nl/wp-content/uploads/zwarte-escort.jpg",
+  quotePool: ["Unieke schoonheid.", "Caribische warmte.", "Afrikaanse elegantie."],
+  trustBadges: ["Diverse achtergronden", "21+ geverifieerd", "Discreet"],
+  trustBadgesEn: ["Diverse backgrounds", "21+ verified", "Discreet"],
+};
+
 const manuallyCuratedSlugs = new Set([
   hotelEscortPageData.slug,
   aziatischeEscortsPageData.slug,
@@ -3668,6 +5368,26 @@ const manuallyCuratedSlugs = new Set([
   uitgaanEscortPageData.slug,
   voetfetishEscortPageData.slug,
   vrijgezellenfeestEscortPageData.slug,
+  blondeEscortPageData.slug,
+  brunetteEscortPageData.slug,
+  shemaleEscortPageData.slug,
+  goedkopeEscortsPageData.slug,
+  studentenEscortPageData.slug,
+  europeseEscortPageData.slug,
+  gayEscortPageData.slug,
+  highClassEscortPageData.slug,
+  jongeEscortPageData.slug,
+  latinaEscortsPageData.slug,
+  matureEscortPageData.slug,
+  petiteEscortPageData.slug,
+  marokkaanseEscortPageData.slug,
+  nederlandseEscortPageData.slug,
+  japanseEscortPageData.slug,
+  poolseEscortPageData.slug,
+  roemeenseEscortPageData.slug,
+  stripteaseEscortPageData.slug,
+  turkseEscortPageData.slug,
+  zwarteEscortPageData.slug,
 ]);
 
 const generatedServiceTypePages: ServiceTypeDetailPageData[] = [
@@ -3711,5 +5431,25 @@ export const allServiceTypeDetailPages: ServiceTypeDetailPageData[] = [
   uitgaanEscortPageData,
   voetfetishEscortPageData,
   vrijgezellenfeestEscortPageData,
+  blondeEscortPageData,
+  brunetteEscortPageData,
+  shemaleEscortPageData,
+  goedkopeEscortsPageData,
+  studentenEscortPageData,
+  europeseEscortPageData,
+  gayEscortPageData,
+  highClassEscortPageData,
+  jongeEscortPageData,
+  latinaEscortsPageData,
+  matureEscortPageData,
+  petiteEscortPageData,
+  marokkaanseEscortPageData,
+  nederlandseEscortPageData,
+  japanseEscortPageData,
+  poolseEscortPageData,
+  roemeenseEscortPageData,
+  stripteaseEscortPageData,
+  turkseEscortPageData,
+  zwarteEscortPageData,
   ...generatedServiceTypePages,
 ];
