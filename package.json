@@ -26,12 +26,14 @@
     "reconcile:metadata-gaps": "node scripts/build-metadata-parity-gaps.mjs",
     "reconcile:language-gaps": "node scripts/build-language-parity-gaps.mjs",
     "reconcile:parity-evidence": "node scripts/build-parity-validation-evidence.mjs",
+    "images:download:locations": "node scripts/download-location-images.mjs",
     "strapi:audit:coverage": "node scripts/strapi-coverage-audit.mjs",
     "ingest:healthcheck": "npm run wp:healthcheck && npm run strapi:healthcheck"
   },
   "dependencies": {
     "clsx": "^2.1.1",
     "framer-motion": "^12.34.4",
+    "gleap": "^15.2.3",
     "lucide-react": "^0.576.0",
     "next": "^15.1.0",
     "react": "^18.3.1",

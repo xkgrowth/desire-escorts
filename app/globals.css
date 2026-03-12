@@ -714,3 +714,15 @@ body {
 .jotform-container {
   background: transparent;
 }
+
+/* Gleap launcher overrides: white bubble, black inner icon */
+.bb-feedback-button,
+.bb-feedback-button-icon {
+  background: #ffffff !important;
+}
+
+.bb-feedback-button-icon .bb-logo-logo path,
+.bb-feedback-button-icon .bb-logo-arrowdown,
+.bb-feedback-button-icon .bb-logo-arrowdown path {
+  fill: #000000 !important;
+}
