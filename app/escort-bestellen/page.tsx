@@ -15,7 +15,6 @@ import { HowToSteps } from "../components/domain/how-to-steps";
 import { TemplateHeroGlass } from "../components/domain/template-hero-glass";
 import { PageLayout, PageSection } from "../components/layout/page-layout";
 import { PaymentIcons } from "../components/ui/payment-icons";
-import { ScrollReveal } from "../components/ui/scroll-reveal";
 
 const bookingSteps = [
   {
@@ -165,23 +164,20 @@ export default function EscortBestellenPage() {
 
       <PageLayout>
         <PageSection size="sm" className="pb-0">
-          <ScrollReveal>
-            <TemplateHeroGlass
-              breadcrumbs={[{ label: "Hoe Het Werkt" }]}
-              title="Hoe werkt een escort bestellen?"
-              description="Van eerste keuze tot bevestiging: op deze pagina zie je precies hoe het bookingproces verloopt. Snel, duidelijk en altijd discreet."
-              uspItems={[
-                { icon: <Clock3 className="h-5 w-5" />, title: "Snelle bevestiging" },
-                { icon: <ShieldCheck className="h-5 w-5" />, title: "Volledig discreet" },
-                { icon: <BadgeEuro className="h-5 w-5" />, title: "Vanaf EUR160" },
-              ]}
-            />
-          </ScrollReveal>
+          <TemplateHeroGlass
+            breadcrumbs={[{ label: "Hoe Het Werkt" }]}
+            title="Hoe werkt een escort bestellen?"
+            description="Van eerste keuze tot bevestiging: op deze pagina zie je precies hoe het bookingproces verloopt. Snel, duidelijk en altijd discreet."
+            uspItems={[
+              { icon: <Clock3 className="h-5 w-5" />, title: "Snelle bevestiging" },
+              { icon: <ShieldCheck className="h-5 w-5" />, title: "Volledig discreet" },
+              { icon: <BadgeEuro className="h-5 w-5" />, title: "Vanaf EUR160" },
+            ]}
+          />
         </PageSection>
 
         <PageSection size="sm">
-          <ScrollReveal delay={0.06}>
-            <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
+          <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
               <div>
                 <h2 className="font-heading text-2xl font-bold text-foreground md:text-3xl">
                   Alles wat je moet weten voor een soepele booking
@@ -222,23 +218,19 @@ export default function EscortBestellenPage() {
                 />
               </div>
             </div>
-          </ScrollReveal>
         </PageSection>
 
         <PageSection size="sm">
-          <ScrollReveal delay={0.08}>
-            <HowToSteps
-              eyebrow="Stap voor stap"
-              title="In 6 stappen jouw afspraak geregeld"
-              steps={bookingSteps}
-              variant="timeline"
-            />
-          </ScrollReveal>
+          <HowToSteps
+            eyebrow="Stap voor stap"
+            title="In 6 stappen jouw afspraak geregeld"
+            steps={bookingSteps}
+            variant="timeline"
+          />
         </PageSection>
 
         <PageSection size="sm">
-          <ScrollReveal delay={0.1}>
-            <div className="rounded-luxury border border-white/10 bg-surface/35 p-6 md:p-8">
+          <div className="rounded-luxury border border-white/10 bg-surface/35 p-6 md:p-8">
               <div className="flex items-center gap-3">
                 <CreditCard className="h-5 w-5 text-primary" />
                 <h2 className="font-heading text-2xl font-bold text-foreground">
@@ -270,12 +262,10 @@ export default function EscortBestellenPage() {
                 </li>
               </ul>
             </div>
-          </ScrollReveal>
         </PageSection>
 
         <PageSection size="sm">
-          <ScrollReveal delay={0.12}>
-            <div className="rounded-luxury border border-primary/25 bg-primary/5 p-6 md:p-8">
+          <div className="rounded-luxury border border-primary/25 bg-primary/5 p-6 md:p-8">
               <div className="flex items-center gap-2 text-primary">
                 <MessageCircle className="h-5 w-5" />
                 <span className="text-sm font-medium uppercase tracking-wider">
@@ -297,12 +287,10 @@ export default function EscortBestellenPage() {
                 Naar First Time Experience
               </Link>
             </div>
-          </ScrollReveal>
         </PageSection>
 
         <PageSection size="sm">
-          <ScrollReveal delay={0.14}>
-            <div className="mb-8">
+          <div className="mb-8">
               <h2 className="font-heading text-2xl font-bold text-foreground md:text-3xl">
                 Handige vervolgstappen
               </h2>
@@ -310,7 +298,7 @@ export default function EscortBestellenPage() {
                 Ga direct door naar de pagina die je nu nodig hebt.
               </p>
             </div>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {relatedLinks.map((item) => (
                 <Link
                   key={item.href}
@@ -321,27 +309,22 @@ export default function EscortBestellenPage() {
                 </Link>
               ))}
             </div>
-          </ScrollReveal>
         </PageSection>
 
         <PageSection size="sm">
-          <ScrollReveal delay={0.16}>
-            <FAQ
-              eyebrow="Veelgestelde vragen"
-              title="Over het bookingproces"
-              items={bookingFaq}
-            />
-          </ScrollReveal>
+          <FAQ
+            eyebrow="Veelgestelde vragen"
+            title="Over het bookingproces"
+            items={bookingFaq}
+          />
         </PageSection>
 
         <PageSection size="sm">
-          <ScrollReveal delay={0.18}>
-            <CTASection
-              eyebrow="Escort bestellen"
-              title="Start vandaag nog je aanvraag"
-              description="Deel je voorkeuren, tijd en locatie. We helpen je direct met een passende en discrete booking."
-            />
-          </ScrollReveal>
+          <CTASection
+            eyebrow="Escort bestellen"
+            title="Start vandaag nog je aanvraag"
+            description="Deel je voorkeuren, tijd en locatie. We helpen je direct met een passende en discrete booking."
+          />
         </PageSection>
       </PageLayout>
     </>

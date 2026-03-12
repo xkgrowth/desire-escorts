@@ -39,12 +39,6 @@ export const primaryNav: NavItem[] = [
       { label: "Alle Services", labelEn: "All Services", href: "/services" },
     ],
   },
-  {
-    label: "Hoe Het Werkt",
-    labelEn: "How It Works",
-    href: "/escort-bestellen",
-    description: "Stap voor stap escort boeken",
-  },
   { 
     label: "Locaties", 
     labelEn: "Locations",

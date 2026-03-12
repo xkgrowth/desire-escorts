@@ -24,8 +24,8 @@ todos:
     content: 4.6.1 Implement standalone FAQ collection page (`/faq/`) with grouped categories, FAQ schema, and contact CTA
     status: completed
   - id: p4-how-it-works-template
-    content: 4.6.2 Implement How it Works template page (`/hoe-het-werkt/`) with conversion steps and trust/discretion messaging
-    status: pending
+    content: 4.6.2 Implement How it Works template page (`/escort-bestellen/`) with conversion steps and trust/discretion messaging
+    status: completed
   - id: p4-legal-pages
     content: 4.7 Apply design system to legal/license pages and remaining long-tail pages
     status: pending
@@ -273,7 +273,7 @@ These buttons currently don't have functional chat widget integration.
 - [ ] C.6.2 Contact template page (`/contact/`)
 - [x] C.6.3 Rates template page (`/prijzen/`)
 - [ ] C.6.4 Legal template pages (`/algemene-voorwaarden/`, `/privacybeleid/`, `/cookiebeleid/`, `/licentie/`)
-- [ ] C.6.5 How it Works template page (`/hoe-het-werkt/`)
+- [x] C.6.5 How it Works template page (`/escort-bestellen/`)
 
 ---
 

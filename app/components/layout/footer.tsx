@@ -71,6 +71,7 @@ const defaultColumns: FooterColumn[] = [
       { label: "Blog", href: "/blog" },
       { label: "Kennisbank", href: "/kennisbank" },
       { label: "Veelgestelde Vragen", href: "/faq" },
+      { label: "Hoe Het Werkt", href: "/escort-bestellen" },
       { label: "Tarieven", href: "/prijzen" },
       { label: "Contact", href: "/contact" },
       { label: "Werken als Escort", href: "/werken-als-escort" },
