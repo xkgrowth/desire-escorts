@@ -109,10 +109,10 @@ export const locationDetailPages: Record<string, LocationDetailPageData> = {
       },
     ],
     services: [
-      { label: "Hotel Escort", href: "/diensten/hotel-escorts" },
-      { label: "Erotische Massage", href: "/diensten/erotische-massage" },
-      { label: "Girlfriend Experience", href: "/diensten/gfe-escorts" },
-      { label: "Dinner Date", href: "/diensten/dinner-date" },
+      { label: "Hotel Escort", href: "/hotel-escort" },
+      { label: "Erotische Massage", href: "/erotische-massage" },
+      { label: "Girlfriend Experience", href: "/gfe-escorts" },
+      { label: "Dinner Date", href: "/dinnerdate-escort" },
     ],
     nearbyLocations: [
       { label: "Escort Bloemendaal", href: "/escort-bloemendaal" },
@@ -262,10 +262,10 @@ export const locationDetailPages: Record<string, LocationDetailPageData> = {
       },
     ],
     services: [
-      { label: "Hotel Escort", href: "/diensten/hotel-escorts" },
-      { label: "Erotische Massage", href: "/diensten/erotische-massage" },
-      { label: "Girlfriend Experience", href: "/diensten/gfe-escorts" },
-      { label: "24-uurs Escort", href: "/diensten/24-uurs-escort" },
+      { label: "Hotel Escort", href: "/hotel-escort" },
+      { label: "Erotische Massage", href: "/erotische-massage" },
+      { label: "Girlfriend Experience", href: "/gfe-escorts" },
+      { label: "24-uurs Escort", href: "/24-uurs-escort" },
     ],
     nearbyLocations: [
       { label: "Escort Amsterdam", href: "/escort-amsterdam" },
