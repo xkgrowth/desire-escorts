@@ -44,7 +44,7 @@ export default async function EscortsOverviewPage() {
               },
               {
                 icon: <BadgeEuro className="h-5 w-5" />,
-                title: "Vanaf €160, boekduur per stad",
+                title: "Vanaf €160",
               },
             ]}
           />
